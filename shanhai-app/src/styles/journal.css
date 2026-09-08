@@ -88,6 +88,8 @@ body { margin:0; background:light-dark(#f4f3ed,#142220); }
 .yn-pin:focus-visible .yn-pin-label,.yn-pin:hover .yn-pin-label,.yn-pin[aria-pressed=true] .yn-pin-label,.yn-pin[data-label=true] .yn-pin-label { display:block; }
 .yn-cluster-count { position:absolute; top:0; right:-8px; min-width:36px; height:22px; padding:0 5px; border:1px solid var(--lj-ink); border-radius:7px; background:var(--lj-paper); color:var(--lj-ink); font:12px/20px sans-serif; text-align:center; white-space:nowrap; pointer-events:none; }
 .yn-region-label { color:var(--lj-muted); font:12px/1.3 'Songti SC',SimSun,serif; letter-spacing:.08em; text-shadow:0 1px 2px var(--lj-paper); white-space:nowrap; pointer-events:none; opacity:.8; }
+.yn-memory-route-underlay { stroke-linecap:round; stroke-linejoin:round; }
+.yn-memory-route { stroke-linecap:round; stroke-linejoin:round; filter:drop-shadow(0 1px 0 var(--lj-paper)); }
 .leaflet-interactive[data-province-id] { cursor:pointer; }
 .leaflet-interactive[data-province-id]:hover { fill-opacity:.9; stroke-width:2; }
 .leaflet-control-attribution { max-width:85%; background:var(--lj-paper)!important; color:var(--lj-muted)!important; font-size:10px!important; }

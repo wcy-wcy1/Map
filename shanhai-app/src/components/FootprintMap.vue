@@ -9,6 +9,7 @@ import { focusAnchor, markerDimensions, markerLabel } from '../map/presentation'
 import { selectPlaceCover } from '../domain/place-cover'
 import { layoutMapCovers, type Rect } from '../map/cover-layout'
 import { createMapPhotoCover } from '../map/photo-cover'
+import { buildMemoryRoutes, type MemoryRoute } from '../map/routes'
 import { PHOTO_LOADER_KEY } from '../services/photo-loader'
 import '../map/photo-cover.css'
 
@@ -44,6 +45,7 @@ let photoViews: ReturnType<typeof createMapPhotoCover>[] = []
 function releasePhotos() { photoViews.forEach(view => view.dispose()); photoViews = [] }
 let map: L.Map | undefined
 let markers: L.LayerGroup | undefined
+let routes: L.LayerGroup | undefined
 let regionLabels: L.LayerGroup | undefined
 let geographyLayer: L.GeoJSON | undefined
 let provinceBounds: L.LatLngBounds | undefined
@@ -97,6 +99,43 @@ function addText(parent: HTMLElement, className: string, text: string) {
   parent.append(span)
 }
 
+function renderRoutes(currentZoom: number) {
+  if (!map || !routes) return
+  routes.clearLayers()
+  // The route is a diary affordance, not a national navigation overlay.
+  // Keep it hidden in the overview and reveal it once the map is readable.
+  if (currentZoom < 8.5 || props.pickingLocation) return
+  const memoryRoutes = buildMemoryRoutes(props.places, props.recordIndex)
+  for (const route of memoryRoutes) addRoute(route)
+}
+
+function addRoute(route: MemoryRoute) {
+  if (!routes || route.coordinates.length < 2) return
+  const latlngs = route.coordinates.map(([longitude, latitude]) => [latitude, longitude] as L.LatLngTuple)
+  // A quiet underlay keeps the route legible over the illustrated geography.
+  L.polyline(latlngs, {
+    className: 'yn-memory-route-underlay',
+    pane: 'memoryRoutes',
+    color: 'var(--lj-paper)',
+    weight: 7,
+    opacity: 0.78,
+    interactive: false,
+    bubblingMouseEvents: false,
+  }).addTo(routes)
+  L.polyline(latlngs, {
+    className: 'yn-memory-route',
+    pane: 'memoryRoutes',
+    color: 'var(--lj-red)',
+    weight: 2.2,
+    opacity: 0.86,
+    dashArray: '2 8',
+    lineCap: 'round',
+    lineJoin: 'round',
+    interactive: false,
+    bubblingMouseEvents: false,
+  }).addTo(routes)
+}
+
 function renderMarkers() {
   if (!map || !markers || !regionLabels || !element.value) return
   const active = document.activeElement instanceof HTMLElement && element.value.contains(document.activeElement)
@@ -105,6 +144,7 @@ function renderMarkers() {
   markers.clearLayers()
   regionLabels.clearLayers()
   const currentZoom = map.getZoom()
+  renderRoutes(currentZoom)
   const dimensions = markerDimensions(currentZoom)
   const projected = props.places.map(place => {
     const pixel = map!.project(asLatLng(place), currentZoom)
@@ -305,12 +345,19 @@ onMounted(() => {
     // Viewport guard only; record validation uses the selected province geometry.
     maxBounds: [[-5, 60], [65, 150]], maxBoundsViscosity: 0.9,
   })
+  const routePane = map.createPane('memoryRoutes')
+  routePane.style.zIndex = '450'
   map.attributionControl.setPrefix('')
   map.attributionControl.addAttribution('<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a>')
   map.attributionControl.addAttribution('<a href="https://www.geoboundaries.org/" target="_blank" rel="noopener noreferrer">geoBoundaries</a> · 轮廓仅作示意')
   L.control.scale({ position: 'bottomleft', imperial: false, maxWidth: 90 }).addTo(map)
   updateGeography()
   markers = L.layerGroup().addTo(map)
+  routes = L.layerGroup().addTo(map)
+  // Keep the route layer below markers while allowing it to sit above the
+  // geography illustration.
+  map.removeLayer(routes)
+  routes.addTo(map)
   regionLabels = L.layerGroup().addTo(map)
   map.on('moveend zoomend', queueMarkers)
   map.on('click', (event: L.LeafletMouseEvent) => {
@@ -332,6 +379,7 @@ watch(() => [props.places, props.regions, props.visitedIds, props.selectedId, pr
 watch(() => [props.geography, props.provinceId], () => { updateGeography(); queueMarkers() })
 onBeforeUnmount(() => {
   releasePhotos()
+  routes?.clearLayers()
   if (markerFrame !== undefined) cancelAnimationFrame(markerFrame)
   if (resizeFrame !== undefined) cancelAnimationFrame(resizeFrame)
   resizeObserver?.disconnect()
@@ -340,6 +388,7 @@ onBeforeUnmount(() => {
   window.removeEventListener('resize', resizeMap)
   map?.remove()
   map = undefined
+  routes = undefined
 })
 </script>
 
