@@ -1,0 +1,37 @@
+/* Journal tokens and Songti headings continue the existing photographic diary.
+   Layout: left-aligned 520px editor, three contained thumbnails, full PNG below.
+   Review: quiet controls keep the selected travel photographs as the focal point. */
+.yn-memory-card { width:min(520px,calc(100% - 28px)); max-height:90dvh; box-sizing:border-box; overflow:auto; padding:16px 24px 24px; border:1px solid var(--lj-line,#d6ddd0); border-radius:12px; background:var(--lj-paper,#fbf8ef); color:var(--lj-ink,#163d3a); text-align:left; }
+.yn-memory-card::backdrop { background:#112e2ab3; }
+.yn-memory-card h2 { margin:10px 0 4px; font:500 25px/1.35 "Songti SC",SimSun,serif; }
+.yn-memory-card p { margin:8px 0 14px; overflow-wrap:anywhere; line-height:1.65; }
+.yn-card-context,.yn-card-help,.yn-card-share-help { color:var(--lj-muted,#56685e); font-size:12px; }
+.yn-memory-card :is(button,.yn-card-download) { min-height:44px; padding:10px 14px; border:1px solid var(--lj-line,#d6ddd0); border-radius:6px; background:var(--lj-paper,#fbf8ef); color:var(--lj-ink,#163d3a); font:inherit; cursor:pointer; }
+.yn-memory-card button:disabled { opacity:.55; cursor:default; }
+#shanhai-lijiang .yn-memory-card :is(.yn-card-back,.yn-card-use-note) { border:0; padding-left:0; background:transparent; }
+#shanhai-lijiang .yn-memory-card :is(.yn-card-generate,.yn-card-download) { background:var(--lj-ink,#163d3a); color:var(--lj-paper,#fbf8ef); border-color:var(--lj-ink,#163d3a); }
+.yn-card-fields,.yn-card-photos { padding:0; border:0; min-width:0; margin:0; }
+.yn-card-photos { margin:20px 0 18px; }
+.yn-card-photos legend { padding:0; }
+.yn-card-photos p { font-size:12px; color:var(--lj-muted,#56685e); }
+.yn-card-picker { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+.yn-card-picker label { padding:4px; border:1px solid var(--lj-line,#d6ddd0); background:var(--lj-photo,#fffdf7); color:var(--lj-photo-ink,#163d3a); cursor:pointer; text-align:center; min-width:0; font-size:12px; }
+.yn-card-picker label[data-selected=true] { border-color:var(--lj-ink,#163d3a); box-shadow:0 0 0 1px var(--lj-ink,#163d3a); }
+.yn-card-picker img { display:block; width:100%; height:86px; object-fit:contain; }
+.yn-card-picker input { accent-color:var(--lj-ink,#163d3a); margin:12px 6px 10px 0; vertical-align:middle; }
+.yn-card-label { display:block; }
+#shanhai-lijiang .yn-memory-card .yn-card-text { box-sizing:border-box; display:block; width:100%; margin-top:7px; padding:11px; resize:vertical; min-height:110px; border:1px solid var(--lj-line,#d6ddd0); border-radius:6px; font:inherit; font-size:16px; line-height:1.6; background:var(--lj-paper,#fbf8ef); color:var(--lj-ink,#163d3a); }
+.yn-card-text::placeholder { color:var(--lj-muted,#56685e); opacity:1; }
+.yn-card-text-tools { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:12px; color:var(--lj-muted,#56685e); }
+.yn-card-date { display:flex; gap:8px; align-items:center; min-height:44px; margin:4px 0; cursor:pointer; font-size:14px; }
+.yn-card-date input { flex:0 0 16px; width:16px; height:16px; accent-color:var(--lj-ink,#163d3a); }
+.yn-card-status { font-size:12px; }
+.yn-card-status:empty { display:none; }
+.yn-memory-card [data-error=true] { color:var(--lj-red,#a83b30); }
+.yn-card-preview { margin-top:20px; padding-top:18px; border-top:1px solid var(--lj-line,#d6ddd0); }
+.yn-card-preview img { box-sizing:border-box; display:block; width:100%; height:auto; border:1px solid var(--lj-line,#d6ddd0); background:#fbf8ef; }
+.yn-card-preview p { font-size:12px; color:var(--lj-muted,#56685e); }
+.yn-card-actions { display:flex; flex-wrap:wrap; gap:10px; }
+.yn-card-download { display:inline-flex; align-items:center; text-decoration:none; }
+.yn-memory-card :is(button,a,input,textarea):focus-visible { outline:2px solid var(--lj-ink,#163d3a); outline-offset:3px; }
+@media (max-width:359px) { .yn-memory-card { padding-left:16px; padding-right:16px; } .yn-card-picker { gap:8px; } }

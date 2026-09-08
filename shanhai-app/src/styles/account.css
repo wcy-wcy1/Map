@@ -1,0 +1,26 @@
+/* Account controls stay secondary to the travel map and its photo stacks. */
+.yn-account-bar { display:flex; align-items:center; flex-wrap:wrap; gap:8px 18px; padding:10px 0; border-bottom:1px solid var(--lj-line); }
+.yn-account-summary { display:flex; flex:1 1 260px; flex-direction:column; gap:2px; min-width:0; }
+.yn-account-summary strong { font-weight:600; }
+.yn-account-summary small { margin-left:8px; color:var(--lj-muted); font-size:12px; font-weight:400; }
+.yn-account-summary > span { color:var(--lj-muted); font-size:12px; overflow-wrap:anywhere; }
+.yn-account-actions { display:flex; flex-wrap:wrap; gap:6px; }
+.yn-account-details { flex:1 0 100%; max-width:100%; padding:10px 0 2px; border-top:1px dashed var(--lj-line); }
+.yn-account-details p { max-width:65ch; margin:0 0 8px; overflow-wrap:anywhere; }
+.yn-account-details a { display:inline-flex; align-items:center; min-height:44px; margin-left:16px; }
+.yn-account-error { color:var(--lj-red); flex-basis:100%; overflow-wrap:anywhere; }
+.yn-account-login { max-width:480px; margin:clamp(24px,8vh,90px) auto 48px; }
+.yn-account-login h1 { font:30px/1.3 'Songti SC',SimSun,serif; margin:0 0 16px; }
+.yn-account-disclosure, .yn-account-local-note { color:var(--lj-muted); }
+.yn-account-form { display:flex; flex-direction:column; align-items:stretch; gap:8px; margin:24px 0 12px; }
+#shanhai-lijiang .yn-account-form :is(input,select) { width:100%; min-height:46px; padding:8px 12px; border:1px solid var(--lj-line); border-radius:6px; background:var(--lj-paper); font-size:16px; }
+.yn-account-form label:not(:first-child) { margin-top:12px; }
+.yn-account-form small { color:var(--lj-muted); }
+#shanhai-lijiang .yn-account-form button { margin-top:14px; background:var(--lj-ink); color:var(--lj-paper); border-color:var(--lj-ink); }
+.yn-account-local-note a { display:inline-block; min-height:44px; padding:10px 2px; }
+@media(max-width:680px) {
+  .yn-account-actions { width:100%; }
+  .yn-account-details a { margin-left:8px; }
+  .yn-account-login { margin-top:28px; }
+  #shanhai-lijiang.yn-account-entry { padding:0 16px 24px; }
+}

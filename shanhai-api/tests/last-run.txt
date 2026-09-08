@@ -1,0 +1,30 @@
+
+> shanhai-api@0.1.0-local test
+> npm run build && node --test --test-concurrency=1 tests/*.test.mjs
+
+
+> shanhai-api@0.1.0-local build
+> tsc -p tsconfig.json
+
+✔ explicit test mode, exact loopback origin, real PostgreSQL and controlled catalogue (457.4659ms)
+✔ security headers, missing auth, origin, host, CSRF, unknown fields and private paths (142.06ms)
+✔ custom points derive provinces, preserve old Yunnan identities and reject foreign access (73.7434ms)
+✔ immutable upload generation, owner checks, actual sharp decode and metadata receipt (177.5044ms)
+✔ save and receipts are atomic, idempotent and account-scoped (107.0425ms)
+✔ signed private read is decodable metadata-free JPEG; logout revokes only that session (121.9749ms)
+✔ map cover association plus concurrent CAS has exactly one winner (146.1136ms)
+✔ durable sessions, photos, records and signing survive closing and rebuilding the Nest app (150.1525ms)
+✔ commit cursors preserve history, never split atomic deletion, and deleted client IDs never resurrect (94.866ms)
+✔ bad bytes, digest, MIME and cancelled upload cannot become ready (196.0836ms)
+✔ cleanup failure after physical delete cannot roll back retirement or make missing bytes attachable (190.475ms)
+✔ transient staging read failure keeps uploaded state and the same completion key can retry (87.4758ms)
+✔ cleanup never removes referenced photos and releases both cancelled-object reservations (187.1556ms)
+✔ actual expanded JPEG output is charged before write, and cancelled pending objects still consume quota (742.6763ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3730.1442

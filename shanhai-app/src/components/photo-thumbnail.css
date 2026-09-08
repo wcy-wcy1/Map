@@ -1,0 +1,9 @@
+.yn-photo-thumbnail { position:relative; display:block; width:100%; height:180px; background:var(--lj-photo); color:var(--lj-photo-ink); overflow:hidden; }
+.yn-photo-thumbnail.yn-photo-thumbnail-compact { width:100%; height:100%; border:3px solid var(--lj-photo); border-radius:3px; }
+.yn-photo-thumbnail>.yn-photo-placeholder { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:8px; font-size:13px; line-height:1.5; text-align:center; overflow-wrap:anywhere; }
+.yn-photo-thumbnail-compact>.yn-photo-placeholder { padding:1px; font-size:10px; }
+.yn-photo-thumbnail.yn-photo-thumbnail>img { display:block; width:100%; height:100%; object-fit:contain; }
+.yn-photo-thumbnail[data-state=loading]>img { visibility:hidden; }
+.yn-photo-thumbnail.yn-photo-thumbnail-compact>img { object-fit:cover; }
+.yn-row-photo>.yn-photo-thumbnail>img { border:0; border-radius:0; }
+@media (max-width:680px) { .yn-photo-thumbnail:not(.yn-photo-thumbnail-compact) { height:190px; } }

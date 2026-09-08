@@ -1,0 +1,18 @@
+/* Native Vue editor extends the established journal dialog, not a new theme. */
+.yn-vue-editor .yn-editor-fields { min-width:0; margin:0; padding:0; border:0; }
+.yn-vue-editor .yn-editor-fields:disabled { opacity:.8; }
+.yn-vue-editor .yn-record-error li { margin-block:6px; overflow-wrap:anywhere; }
+.yn-vue-editor .yn-record-actions { align-items:center; }
+.yn-vue-editor .yn-discard { margin-left:auto; }
+.yn-vue-editor .yn-duplicate p { margin:0 0 8px; }
+.yn-vue-editor :is(button,input,select,textarea):focus-visible { outline:2px solid var(--lj-red); outline-offset:3px; }
+.yn-vue-editor .yn-record-help { max-width:70ch; }
+.yn-vue-editor .yn-editor-place-scope { margin-top:14px; }
+.yn-vue-editor .yn-editor-place-scope label { color:var(--lj-muted); font-size:12px; }
+.yn-vue-editor .yn-custom-place { min-width:0; }
+.yn-vue-editor :is(input,select,textarea) { max-width:100%; min-width:0; }
+.yn-vue-editor .yn-custom-position { overflow-wrap:anywhere; }
+@media(max-width:480px) {
+  .yn-record-dialog.yn-vue-editor { padding:18px; }
+  .yn-vue-editor .yn-discard { margin-left:0; }
+}

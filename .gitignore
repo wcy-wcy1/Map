@@ -1,0 +1,9 @@
+.codegraph/
+.deepcode-data/
+.deepcode-runtime/
+opencode.json
+/shanhai-app/.playwright-cli/
+/shanhai-app/qa/
+/shanhai-app/release/
+/shanhai-api/qa/
+/shanhai-api/.local/

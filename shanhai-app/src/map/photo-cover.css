@@ -1,0 +1,11 @@
+/* A small contact-print beside the landmark, never over its artwork/anchor. */
+.yn-map-photo { position:absolute; display:block; isolation:isolate; pointer-events:auto; }
+.yn-map-photo::before,.yn-map-photo::after { content:''; position:absolute; width:calc(100% - 4px); height:calc(100% - 4px); border:1px solid var(--lj-line); border-radius:2px; background:var(--lj-photo); pointer-events:none; }
+.yn-map-photo::before { top:2px; left:2px; z-index:-1; }
+.yn-map-photo::after { top:0; left:4px; z-index:-2; }
+.yn-map-photo[data-layers='1']::before,.yn-map-photo[data-layers='1']::after,.yn-map-photo[data-layers='2']::after { display:none; }
+.yn-map-photo-face { position:absolute; inset:4px 4px 0 0; display:block; overflow:hidden; padding:2px; border:1px solid var(--lj-line); border-radius:2px; background:var(--lj-photo); box-shadow:0 1px 3px var(--lj-shadow); }
+.yn-map-photo-face img { display:block; width:100%; height:100%; object-fit:cover; pointer-events:none; }
+.yn-map-photo-placeholder { position:absolute; inset:2px; display:grid; place-items:center; color:var(--lj-photo-ink); background:var(--lj-photo); font:10px/1.4 'Microsoft YaHei',sans-serif; pointer-events:none; }
+.yn-map-photo[data-state='ready'] .yn-map-photo-placeholder { display:none; }
+.yn-pin:focus-visible .yn-map-photo-face,.yn-pin[aria-pressed=true] .yn-map-photo-face { border-color:var(--lj-red); }

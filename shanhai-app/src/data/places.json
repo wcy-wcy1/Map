@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "shilin",
+    "name": "石林",
+    "aliases": [
+      "石林风景区"
+    ],
+    "regionId": "kunming",
+    "regionName": "昆明市",
+    "city": "昆明",
+    "category": "stone-forest",
+    "iconKey": "stone-forest",
+    "coordinates": [
+      103.32253215,
+      24.8162558
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/732651541",
+      "objectType": "way",
+      "objectId": 732651541,
+      "evidenceKey": "osm:石林风景区",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "石林风景区面；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://zhuanti.mct.gov.cn/xcszbwg2022/yunnan/detail/1993.html",
+    "text": "石灰岩峰林与彝族文化相遇的石林风景区。",
+    "highlights": [
+      "喀斯特峰林",
+      "阿诗玛文化"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "dianchi",
+    "name": "滇池",
+    "aliases": [
+      "滇池"
+    ],
+    "regionId": "kunming",
+    "regionName": "昆明市",
+    "city": "昆明",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      102.69149155,
+      24.8465852
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/relation/254775",
+      "objectType": "relation",
+      "objectId": 254775,
+      "evidenceKey": "osm:滇池",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "滇池水面；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://en.www.km.gov.cn/2021-09/24/c_663298.htm",
+    "text": "西山脚下的高原湖泊，湖岸串联多处湿地景观。",
+    "highlights": [
+      "高原湖泊",
+      "沿湖湿地"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "green-lake",
+    "name": "翠湖",
+    "aliases": [
+      "翠湖"
+    ],
+    "regionId": "kunming",
+    "regionName": "昆明市",
+    "city": "昆明",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      102.7025838,
+      25.05147375
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/relation/167607",
+      "objectType": "relation",
+      "objectId": 167607,
+      "evidenceKey": "osm:翠湖",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "翠湖水面；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://en.www.km.gov.cn/2023-06/19/c_902537.htm",
+    "text": "城市中的湖泊与园林，适合沿桥和湖岸慢慢走。",
+    "highlights": [
+      "湖岸园林",
+      "城市散步"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "western-hills",
+    "name": "西山",
+    "aliases": [
+      "西山 昆明"
+    ],
+    "regionId": "kunming",
+    "regionName": "昆明市",
+    "city": "昆明",
+    "category": "garden",
+    "iconKey": "garden",
+    "coordinates": [
+      102.6371968,
+      24.9377568
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/7106744035",
+      "objectType": "node",
+      "objectId": 7106744035,
+      "evidenceKey": "osm:西山 昆明",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "滇池西岸西山山峰节点；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://en.www.km.gov.cn/2023-06/19/c_902537.htm",
+    "text": "从山林与石窟之间，认识滇池西岸的西山景观。",
+    "highlights": [
+      "山林步道",
+      "石窟文化"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "yunnan-nationalities-village",
+    "name": "云南民族村",
+    "aliases": [
+      "云南民族村"
+    ],
+    "regionId": "kunming",
+    "regionName": "昆明市",
+    "city": "昆明",
+    "category": "village",
+    "iconKey": "village",
+    "coordinates": [
+      102.6594697,
+      24.96915705
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/39585364",
+      "objectType": "way",
+      "objectId": 39585364,
+      "evidenceKey": "osm:云南民族村",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "民族村园区面；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://en.www.km.gov.cn/2021-09/24/c_663374.htm",
+    "text": "以民居建筑、手工艺和民俗展示认识云南多样文化。",
+    "highlights": [
+      "民居展示",
+      "民族手工艺"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "jiulong-waterfalls",
+    "name": "九龙瀑布群",
+    "aliases": [
+      "九龙瀑布"
+    ],
+    "regionId": "qujing",
+    "regionName": "曲靖市",
+    "city": "曲靖",
+    "category": "waterfall",
+    "iconKey": "waterfall",
+    "coordinates": [
+      104.3977117,
+      25.01410005
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/42199479",
+      "objectType": "way",
+      "objectId": 42199479,
+      "evidenceKey": "osm:九龙瀑布",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "九龙瀑布群风景区面；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://jtyst.yn.gov.cn/hdjl/zxft/202601/t20260115_3438111.html",
+    "text": "罗平山水间层层跌落的瀑布群，是滇东旅行的一站。",
+    "highlights": [
+      "层叠瀑布",
+      "山水摄影"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "fuxian-lake",
+    "name": "抚仙湖",
+    "aliases": [
+      "抚仙湖"
+    ],
+    "regionId": "yuxi",
+    "regionName": "玉溪市",
+    "city": "玉溪",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      102.88913174999999,
+      24.4938791
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/relation/13499",
+      "objectType": "relation",
+      "objectId": 13499,
+      "evidenceKey": "osm:抚仙湖",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "抚仙湖水面；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://yfao.yn.gov.cn/qyhz/202601/t20260106_2819086.html",
+    "text": "澄江一带的深水高原湖泊，用一枚湖泊地标记录沿湖时光。",
+    "highlights": [
+      "高原湖泊",
+      "湖岸风景"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "nieer-music-square",
+    "name": "聂耳音乐广场",
+    "aliases": [
+      "聂耳音乐广场"
+    ],
+    "regionId": "yuxi",
+    "regionName": "玉溪市",
+    "city": "玉溪",
+    "category": "garden",
+    "iconKey": "garden",
+    "coordinates": [
+      102.56116645,
+      24.369231300000003
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/1123833756",
+      "objectType": "way",
+      "objectId": 1123833756,
+      "evidenceKey": "osm:聂耳音乐广场",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "聂耳音乐广场面；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://www.yuxi.gov.cn/yxs/shzyhxjzg0524/20210510/1255910.html",
+    "text": "以音乐家聂耳为主题的城市公共空间，连接玉湖与休闲绿地。",
+    "highlights": [
+      "音乐文化",
+      "城市公园"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "heshun-old-town",
+    "name": "和顺古镇",
+    "aliases": [
+      "和顺 腾冲"
+    ],
+    "regionId": "baoshan",
+    "regionName": "保山市",
+    "city": "保山",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      98.457465,
+      25.013638800000003
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/737175787",
+      "objectType": "way",
+      "objectId": 737175787,
+      "evidenceKey": "osm:和顺 腾冲",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "古镇内和顺图书馆建筑面，代表古镇而非全镇中心；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://www.baoshan.gov.cn/info/1015/9378124.htm",
+    "text": "走进腾冲的古镇巷道，感受侨乡民居与书香。",
+    "highlights": [
+      "侨乡古镇",
+      "和顺图书馆"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "tengchong-rehai",
+    "name": "腾冲热海",
+    "aliases": [
+      "热海"
+    ],
+    "regionId": "baoshan",
+    "regionName": "保山市",
+    "city": "保山",
+    "category": "hot-spring",
+    "iconKey": "hot-spring",
+    "coordinates": [
+      98.44117195,
+      24.95079105
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/1006150629",
+      "objectType": "way",
+      "objectId": 1006150629,
+      "evidenceKey": "osm:热海",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "腾冲热海景区面；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://baoshan.gov.cn/info/7792/2345334.htm",
+    "text": "蒸汽、热泉与泉华集中呈现腾冲的地热景观。",
+    "highlights": [
+      "地热奇观",
+      "热泉泉华"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "tengchong-volcano",
+    "name": "腾冲火山",
+    "aliases": [
+      "大空山"
+    ],
+    "regionId": "baoshan",
+    "regionName": "保山市",
+    "city": "保山",
+    "category": "volcano",
+    "iconKey": "volcano",
+    "coordinates": [
+      98.5011604,
+      25.2224427
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/665935795",
+      "objectType": "node",
+      "objectId": 665935795,
+      "evidenceKey": "osm:大空山",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "大空山火山节点，代表火山景区，不是景区入口；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://baoshan.gov.cn/info/7792/2345334.htm",
+    "text": "以大空山为代表，认识腾冲的火山锥与熔岩地貌。",
+    "highlights": [
+      "大空山",
+      "火山地貌"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "huanglianhe",
+    "name": "黄连河",
+    "aliases": [
+      "黄连河瀑布群",
+      "黄连河瀑布景区"
+    ],
+    "regionId": "zhaotong",
+    "regionName": "昭通市",
+    "city": "昭通",
+    "category": "waterfall",
+    "iconKey": "waterfall",
+    "coordinates": [
+      103.9216723,
+      27.72535405
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/1246072990",
+      "objectType": "way",
+      "objectId": 1246072990,
+      "evidenceKey": "way/1246072990",
+      "evidenceFile": "osm-object-evidence.json"
+    },
+    "anchorNote": "黄连河瀑布景区命名林地面，不是某一条瀑布的精确落水点；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://www.ztrd.gov.cn/article/20150527/n54323_1.shtml",
+    "text": "以瀑布景观闻名的大关山地景区。",
+    "highlights": [
+      "瀑布群",
+      "山谷风光"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "lugu-lake",
+    "name": "泸沽湖",
+    "aliases": [
+      "泸沽湖"
+    ],
+    "regionId": "lijiang",
+    "regionName": "丽江市",
+    "city": "丽江",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      100.79037135,
+      27.70629175
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/relation/13495",
+      "objectType": "relation",
+      "objectId": 13495,
+      "evidenceKey": "osm:泸沽湖",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "跨云南与四川的泸沽湖水面；归入丽江旅行目录，不表示整湖属于云南；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://www.ynxc.gov.cn/uploadfile/s61/2024/0419/20240419094809765.pdf",
+    "text": "滇川交界的高原湖泊，沿湖村落与山色构成旅途风景。",
+    "highlights": [
+      "高原湖泊",
+      "沿湖村落"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "yulong",
+    "name": "玉龙雪山",
+    "aliases": [
+      "雪山",
+      "玉龙",
+      "扇子陡",
+      "yulong",
+      "Yulong Snow Mountain"
+    ],
+    "regionId": "lijiang",
+    "regionName": "丽江市",
+    "city": "丽江",
+    "category": "mountain",
+    "iconKey": "snow-mountain",
+    "coordinates": [
+      100.1767026,
+      27.0984141
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "legacy-osm",
+      "url": "https://www.openstreetmap.org/node/298460509",
+      "objectType": "node",
+      "objectId": 298460509,
+      "evidenceKey": "../shanhai-lijiang-map/geodata.json"
+    },
+    "anchorNote": "OSM 山峰节点；仅作雪山图标展示代表点，不是景区入口、索道站或导航目的地。公共标记不代表用户到访。",
+    "source": "https://zhuanti.mct.gov.cn/csxz2022/yunnan/detail/1589.html",
+    "text": "主峰扇子陡，在丽江古城以北。",
+    "highlights": [
+      "雪山群峰",
+      "纳西文化"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "lijiang-old-town",
+    "name": "丽江古城",
+    "aliases": [
+      "古城",
+      "大研古城",
+      "大研",
+      "四方街",
+      "lijiang",
+      "Lijiang Old Town"
+    ],
+    "regionId": "lijiang",
+    "regionName": "丽江市",
+    "city": "丽江",
+    "category": "town",
+    "iconKey": "old-town",
+    "coordinates": [
+      100.2328715,
+      26.87553845
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "legacy-osm",
+      "url": "https://www.openstreetmap.org/way/995096057",
+      "objectType": "way",
+      "objectId": 995096057,
+      "evidenceKey": "../shanhai-lijiang-map/geodata.json"
+    },
+    "anchorNote": "四方街源多边形包围盒中心；用于古城地标图标展示，不是整个古城边界中心或入口。公共标记不代表用户到访。",
+    "source": "https://www.neac.gov.cn/seac/c103627/202310/1168374.shtml",
+    "text": "以大研古城四方街，标记这座古城。",
+    "highlights": [
+      "古镇街巷",
+      "纳西文化"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "baisha",
+    "name": "白沙镇",
+    "aliases": [
+      "白沙古镇",
+      "白沙",
+      "baisha",
+      "Baisha Old Town"
+    ],
+    "regionId": "lijiang",
+    "regionName": "丽江市",
+    "city": "丽江",
+    "category": "town",
+    "iconKey": "old-town",
+    "coordinates": [
+      100.2172013,
+      26.9571939
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "legacy-osm",
+      "url": "https://www.openstreetmap.org/node/1753861048",
+      "objectType": "node",
+      "objectId": 1753861048,
+      "evidenceKey": "../shanhai-lijiang-map/geodata.json"
+    },
+    "anchorNote": "OSM 城镇节点，作为白沙镇展示代表点，不是景区入口。通用古镇符号不是建筑复原，公共标记不代表用户到访。",
+    "source": "https://www.neac.gov.cn/seac/c103627/202310/1168374.shtml",
+    "text": "白沙镇，在丽江古城以北。",
+    "highlights": [
+      "古镇街巷",
+      "纳西文化"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "shuhe",
+    "name": "束河古镇",
+    "aliases": [
+      "束河",
+      "shuhe",
+      "Shuhe Old Town"
+    ],
+    "regionId": "lijiang",
+    "regionName": "丽江市",
+    "city": "丽江",
+    "category": "town",
+    "iconKey": "old-town",
+    "coordinates": [
+      100.2039308,
+      26.92348795
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "legacy-osm",
+      "url": "https://www.openstreetmap.org/way/995077673",
+      "objectType": "way",
+      "objectId": 995077673,
+      "evidenceKey": "../shanhai-lijiang-map/geodata.json"
+    },
+    "anchorNote": "OSM 景点面包围盒中心，作为束河古镇展示代表点，不是景区入口。通用古镇符号不是建筑复原，公共标记不代表用户到访。",
+    "source": "https://www.neac.gov.cn/seac/c103627/202310/1168374.shtml",
+    "text": "束河古镇，在丽江古城以北。",
+    "highlights": [
+      "古镇街巷",
+      "纳西文化"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "jingmai-tea-mountain",
+    "name": "景迈山古茶林",
+    "aliases": [
+      "景迈山",
+      "普洱景迈山古茶林文化景观"
+    ],
+    "regionId": "puer",
+    "regionName": "普洱市",
+    "city": "普洱",
+    "category": "tea",
+    "iconKey": "tea",
+    "coordinates": [
+      99.99215125,
+      22.1846199
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/1210243368",
+      "objectType": "way",
+      "objectId": 1210243368,
+      "evidenceKey": "way/1210243368",
+      "evidenceFile": "osm-object-evidence.json"
+    },
+    "anchorNote": "景迈山古茶林文化景观遗产地面，不是古茶林内某个村寨；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://nync.yn.gov.cn/html/2025/yzychyxw_0407/1418188.html",
+    "text": "古茶林、传统村落与森林交织，留下人与茶共同生活的印记。",
+    "highlights": [
+      "古茶林",
+      "传统村落",
+      "茶文化"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "puer-national-park",
+    "name": "普洱太阳河森林公园",
+    "aliases": [
+      "普洱国家公园"
+    ],
+    "regionId": "puer",
+    "regionName": "普洱市",
+    "city": "普洱",
+    "category": "rainforest",
+    "iconKey": "rainforest",
+    "coordinates": [
+      101.0962597,
+      22.6047962
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/6246019963",
+      "objectType": "node",
+      "objectId": 6246019963,
+      "evidenceKey": "osm:普洱国家公园",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "OSM Puer National Park 景点节点；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://zhuanti.mct.gov.cn/csxz2022/yunnan/detail/1587.html",
+    "text": "普洱山林中的自然体验地，适合认识热带与亚热带过渡地带。",
+    "highlights": [
+      "森林体验",
+      "自然观察"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "puer-tea-horse-road",
+    "name": "普洱茶马古道",
+    "aliases": [
+      "茶马古道",
+      "斑鸠坡",
+      "普洱茶马古道旅游景区"
+    ],
+    "regionId": "puer",
+    "regionName": "普洱市",
+    "city": "普洱",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      100.9909244,
+      22.8327259
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/12536315253",
+      "objectType": "node",
+      "objectId": 12536315253,
+      "evidenceKey": "node/12536315253",
+      "evidenceFile": "osm-object-evidence.json"
+    },
+    "anchorNote": "茶马古道斑鸠坡路段遗址国保碑节点，代表普洱景区内古道遗迹，不代表整条古道；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://zhuanti.mct.gov.cn/csxz2022/yunnan/detail/1587.html",
+    "text": "在普洱的茶马古道旅游景区，认识茶叶贸易与马帮记忆。",
+    "highlights": [
+      "马帮文化",
+      "茶路记忆"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "wengding-village",
+    "name": "翁丁村",
+    "aliases": [
+      "翁丁"
+    ],
+    "regionId": "lincang",
+    "regionName": "临沧市",
+    "city": "临沧",
+    "category": "village",
+    "iconKey": "village",
+    "coordinates": [
+      99.1647509,
+      23.281709
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/727309242",
+      "objectType": "node",
+      "objectId": 727309242,
+      "evidenceKey": "osm:翁丁",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "翁丁村聚落节点；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://cangyuan.gov.cn/artview/738/267892.html",
+    "text": "以佤族民居和日常文化体验为特色的村寨。",
+    "highlights": [
+      "佤族民居",
+      "村寨文化"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "cangyuan-rock-art",
+    "name": "沧源崖画",
+    "aliases": [
+      "沧源崖画"
+    ],
+    "regionId": "lincang",
+    "regionName": "临沧市",
+    "city": "临沧",
+    "category": "cave",
+    "iconKey": "cave",
+    "coordinates": [
+      99.3151893,
+      23.2716423
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/760775321",
+      "objectType": "node",
+      "objectId": 760775321,
+      "evidenceKey": "osm:沧源崖画",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "沧源崖画代表点；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://lincang.gov.cn/artview/14/231001.html",
+    "text": "崖壁上的古老图像，与周边山谷共同讲述佤山故事。",
+    "highlights": [
+      "岩画文化",
+      "山谷景观"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "lufeng-dinosaur-valley",
+    "name": "世界恐龙谷",
+    "aliases": [
+      "世界恐龙谷"
+    ],
+    "regionId": "chuxiong",
+    "regionName": "楚雄州",
+    "city": "楚雄",
+    "category": "museum",
+    "iconKey": "museum",
+    "coordinates": [
+      102.07277045000001,
+      24.97534675
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/1121897207",
+      "objectType": "way",
+      "objectId": 1121897207,
+      "evidenceKey": "osm:世界恐龙谷",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "恐龙谷园区代表点；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://www.cxs.gov.cn/info/1391/838239.htm",
+    "text": "从禄丰恐龙化石出发，认识远古生物与地质年代。",
+    "highlights": [
+      "恐龙化石",
+      "地质科普"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "yuanmou-earth-forest",
+    "name": "元谋土林",
+    "aliases": [
+      "元谋土林",
+      "物茂土林"
+    ],
+    "regionId": "chuxiong",
+    "regionName": "楚雄州",
+    "city": "楚雄",
+    "category": "stone-forest",
+    "iconKey": "stone-forest",
+    "coordinates": [
+      101.75749995000001,
+      25.8481157
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/45015631",
+      "objectType": "way",
+      "objectId": 45015631,
+      "evidenceKey": "way/45015631",
+      "evidenceFile": "osm-object-evidence.json"
+    },
+    "anchorNote": "元谋土林风景区（物茂土林）面，不代表元谋全部土林景点；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://www.cxs.gov.cn/info/1391/838239.htm",
+    "text": "奇特的土柱与沟谷，呈现元谋盆地的地貌层次。",
+    "highlights": [
+      "土林地貌",
+      "地质摄影"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "yuanyang-terraces",
+    "name": "元阳哈尼梯田",
+    "aliases": [
+      "元阳梯田"
+    ],
+    "regionId": "honghe",
+    "regionName": "红河州",
+    "city": "红河",
+    "category": "terraces",
+    "iconKey": "terraces",
+    "coordinates": [
+      102.7692122,
+      23.0968411
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/relation/6295690",
+      "objectType": "relation",
+      "objectId": 6295690,
+      "evidenceKey": "osm:元阳梯田",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "哈尼梯田文化景观代表点，不是观景台或入口；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://nync.yn.gov.cn/html/2025/yunnongkuanxun-new_0911/1421452.html",
+    "text": "山林、村寨与层层稻田相连，体现哈尼族的山地农耕智慧。",
+    "highlights": [
+      "层叠梯田",
+      "哈尼村寨",
+      "农耕文化"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "jianshui-old-town",
+    "name": "建水古城",
+    "aliases": [
+      "建水古城",
+      "朝阳楼"
+    ],
+    "regionId": "honghe",
+    "regionName": "红河州",
+    "city": "红河",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      102.8294826,
+      23.61923855
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/175089167",
+      "objectType": "way",
+      "objectId": 175089167,
+      "evidenceKey": "way/175089167",
+      "evidenceFile": "osm-object-evidence.json"
+    },
+    "anchorNote": "建水古城朝阳楼建筑面，以城楼代表古城，不是全城中心；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://www.hhjs.gov.cn/info/2231/145591.htm",
+    "text": "在临安古城的街巷与文物建筑之间，认识建水的人文积累。",
+    "highlights": [
+      "古城街巷",
+      "历史建筑"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "zhu-family-garden",
+    "name": "朱家花园",
+    "aliases": [
+      "朱家花园"
+    ],
+    "regionId": "honghe",
+    "regionName": "红河州",
+    "city": "红河",
+    "category": "garden",
+    "iconKey": "garden",
+    "coordinates": [
+      102.82575804999999,
+      23.618508900000002
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/740585016",
+      "objectType": "way",
+      "objectId": 740585016,
+      "evidenceKey": "osm:朱家花园",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "朱家花园建筑景点；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://hhjs.gov.cn/info/1061/229291.htm",
+    "text": "建水古城里的传统宅院与园林，适合细看空间和建筑细节。",
+    "highlights": [
+      "传统宅院",
+      "园林建筑"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "alu-cave",
+    "name": "阿庐古洞",
+    "aliases": [
+      "阿庐古洞"
+    ],
+    "regionId": "honghe",
+    "regionName": "红河州",
+    "city": "红河",
+    "category": "cave",
+    "iconKey": "cave",
+    "coordinates": [
+      103.75105455,
+      24.564499400000003
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/1098977979",
+      "objectType": "way",
+      "objectId": 1098977979,
+      "evidenceKey": "osm:阿庐古洞",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "阿庐古洞景点；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://www.hhlx.gov.cn/info/3121/271751.htm",
+    "text": "泸西的喀斯特溶洞群，将地下厅堂与洞中河流连接起来。",
+    "highlights": [
+      "溶洞群",
+      "地下河"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "puzhehei",
+    "name": "普者黑",
+    "aliases": [
+      "普者黑"
+    ],
+    "regionId": "wenshan",
+    "regionName": "文山州",
+    "city": "文山",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      104.1190294,
+      24.138165
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/822471220",
+      "objectType": "node",
+      "objectId": 822471220,
+      "evidenceKey": "osm:普者黑",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "普者黑村聚落节点，以村落代表普者黑景区；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://zhuanti.mct.gov.cn/dhxlsfn2022/yunnan/detail/2504.html",
+    "text": "丘北的湖泊、峰林与田园相依，构成水上乡村风景。",
+    "highlights": [
+      "湖泊峰林",
+      "水上田园"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "bamei",
+    "name": "坝美",
+    "aliases": [
+      "坝美"
+    ],
+    "regionId": "wenshan",
+    "regionName": "文山州",
+    "city": "文山",
+    "category": "village",
+    "iconKey": "village",
+    "coordinates": [
+      105.0389305,
+      24.3158251
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/4360254558",
+      "objectType": "node",
+      "objectId": 4360254558,
+      "evidenceKey": "osm:坝美",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "坝美村聚落代表点；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://zhuanti.mct.gov.cn/dhxlsfn2022/yunnan/detail/2504.html",
+    "text": "群山围合的村庄，与河流和溶洞共同构成田园景观。",
+    "highlights": [
+      "壮乡村落",
+      "河流溶洞"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "xtbg",
+    "name": "西双版纳热带植物园",
+    "aliases": [
+      "西双版纳热带植物园"
+    ],
+    "regionId": "xishuangbanna",
+    "regionName": "西双版纳州",
+    "city": "西双版纳",
+    "category": "rainforest",
+    "iconKey": "rainforest",
+    "coordinates": [
+      101.2649879,
+      21.91734495
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/1137753406",
+      "objectType": "way",
+      "objectId": 1137753406,
+      "evidenceKey": "osm:西双版纳热带植物园",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "中国科学院西双版纳热带植物园园区；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://xtbg.cas.cn/2022/ykfw/ryxz/",
+    "text": "在专类园与热带森林中认识植物多样性。",
+    "highlights": [
+      "热带植物",
+      "自然科普",
+      "雨林体验"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "manting-park",
+    "name": "曼听公园",
+    "aliases": [
+      "曼听公园"
+    ],
+    "regionId": "xishuangbanna",
+    "regionName": "西双版纳州",
+    "city": "西双版纳",
+    "category": "garden",
+    "iconKey": "garden",
+    "coordinates": [
+      100.80704395000001,
+      21.993329199999998
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/288655553",
+      "objectType": "way",
+      "objectId": 288655553,
+      "evidenceKey": "osm:曼听公园",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "曼听公园园区；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://www.ynxc.gov.cn/uploadfile/s61/2024/0419/20240419094628477.pdf",
+    "text": "景洪的园林文化景点，在城市旅途中留下一段绿色时光。",
+    "highlights": [
+      "城市园林",
+      "傣乡文化"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "wild-elephant-valley",
+    "name": "野象谷",
+    "aliases": [
+      "野象谷"
+    ],
+    "regionId": "xishuangbanna",
+    "regionName": "西双版纳州",
+    "city": "西双版纳",
+    "category": "rainforest",
+    "iconKey": "rainforest",
+    "coordinates": [
+      100.8639879,
+      22.1698392
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/1285857696",
+      "objectType": "node",
+      "objectId": 1285857696,
+      "evidenceKey": "osm:野象谷",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "野象谷景区代表点，不保证能看到野生象；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://www.ynxc.gov.cn/uploadfile/s61/2024/0419/20240419094628477.pdf",
+    "text": "以雨林生态与亚洲象主题为特色的自然体验景区。",
+    "highlights": [
+      "雨林生态",
+      "亚洲象主题"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "erhai",
+    "name": "洱海",
+    "aliases": [
+      "洱海"
+    ],
+    "regionId": "dali",
+    "regionName": "大理州",
+    "city": "大理",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      100.191954,
+      25.78291485
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/relation/254433",
+      "objectType": "relation",
+      "objectId": 254433,
+      "evidenceKey": "osm:洱海",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "洱海水面；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://tyj.yn.gov.cn/tyzx/tycy/202310/t20231021_3417324.html",
+    "text": "苍山与大理坝子之间的湖泊，沿岸村落和步道串联旅行记忆。",
+    "highlights": [
+      "苍洱风景",
+      "沿湖村落"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "chongsheng-three-pagodas",
+    "name": "崇圣寺三塔",
+    "aliases": [
+      "崇圣寺三塔"
+    ],
+    "regionId": "dali",
+    "regionName": "大理州",
+    "city": "大理",
+    "category": "pagoda",
+    "iconKey": "pagoda",
+    "coordinates": [
+      100.1465644,
+      25.7086408
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/7651326585",
+      "objectType": "node",
+      "objectId": 7651326585,
+      "evidenceKey": "osm:崇圣寺三塔",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "崇圣寺三塔建筑代表点；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://tyj.yn.gov.cn/tyzx/tycy/202310/t20231021_3417324.html",
+    "text": "苍山洱海之间的三座古塔，是大理鲜明的人文地标。",
+    "highlights": [
+      "三塔建筑",
+      "南诏历史"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "dali-old-town",
+    "name": "大理古城",
+    "aliases": [
+      "大理古城"
+    ],
+    "regionId": "dali",
+    "regionName": "大理州",
+    "city": "大理",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      100.16283045,
+      25.69816375
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/767449039",
+      "objectType": "way",
+      "objectId": 767449039,
+      "evidenceKey": "osm:大理古城",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "大理古城代表点；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://tyj.yn.gov.cn/tyzx/tycy/202310/t20231021_3417324.html",
+    "text": "在苍洱之间的古城街巷，感受多元文化积累的生活气息。",
+    "highlights": [
+      "古城街巷",
+      "苍洱人文"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "xizhou-old-town",
+    "name": "喜洲古镇",
+    "aliases": [
+      "喜洲",
+      "喜洲镇"
+    ],
+    "regionId": "dali",
+    "regionName": "大理州",
+    "city": "大理",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      100.1304383,
+      25.853639
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/704424224",
+      "objectType": "node",
+      "objectId": 704424224,
+      "evidenceKey": "node/704424224",
+      "evidenceFile": "osm-object-evidence.json"
+    },
+    "anchorNote": "喜洲镇聚落节点，以老镇聚落代表喜洲古镇，不是行政区中心；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://mz.yn.gov.cn/html/2025/difangdongtai_0206/4057940.html",
+    "text": "在大理的白族古镇，沿街巷寻找民居与日常生活。",
+    "highlights": [
+      "白族民居",
+      "古镇街巷"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "menghuan-golden-pagoda",
+    "name": "勐焕大金塔",
+    "aliases": [
+      "勐焕大金塔"
+    ],
+    "regionId": "dehong",
+    "regionName": "德宏州",
+    "city": "德宏",
+    "category": "pagoda",
+    "iconKey": "pagoda",
+    "coordinates": [
+      98.59592950000001,
+      24.42652
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/660705530",
+      "objectType": "way",
+      "objectId": 660705530,
+      "evidenceKey": "osm:勐焕大金塔",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "勐焕大金塔建筑；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://www.dhms.gov.cn/wtj/Web/_F0_0_28D020URCT3A3H8G747D9WVAD3.htm",
+    "text": "芒市的金色塔形地标，是认识当地人文景观的一站。",
+    "highlights": [
+      "金塔建筑",
+      "芒市风景"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "nujiang-first-bend",
+    "name": "怒江第一湾",
+    "aliases": [
+      "怒江第一湾"
+    ],
+    "regionId": "nujiang",
+    "regionName": "怒江州",
+    "city": "怒江",
+    "category": "canyon",
+    "iconKey": "canyon",
+    "coordinates": [
+      98.6352736,
+      28.004446
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/13617462505",
+      "objectType": "node",
+      "objectId": 13617462505,
+      "evidenceKey": "osm:怒江第一湾",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "怒江第一湾代表点；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://tyj.yn.gov.cn/tyzx/qzty/202301/t20230109_3415202.html",
+    "text": "怒江在丙中洛附近绕山转弯，形成开阔的半圆形河湾。",
+    "highlights": [
+      "怒江河湾",
+      "峡谷风光"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "bingzhongluo",
+    "name": "丙中洛",
+    "aliases": [
+      "丙中洛"
+    ],
+    "regionId": "nujiang",
+    "regionName": "怒江州",
+    "city": "怒江",
+    "category": "village",
+    "iconKey": "village",
+    "coordinates": [
+      98.6214535,
+      28.0181258
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/1425152562",
+      "objectType": "node",
+      "objectId": 1425152562,
+      "evidenceKey": "osm:丙中洛",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "丙中洛聚落节点；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://tyj.yn.gov.cn/tyzx/qzty/202301/t20230109_3415202.html",
+    "text": "高黎贡山与碧罗雪山之间，村落和怒江共同铺展山地风景。",
+    "highlights": [
+      "峡谷村落",
+      "怒江风光"
+    ],
+    "priority": 2
+  },
+  {
+    "id": "pudacuo",
+    "name": "普达措",
+    "aliases": [
+      "普达措"
+    ],
+    "regionId": "diqing",
+    "regionName": "迪庆州",
+    "city": "迪庆",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      99.9214922,
+      27.9137543
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/832323147",
+      "objectType": "way",
+      "objectId": 832323147,
+      "evidenceKey": "osm:普达措",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "普达措园区代表点；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://diqing.gov.cn/xwzx/dqyw/202604/20260413_239927.html",
+    "text": "香格里拉周边的高原森林与湖泊景观。",
+    "highlights": [
+      "高原湖泊",
+      "森林风景"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "songzanlin-monastery",
+    "name": "松赞林寺",
+    "aliases": [
+      "松赞林寺"
+    ],
+    "regionId": "diqing",
+    "regionName": "迪庆州",
+    "city": "迪庆",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      99.70438290000001,
+      27.86359315
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-bbox-center",
+      "url": "https://www.openstreetmap.org/way/472325512",
+      "objectType": "way",
+      "objectId": 472325512,
+      "evidenceKey": "osm:松赞林寺",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "松赞林寺建筑群；采用 OSM 对象包围盒中心，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://diqing.gov.cn/xwzx/dqyw/202604/20260413_239927.html",
+    "text": "香格里拉的寺院建筑群，记录旅途中的人文一面。",
+    "highlights": [
+      "寺院建筑",
+      "高原人文"
+    ],
+    "priority": 1
+  },
+  {
+    "id": "meili-snow-mountain",
+    "name": "梅里雪山",
+    "aliases": [
+      "梅里雪山",
+      "卡瓦格博"
+    ],
+    "regionId": "diqing",
+    "regionName": "迪庆州",
+    "city": "迪庆",
+    "category": "snow-mountain",
+    "iconKey": "snow-mountain",
+    "coordinates": [
+      98.6843785,
+      28.439403
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/3213727594",
+      "objectType": "node",
+      "objectId": 3213727594,
+      "evidenceKey": "osm:梅里雪山",
+      "evidenceFile": "coordinate-evidence.json"
+    },
+    "anchorNote": "梅里雪山山峰代表点，不是入口、观景台或登山路线；采用 OSM 原节点坐标，仅作地图展示代表点，不是导航入口；公共标记不代表到访。",
+    "source": "https://diqing.gov.cn/xwzx/dqyw/202604/20260413_239927.html",
+    "text": "德钦一带的雪山群，以卡瓦格博为代表记录远望雪峰的时刻。",
+    "highlights": [
+      "雪山群峰",
+      "高原风景"
+    ],
+    "priority": 1
+  }
+]
