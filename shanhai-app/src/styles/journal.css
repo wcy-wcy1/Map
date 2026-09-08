@@ -72,6 +72,9 @@ body { margin:0; background:light-dark(#f4f3ed,#142220); }
 #shanhai-lijiang :is(.yn-zoom-in,.yn-zoom-out) { font-size:24px; line-height:1; }
 .yn-north { position:absolute; top:18px; left:18px; z-index:400; color:var(--lj-muted); font-size:12px; pointer-events:none; }
 .yn-map-summary { position:absolute; left:50%; bottom:28px; z-index:400; transform:translateX(-50%); width:max-content; max-width:80%; padding:4px 10px; border:1px solid var(--lj-line); border-radius:4px; background:var(--lj-paper); font-size:12px; text-align:center; pointer-events:none; }
+.yn-route-summary { position:absolute; left:18px; bottom:58px; z-index:400; display:flex; align-items:flex-start; gap:8px; max-width:min(360px,58%); padding:8px 11px; border:1px solid var(--lj-line); border-radius:6px; background:color-mix(in srgb,var(--lj-paper) 92%,transparent); box-shadow:0 2px 8px var(--lj-shadow); color:var(--lj-muted); font-size:11px; line-height:1.45; pointer-events:none; }
+.yn-route-summary strong { display:block; margin-bottom:1px; color:var(--lj-ink); font-size:12px; font-weight:500; }
+.yn-route-summary-dot { width:8px; height:8px; flex:0 0 8px; margin-top:5px; border:2px solid var(--lj-paper); border-radius:50%; background:var(--lj-red); box-shadow:0 0 0 1px var(--lj-red); }
 .yn-map-help { display:flex; align-items:center; flex-wrap:wrap; gap:6px; margin:8px 0; color:var(--lj-muted); font-size:12px; }
 .yn-map-help>span:last-child { margin-left:auto; }
 .yn-visited-dot { display:inline-block; width:7px; height:7px; flex-shrink:0; border-radius:50%; background:var(--lj-red); }
@@ -259,6 +262,7 @@ body { margin:0; background:light-dark(#f4f3ed,#142220); }
   .yn-map-tools { top:10px; right:10px; }
   .yn-north { top:14px; left:14px; }
   .yn-map-summary { max-width:84%; padding:4px 7px; }
+  .yn-route-summary { left:12px; bottom:66px; max-width:62%; padding:7px 9px; }
   .yn-map-help { gap:5px; line-height:1.5; }
   .yn-map-help>span:last-child { flex-basis:100%; margin-left:0; }
   .yn-panel { margin-top:14px; padding:17px 14px; border-radius:9px; }

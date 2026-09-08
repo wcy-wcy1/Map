@@ -38,6 +38,7 @@ const emit = defineEmits<{
 
 const element = ref<HTMLDivElement>()
 const summary = ref('正在打开地图…')
+const routeSummary = ref('')
 const zoom = ref(5)
 const coarsePointer = ref(false)
 const photoLoader = inject(PHOTO_LOADER_KEY, null)
@@ -102,11 +103,18 @@ function addText(parent: HTMLElement, className: string, text: string) {
 function renderRoutes(currentZoom: number) {
   if (!map || !routes) return
   routes.clearLayers()
+  routeSummary.value = ''
   // The route is a diary affordance, not a national navigation overlay.
   // Keep it hidden in the overview and reveal it once the map is readable.
   if (currentZoom < 8.5 || props.pickingLocation) return
   const memoryRoutes = buildMemoryRoutes(props.places, props.recordIndex)
   for (const route of memoryRoutes) addRoute(route)
+  const activeRoute = memoryRoutes.find(route => route.coordinates.some(([longitude, latitude]) =>
+    map?.getBounds().contains([latitude, longitude])))
+  if (activeRoute) {
+    const names = activeRoute.placeIds.map(id => props.places.find(place => place.id === id)?.name).filter(Boolean)
+    routeSummary.value = `${names.slice(0, 3).join(' · ')}${names.length > 3 ? ` 等 ${names.length} 处` : ''}`
+  }
 }
 
 function addRoute(route: MemoryRoute) {
@@ -235,7 +243,7 @@ function renderMarkers() {
       }),
     }))
   }
-  if (currentZoom < 8.5 && !props.query) {
+  if (currentZoom < 11.5 && !props.query) {
     for (const feature of props.geography.features.filter(feature => feature.properties.kind === (props.provinceId ? 'region' : 'province'))) {
       const id = props.provinceId ? feature.properties.regionId : String(feature.properties.provinceId || '')
       if (props.regionId && id !== props.regionId) continue
@@ -403,6 +411,10 @@ onBeforeUnmount(() => {
       </div>
       <span class="yn-north" aria-label="地图上方为北">北 ↑</span>
       <div class="yn-map-summary" role="status">{{ summary }}</div>
+      <div v-if="routeSummary" class="yn-route-summary" aria-live="polite">
+        <span class="yn-route-summary-dot"></span>
+        <span><strong>我的足迹线</strong>{{ routeSummary }}</span>
+      </div>
     </div>
     <p class="yn-map-help"><span class="yn-visited-dot"></span>有我的回忆 <span>{{ coarsePointer ? '双指移动或缩放，单指滚动页面；照片随空间展开。' : '照片随空间展开；数字是附近景点数，点击展开。' }}</span></p>
     <p class="yn-map-detail-note">{{ !provinceId ? '点击省区轮廓，或用上方选择框进入。' : '' }}省区轮廓为粗略示意，仅作回忆定位，不用于导航或判定行政归属。</p>
