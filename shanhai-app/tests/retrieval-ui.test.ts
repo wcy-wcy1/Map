@@ -85,6 +85,8 @@ describe('Vue retrieval interactions', () => {
     const summary: VisitSummary = { ...visits[0]!, coverId: 'second', photos: [{ id: 'first', name: 'first.jpg' }, { id: 'second', name: 'second.jpg' }] }
     const wrapper = mount(PlaceDetail, { props: { ...revisions, place, visits: [summary], query: '' } })
     await flushPromises()
+    expect(wrapper.get('.yn-memory-album-heading').text()).toContain('1 段回忆留在这里')
+    expect(wrapper.get('.yn-memory-body').attributes('data-has-photo')).toBe('true')
     expect(wrapper.text()).toContain('照片未载入，点开重试')
     await wrapper.get('.yn-memory-cover').trigger('click')
     expect(wrapper.emitted('viewPhoto')).toEqual([[summary, 1]])
