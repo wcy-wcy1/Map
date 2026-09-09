@@ -107,6 +107,9 @@ function addText(parent: HTMLElement, className: string, text: string) {
   span.textContent = text
   parent.append(span)
 }
+const collides = (rect: Rect, others: readonly Rect[], gap = 6) => others.some(other =>
+  rect.x < other.x + other.width + gap && rect.x + rect.width + gap > other.x &&
+  rect.y < other.y + other.height + gap && rect.y + rect.height + gap > other.y)
 
 function renderRoutes(currentZoom: number) {
   if (!map || !routes) return
@@ -278,22 +281,34 @@ function renderMarkers() {
   const showProvinceLabels = !props.provinceId && currentZoom < PROVINCE_LABEL_ZOOM_MAX
   const showRegionLabels = !!props.provinceId && currentZoom < 11.5
   if ((showProvinceLabels || showRegionLabels) && !props.query) {
-    const provinceIds = showProvinceLabels ? labelledProvinceIds() : new Set<string>()
-    for (const feature of props.geography.features.filter(feature => feature.properties.kind === (props.provinceId ? 'region' : 'province'))) {
+    const priorityProvinceIds = showProvinceLabels ? labelledProvinceIds() : new Set<string>()
+    const labelRects: Rect[] = []
+    const labelFeatures = props.geography.features.filter(feature => feature.properties.kind === (props.provinceId ? 'region' : 'province'))
+      .sort((a, b) => Number(priorityProvinceIds.has(String(b.properties.provinceId || ''))) - Number(priorityProvinceIds.has(String(a.properties.provinceId || ''))))
+    for (const feature of labelFeatures) {
       const id = props.provinceId ? feature.properties.regionId : String(feature.properties.provinceId || '')
-      if (showProvinceLabels && (!id || !provinceIds.has(id))) continue
       if (props.regionId && id !== props.regionId) continue
       const bounds = L.geoJSON(feature).getBounds()
       if (!bounds.isValid()) continue
       const region = props.regions.find(region => region.id === id)
+      const text = (region?.name || feature.properties.name || '').replace(/壮族自治区$|回族自治区$|维吾尔自治区$|自治区$|特别行政区$|[省市州]$/u, '')
+      const center = bounds.getCenter()
+      const point = map.latLngToContainerPoint(center)
+      const isPriority = showProvinceLabels && id && priorityProvinceIds.has(id)
+      const labelWidth = showProvinceLabels ? Math.max(50, Math.min(98, text.length * 16 + 18)) : Math.max(54, Math.min(120, text.length * 15 + 18))
+      const labelHeight = showProvinceLabels ? 25 : 23
+      const rect = { x: point.x - labelWidth / 2, y: point.y - labelHeight / 2, width: labelWidth, height: labelHeight }
+      if (showProvinceLabels && !isPriority && collides(rect, labelRects, 8)) continue
+      labelRects.push(rect)
       const label = document.createElement('span')
       label.className = 'yn-region-label'
       label.dataset.scope = props.provinceId ? 'region' : 'province'
-      label.textContent = (region?.name || feature.properties.name || '').replace(/壮族自治区$|回族自治区$|维吾尔自治区$|自治区$|特别行政区$|[省市州]$/u, '')
+      label.dataset.priority = isPriority ? 'memory' : 'map'
+      label.textContent = text
       if (id) label.dataset.regionLabel = id
-      regionLabels.addLayer(L.marker(bounds.getCenter(), {
+      regionLabels.addLayer(L.marker(center, {
         interactive: false, keyboard: false, zIndexOffset: -1000,
-        icon: L.divIcon({ className: 'yn-map-icon', html: label, iconSize: [80, 18], iconAnchor: [40, 9] }),
+        icon: L.divIcon({ className: 'yn-map-icon', html: label, iconSize: [labelWidth, labelHeight], iconAnchor: [labelWidth / 2, labelHeight / 2] }),
       }))
     }
   }
