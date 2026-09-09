@@ -287,6 +287,16 @@ describe('FootprintMap actual Leaflet lifecycle', () => {
     expect(labels.some(label => label.attributes('data-region-label') === 'yunnan')).toBe(true)
     expect(wrapper.get('[data-region-label="yunnan"]').attributes('data-priority')).toBe('memory')
   })
+  it('hides province labels that would collide at the current national zoom', async () => {
+    const crowded: Geography = { type: 'FeatureCollection', features: [
+      provinceFeature('a', 100, 25, 103, 28),
+      provinceFeature('b', 100.2, 25.2, 103.2, 28.2),
+      provinceFeature('c', 100.4, 25.4, 103.4, 28.4),
+    ] }
+    const wrapper = render([], { geography: crowded, provinceId: '', areaLabel: '全国' })
+    await settle()
+    expect(wrapper.findAll('.yn-region-label').length).toBeLessThan(crowded.features.length)
+  })
   it('does not bubble national marker clicks into province navigation, and picks on a province only once', async () => {
     const wrapper = render([place('成都', 104.07, 30.67)], { geography: national, provinceId: '', areaLabel: '全国' })
     await settle()

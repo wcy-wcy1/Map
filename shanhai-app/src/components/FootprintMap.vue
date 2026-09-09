@@ -65,8 +65,8 @@ let lastWidth = 0
 let lastHeight = 0
 const asLatLng = (place: Place): L.LatLngTuple => [place.coordinates[1], place.coordinates[0]]
 const labelledProvinceIds = () => new Set(props.places.map(place => place.mapId).filter((id): id is string => !!id))
-const PROVINCE_LABEL_ZOOM_MAX = 7.4
 const PLACE_LABEL_ZOOM = 8.5
+const nationalLabelGap = (zoom: number) => zoom < 4.8 ? 26 : zoom < 5.8 ? 16 : 8
 
 function fitProvince() {
   if (!map || !provinceBounds?.isValid() || !element.value) return
@@ -278,7 +278,7 @@ function renderMarkers() {
       }),
     }))
   }
-  const showProvinceLabels = !props.provinceId && currentZoom < PROVINCE_LABEL_ZOOM_MAX
+  const showProvinceLabels = !props.provinceId
   const showRegionLabels = !!props.provinceId && currentZoom < 11.5
   if ((showProvinceLabels || showRegionLabels) && !props.query) {
     const priorityProvinceIds = showProvinceLabels ? labelledProvinceIds() : new Set<string>()
@@ -293,12 +293,13 @@ function renderMarkers() {
       const region = props.regions.find(region => region.id === id)
       const text = (region?.name || feature.properties.name || '').replace(/壮族自治区$|回族自治区$|维吾尔自治区$|自治区$|特别行政区$|[省市州]$/u, '')
       const center = bounds.getCenter()
+      if (showProvinceLabels && !viewport.contains(center)) continue
       const point = map.latLngToContainerPoint(center)
       const isPriority = showProvinceLabels && id && priorityProvinceIds.has(id)
       const labelWidth = showProvinceLabels ? Math.max(50, Math.min(98, text.length * 16 + 18)) : Math.max(54, Math.min(120, text.length * 15 + 18))
       const labelHeight = showProvinceLabels ? 25 : 23
       const rect = { x: point.x - labelWidth / 2, y: point.y - labelHeight / 2, width: labelWidth, height: labelHeight }
-      if (showProvinceLabels && !isPriority && collides(rect, labelRects, 8)) continue
+      if (showProvinceLabels && collides(rect, labelRects, isPriority ? 6 : nationalLabelGap(currentZoom))) continue
       labelRects.push(rect)
       const label = document.createElement('span')
       label.className = 'yn-region-label'
