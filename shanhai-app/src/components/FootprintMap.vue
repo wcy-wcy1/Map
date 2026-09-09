@@ -64,6 +64,7 @@ let root: HTMLElement | null = null
 let lastWidth = 0
 let lastHeight = 0
 const asLatLng = (place: Place): L.LatLngTuple => [place.coordinates[1], place.coordinates[0]]
+const labelledProvinceIds = () => new Set(props.places.map(place => place.mapId).filter((id): id is string => !!id))
 
 function fitProvince() {
   if (!map || !provinceBounds?.isValid() || !element.value) return
@@ -272,15 +273,20 @@ function renderMarkers() {
       }),
     }))
   }
-  if (currentZoom < 11.5 && !props.query) {
+  const showProvinceLabels = !props.provinceId && currentZoom >= 5.2 && currentZoom < 7.4
+  const showRegionLabels = !!props.provinceId && currentZoom < 11.5
+  if ((showProvinceLabels || showRegionLabels) && !props.query) {
+    const provinceIds = showProvinceLabels ? labelledProvinceIds() : new Set<string>()
     for (const feature of props.geography.features.filter(feature => feature.properties.kind === (props.provinceId ? 'region' : 'province'))) {
       const id = props.provinceId ? feature.properties.regionId : String(feature.properties.provinceId || '')
+      if (showProvinceLabels && (!id || !provinceIds.has(id))) continue
       if (props.regionId && id !== props.regionId) continue
       const bounds = L.geoJSON(feature).getBounds()
       if (!bounds.isValid()) continue
       const region = props.regions.find(region => region.id === id)
       const label = document.createElement('span')
       label.className = 'yn-region-label'
+      label.dataset.scope = props.provinceId ? 'region' : 'province'
       label.textContent = (region?.name || feature.properties.name || '').replace(/壮族自治区$|回族自治区$|维吾尔自治区$|自治区$|特别行政区$|[省市州]$/u, '')
       if (id) label.dataset.regionLabel = id
       regionLabels.addLayer(L.marker(bounds.getCenter(), {

@@ -237,6 +237,7 @@ describe('FootprintMap actual Leaflet lifecycle', () => {
     const wrapper = render([], { geography: national, provinceId: '', areaLabel: '全国' })
     await settle()
     expect(Number(wrapper.get('#yn-map').attributes('data-zoom'))).toBeLessThan(5)
+    expect(wrapper.find('.yn-region-label').exists()).toBe(false)
     expect(wrapper.get('#yn-map').attributes('aria-label')).toContain('全国')
     const province = wrapper.get('[data-province-id="cn-51"]')
     expect(province.attributes('fill')).toBe('var(--yn-forest)')
@@ -266,6 +267,12 @@ describe('FootprintMap actual Leaflet lifecycle', () => {
     await settle()
     expect(Number(wrapper.get('#yn-map').attributes('data-zoom'))).toBeLessThan(5)
     expect(wrapper.find('[data-province-id="cn-51"]').exists()).toBe(true)
+  })
+  it('does not crowd the national overview with every province label', async () => {
+    const yunnanMemory = { ...place('玉龙雪山', 100, 26), mapId: 'yunnan' }
+    const wrapper = render([yunnanMemory], { geography: national, provinceId: '', areaLabel: '全国' })
+    await settle()
+    expect(wrapper.find('.yn-region-label').exists()).toBe(false)
   })
   it('does not bubble national marker clicks into province navigation, and picks on a province only once', async () => {
     const wrapper = render([place('成都', 104.07, 30.67)], { geography: national, provinceId: '', areaLabel: '全国' })
