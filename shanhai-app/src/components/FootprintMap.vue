@@ -190,8 +190,10 @@ function renderMarkers() {
   // Layout uses container pixels, while grouping continues to use true projected
   // coordinates. Neither the artwork nor the geographic anchor is displaced.
   const visibleGroups = groups.filter(item => viewport.contains(L.latLng(...asLatLng(item.anchor))))
+  const revealCovers = currentZoom >= 9.5
   const coverReferences = new Map(visibleGroups.map(item => [item.anchor.id,
-    props.pickingLocation ? undefined : selectPlaceCover(item.anchor.id, props.recordIndex, props.covers, props.query)]))
+    props.pickingLocation || item.members.length > 1 && item.anchor.id !== props.selectedId || (!revealCovers && item.anchor.id !== props.selectedId)
+      ? undefined : selectPlaceCover(item.anchor.id, props.recordIndex, props.covers, props.query)]))
   const layoutMarkers = visibleGroups.map(item => {
     const point = map!.latLngToContainerPoint(asLatLng(item.anchor))
     return { id: item.anchor.id, x: point.x - dimensions.anchorX, y: point.y - dimensions.anchorY,
@@ -448,7 +450,7 @@ onBeforeUnmount(() => {
         <span><strong>计划路线</strong>{{ plannedSummary }}</span>
       </button>
     </div>
-    <p class="yn-map-help"><span class="yn-visited-dot"></span>有我的回忆 <span>{{ coarsePointer ? '双指移动或缩放，单指滚动页面；照片随空间展开。' : '照片随空间展开；数字是附近景点数，点击展开。' }}</span></p>
+    <p class="yn-map-help"><span class="yn-visited-dot"></span>有我的回忆 <span>{{ coarsePointer ? '双指移动或缩放，单指滚动页面；放大后照片展开。' : '放大后照片展开；数字是附近景点数，点击展开。' }}</span></p>
     <p class="yn-map-detail-note">{{ !provinceId ? '点击省区轮廓，或用上方选择框进入。' : '' }}省区轮廓为粗略示意，仅作回忆定位，不用于导航或判定行政归属。</p>
   </div>
 </template>

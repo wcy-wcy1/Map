@@ -97,12 +97,12 @@ describe('FootprintMap actual Leaflet lifecycle', () => {
   }
   function photoLoader() { return { load: vi.fn(async (_visit, id) => ({ id, name: '二.jpg', url: 'data:image/jpeg;base64,AA==' })), clear: vi.fn(), close: vi.fn() } satisfies PhotoLoader }
   it('displays the selected cover beside its landmark and clicking the paper enters the same place', async () => {
-    const loader = photoLoader(), wrapper = render([place('雪山', 100)], photoOptions('雪山'), loader)
+    const loader = photoLoader(), wrapper = render([place('雪山', 100)], { ...photoOptions('雪山'), selectedId: '雪山' }, loader)
     await settle()
     const marker = wrapper.get<HTMLButtonElement>('[data-map-place="雪山"]'), cover = marker.get<HTMLElement>('.yn-map-photo')
     expect(marker.attributes('data-cover')).toBe('shown')
     expect(cover.attributes('data-photo-id')).toBe('second')
-    expect(Number.parseFloat(cover.element.style.width)).toBeLessThanOrEqual(52)
+    expect(Number.parseFloat(cover.element.style.width)).toBeLessThanOrEqual(48)
     expect(Number.parseFloat(cover.element.style.left)).toBeGreaterThanOrEqual(Number.parseFloat(marker.element.style.width) + 4)
     expect(marker.attributes('data-longitude')).toBe('100')
     expect(loader.load).not.toHaveBeenCalled(); visiblePhotos(); await settle()
@@ -111,8 +111,18 @@ describe('FootprintMap actual Leaflet lifecycle', () => {
     await cover.trigger('click'); expect(wrapper.emitted('select')).toEqual([['雪山']])
     expect(wrapper.findAll('.leaflet-tile')).toHaveLength(0)
   })
-  it('releases old photos on revision/filter/picker changes and never reloads hidden/picker covers', async () => {
+  it('keeps map covers hidden in overview until a place is selected or the map is readable', async () => {
     const loader = photoLoader(), wrapper = render([place('a', 100)], photoOptions('a'), loader)
+    await settle()
+    expect(wrapper.get('[data-map-place="a"]').attributes('data-cover')).toBe('none')
+    expect(wrapper.find('.yn-map-photo').exists()).toBe(false)
+    visiblePhotos(); await settle()
+    expect(loader.load).not.toHaveBeenCalled()
+    await wrapper.setProps({ selectedId: 'a' }); await settle()
+    expect(wrapper.get('[data-map-place="a"]').attributes('data-cover')).toBe('shown')
+  })
+  it('releases old photos on revision/filter/picker changes and never reloads hidden/picker covers', async () => {
+    const loader = photoLoader(), wrapper = render([place('a', 100)], { ...photoOptions('a'), selectedId: 'a' }, loader)
     await settle(); visiblePhotos(); await settle()
     const oldImage = wrapper.get('.yn-map-photo img').element
     await wrapper.setProps({ revision: 4, covers: [{ placeId: 'a', visitId: 'visit-a', photoId: 'first' }] })
@@ -139,7 +149,7 @@ describe('FootprintMap actual Leaflet lifecycle', () => {
   })
   it('keeps a failed cover landmark clickable and releases map image observers on unmount', async () => {
     const loader = photoLoader(); loader.load.mockRejectedValue(new Error('stale'))
-    const wrapper = render([place('a', 100)], photoOptions('a'), loader)
+    const wrapper = render([place('a', 100)], { ...photoOptions('a'), selectedId: 'a' }, loader)
     await settle(); visiblePhotos(); await settle()
     expect(wrapper.get('.yn-map-photo').attributes('data-state')).toBe('error')
     await wrapper.get('[data-map-place="a"]').trigger('click'); expect(wrapper.emitted('select')).toEqual([['a']])
