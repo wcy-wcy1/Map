@@ -11,6 +11,7 @@ const props = defineProps<{
   recordIndex: ReadonlyMap<string, readonly VisitSummary[]>
   covers?: readonly Cover[]
   revision: number
+  variant?: 'memory' | 'planned'
 }>()
 const emit = defineEmits<{ back: []; select: [placeId: string]; add: [placeId: string]; viewPhoto: [visit: VisitSummary, index: number] }>()
 
@@ -29,7 +30,9 @@ const rows = computed(() => props.placeIds.map((id, index) => {
 const title = computed(() => rows.value.length > 1
   ? `${rows.value[0]?.place?.name ?? '这趟旅行'} 到 ${rows.value.at(-1)?.place?.name ?? ''}`
   : rows.value[0]?.place?.name ?? '我的足迹线')
+const isPlanned = computed(() => props.variant === 'planned')
 const dateRange = computed(() => {
+  if (isPlanned.value) return '按地理距离生成的建议顺序'
   const dates = rows.value.flatMap(row => row.visits.map(visit => visit.date)).sort()
   if (!dates.length) return '按留下回忆的顺序整理'
   return dates[0] === dates.at(-1) ? dates[0] : `${dates[0]} 至 ${dates.at(-1)}`
@@ -42,7 +45,7 @@ const dateRange = computed(() => {
     <div class="yn-journey-hero">
       <p>{{ dateRange }}</p>
       <h2>{{ title }}</h2>
-      <span>{{ rows.length }} 个地点 · 足迹线不是导航路线</span>
+      <span>{{ rows.length }} 个地点 · {{ isPlanned ? '规划预览不是导航路线' : '足迹线不是导航路线' }}</span>
     </div>
     <ol class="yn-journey-steps">
       <li v-for="row in rows" :key="row.place!.id">
@@ -55,7 +58,7 @@ const dateRange = computed(() => {
           <strong>{{ row.place!.name }}</strong>
           <small>{{ row.place!.regionName }}{{ row.visit ? ` · ${row.visit.date}` : '' }}</small>
           <span v-if="row.visit?.note">{{ row.visit.note.slice(0, 72) }}</span>
-          <span v-else>这里还没有手记，可以补一段。</span>
+          <span v-else>{{ isPlanned ? '还没有你的回忆，适合先放进计划里。' : '这里还没有手记，可以补一段。' }}</span>
         </span>
         <span class="yn-journey-actions">
           <button type="button" @click="emit('select', row.place!.id)">看地点</button>

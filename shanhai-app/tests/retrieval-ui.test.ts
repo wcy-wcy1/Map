@@ -3,6 +3,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import SearchToolbar from '../src/components/SearchToolbar.vue'
 import PlaceList from '../src/components/PlaceList.vue'
 import PlaceDetail from '../src/components/PlaceDetail.vue'
+import JourneyPlanner from '../src/components/JourneyPlanner.vue'
 import { publicPlaces, regions } from '../src/domain/catalogue'
 import { indexVisits } from '../src/domain/map-layout'
 import type { VisitSummary } from '../src/domain/models'
@@ -94,5 +95,13 @@ describe('Vue retrieval interactions', () => {
     expect(wrapper.emitted('viewPhoto')?.[0]?.[0]).toEqual(expect.objectContaining({ photos: [{ id: 'first', name: 'first.jpg' }, { id: 'second', name: 'second.jpg' }] }))
     expect(wrapper.get('.yn-memory-cover').find('button').exists()).toBe(false)
     wrapper.unmount()
+  })
+  it('selects places and previews a lightweight planned journey', async () => {
+    const wrapper = mount(JourneyPlanner, { props: { places: publicPlaces.slice(0, 3), selectedIds: [], recordIndex: new Map(), areaLabel: '云南' } })
+    await wrapper.get('.yn-planner-place').trigger('click')
+    expect(wrapper.emitted('toggle')?.[0]).toEqual([publicPlaces[0]!.id])
+    await wrapper.setProps({ selectedIds: [publicPlaces[0]!.id, publicPlaces[1]!.id] })
+    await wrapper.get('.yn-primary').trigger('click')
+    expect(wrapper.emitted('preview')?.[0]?.[0]).toHaveLength(2)
   })
 })

@@ -5,6 +5,7 @@ import SearchToolbar from './components/SearchToolbar.vue'
 import PlaceList from './components/PlaceList.vue'
 import PlaceDetail from './components/PlaceDetail.vue'
 import JourneyDetail from './components/JourneyDetail.vue'
+import JourneyPlanner from './components/JourneyPlanner.vue'
 import MemoryEditor from './components/MemoryEditor.vue'
 import BackupPanel from './components/BackupPanel.vue'
 import PhotoViewer from './components/PhotoViewer.vue'
@@ -43,6 +44,7 @@ const areaLabel = computed(() => currentProvince.value?.shortName ?? '全国')
 const pickingProvince = ref('')
 const selectedId = ref<string | null>(null), groupIds = ref<string[]>([]), limit = ref(12)
 const journeyIds = ref<string[]>([])
+const planning = ref(false), plannedIds = ref<string[]>([]), journeyVariant = ref<'memory' | 'planned'>('memory')
 const visits = shallowRef<VisitSummary[]>([]), covers = shallowRef<Cover[]>([]), catalogueVersion = ref(0)
 const libraryRevision = ref(-1), readingRecord = ref(false)
 const ready = ref(false), storageMessage = ref(accountMode.value ? '正在读取账号回忆…' : '正在读取本机回忆…'), storageError = ref(false)
@@ -86,7 +88,7 @@ async function loadGeography() {
 watch(provinceId, () => { regionId.value = ''; void loadGeography() }, { flush: 'sync' })
 watch([query, regionId, visitedOnly, provinceId], async (values, previous) => {
   cancelRecordRead()
-  selectedId.value = null; groupIds.value = []; journeyIds.value = []; limit.value = 12
+  selectedId.value = null; groupIds.value = []; journeyIds.value = []; planning.value = false; limit.value = 12
   await nextTick()
   // A cross-province select also waits for this render. Its explicit landmark
   // focus must win over this earlier, generic scope-fit intention.
@@ -98,18 +100,19 @@ watch([query, regionId, visitedOnly, provinceId], async (values, previous) => {
 function reset() {
   cancelRecordRead()
   provinceId.value = pickingLocation.value ? pickingProvince.value : ''
-  query.value = ''; regionId.value = ''; visitedOnly.value = false; selectedId.value = null; groupIds.value = []; journeyIds.value = []; limit.value = 12
+  query.value = ''; regionId.value = ''; visitedOnly.value = false; selectedId.value = null; groupIds.value = []; journeyIds.value = []; planning.value = false; limit.value = 12
   void nextTick(() => map.value?.fitProvince())
 }
 function showFootprints() { if (!pickingLocation.value) { provinceId.value = ''; regionId.value = ''; query.value = ''; visitedOnly.value = true; journeyIds.value = [] } }
 function changeProvince(id: string) { if (!pickingLocation.value && (!id || getProvince(id))) { provinceId.value = id; journeyIds.value = [] } }
+function startPlanning() { if (!pickingLocation.value) { selectedId.value = null; groupIds.value = []; journeyIds.value = []; planning.value = true } }
 async function select(id: string, focusMap = false) {
   cancelRecordRead()
   const place = catalogue.get(id)
   if (!place) return
   const changedScope = !!place.mapId && provinceId.value !== place.mapId
   if (changedScope) { provinceId.value = place.mapId!; await nextTick() }
-  selectedId.value = id; journeyIds.value = []
+  selectedId.value = id; journeyIds.value = []; planning.value = false
   if (focusMap || changedScope) map.value?.selectPlace(place)
   await nextTick()
   const detail = panel.value?.querySelector<HTMLElement>('.yn-detail')
@@ -117,12 +120,15 @@ async function select(id: string, focusMap = false) {
   if (matchMedia('(max-width:900px)').matches) detail?.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth' })
 }
 function backToList() { cancelRecordRead(); selectedId.value = null }
-function selectCluster(ids: string[]) { cancelRecordRead(); selectedId.value = null; journeyIds.value = []; groupIds.value = ids; limit.value = 12 }
-async function openJourney(ids: readonly string[]) {
+function selectCluster(ids: string[]) { cancelRecordRead(); selectedId.value = null; journeyIds.value = []; planning.value = false; groupIds.value = ids; limit.value = 12 }
+function togglePlannedPlace(id: string) {
+  plannedIds.value = plannedIds.value.includes(id) ? plannedIds.value.filter(row => row !== id) : [...plannedIds.value, id]
+}
+async function openJourney(ids: readonly string[], variant: 'memory' | 'planned' = 'memory') {
   cancelRecordRead()
   const readable = ids.filter(id => catalogue.get(id))
   if (readable.length < 2) return
-  selectedId.value = null; groupIds.value = []; journeyIds.value = [...readable]
+  selectedId.value = null; groupIds.value = []; planning.value = false; journeyVariant.value = variant; journeyIds.value = [...readable]
   await nextTick()
   const detail = panel.value?.querySelector<HTMLElement>('.yn-journey-detail')
   detail?.focus({ preventScroll: true })
@@ -353,7 +359,7 @@ defineExpose({ refresh: () => reload(true) })
   <main id="shanhai-lijiang" ref="app" class="yn-app" aria-label="山海集旅行回忆地图">
     <header class="yn-header">
       <a class="yn-brand" href="#" aria-label="山海集，回到全国总览" @click.prevent="reset"><span>山海集</span><small>把走过的地方，留在地图上。</small></a>
-      <nav aria-label="个人记录"><button type="button" :disabled="pickingLocation" @click="showFootprints">我的足迹 <span class="yn-total">{{ visitedIds.length }}</span></button><button v-if="!accountMode" type="button" @click="jumpToBackup">备份</button><button type="button" :disabled="!ready || busy || editorOpen" @click="openRecord()">记一下</button></nav>
+      <nav aria-label="个人记录"><button type="button" :disabled="pickingLocation" @click="showFootprints">我的足迹 <span class="yn-total">{{ visitedIds.length }}</span></button><button type="button" :disabled="pickingLocation" @click="startPlanning">规划旅程</button><button v-if="!accountMode" type="button" @click="jumpToBackup">备份</button><button type="button" :disabled="!ready || busy || editorOpen" @click="openRecord()">记一下</button></nav>
     </header>
     <slot name="account" />
     <div class="yn-storage" role="status" :data-error="storageError"><span>{{ storageMessage }}</span><button v-if="storageError" type="button" :disabled="busy || editorOpen" @click="reload()">重新读取</button><button v-if="hasDraft" type="button" :disabled="!ready || busy || editorOpen" @click="openRecord()">继续草稿</button></div>
@@ -369,7 +375,8 @@ defineExpose({ refresh: () => reload(true) })
       <aside ref="panel" class="yn-panel" aria-label="景点与回忆">
         <p v-if="readingRecord" role="status">正在打开这次回忆… <button type="button" @click="cancelRecordRead">取消打开</button></p>
         <PlaceDetail v-if="selected" :place="selected" :visits="recordIndex.get(selected.id) ?? []" :revision="libraryRevision" :query="query" :disabled="!ready || busy || editorOpen" @back="backToList" @add="openRecord(selected.id)" @edit="openRecord($event.placeId, $event)" @delete="askDelete" @view-photo="viewPhoto" @share="openCard($event)" />
-        <JourneyDetail v-else-if="journeyIds.length" :place-ids="journeyIds" :places="journeyPlaces" :record-index="recordIndex" :covers="covers" :revision="libraryRevision" @back="journeyIds = []" @select="select($event, true)" @add="openRecord" @view-photo="viewPhoto" />
+        <JourneyDetail v-else-if="journeyIds.length" :place-ids="journeyIds" :places="journeyPlaces" :record-index="recordIndex" :covers="covers" :revision="libraryRevision" :variant="journeyVariant" @back="journeyIds = []" @select="select($event, true)" @add="openRecord" @view-photo="viewPhoto" />
+        <JourneyPlanner v-else-if="planning" :places="filtered" :selected-ids="plannedIds" :record-index="recordIndex" :area-label="areaLabel" @back="planning = false" @toggle="togglePlannedPlace" @clear="plannedIds = []" @preview="openJourney($event, 'planned')" />
         <template v-else>
           <p v-if="provinceId && !scopePublicCount && !visitedOnly" class="yn-list-intro">{{ areaLabel }}的公共景点目录尚在整理，可以先添加自己的地点。省区轮廓不等于景点已完整覆盖。</p>
           <p v-if="groupIds.length" class="yn-cluster-intro">这些地点相邻，选择一个查看。<button type="button" @click="groupIds = []">返回全部结果</button></p>
