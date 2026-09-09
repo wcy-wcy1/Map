@@ -65,6 +65,9 @@ let lastWidth = 0
 let lastHeight = 0
 const asLatLng = (place: Place): L.LatLngTuple => [place.coordinates[1], place.coordinates[0]]
 const labelledProvinceIds = () => new Set(props.places.map(place => place.mapId).filter((id): id is string => !!id))
+const PROVINCE_LABEL_ZOOM_MIN = 5.2
+const PROVINCE_LABEL_ZOOM_MAX = 7.4
+const PLACE_LABEL_ZOOM = 8.5
 
 function fitProvince() {
   if (!map || !provinceBounds?.isValid() || !element.value) return
@@ -206,7 +209,7 @@ function renderMarkers() {
     const marker = layoutMarkers[index]!
     const left = marker.x, top = marker.y
     // Reserve even transient hover labels, so revealing a name cannot cover a photo.
-    obstacles.push({ x: marker.anchorX - 75, y: top + dimensions.height + 4, width: 150, height: 24 })
+    obstacles.push({ x: marker.anchorX - 120, y: top + dimensions.height + 6, width: 240, height: 42 })
     if (item.members.length > 1) {
       const width = Math.max(36, String(item.members.length).length * 7 + 20)
       obstacles.push({ x: left + dimensions.width + 8 - width, y: top, width, height: 22 })
@@ -240,7 +243,7 @@ function renderMarkers() {
     const visitedCount = item.members.filter(member => visited.has(member.id)).length
     button.dataset.visited = String(visitedCount > 0)
     button.dataset.visitedCount = String(visitedCount)
-    button.dataset.label = String(currentZoom >= 11 && item.members.length === 1)
+    button.dataset.label = String(currentZoom >= PLACE_LABEL_ZOOM && item.members.length === 1)
     button.setAttribute('aria-pressed', String(props.selectedId === place.id))
     button.setAttribute('aria-label', markerLabel(item, visited, props.pickingLocation))
     // svg() only returns internal authored artwork. User names never enter markup.
@@ -273,7 +276,7 @@ function renderMarkers() {
       }),
     }))
   }
-  const showProvinceLabels = !props.provinceId && currentZoom >= 5.2 && currentZoom < 7.4
+  const showProvinceLabels = !props.provinceId && currentZoom >= PROVINCE_LABEL_ZOOM_MIN && currentZoom < PROVINCE_LABEL_ZOOM_MAX
   const showRegionLabels = !!props.provinceId && currentZoom < 11.5
   if ((showProvinceLabels || showRegionLabels) && !props.query) {
     const provinceIds = showProvinceLabels ? labelledProvinceIds() : new Set<string>()
@@ -456,7 +459,7 @@ onBeforeUnmount(() => {
         <span><strong>计划路线</strong>{{ plannedSummary }}</span>
       </button>
     </div>
-    <p class="yn-map-help"><span class="yn-visited-dot"></span>有我的回忆 <span>{{ coarsePointer ? '双指移动或缩放，单指滚动页面；放大后照片展开。' : '放大后照片展开；数字是附近景点数，点击展开。' }}</span></p>
+    <p class="yn-map-help"><span class="yn-visited-dot"></span>有我的回忆 <span>{{ coarsePointer ? '双指移动或缩放，单指滚动页面；放大后显示名字和照片。' : '放大后显示名字和照片；数字是附近景点数，点击展开。' }}</span></p>
     <p class="yn-map-detail-note">{{ !provinceId ? '点击省区轮廓，或用上方选择框进入。' : '' }}省区轮廓为粗略示意，仅作回忆定位，不用于导航或判定行政归属。</p>
   </div>
 </template>

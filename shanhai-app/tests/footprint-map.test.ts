@@ -184,6 +184,16 @@ describe('FootprintMap actual Leaflet lifecycle', () => {
     expect(wrapper.get('.yn-map-summary').text()).toContain('可添加我的地点')
     expect(document.activeElement?.id).toBe('yn-map')
   })
+  it('shows place names when the map zooms into a memory-level view', async () => {
+    const mountain = place('玉龙雪山', 100)
+    const wrapper = render([mountain])
+    await settle()
+    expect(wrapper.get('[data-map-place="玉龙雪山"]').attributes('data-label')).toBe('false')
+    ;(wrapper.vm as unknown as { selectPlace(place: Place): void }).selectPlace(mountain)
+    await settle()
+    expect(wrapper.get('[data-map-place="玉龙雪山"]').attributes('data-label')).toBe('true')
+    expect(wrapper.get('.yn-pin-label').text()).toBe('玉龙雪山')
+  })
   it('opens the visible memory route as a journey from the map summary', async () => {
     const visits = new Map([
       ['a', [summary('a')]],
