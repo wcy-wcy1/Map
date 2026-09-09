@@ -27,7 +27,8 @@ const props = withDefaults(defineProps<{
   provinceId?: string
   areaLabel?: string
   pickingLocation?: boolean
-}>(), { query: '', regionId: '', provinceId: 'yunnan', areaLabel: '云南', pickingLocation: false, recordIndex: () => new Map(), covers: () => [], revision: -1 })
+  plannedRouteIds?: readonly string[]
+}>(), { query: '', regionId: '', provinceId: 'yunnan', areaLabel: '云南', pickingLocation: false, recordIndex: () => new Map(), covers: () => [], revision: -1, plannedRouteIds: () => [] })
 const emit = defineEmits<{
   select: [placeId: string]
   cluster: [placeIds: string[]]
@@ -40,6 +41,7 @@ const emit = defineEmits<{
 const element = ref<HTMLDivElement>()
 const summary = ref('正在打开地图…')
 const routeSummary = ref('')
+const plannedSummary = ref('')
 const zoom = ref(5)
 const coarsePointer = ref(false)
 const photoLoader = inject(PHOTO_LOADER_KEY, null)
@@ -54,6 +56,7 @@ let provinceBounds: L.LatLngBounds | undefined
 let markerFrame: number | undefined
 let resizeFrame: number | undefined
 let activeRouteIds: string[] = []
+let activePlannedIds: string[] = []
 let resizeObserver: ResizeObserver | undefined
 let chromeObserver: ResizeObserver | undefined
 let pointerQuery: MediaQueryList | undefined
@@ -106,12 +109,16 @@ function renderRoutes(currentZoom: number) {
   if (!map || !routes) return
   routes.clearLayers()
   routeSummary.value = ''
+  plannedSummary.value = ''
   activeRouteIds = []
+  activePlannedIds = []
   // The route is a diary affordance, not a national navigation overlay.
   // Keep it hidden in the overview and reveal it once the map is readable.
-  if (currentZoom < 8.5 || props.pickingLocation) return
-  const memoryRoutes = buildMemoryRoutes(props.places, props.recordIndex)
-  for (const route of memoryRoutes) addRoute(route)
+  if (props.pickingLocation) return
+  const plannedRoute = plannedMemoryRoute()
+  if (plannedRoute && currentZoom >= 5) addRoute(plannedRoute, 'planned')
+  const memoryRoutes = currentZoom >= 8.5 ? buildMemoryRoutes(props.places, props.recordIndex) : []
+  for (const route of memoryRoutes) addRoute(route, 'memory')
   const activeRoute = memoryRoutes.find(route => route.coordinates.some(([longitude, latitude]) =>
     map?.getBounds().contains([latitude, longitude])))
   if (activeRoute) {
@@ -119,28 +126,41 @@ function renderRoutes(currentZoom: number) {
     routeSummary.value = `${names.slice(0, 3).join(' · ')}${names.length > 3 ? ` 等 ${names.length} 处` : ''}`
     activeRouteIds = [...activeRoute.placeIds]
   }
+  if (plannedRoute && currentZoom >= 5) {
+    const names = plannedRoute.placeIds.map(id => props.places.find(place => place.id === id)?.name).filter(Boolean)
+    plannedSummary.value = `${names.slice(0, 3).join(' · ')}${names.length > 3 ? ` 等 ${names.length} 处` : ''}`
+    activePlannedIds = [...plannedRoute.placeIds]
+  }
 }
 
-function addRoute(route: MemoryRoute) {
+function plannedMemoryRoute(): MemoryRoute | null {
+  const placeById = new Map(props.places.map(place => [place.id, place]))
+  const places = props.plannedRouteIds.map(id => placeById.get(id)).filter(Boolean) as Place[]
+  if (places.length < 2) return null
+  const first = places[0]!
+  return { regionId: first.regionId, placeIds: places.map(place => place.id), coordinates: places.map(place => [...place.coordinates]) }
+}
+
+function addRoute(route: MemoryRoute, variant: 'memory' | 'planned') {
   if (!routes || route.coordinates.length < 2) return
   const latlngs = route.coordinates.map(([longitude, latitude]) => [latitude, longitude] as L.LatLngTuple)
   // A quiet underlay keeps the route legible over the illustrated geography.
   L.polyline(latlngs, {
-    className: 'yn-memory-route-underlay',
+    className: `yn-${variant}-route-underlay`,
     pane: 'memoryRoutes',
     color: 'var(--lj-paper)',
-    weight: 7,
-    opacity: 0.78,
+    weight: variant === 'planned' ? 8 : 7,
+    opacity: variant === 'planned' ? 0.88 : 0.78,
     interactive: false,
     bubblingMouseEvents: false,
   }).addTo(routes)
   const line = L.polyline(latlngs, {
-    className: 'yn-memory-route',
+    className: `yn-${variant}-route`,
     pane: 'memoryRoutes',
-    color: 'var(--lj-red)',
-    weight: 2.2,
-    opacity: 0.86,
-    dashArray: '2 8',
+    color: variant === 'planned' ? 'var(--yn-water)' : 'var(--lj-red)',
+    weight: variant === 'planned' ? 2.6 : 2.2,
+    opacity: variant === 'planned' ? 0.92 : 0.86,
+    dashArray: variant === 'planned' ? '8 7' : '2 8',
     lineCap: 'round',
     lineJoin: 'round',
     interactive: true,
@@ -388,6 +408,7 @@ onMounted(() => {
 })
 
 watch(() => [props.places, props.regions, props.visitedIds, props.selectedId, props.query, props.regionId, props.pickingLocation,
+  props.plannedRouteIds,
   props.recordIndex, props.covers, props.revision], () => { releasePhotos(); queueMarkers() }, { deep: true })
 watch(() => [props.geography, props.provinceId], () => { updateGeography(); queueMarkers() })
 onBeforeUnmount(() => {
@@ -419,6 +440,10 @@ onBeforeUnmount(() => {
       <button v-if="routeSummary" type="button" class="yn-route-summary" aria-live="polite" @click="emit('journey', activeRouteIds)">
         <span class="yn-route-summary-dot"></span>
         <span><strong>我的足迹线</strong>{{ routeSummary }}</span>
+      </button>
+      <button v-if="plannedSummary" type="button" class="yn-route-summary yn-planned-summary" aria-live="polite" @click="emit('journey', activePlannedIds)">
+        <span class="yn-route-summary-dot"></span>
+        <span><strong>计划路线</strong>{{ plannedSummary }}</span>
       </button>
     </div>
     <p class="yn-map-help"><span class="yn-visited-dot"></span>有我的回忆 <span>{{ coarsePointer ? '双指移动或缩放，单指滚动页面；照片随空间展开。' : '照片随空间展开；数字是附近景点数，点击展开。' }}</span></p>

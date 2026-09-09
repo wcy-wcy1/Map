@@ -71,6 +71,7 @@ const filtered = computed(() => {
 const shown = computed(() => groupIds.value.length ? filtered.value.filter(place => groupIds.value.includes(place.id)) : filtered.value)
 const selected = computed(() => { void catalogueVersion.value; return selectedId.value ? catalogue.get(selectedId.value) : undefined })
 const journeyPlaces = computed(() => { void catalogueVersion.value; return journeyIds.value.map(id => catalogue.get(id)).filter(Boolean) as Place[] })
+const mapPlannedRouteIds = computed(() => journeyVariant.value === 'planned' ? journeyIds.value : planning.value ? plannedIds.value : [])
 const hasFilters = computed(() => !!query.value || !!provinceId.value || !!regionId.value || visitedOnly.value)
 
 async function loadGeography() {
@@ -130,9 +131,15 @@ async function openJourney(ids: readonly string[], variant: 'memory' | 'planned'
   if (readable.length < 2) return
   selectedId.value = null; groupIds.value = []; planning.value = false; journeyVariant.value = variant; journeyIds.value = [...readable]
   await nextTick()
+  if (variant === 'planned') map.value?.fitPlaces(journeyPlaces.value)
   const detail = panel.value?.querySelector<HTMLElement>('.yn-journey-detail')
   detail?.focus({ preventScroll: true })
   if (matchMedia('(max-width:900px)').matches) detail?.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth' })
+}
+function openMapJourney(ids: readonly string[]) {
+  const planned = mapPlannedRouteIds.value
+  const variant = ids.length === planned.length && ids.every((id, index) => id === planned[index]) ? 'planned' : 'memory'
+  void openJourney(ids, variant)
 }
 function message(text: string, error = false) { storageMessage.value = text; storageError.value = error }
 function friendly(error: unknown, fallback: string) { return (error as TravelServiceError)?.friendlyMessage || fallback }
@@ -371,7 +378,7 @@ defineExpose({ refresh: () => reload(true) })
     <div v-if="pickingLocation" class="yn-location-banner" role="status"><strong>在{{ areaLabel }}地图上点选这个地点的位置</strong><p>位置由你确认，仅用于保存旅行回忆。地区轮廓较粗略，不是导航地图。</p><p v-if="locationError" class="yn-record-error" role="alert">{{ locationError }}</p><button type="button" @click="cancelPicking">返回填写</button></div>
     <div v-if="undo && !accountMode" class="yn-undo" role="status"><span>最近删除的回忆还可以恢复。</span><button type="button" :disabled="busy" @click="undoDelete">撤销删除</button></div>
     <section class="yn-workspace">
-      <FootprintMap ref="map" :places="filtered" :geography="geography" :province-id="provinceId" :area-label="areaLabel" :regions="scopeRegions" :visited-ids="visitedIds" :selected-id="selectedId" :record-index="recordIndex" :covers="covers" :revision="libraryRevision" :query="query" :region-id="regionId" :picking-location="pickingLocation" @select="select($event)" @province="changeProvince" @cluster="selectCluster" @journey="openJourney" @reset="reset" @pick="acceptLocation" />
+      <FootprintMap ref="map" :places="filtered" :geography="geography" :province-id="provinceId" :area-label="areaLabel" :regions="scopeRegions" :visited-ids="visitedIds" :selected-id="selectedId" :record-index="recordIndex" :covers="covers" :revision="libraryRevision" :query="query" :region-id="regionId" :picking-location="pickingLocation" :planned-route-ids="mapPlannedRouteIds" @select="select($event)" @province="changeProvince" @cluster="selectCluster" @journey="openMapJourney" @reset="reset" @pick="acceptLocation" />
       <aside ref="panel" class="yn-panel" aria-label="景点与回忆">
         <p v-if="readingRecord" role="status">正在打开这次回忆… <button type="button" @click="cancelRecordRead">取消打开</button></p>
         <PlaceDetail v-if="selected" :place="selected" :visits="recordIndex.get(selected.id) ?? []" :revision="libraryRevision" :query="query" :disabled="!ready || busy || editorOpen" @back="backToList" @add="openRecord(selected.id)" @edit="openRecord($event.placeId, $event)" @delete="askDelete" @view-photo="viewPhoto" @share="openCard($event)" />

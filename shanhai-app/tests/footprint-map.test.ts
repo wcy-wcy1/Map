@@ -188,6 +188,19 @@ describe('FootprintMap actual Leaflet lifecycle', () => {
     await wrapper.get('.yn-route-summary').trigger('click')
     expect(wrapper.emitted('journey')).toEqual([[['a', 'b']]])
   })
+  it('draws a planned route separately from remembered routes', async () => {
+    const wrapper = render([place('a', 100), place('b', 101)], { plannedRouteIds: ['a', 'b'] })
+    await settle()
+    for (let index = 0; index < 5 && !wrapper.find('.yn-planned-summary').exists(); index++) {
+      await wrapper.get('.yn-zoom-in').trigger('click')
+      await settle()
+    }
+    expect(wrapper.find('.yn-planned-summary').text()).toContain('计划路线')
+    expect(wrapper.find('.yn-memory-route').exists()).toBe(false)
+    expect(wrapper.find('.yn-planned-route').exists()).toBe(true)
+    await wrapper.get('.yn-planned-summary').trigger('click')
+    expect(wrapper.emitted('journey')).toEqual([[['a', 'b']]])
+  })
   it('releases observers, media listeners, and the Leaflet container on unmount', async () => {
     const wrapper = render([place('a', 100)])
     await settle()
