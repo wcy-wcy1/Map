@@ -282,7 +282,9 @@ describe('FootprintMap actual Leaflet lifecycle', () => {
     const yunnanMemory = { ...place('玉龙雪山', 100, 26), mapId: 'yunnan' }
     const wrapper = render([yunnanMemory], { geography: national, provinceId: '', areaLabel: '全国' })
     await settle()
-    expect(wrapper.find('.yn-region-label').exists()).toBe(false)
+    const labels = wrapper.findAll('.yn-region-label')
+    expect(labels).toHaveLength(1)
+    expect(labels[0]!.attributes('data-region-label')).toBe('yunnan')
   })
   it('does not bubble national marker clicks into province navigation, and picks on a province only once', async () => {
     const wrapper = render([place('成都', 104.07, 30.67)], { geography: national, provinceId: '', areaLabel: '全国' })

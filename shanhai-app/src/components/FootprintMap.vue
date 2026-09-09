@@ -65,7 +65,6 @@ let lastWidth = 0
 let lastHeight = 0
 const asLatLng = (place: Place): L.LatLngTuple => [place.coordinates[1], place.coordinates[0]]
 const labelledProvinceIds = () => new Set(props.places.map(place => place.mapId).filter((id): id is string => !!id))
-const PROVINCE_LABEL_ZOOM_MIN = 5.2
 const PROVINCE_LABEL_ZOOM_MAX = 7.4
 const PLACE_LABEL_ZOOM = 8.5
 
@@ -209,7 +208,7 @@ function renderMarkers() {
     const marker = layoutMarkers[index]!
     const left = marker.x, top = marker.y
     // Reserve even transient hover labels, so revealing a name cannot cover a photo.
-    obstacles.push({ x: marker.anchorX - 120, y: top + dimensions.height + 6, width: 240, height: 42 })
+    obstacles.push({ x: marker.anchorX - 86, y: top + dimensions.height + 5, width: 172, height: 31 })
     if (item.members.length > 1) {
       const width = Math.max(36, String(item.members.length).length * 7 + 20)
       obstacles.push({ x: left + dimensions.width + 8 - width, y: top, width, height: 22 })
@@ -276,7 +275,7 @@ function renderMarkers() {
       }),
     }))
   }
-  const showProvinceLabels = !props.provinceId && currentZoom >= PROVINCE_LABEL_ZOOM_MIN && currentZoom < PROVINCE_LABEL_ZOOM_MAX
+  const showProvinceLabels = !props.provinceId && currentZoom < PROVINCE_LABEL_ZOOM_MAX
   const showRegionLabels = !!props.provinceId && currentZoom < 11.5
   if ((showProvinceLabels || showRegionLabels) && !props.query) {
     const provinceIds = showProvinceLabels ? labelledProvinceIds() : new Set<string>()
