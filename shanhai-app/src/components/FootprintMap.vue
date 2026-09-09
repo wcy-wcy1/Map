@@ -299,6 +299,7 @@ function renderMarkers() {
       const labelWidth = showProvinceLabels ? Math.max(50, Math.min(98, text.length * 16 + 18)) : Math.max(54, Math.min(120, text.length * 15 + 18))
       const labelHeight = showProvinceLabels ? 25 : 23
       const rect = { x: point.x - labelWidth / 2, y: point.y - labelHeight / 2, width: labelWidth, height: labelHeight }
+      if (showProvinceLabels && !isPriority && collides(rect, obstacles, 6)) continue
       if (showProvinceLabels && collides(rect, labelRects, isPriority ? 6 : nationalLabelGap(currentZoom))) continue
       labelRects.push(rect)
       const label = document.createElement('span')
