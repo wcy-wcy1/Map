@@ -94,8 +94,8 @@ body { margin:0; background:light-dark(#f4f3ed,#142220); }
 .yn-pin[aria-pressed=true] .yn-pin-label { background:color-mix(in srgb,var(--lj-paper) 88%,var(--yn-selected)); }
 .yn-pin:focus-visible .yn-pin-label,.yn-pin:hover .yn-pin-label,.yn-pin[aria-pressed=true] .yn-pin-label,.yn-pin[data-label=true] .yn-pin-label { display:block; }
 .yn-cluster-count { position:absolute; top:0; right:-8px; min-width:36px; height:22px; padding:0 5px; border:1px solid var(--lj-ink); border-radius:7px; background:var(--lj-paper); color:var(--lj-ink); font:12px/20px sans-serif; text-align:center; white-space:nowrap; pointer-events:none; }
-.yn-region-label { color:var(--lj-muted); font:12px/1.3 'Songti SC',SimSun,serif; letter-spacing:.08em; text-shadow:0 1px 2px var(--lj-paper); white-space:nowrap; pointer-events:none; opacity:.8; }
-.yn-region-label[data-scope=province] { padding:1px 5px; border-radius:999px; background:color-mix(in srgb,var(--lj-paper) 72%,transparent); font-size:11px; letter-spacing:.12em; opacity:.52; }
+.yn-region-label { padding:2px 7px; border-radius:999px; background:color-mix(in srgb,var(--lj-paper) 58%,transparent); color:color-mix(in srgb,var(--lj-ink) 62%,var(--lj-muted)); font:600 15px/1.35 'Songti SC',SimSun,serif; letter-spacing:.1em; text-shadow:0 1px 0 var(--lj-paper),0 3px 8px color-mix(in srgb,var(--lj-paper) 82%,transparent); white-space:nowrap; pointer-events:none; opacity:.72; }
+.yn-region-label[data-scope=province] { padding:3px 10px 4px; background:color-mix(in srgb,var(--lj-paper) 64%,transparent); color:color-mix(in srgb,var(--lj-ink) 70%,var(--lj-muted)); font-size:18px; letter-spacing:.14em; opacity:.78; }
 .yn-memory-route-underlay,.yn-planned-route-underlay { stroke-linecap:round; stroke-linejoin:round; }
 .yn-memory-route,.yn-planned-route { stroke-linecap:round; stroke-linejoin:round; filter:drop-shadow(0 1px 0 var(--lj-paper)); cursor:pointer; }
 .yn-planned-route { filter:drop-shadow(0 1px 0 var(--lj-paper)) drop-shadow(0 0 3px color-mix(in srgb,var(--yn-water) 22%,transparent)); }
