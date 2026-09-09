@@ -11,8 +11,8 @@ export interface CoverMarker extends Rect {
 export interface CoverPlacement extends Rect { compact: boolean }
 
 const GAP = 4, EDGE = 8
-const REGULAR = { width: 52, height: 48, compact: false }
-const COMPACT = { width: 48, height: 48, compact: true }
+const REGULAR = { width: 48, height: 44, compact: false }
+const COMPACT = { width: 44, height: 44, compact: true }
 const finite = (...values: number[]) => values.every(Number.isFinite)
 const validRect = (rect: Rect) => finite(rect.x, rect.y, rect.width, rect.height, rect.x + rect.width, rect.y + rect.height) && rect.width > 0 && rect.height > 0
 const compareId = (a: CoverMarker, b: CoverMarker) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0

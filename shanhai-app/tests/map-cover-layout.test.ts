@@ -7,8 +7,8 @@ const gap = (a: Rect, b: Rect) => a.x + a.width + 4 <= b.x || b.x + b.width + 4 
 function expectSafe(markers: readonly CoverMarker[], size = viewport, obstacles: Rect[] = []) {
   const placements = [...layoutMapCovers(markers, size, obstacles).values()]
   for (const placed of placements) {
-    expect(placed.width).toBeGreaterThanOrEqual(44); expect(placed.width).toBeLessThanOrEqual(52)
-    expect(placed.height).toBe(48); expect(placed.x).toBeGreaterThanOrEqual(8); expect(placed.y).toBeGreaterThanOrEqual(8)
+    expect(placed.width).toBeGreaterThanOrEqual(44); expect(placed.width).toBeLessThanOrEqual(48)
+    expect(placed.height).toBe(44); expect(placed.x).toBeGreaterThanOrEqual(8); expect(placed.y).toBeGreaterThanOrEqual(8)
     expect(placed.x + placed.width).toBeLessThanOrEqual(size.width - 8)
     expect(placed.y + placed.height).toBeLessThanOrEqual(size.height - 8)
     for (const obstacle of [...markers, ...obstacles]) expect(gap(placed, obstacle)).toBe(true)
@@ -20,27 +20,27 @@ function expectSafe(markers: readonly CoverMarker[], size = viewport, obstacles:
 describe('small map cover collision layout', () => {
   it('prefers a regular right-side stack, leaving a four-pixel landmark gap', () => {
     const source = marker('snow')
-    expect(layoutMapCovers([source], viewport).get('snow')).toEqual({ x: 178, y: 103, width: 52, height: 48, compact: false })
+    expect(layoutMapCovers([source], viewport).get('snow')).toEqual({ x: 178, y: 105, width: 48, height: 44, compact: false })
     expectSafe([source])
   })
   it('tries left before below, then avoids the name/control obstacles below', () => {
     const source = marker('snow'), right = { x: 178, y: 90, width: 55, height: 75 }, left = { x: 55, y: 90, width: 62, height: 75 }
-    expect(layoutMapCovers([source], viewport, [right]).get('snow')?.x).toBe(64)
-    expect(layoutMapCovers([source], viewport, [right, left]).get('snow')).toEqual({ x: 121, y: 158, width: 52, height: 48, compact: false })
+    expect(layoutMapCovers([source], viewport, [right]).get('snow')?.x).toBe(68)
+    expect(layoutMapCovers([source], viewport, [right, left]).get('snow')).toEqual({ x: 123, y: 158, width: 48, height: 44, compact: false })
     const label = { x: 115, y: 157, width: 64, height: 24 }
     expect(layoutMapCovers([source], viewport, [right, left, label]).has('snow')).toBe(false)
     expectSafe([source], viewport, [right, left])
   })
   it('uses compact size only after regular candidates fail on a narrow gap', () => {
-    const source = marker('snow', { x: 484, y: 100, width: 54, anchorX: 511, anchorY: 154 })
+    const source = marker('snow', { x: 488, y: 100, width: 54, anchorX: 515, anchorY: 154 })
     const edgeViewport = { width: 598, height: 220 }
-    const left = { x: 400, y: 85, width: 80, height: 82 }, below = { x: 475, y: 157, width: 66, height: 45 }
-    expect(layoutMapCovers([source], edgeViewport, [left, below]).get('snow')).toEqual({ x: 542, y: 103, width: 48, height: 48, compact: true })
+    const left = { x: 400, y: 85, width: 84, height: 82 }, below = { x: 479, y: 157, width: 66, height: 45 }
+    expect(layoutMapCovers([source], edgeViewport, [left, below]).get('snow')).toEqual({ x: 546, y: 105, width: 44, height: 44, compact: true })
     expectSafe([source], edgeViewport, [left, below])
   })
   it('starts compact at mobile widths including the exact 400px boundary', () => {
-    expect(layoutMapCovers([marker('snow')], { width: 400, height: 400 }).get('snow')?.width).toBe(48)
-    expect(layoutMapCovers([marker('snow')], { width: 401, height: 400 }).get('snow')?.width).toBe(52)
+    expect(layoutMapCovers([marker('snow')], { width: 400, height: 400 }).get('snow')?.width).toBe(44)
+    expect(layoutMapCovers([marker('snow')], { width: 401, height: 400 }).get('snow')?.width).toBe(48)
     expectSafe([marker('snow')], { width: 320, height: 390 })
   })
   it('keeps covers inside edge margins without moving landmarks or geographic anchors', () => {
@@ -48,14 +48,14 @@ describe('small map cover collision layout', () => {
     const before = structuredClone(markers)
     const placements = layoutMapCovers(markers, viewport)
     expect(placements.get('top-left')?.y).toBe(8)
-    expect(placements.get('bottom-right')?.x).toBe(482)
-    expect(placements.get('bottom-right')?.y).toBe(344)
+    expect(placements.get('bottom-right')?.x).toBe(486)
+    expect(placements.get('bottom-right')?.y).toBe(348)
     expect(markers).toEqual(before); expectSafe(markers)
   })
   it('treats every landmark as an obstacle even when it has no photo or valid anchor', () => {
     const source = marker('snow'), noPhoto = marker('other', { x: 177, y: 100, hasCover: false })
-    expect(layoutMapCovers([source, noPhoto], viewport).get('snow')?.x).toBe(64)
-    expect(layoutMapCovers([source, { ...noPhoto, anchorX: NaN }], viewport).get('snow')?.x).toBe(64)
+    expect(layoutMapCovers([source, noPhoto], viewport).get('snow')?.x).toBe(68)
+    expect(layoutMapCovers([source, { ...noPhoto, anchorX: NaN }], viewport).get('snow')?.x).toBe(68)
     expect(layoutMapCovers([source, noPhoto], viewport).has('other')).toBe(false)
   })
   it('gives selected markers priority, otherwise uses stable ids independent of input order', () => {
@@ -82,6 +82,11 @@ describe('small map cover collision layout', () => {
     expectSafe(markers, { width: 340, height: 286 })
     expect(layoutMapCovers([marker('one')], viewport, [{ x: 0, y: 0, width: 600, height: 400 }]).size).toBe(0)
   })
+  it('keeps photo stacks out of route-summary overlay space', () => {
+    const source = marker('near-summary', { x: 24, y: 314, anchorX: 51, anchorY: 368 })
+    const summary = { x: 12, y: 296, width: 360, height: 44 }
+    expect(layoutMapCovers([source], viewport, [summary]).has(source.id)).toBe(false)
+  })
   it('does not place invalid markers, accepts valid offscreen obstacles, and rejects invalid viewports', () => {
     for (const value of [NaN, Infinity, -Infinity]) {
       expect(layoutMapCovers([marker('bad', { x: value })], viewport).size).toBe(0)
@@ -102,7 +107,7 @@ describe('small map cover collision layout', () => {
     const outside = marker('above', { x: 178, y: -40, anchorX: 205, anchorY: -2, height: 180 })
     const result = layoutMapCovers([marker('inside'), outside], viewport)
     expect(result.has('above')).toBe(false)
-    expect(result.get('inside')?.x).toBe(64)
+    expect(result.get('inside')?.x).toBe(68)
   })
   it('is immutable, deterministic under obstacle order, and skips ambiguous duplicate identities', () => {
     const source = Object.freeze(marker('snow')), label = Object.freeze({ x: 118, y: 158, width: 58, height: 24 })

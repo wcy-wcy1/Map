@@ -213,6 +213,8 @@ function renderMarkers() {
   const size = map.getSize()
   obstacles.push({ x: size.x - 62, y: 10, width: 52, height: 152 },
     { x: 12, y: 12, width: 40, height: 30 }, { x: 0, y: size.y - 62, width: size.x, height: 62 })
+  if (routeSummary.value) obstacles.push({ x: 12, y: size.y - 104, width: Math.min(370, size.x * 0.62), height: 42 })
+  if (plannedSummary.value) obstacles.push({ x: 12, y: size.y - 150, width: Math.min(370, size.x * 0.62), height: 42 })
   const placements = layoutMapCovers(layoutMarkers, { width: size.x, height: size.y }, obstacles)
   let shown = 0
   let grouped = 0
