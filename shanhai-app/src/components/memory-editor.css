@@ -7,6 +7,12 @@
 .yn-vue-editor .yn-duplicate p { margin:0 0 8px; }
 .yn-vue-editor :is(button,input,select,textarea):focus-visible { outline:2px solid var(--lj-red); outline-offset:3px; }
 .yn-vue-editor .yn-record-help { max-width:70ch; }
+.yn-vue-editor .yn-editor-brief { display:flex; flex-wrap:wrap; gap:7px; margin:8px 0 18px; padding:12px; border:1px solid var(--lj-line); border-radius:8px; background:color-mix(in srgb,var(--lj-land) 26%,var(--lj-paper)); }
+.yn-vue-editor .yn-editor-brief span { padding:2px 7px; border:1px solid var(--lj-line); border-radius:999px; background:var(--lj-paper); color:var(--lj-muted); font-size:12px; }
+.yn-vue-editor .yn-editor-brief p { flex-basis:100%; margin:3px 0 0; color:var(--lj-ink); font-size:13px; line-height:1.65; }
+.yn-vue-editor .yn-photo-picker { display:grid; gap:6px; padding:12px; border:1px dashed var(--lj-line); border-radius:8px; background:var(--lj-paper); }
+.yn-vue-editor .yn-photo-picker p { margin:0; color:var(--lj-muted); font-size:12px; }
+.yn-vue-editor .yn-photo-empty { display:grid; place-items:center; min-height:82px; margin:12px 0 2px; padding:12px; border:1px solid var(--lj-line); border-radius:6px; background:repeating-linear-gradient(-8deg,color-mix(in srgb,var(--lj-land) 20%,var(--lj-paper)),color-mix(in srgb,var(--lj-land) 20%,var(--lj-paper)) 10px,var(--lj-paper) 10px,var(--lj-paper) 20px); color:var(--lj-muted); font-size:12px; text-align:center; }
 .yn-vue-editor .yn-editor-place-scope { margin-top:14px; }
 .yn-vue-editor .yn-editor-place-scope label { color:var(--lj-muted); font-size:12px; }
 .yn-vue-editor .yn-custom-place { min-width:0; }

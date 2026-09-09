@@ -26,6 +26,22 @@ let revision = 0, version: string | null = null, queue = Promise.resolve(), time
 let forkCandidate: Draft | null = null, photoController: AbortController | undefined, disposed = false, trigger: HTMLElement | null = null
 const choice = computed(() => draft.value?.customPlace ? '__custom' : draft.value?.placeId ?? '')
 const title = computed(() => draft.value?.originalVisit ? '编辑这段回忆' : '记一段旅行')
+const selectedPlaceName = computed(() => draft.value?.customPlace?.name.trim() || props.catalogue.get(draft.value?.placeId || '')?.name || '还没选地点')
+const memoryBrief = computed(() => {
+  if (!draft.value) return []
+  return [
+    draft.value.photos.length ? `${draft.value.photos.length} 张照片` : '未加照片',
+    selectedPlaceName.value,
+    draft.value.date || '未选日期',
+  ]
+})
+const contentHint = computed(() => {
+  if (!draft.value) return ''
+  if (draft.value.photos.length && draft.value.note.trim()) return '照片和手记都在了，可以保存成一段完整回忆。'
+  if (draft.value.photos.length) return '已有照片；再补一句当时的感觉，会更像你的旅行册。'
+  if (draft.value.note.trim()) return '已有手记；也可以只保存文字，之后再补照片。'
+  return '先选照片，或先写一句手记，都可以开始。'
+})
 const customProvinceId = computed(() => props.catalogue.provinceForRegion(draft.value?.customPlace?.regionId || '')?.id || 'yunnan')
 const customRegions = computed(() => props.catalogue.regions.filter(region => region.id !== customProvinceId.value && props.catalogue.provinceForRegion(region.id)?.id === customProvinceId.value))
 const availablePlaces = computed(() => props.catalogue.all.filter(place => !editorProvinceId.value || place.mapId === editorProvinceId.value || place.id === draft.value?.placeId))
@@ -346,12 +362,20 @@ defineExpose({ acceptLocation, cancelLocationPick })
     <p v-if="resumed" class="yn-draft-notice">正在继续未完成的草稿，不会用另一段回忆覆盖它。先保存或放弃这份草稿。</p>
     <form v-if="draft" novalidate @submit.prevent="save()">
       <fieldset class="yn-editor-fields" :disabled="busy">
+        <div class="yn-editor-brief" aria-live="polite">
+          <span v-for="item in memoryBrief" :key="item">{{ item }}</span>
+          <p>{{ contentHint }}</p>
+        </div>
         <label for="yn-editor-photos">旅行照片 <span>{{ draft.photos.length }} / 9 张</span></label>
-        <input id="yn-editor-photos" type="file" multiple accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" :disabled="draft.photos.length >= 9" @change="choosePhotos">
+        <div class="yn-photo-picker">
+          <input id="yn-editor-photos" type="file" multiple accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" :disabled="draft.photos.length >= 9" @change="choosePhotos">
+          <p>选 1–9 张，第一张会先作为地图封面。</p>
+        </div>
         <p v-if="accountMode" class="yn-record-help">单张不超过 10 MiB。点击保存后，照片副本和手记会上传到本机测试服务；草稿仍留在本浏览器。原照片不变，请保留原片。</p>
         <p v-else class="yn-record-help">照片仅在本机处理，单张不超过 10 MiB。保存压缩副本，原照片不变；请另行保留原片。</p>
         <p v-if="progress" class="yn-photo-progress" role="status">{{ progress }}</p>
         <ul v-if="photoErrors.length" class="yn-record-error" aria-label="未添加的照片"><li v-for="(failure, index) in photoErrors" :key="index">{{ failure.name }}：{{ failure.message }}</li></ul>
+        <div v-if="!draft.photos.length" class="yn-photo-empty">照片会以小相纸叠在地图地标旁。先不选也可以，只写一句手记保存。</div>
         <div class="yn-draft-photos">
           <figure v-for="(photo, index) in draft.photos" :key="photo.id" class="yn-draft-photo" :data-cover="photo.id === draft.coverId">
             <img :src="photo.url" :alt="photo.name || `第 ${index + 1} 张旅行照片`">
