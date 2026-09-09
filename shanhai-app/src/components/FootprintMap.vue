@@ -110,6 +110,34 @@ function addText(parent: HTMLElement, className: string, text: string) {
 const collides = (rect: Rect, others: readonly Rect[], gap = 6) => others.some(other =>
   rect.x < other.x + other.width + gap && rect.x + rect.width + gap > other.x &&
   rect.y < other.y + other.height + gap && rect.y + rect.height + gap > other.y)
+function ringMetrics(ring: number[][]): { area: number, centroid: Coordinates } | null {
+  let twiceArea = 0, x = 0, y = 0
+  for (let index = 0; index < ring.length - 1; index++) {
+    const current = ring[index], next = ring[index + 1]
+    const currentLng = current?.[0], currentLat = current?.[1]
+    const nextLng = next?.[0], nextLat = next?.[1]
+    if (currentLng === undefined || currentLat === undefined || nextLng === undefined || nextLat === undefined) continue
+    const cross = currentLng * nextLat - nextLng * currentLat
+    twiceArea += cross
+    x += (currentLng + nextLng) * cross
+    y += (currentLat + nextLat) * cross
+  }
+  if (Math.abs(twiceArea) < 0.000001) return null
+  return { area: Math.abs(twiceArea / 2), centroid: [x / (3 * twiceArea), y / (3 * twiceArea)] }
+}
+function labelCenter(feature: Geography['features'][number], fallback: L.LatLng): L.LatLng {
+  const geometry = feature.geometry
+  if (geometry.type === 'Polygon') {
+    const metrics = ringMetrics(geometry.coordinates[0] as number[][])
+    if (metrics) return L.latLng(metrics.centroid[1], metrics.centroid[0])
+  }
+  if (geometry.type === 'MultiPolygon') {
+    const rings = (geometry.coordinates as number[][][][]).map(polygon => polygon[0]).filter(Boolean)
+    const largest = rings.map(ring => ringMetrics(ring!)).filter(metrics => metrics !== null).sort((a, b) => b.area - a.area)[0]
+    if (largest) return L.latLng(largest.centroid[1], largest.centroid[0])
+  }
+  return fallback
+}
 
 function renderRoutes(currentZoom: number) {
   if (!map || !routes) return
@@ -292,7 +320,7 @@ function renderMarkers() {
       if (!bounds.isValid()) continue
       const region = props.regions.find(region => region.id === id)
       const text = (region?.name || feature.properties.name || '').replace(/壮族自治区$|回族自治区$|维吾尔自治区$|自治区$|特别行政区$|[省市州]$/u, '')
-      const center = bounds.getCenter()
+      const center = labelCenter(feature, bounds.getCenter())
       if (showProvinceLabels && !viewport.contains(center)) continue
       const point = map.latLngToContainerPoint(center)
       const isPriority = showProvinceLabels && id && priorityProvinceIds.has(id)
@@ -306,6 +334,8 @@ function renderMarkers() {
       label.className = 'yn-region-label'
       label.dataset.scope = props.provinceId ? 'region' : 'province'
       label.dataset.priority = isPriority ? 'memory' : 'map'
+      label.dataset.labelLongitude = String(center.lng)
+      label.dataset.labelLatitude = String(center.lat)
       label.textContent = text
       if (id) label.dataset.regionLabel = id
       regionLabels.addLayer(L.marker(center, {

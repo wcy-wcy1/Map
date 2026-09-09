@@ -297,6 +297,17 @@ describe('FootprintMap actual Leaflet lifecycle', () => {
     await settle()
     expect(wrapper.findAll('.yn-region-label').length).toBeLessThan(crowded.features.length)
   })
+  it('anchors a province label to the visual center of an irregular outline', async () => {
+    const irregular: Geography = { type: 'FeatureCollection', features: [{
+      type: 'Feature', properties: { kind: 'province', provinceId: 'irregular', name: '不规则省份' },
+      geometry: { type: 'Polygon', coordinates: [[[100, 25], [104, 25], [104, 26], [101, 26], [101, 29], [100, 29], [100, 25]]] },
+    }] }
+    const wrapper = render([], { geography: irregular, provinceId: '', areaLabel: '全国' })
+    await settle()
+    const label = wrapper.get('[data-region-label="irregular"]')
+    expect(Number(label.attributes('data-label-longitude'))).toBeCloseTo(101.36, 1)
+    expect(Number(label.attributes('data-label-latitude'))).toBeCloseTo(26.36, 1)
+  })
   it('does not bubble national marker clicks into province navigation, and picks on a province only once', async () => {
     const wrapper = render([place('成都', 104.07, 30.67)], { geography: national, provinceId: '', areaLabel: '全国' })
     await settle()
