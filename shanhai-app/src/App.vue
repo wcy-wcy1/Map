@@ -4,6 +4,7 @@ import FootprintMap from './components/FootprintMap.vue'
 import SearchToolbar from './components/SearchToolbar.vue'
 import PlaceList from './components/PlaceList.vue'
 import PlaceDetail from './components/PlaceDetail.vue'
+import JourneyDetail from './components/JourneyDetail.vue'
 import MemoryEditor from './components/MemoryEditor.vue'
 import BackupPanel from './components/BackupPanel.vue'
 import PhotoViewer from './components/PhotoViewer.vue'
@@ -17,7 +18,7 @@ import { filter, indexVisits } from './domain/map-layout'
 import { createTravelServices, type TravelServices } from './services/travel-services'
 import { createPhotoLoader, PHOTO_LOADER_KEY } from './services/photo-loader'
 import { toVisitSummary } from './domain/visit-summary'
-import type { Coordinates, Cover, Draft, Visit, VisitSummary } from './domain/models'
+import type { Coordinates, Cover, Draft, Place, Visit, VisitSummary } from './domain/models'
 import type { MergeCounts, TravelServiceError, UndoVisit } from './services/contracts'
 
 // Switching accounts remounts the entire tree; no private repository or photo
@@ -41,6 +42,7 @@ const scopePublicCount = computed(() => publicPlaces.filter(place => !provinceId
 const areaLabel = computed(() => currentProvince.value?.shortName ?? '全国')
 const pickingProvince = ref('')
 const selectedId = ref<string | null>(null), groupIds = ref<string[]>([]), limit = ref(12)
+const journeyIds = ref<string[]>([])
 const visits = shallowRef<VisitSummary[]>([]), covers = shallowRef<Cover[]>([]), catalogueVersion = ref(0)
 const libraryRevision = ref(-1), readingRecord = ref(false)
 const ready = ref(false), storageMessage = ref(accountMode.value ? '正在读取账号回忆…' : '正在读取本机回忆…'), storageError = ref(false)
@@ -66,6 +68,7 @@ const filtered = computed(() => {
 })
 const shown = computed(() => groupIds.value.length ? filtered.value.filter(place => groupIds.value.includes(place.id)) : filtered.value)
 const selected = computed(() => { void catalogueVersion.value; return selectedId.value ? catalogue.get(selectedId.value) : undefined })
+const journeyPlaces = computed(() => { void catalogueVersion.value; return journeyIds.value.map(id => catalogue.get(id)).filter(Boolean) as Place[] })
 const hasFilters = computed(() => !!query.value || !!provinceId.value || !!regionId.value || visitedOnly.value)
 
 async function loadGeography() {
@@ -83,7 +86,7 @@ async function loadGeography() {
 watch(provinceId, () => { regionId.value = ''; void loadGeography() }, { flush: 'sync' })
 watch([query, regionId, visitedOnly, provinceId], async (values, previous) => {
   cancelRecordRead()
-  selectedId.value = null; groupIds.value = []; limit.value = 12
+  selectedId.value = null; groupIds.value = []; journeyIds.value = []; limit.value = 12
   await nextTick()
   // A cross-province select also waits for this render. Its explicit landmark
   // focus must win over this earlier, generic scope-fit intention.
@@ -95,18 +98,18 @@ watch([query, regionId, visitedOnly, provinceId], async (values, previous) => {
 function reset() {
   cancelRecordRead()
   provinceId.value = pickingLocation.value ? pickingProvince.value : ''
-  query.value = ''; regionId.value = ''; visitedOnly.value = false; selectedId.value = null; groupIds.value = []; limit.value = 12
+  query.value = ''; regionId.value = ''; visitedOnly.value = false; selectedId.value = null; groupIds.value = []; journeyIds.value = []; limit.value = 12
   void nextTick(() => map.value?.fitProvince())
 }
-function showFootprints() { if (!pickingLocation.value) { provinceId.value = ''; regionId.value = ''; query.value = ''; visitedOnly.value = true } }
-function changeProvince(id: string) { if (!pickingLocation.value && (!id || getProvince(id))) provinceId.value = id }
+function showFootprints() { if (!pickingLocation.value) { provinceId.value = ''; regionId.value = ''; query.value = ''; visitedOnly.value = true; journeyIds.value = [] } }
+function changeProvince(id: string) { if (!pickingLocation.value && (!id || getProvince(id))) { provinceId.value = id; journeyIds.value = [] } }
 async function select(id: string, focusMap = false) {
   cancelRecordRead()
   const place = catalogue.get(id)
   if (!place) return
   const changedScope = !!place.mapId && provinceId.value !== place.mapId
   if (changedScope) { provinceId.value = place.mapId!; await nextTick() }
-  selectedId.value = id
+  selectedId.value = id; journeyIds.value = []
   if (focusMap || changedScope) map.value?.selectPlace(place)
   await nextTick()
   const detail = panel.value?.querySelector<HTMLElement>('.yn-detail')
@@ -114,7 +117,17 @@ async function select(id: string, focusMap = false) {
   if (matchMedia('(max-width:900px)').matches) detail?.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth' })
 }
 function backToList() { cancelRecordRead(); selectedId.value = null }
-function selectCluster(ids: string[]) { cancelRecordRead(); selectedId.value = null; groupIds.value = ids; limit.value = 12 }
+function selectCluster(ids: string[]) { cancelRecordRead(); selectedId.value = null; journeyIds.value = []; groupIds.value = ids; limit.value = 12 }
+async function openJourney(ids: readonly string[]) {
+  cancelRecordRead()
+  const readable = ids.filter(id => catalogue.get(id))
+  if (readable.length < 2) return
+  selectedId.value = null; groupIds.value = []; journeyIds.value = [...readable]
+  await nextTick()
+  const detail = panel.value?.querySelector<HTMLElement>('.yn-journey-detail')
+  detail?.focus({ preventScroll: true })
+  if (matchMedia('(max-width:900px)').matches) detail?.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth' })
+}
 function message(text: string, error = false) { storageMessage.value = text; storageError.value = error }
 function friendly(error: unknown, fallback: string) { return (error as TravelServiceError)?.friendlyMessage || fallback }
 let loading: Promise<boolean> | null = null, disposed = false, firstRead = true
@@ -352,10 +365,11 @@ defineExpose({ refresh: () => reload(true) })
     <div v-if="pickingLocation" class="yn-location-banner" role="status"><strong>在{{ areaLabel }}地图上点选这个地点的位置</strong><p>位置由你确认，仅用于保存旅行回忆。地区轮廓较粗略，不是导航地图。</p><p v-if="locationError" class="yn-record-error" role="alert">{{ locationError }}</p><button type="button" @click="cancelPicking">返回填写</button></div>
     <div v-if="undo && !accountMode" class="yn-undo" role="status"><span>最近删除的回忆还可以恢复。</span><button type="button" :disabled="busy" @click="undoDelete">撤销删除</button></div>
     <section class="yn-workspace">
-      <FootprintMap ref="map" :places="filtered" :geography="geography" :province-id="provinceId" :area-label="areaLabel" :regions="scopeRegions" :visited-ids="visitedIds" :selected-id="selectedId" :record-index="recordIndex" :covers="covers" :revision="libraryRevision" :query="query" :region-id="regionId" :picking-location="pickingLocation" @select="select($event)" @province="changeProvince" @cluster="selectCluster" @reset="reset" @pick="acceptLocation" />
+      <FootprintMap ref="map" :places="filtered" :geography="geography" :province-id="provinceId" :area-label="areaLabel" :regions="scopeRegions" :visited-ids="visitedIds" :selected-id="selectedId" :record-index="recordIndex" :covers="covers" :revision="libraryRevision" :query="query" :region-id="regionId" :picking-location="pickingLocation" @select="select($event)" @province="changeProvince" @cluster="selectCluster" @journey="openJourney" @reset="reset" @pick="acceptLocation" />
       <aside ref="panel" class="yn-panel" aria-label="景点与回忆">
         <p v-if="readingRecord" role="status">正在打开这次回忆… <button type="button" @click="cancelRecordRead">取消打开</button></p>
         <PlaceDetail v-if="selected" :place="selected" :visits="recordIndex.get(selected.id) ?? []" :revision="libraryRevision" :query="query" :disabled="!ready || busy || editorOpen" @back="backToList" @add="openRecord(selected.id)" @edit="openRecord($event.placeId, $event)" @delete="askDelete" @view-photo="viewPhoto" @share="openCard($event)" />
+        <JourneyDetail v-else-if="journeyIds.length" :place-ids="journeyIds" :places="journeyPlaces" :record-index="recordIndex" :covers="covers" :revision="libraryRevision" @back="journeyIds = []" @select="select($event, true)" @add="openRecord" @view-photo="viewPhoto" />
         <template v-else>
           <p v-if="provinceId && !scopePublicCount && !visitedOnly" class="yn-list-intro">{{ areaLabel }}的公共景点目录尚在整理，可以先添加自己的地点。省区轮廓不等于景点已完整覆盖。</p>
           <p v-if="groupIds.length" class="yn-cluster-intro">这些地点相邻，选择一个查看。<button type="button" @click="groupIds = []">返回全部结果</button></p>

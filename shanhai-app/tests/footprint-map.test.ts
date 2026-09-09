@@ -174,6 +174,20 @@ describe('FootprintMap actual Leaflet lifecycle', () => {
     expect(wrapper.get('.yn-map-summary').text()).toContain('可添加我的地点')
     expect(document.activeElement?.id).toBe('yn-map')
   })
+  it('opens the visible memory route as a journey from the map summary', async () => {
+    const visits = new Map([
+      ['a', [summary('a')]],
+      ['b', [{ ...summary('b'), date: '2025-01-02', createdAt: 2 }]],
+    ])
+    const wrapper = render([place('a', 100), place('b', 101)], { recordIndex: visits, visitedIds: ['a', 'b'] })
+    await settle()
+    for (let index = 0; index < 5 && !wrapper.find('.yn-route-summary').exists(); index++) {
+      await wrapper.get('.yn-zoom-in').trigger('click')
+      await settle()
+    }
+    await wrapper.get('.yn-route-summary').trigger('click')
+    expect(wrapper.emitted('journey')).toEqual([[['a', 'b']]])
+  })
   it('releases observers, media listeners, and the Leaflet container on unmount', async () => {
     const wrapper = render([place('a', 100)])
     await settle()

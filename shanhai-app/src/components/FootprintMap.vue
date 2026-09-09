@@ -31,6 +31,7 @@ const props = withDefaults(defineProps<{
 const emit = defineEmits<{
   select: [placeId: string]
   cluster: [placeIds: string[]]
+  journey: [placeIds: string[]]
   pick: [coordinates: Coordinates]
   reset: []
   province: [provinceId: string]
@@ -52,6 +53,7 @@ let geographyLayer: L.GeoJSON | undefined
 let provinceBounds: L.LatLngBounds | undefined
 let markerFrame: number | undefined
 let resizeFrame: number | undefined
+let activeRouteIds: string[] = []
 let resizeObserver: ResizeObserver | undefined
 let chromeObserver: ResizeObserver | undefined
 let pointerQuery: MediaQueryList | undefined
@@ -104,6 +106,7 @@ function renderRoutes(currentZoom: number) {
   if (!map || !routes) return
   routes.clearLayers()
   routeSummary.value = ''
+  activeRouteIds = []
   // The route is a diary affordance, not a national navigation overlay.
   // Keep it hidden in the overview and reveal it once the map is readable.
   if (currentZoom < 8.5 || props.pickingLocation) return
@@ -114,6 +117,7 @@ function renderRoutes(currentZoom: number) {
   if (activeRoute) {
     const names = activeRoute.placeIds.map(id => props.places.find(place => place.id === id)?.name).filter(Boolean)
     routeSummary.value = `${names.slice(0, 3).join(' · ')}${names.length > 3 ? ` 等 ${names.length} 处` : ''}`
+    activeRouteIds = [...activeRoute.placeIds]
   }
 }
 
@@ -130,7 +134,7 @@ function addRoute(route: MemoryRoute) {
     interactive: false,
     bubblingMouseEvents: false,
   }).addTo(routes)
-  L.polyline(latlngs, {
+  const line = L.polyline(latlngs, {
     className: 'yn-memory-route',
     pane: 'memoryRoutes',
     color: 'var(--lj-red)',
@@ -139,9 +143,10 @@ function addRoute(route: MemoryRoute) {
     dashArray: '2 8',
     lineCap: 'round',
     lineJoin: 'round',
-    interactive: false,
+    interactive: true,
     bubblingMouseEvents: false,
   }).addTo(routes)
+  line.on('click', () => emit('journey', [...route.placeIds]))
 }
 
 function renderMarkers() {
@@ -411,10 +416,10 @@ onBeforeUnmount(() => {
       </div>
       <span class="yn-north" aria-label="地图上方为北">北 ↑</span>
       <div class="yn-map-summary" role="status">{{ summary }}</div>
-      <div v-if="routeSummary" class="yn-route-summary" aria-live="polite">
+      <button v-if="routeSummary" type="button" class="yn-route-summary" aria-live="polite" @click="emit('journey', activeRouteIds)">
         <span class="yn-route-summary-dot"></span>
         <span><strong>我的足迹线</strong>{{ routeSummary }}</span>
-      </div>
+      </button>
     </div>
     <p class="yn-map-help"><span class="yn-visited-dot"></span>有我的回忆 <span>{{ coarsePointer ? '双指移动或缩放，单指滚动页面；照片随空间展开。' : '照片随空间展开；数字是附近景点数，点击展开。' }}</span></p>
     <p class="yn-map-detail-note">{{ !provinceId ? '点击省区轮廓，或用上方选择框进入。' : '' }}省区轮廓为粗略示意，仅作回忆定位，不用于导航或判定行政归属。</p>
