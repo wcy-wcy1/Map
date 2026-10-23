@@ -14,12 +14,14 @@ const coverIndex = (visit: VisitSummary) => Math.max(0, visit.photos.findIndex(p
 const memoryIntro = computed(() => props.visits.length
   ? `${props.visits.length} 段回忆留在这里，最近一次是 ${props.visits[0]?.date ?? ''}。`
   : '这里还没有你的旅行回忆。')
+const distinctHighlights = computed(() => props.place.highlights.filter(highlight => !props.place.text.includes(highlight)))
 </script>
 
 <template>
   <section class="yn-detail" tabindex="-1" aria-live="polite">
     <button class="yn-back" type="button" @click="emit('back')">返回景点列表</button>
-    <div class="yn-detail-hero"><LandmarkIcon class="yn-detail-icon" :icon-key="place.iconKey" :variant="place.id" /><div><p class="yn-region-name">{{ place.regionName }}{{ place.isCustom ? ' · 我的地点' : '' }}</p><h2>{{ place.name }}</h2><p>{{ place.text }}</p></div></div>
+    <div class="yn-detail-hero"><LandmarkIcon class="yn-detail-icon" :icon-key="place.iconKey" :variant="place.id" /><div><p class="yn-region-name">{{ place.regionName }}{{ place.isCustom ? ' · 我的地点' : '' }}<span v-if="!place.isCustom && place.discoveryTier" class="yn-discovery-tag" :data-tier="place.discoveryTier">{{ place.discoveryTier === 'classic' ? '经典地标' : '地方发现' }}</span></p><h2>{{ place.name }}</h2><p>{{ place.text }}</p></div></div>
+    <ul v-if="distinctHighlights.length" class="yn-place-highlights" aria-label="地方特色"><li v-for="highlight in distinctHighlights" :key="highlight">{{ highlight }}</li></ul>
     <p class="yn-anchor-note">{{ place.anchorNote }}</p>
     <p v-if="place.source || place.coordinateSource.url" class="yn-source"><a v-if="validUrl(place.source)" :href="validUrl(place.source)" target="_blank" rel="noopener noreferrer">公共景点资料</a><span v-if="place.source && place.coordinateSource.url"> · </span><a v-if="validUrl(place.coordinateSource.url)" :href="validUrl(place.coordinateSource.url)" target="_blank" rel="noopener noreferrer">坐标来源</a></p>
     <div class="yn-memory-album-heading">

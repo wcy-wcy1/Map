@@ -1,0 +1,1830 @@
+[
+  {
+    "id": "hunan-wulingyuan",
+    "name": "武陵源",
+    "aliases": [],
+    "mapId": "cn-43",
+    "regionId": "cn-43",
+    "regionName": "湖南省",
+    "city": "湖南",
+    "category": "stone-forest",
+    "iconKey": "stone-forest",
+    "coordinates": [
+      110.46666666666667,
+      29.345555555555556
+    ],
+    "source": "https://www.wikidata.org/wiki/Q4187",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4187.json?revision=2559880038",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q4187.json?revision=2559880038",
+      "entityId": "Q4187",
+      "revision": 2559880038,
+      "statementId": "q4187$CF47083F-0FF1-4AC4-8898-7AF85D6731BD",
+      "precision": 0.0002777777777777778,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceKey": "Q4187",
+      "license": "CC0-1.0",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "砂岩石柱与山谷。",
+    "highlights": [
+      "砂岩石柱与山谷"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "hunan-yueyang",
+    "name": "岳阳楼",
+    "aliases": [],
+    "mapId": "cn-43",
+    "regionId": "cn-43",
+    "regionName": "湖南省",
+    "city": "湖南",
+    "category": "pagoda",
+    "iconKey": "pagoda",
+    "coordinates": [
+      113.08834,
+      29.38473
+    ],
+    "source": "https://www.wikidata.org/wiki/Q1195796",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1195796.json?revision=2515896909",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1195796.json?revision=2515896909",
+      "entityId": "Q1195796",
+      "revision": 2515896909,
+      "statementId": "Q1195796$2C517C5A-13DC-4B6B-B983-D4AAD5C0AC5C",
+      "precision": 0.00001,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceKey": "Q1195796",
+      "license": "CC0-1.0",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "湖畔木构楼阁。",
+    "highlights": [
+      "湖畔木构楼阁"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "hunan-hongjiang",
+    "name": "洪江古商城",
+    "aliases": [],
+    "mapId": "cn-43",
+    "regionId": "cn-43",
+    "regionName": "湖南省",
+    "city": "湖南",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      110,
+      27.11750031
+    ],
+    "source": "https://www.wikidata.org/wiki/Q11147080",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q11147080.json?revision=2372669448",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q11147080.json?revision=2372669448",
+      "entityId": "Q11147080",
+      "revision": 2372669448,
+      "statementId": "Q11147080$3C8BA6B9-21B6-413F-8DE4-7BC4B194AA9F",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceKey": "Q11147080",
+      "license": "CC0-1.0",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "坡地商埠与窄巷。",
+    "highlights": [
+      "坡地商埠与窄巷"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "hunan-qianyang",
+    "name": "黔阳古城",
+    "aliases": [],
+    "mapId": "cn-43",
+    "regionId": "cn-43",
+    "regionName": "湖南省",
+    "city": "湖南",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      109.81232,
+      27.19175
+    ],
+    "source": "https://www.wikidata.org/wiki/Q110109423",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q110109423.json?revision=2328676657",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q110109423.json?revision=2328676657",
+      "entityId": "Q110109423",
+      "revision": 2328676657,
+      "statementId": "Q110109423$6F1D9AC8-C6E7-478F-B7D2-457C16F94C72",
+      "precision": 0.000001,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceKey": "Q110109423",
+      "license": "CC0-1.0",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "临江古城与街巷。",
+    "highlights": [
+      "临江古城与街巷"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "guangdong-canton-tower",
+    "name": "广州塔",
+    "aliases": [],
+    "mapId": "cn-44",
+    "regionId": "cn-44",
+    "regionName": "广东省",
+    "city": "广东",
+    "category": "pagoda",
+    "iconKey": "pagoda",
+    "coordinates": [
+      113.31914722222,
+      23.1092
+    ],
+    "source": "https://www.wikidata.org/wiki/Q168400",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q168400.json?revision=2525620953",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q168400.json?revision=2525620953",
+      "entityId": "Q168400",
+      "revision": 2525620953,
+      "statementId": "q168400$33A4C2B5-CC4D-4FBA-B04B-CD4B5132C5BE",
+      "precision": 0.0000027777777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceKey": "Q168400",
+      "license": "CC0-1.0",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "旋转网格塔身。",
+    "highlights": [
+      "旋转网格塔身"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "guangdong-kaiping",
+    "name": "开平碉楼",
+    "aliases": [],
+    "mapId": "cn-44",
+    "regionId": "cn-44",
+    "regionName": "广东省",
+    "city": "广东",
+    "category": "village",
+    "iconKey": "village",
+    "coordinates": [
+      112.520782,
+      22.261814
+    ],
+    "source": "https://www.wikidata.org/wiki/Q16303641",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q16303641.json?revision=2515981017",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q16303641.json?revision=2515981017",
+      "entityId": "Q16303641",
+      "revision": 2515981017,
+      "statementId": "Q16303641$FBC693CA-863A-4A9C-BA0F-B4DF6E48ABDE",
+      "precision": 0.000001,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceKey": "Q16303641",
+      "license": "CC0-1.0",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "开平碉楼与村落遗产地的社区代表点，不代表所有碉楼或某座单体；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "乡村中的高耸碉楼。",
+    "highlights": [
+      "乡村中的高耸碉楼"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "guangdong-chen-clan",
+    "name": "陈家祠",
+    "aliases": [],
+    "mapId": "cn-44",
+    "regionId": "cn-44",
+    "regionName": "广东省",
+    "city": "广东",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      113.240107,
+      23.12984
+    ],
+    "source": "https://www.wikidata.org/wiki/Q5090739",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5090739.json?revision=2515941096",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q5090739.json?revision=2515941096",
+      "entityId": "Q5090739",
+      "revision": 2515941096,
+      "statementId": "Q5090739$B8A4D59B-52AA-4672-9C0C-68B4A1735FC1",
+      "precision": 0.000001,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceKey": "Q5090739",
+      "license": "CC0-1.0",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "屋脊雕饰与院落。",
+    "highlights": [
+      "屋脊雕饰与院落"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "guangdong-guangji",
+    "name": "广济桥",
+    "aliases": [],
+    "mapId": "cn-44",
+    "regionId": "cn-44",
+    "regionName": "广东省",
+    "city": "广东",
+    "category": "bridge",
+    "iconKey": "bridge",
+    "coordinates": [
+      116.6515,
+      23.66519444
+    ],
+    "source": "https://www.wikidata.org/wiki/Q826705",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q826705.json?revision=2558489011",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q826705.json?revision=2558489011",
+      "entityId": "Q826705",
+      "revision": 2558489011,
+      "statementId": "Q826705$E8D32963-94C4-4E60-924B-0DAC51D32F9A",
+      "precision": 0.00002777777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/b-wikidata-extra.json",
+      "evidenceKey": "Q826705",
+      "license": "CC0-1.0",
+      "evidenceSha256": "931be4f35ccfd1e1671ee0d5f4c23835ac3abd781b3e1a3a54e5503a6038acd8"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "桥亭与跨江桥面。",
+    "highlights": [
+      "桥亭与跨江桥面"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "hainan-tianya",
+    "name": "天涯海角",
+    "aliases": [],
+    "mapId": "cn-46",
+    "regionId": "cn-46",
+    "regionName": "海南省",
+    "city": "海南",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      109.347,
+      18.2911
+    ],
+    "source": "https://www.wikidata.org/wiki/Q857031",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q857031.json?revision=2556432004",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q857031.json?revision=2556432004",
+      "entityId": "Q857031",
+      "revision": 2556432004,
+      "statementId": "Q857031$6C8DD7A0-EFC3-497E-B026-C32BABA945B2",
+      "precision": 0.0094611864786548,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceKey": "Q857031",
+      "license": "CC0-1.0",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "海滩巨石与海面。",
+    "highlights": [
+      "海滩巨石与海面"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "hainan-nanshan",
+    "name": "南山寺",
+    "aliases": [
+      "南山寺 (三亚)"
+    ],
+    "mapId": "cn-46",
+    "regionId": "cn-46",
+    "regionName": "海南省",
+    "city": "海南",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      109.206161,
+      18.304336
+    ],
+    "source": "https://www.wikidata.org/wiki/Q4494941",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4494941.json?revision=2386584741",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q4494941.json?revision=2386584741",
+      "entityId": "Q4494941",
+      "revision": 2386584741,
+      "statementId": "Q4494941$CA6A2663-E801-49A3-83DE-5C37D7ACBA07",
+      "precision": 0.00000277777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceKey": "Q4494941",
+      "license": "CC0-1.0",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "海滨寺院与庭园。",
+    "highlights": [
+      "海滨寺院与庭园"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "hainan-boao",
+    "name": "玉带滩",
+    "aliases": [],
+    "mapId": "cn-46",
+    "regionId": "cn-46",
+    "regionName": "海南省",
+    "city": "海南",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      110.57905581728185,
+      19.143208950000002
+    ],
+    "source": "https://www.openstreetmap.org/way/1460883593",
+    "coordinateSource": {
+      "type": "osm-surface-point",
+      "url": "https://www.openstreetmap.org/way/1460883593",
+      "rawUrl": "https://api.openstreetmap.org/api/0.6/way/1460883593/full.json",
+      "objectVersion": 1,
+      "timestamp": "2025-12-24T00:48:18Z",
+      "method": "midpoint of longest interior horizontal interval at bbox mid-latitude",
+      "evidenceFile": "reference/catalogue/expansion/b-osm-yudai.json",
+      "evidenceKey": "way/1460883593",
+      "license": "ODbL-1.0",
+      "attribution": "© OpenStreetMap contributors",
+      "evidenceSha256": "3d1b559b8c56d9dd6499cbb5de1e6cb6c35ab1b8a7812cbc3395493f7d126cdf"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "以玉带滩原始沙滩面的内部代表点定位；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "河口与细长沙洲。",
+    "highlights": [
+      "河口与细长沙洲"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "hainan-dongpo",
+    "name": "东坡书院",
+    "aliases": [],
+    "mapId": "cn-46",
+    "regionId": "cn-46",
+    "regionName": "海南省",
+    "city": "海南",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      109.35339713265886,
+      19.742745560517555
+    ],
+    "source": "https://www.wikidata.org/wiki/Q847432",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q847432.json?revision=2515885080",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q847432.json?revision=2515885080",
+      "entityId": "Q847432",
+      "revision": 2515885080,
+      "statementId": "Q847432$fd34bdae-4173-347d-bce7-a19fd2786688",
+      "precision": 0.00001,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceKey": "Q847432",
+      "license": "CC0-1.0",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "书院与热带庭院。",
+    "highlights": [
+      "书院与热带庭院"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "chongqing-hongya",
+    "name": "洪崖洞",
+    "aliases": [],
+    "mapId": "cn-50",
+    "regionId": "cn-50",
+    "regionName": "重庆市",
+    "city": "重庆",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      106.57422251797499,
+      29.56478003016661
+    ],
+    "source": "https://www.wikidata.org/wiki/Q32171478",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q32171478.json?revision=2411543283",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q32171478.json?revision=2411543283",
+      "entityId": "Q32171478",
+      "revision": 2411543283,
+      "statementId": "Q32171478$056d6046-4524-21ab-f93e-d29acee69cbe",
+      "precision": 1e-8,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceKey": "Q32171478",
+      "license": "CC0-1.0",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "临江层叠吊脚楼。",
+    "highlights": [
+      "临江层叠吊脚楼"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "chongqing-dazu",
+    "name": "大足石刻",
+    "aliases": [],
+    "mapId": "cn-50",
+    "regionId": "cn-50",
+    "regionName": "重庆市",
+    "city": "重庆",
+    "category": "cave",
+    "iconKey": "cave",
+    "coordinates": [
+      105.70694444444,
+      29.713333333333
+    ],
+    "source": "https://www.wikidata.org/wiki/Q651278",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q651278.json?revision=2545548413",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q651278.json?revision=2545548413",
+      "entityId": "Q651278",
+      "revision": 2545548413,
+      "statementId": "q651278$BBF9F733-DEDD-4AA1-879E-47EFE8E95AA0",
+      "precision": 0.00027777777777778,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceKey": "Q651278",
+      "license": "CC0-1.0",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "山崖石刻与洞龛。",
+    "highlights": [
+      "山崖石刻与洞龛"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "chongqing-gongtan",
+    "name": "龚滩古镇",
+    "aliases": [],
+    "mapId": "cn-50",
+    "regionId": "cn-50",
+    "regionName": "重庆市",
+    "city": "重庆",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      108.35156,
+      28.9299234
+    ],
+    "source": "https://www.openstreetmap.org/node/2886574248",
+    "coordinateSource": {
+      "type": "osm-node",
+      "url": "https://www.openstreetmap.org/node/2886574248",
+      "rawUrl": "https://api.openstreetmap.org/api/0.6/node/2886574248.json",
+      "objectVersion": 6,
+      "timestamp": "2026-03-14T22:31:37Z",
+      "method": "original OSM settlement node (current Gongtan, not submerged old site)",
+      "evidenceFile": "reference/catalogue/expansion/b-osm-gongtan.json",
+      "evidenceKey": "node/2886574248",
+      "license": "ODbL-1.0",
+      "attribution": "© OpenStreetMap contributors",
+      "evidenceSha256": "7051b108e5c42bd66420dac49a0504ad6c8485489462abeebe52495ca6999478"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "以现龚滩镇村落节点代表重建古镇街区，不指沉没的旧址；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "江边石阶与吊脚楼。",
+    "highlights": [
+      "江边石阶与吊脚楼"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "chongqing-diaoyu",
+    "name": "钓鱼城",
+    "aliases": [],
+    "mapId": "cn-50",
+    "regionId": "cn-50",
+    "regionName": "重庆市",
+    "city": "重庆",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      106.310431059374,
+      30.0056103878172
+    ],
+    "source": "https://www.wikidata.org/wiki/Q195821",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q195821.json?revision=2489009493",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q195821.json?revision=2489009493",
+      "entityId": "Q195821",
+      "revision": 2489009493,
+      "statementId": "Q195821$180E3B57-2211-4F28-A238-6D51D004C5C7",
+      "precision": 0.000001,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceKey": "Q195821",
+      "license": "CC0-1.0",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "山城石门与城墙。",
+    "highlights": [
+      "山城石门与城墙"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "shaanxi-terracotta",
+    "name": "秦始皇兵马俑博物馆",
+    "aliases": [],
+    "mapId": "cn-61",
+    "regionId": "cn-61",
+    "regionName": "陕西省",
+    "city": "陕西",
+    "category": "museum",
+    "iconKey": "museum",
+    "coordinates": [
+      109.27305555555556,
+      34.385
+    ],
+    "source": "https://www.wikidata.org/wiki/Q47672",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q47672.json?revision=2559758312",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q47672.json?revision=2559758312",
+      "entityId": "Q47672",
+      "revision": 2559758312,
+      "statementId": "Q47672$7F802CA4-F220-4C42-B20D-39A73EF5172B",
+      "precision": 0.0002777777777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceKey": "Q47672",
+      "license": "CC0-1.0",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "兵俑方阵与考古遗址。",
+    "highlights": [
+      "兵俑方阵与考古遗址"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "shaanxi-wild-goose",
+    "name": "大雁塔",
+    "aliases": [],
+    "mapId": "cn-61",
+    "regionId": "cn-61",
+    "regionName": "陕西省",
+    "city": "陕西",
+    "category": "pagoda",
+    "iconKey": "pagoda",
+    "coordinates": [
+      108.959335,
+      34.219769
+    ],
+    "source": "https://www.wikidata.org/wiki/Q1047061",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1047061.json?revision=2544789381",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1047061.json?revision=2544789381",
+      "entityId": "Q1047061",
+      "revision": 2544789381,
+      "statementId": "Q1047061$F0E4EFF4-0C95-4FD0-852A-1FB3F8FC3A22",
+      "precision": 0.00000277777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceKey": "Q1047061",
+      "license": "CC0-1.0",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "方形砖塔与层叠塔身。",
+    "highlights": [
+      "方形砖塔与层叠塔身"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "shaanxi-dangjia",
+    "name": "党家村",
+    "aliases": [],
+    "mapId": "cn-61",
+    "regionId": "cn-61",
+    "regionName": "陕西省",
+    "city": "陕西",
+    "category": "village",
+    "iconKey": "village",
+    "coordinates": [
+      110.47197,
+      35.52702
+    ],
+    "source": "https://www.wikidata.org/wiki/Q10891162",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10891162.json?revision=2522145358",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q10891162.json?revision=2522145358",
+      "entityId": "Q10891162",
+      "revision": 2522145358,
+      "statementId": "Q10891162$461f49ff-4430-ff02-14b8-27a973b71f71",
+      "precision": 0.00001,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceKey": "Q10891162",
+      "license": "CC0-1.0",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "传统院落与村巷。",
+    "highlights": [
+      "传统院落与村巷"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "shaanxi-famen",
+    "name": "法门寺",
+    "aliases": [],
+    "mapId": "cn-61",
+    "regionId": "cn-61",
+    "regionName": "陕西省",
+    "city": "陕西",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      107.905,
+      34.4399
+    ],
+    "source": "https://www.wikidata.org/wiki/Q614916",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q614916.json?revision=2550153304",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q614916.json?revision=2550153304",
+      "entityId": "Q614916",
+      "revision": 2550153304,
+      "statementId": "Q614916$87277B2C-56B9-4A98-8411-43E543E3EE03",
+      "precision": 0.010892368724353,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceKey": "Q614916",
+      "license": "CC0-1.0",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "寺院与佛塔。",
+    "highlights": [
+      "寺院与佛塔"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "ningxia-sand-lake",
+    "name": "沙湖",
+    "aliases": [],
+    "mapId": "cn-64",
+    "regionId": "cn-64",
+    "regionName": "宁夏回族自治区",
+    "city": "宁夏",
+    "category": "wetland",
+    "iconKey": "wetland",
+    "coordinates": [
+      106.3525716,
+      38.8081115
+    ],
+    "source": "https://www.openstreetmap.org/relation/16906759",
+    "coordinateSource": {
+      "type": "osm-surface-point",
+      "url": "https://www.openstreetmap.org/relation/16906759",
+      "rawUrl": "https://api.openstreetmap.org/api/0.6/relation/16906759/full.json",
+      "objectVersion": 3,
+      "timestamp": "2023-12-31T06:03:33Z",
+      "method": "Nominatim display point of the named lake; not an entrance",
+      "evidenceFile": "reference/catalogue/expansion/b-osm-sand-lake.json",
+      "evidenceKey": "relation/16906759",
+      "license": "ODbL-1.0",
+      "attribution": "© OpenStreetMap contributors",
+      "evidenceSha256": "bc7204bb557c001dae517ac4bdfbbffaa7bc75a0f631dc8323cc086d677f5c2b",
+      "displayPointEvidenceFile": "reference/catalogue/expansion/b-nominatim.json",
+      "displayPointEvidenceSha256": "ff4b597f3513db285c548bc33c7e916d35cafe0244877d980cbf974d707bcef6"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "以沙湖湖面显示点代表沙湖，不指门票入口；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "沙丘与湖泊芦苇。",
+    "highlights": [
+      "沙丘与湖泊芦苇"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "ningxia-western-xia",
+    "name": "西夏王陵",
+    "aliases": [],
+    "mapId": "cn-64",
+    "regionId": "cn-64",
+    "regionName": "宁夏回族自治区",
+    "city": "宁夏",
+    "category": "museum",
+    "iconKey": "museum",
+    "coordinates": [
+      105.987167,
+      38.435035
+    ],
+    "source": "https://www.wikidata.org/wiki/Q1069411",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1069411.json?revision=2556445237",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1069411.json?revision=2556445237",
+      "entityId": "Q1069411",
+      "revision": 2556445237,
+      "statementId": "Q1069411$242F3424-CB21-4346-8CD6-B3F12ED8E5EF",
+      "precision": 0.00000277777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceKey": "Q1069411",
+      "license": "CC0-1.0",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "戈壁上的陵冢。",
+    "highlights": [
+      "戈壁上的陵冢"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "ningxia-shuidonggou",
+    "name": "水洞沟遗址",
+    "aliases": [],
+    "mapId": "cn-64",
+    "regionId": "cn-64",
+    "regionName": "宁夏回族自治区",
+    "city": "宁夏",
+    "category": "canyon",
+    "iconKey": "canyon",
+    "coordinates": [
+      106.50183888888888,
+      38.29875111111111
+    ],
+    "source": "https://www.wikidata.org/wiki/Q19841439",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q19841439.json?revision=2515988887",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q19841439.json?revision=2515988887",
+      "entityId": "Q19841439",
+      "revision": 2515988887,
+      "statementId": "Q19841439$6C1BDCD9-B707-49B0-B497-5F612CAC92D9",
+      "precision": 0.0000277778,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceKey": "Q19841439",
+      "license": "CC0-1.0",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "黄土沟壑与考古遗址。",
+    "highlights": [
+      "黄土沟壑与考古遗址"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "ningxia-zhenbeibu",
+    "name": "镇北堡西部影城",
+    "aliases": [],
+    "mapId": "cn-64",
+    "regionId": "cn-64",
+    "regionName": "宁夏回族自治区",
+    "city": "宁夏",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      106.066496,
+      38.615496
+    ],
+    "source": "https://www.wikidata.org/wiki/Q15897600",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q15897600.json?revision=2493844919",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q15897600.json?revision=2493844919",
+      "entityId": "Q15897600",
+      "revision": 2493844919,
+      "statementId": "Q15897600$7ddf3074-445f-eb62-b54d-7b63f5401b6f",
+      "precision": 0.000001,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceKey": "Q15897600",
+      "license": "CC0-1.0",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "夯土城门与西北街景。",
+    "highlights": [
+      "夯土城门与西北街景"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "qinghai-qinghai-lake",
+    "name": "青海湖",
+    "aliases": [],
+    "mapId": "cn-63",
+    "regionId": "cn-63",
+    "regionName": "青海省",
+    "city": "青海",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      100,
+      37
+    ],
+    "source": "https://www.wikidata.org/wiki/Q201294",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q201294.json?revision=2545345544",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q201294.json?revision=2545345544",
+      "entityId": "Q201294",
+      "revision": 2545345544,
+      "statementId": "q201294$A964081E-4369-47EB-9527-754C48577D82",
+      "precision": 1,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceKey": "Q201294",
+      "license": "CC0-1.0",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "高原湖泊与远山。",
+    "highlights": [
+      "高原湖泊与远山"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "qinghai-kumbum",
+    "name": "塔尔寺",
+    "aliases": [],
+    "mapId": "cn-63",
+    "regionId": "cn-63",
+    "regionName": "青海省",
+    "city": "青海",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      101.567121,
+      36.49011
+    ],
+    "source": "https://www.wikidata.org/wiki/Q1791988",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1791988.json?revision=2515913247",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1791988.json?revision=2515913247",
+      "entityId": "Q1791988",
+      "revision": 2515913247,
+      "statementId": "Q1791988$98bd541e-4b3a-47b6-57db-5c473a8a8d4f",
+      "precision": 0.000001,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceKey": "Q1791988",
+      "license": "CC0-1.0",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用Wikidata寺院坐标；未采用与OSM位置不符的中文Wikipedia坐标；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "金顶与寺院建筑。",
+    "highlights": [
+      "金顶与寺院建筑"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "qinghai-rongwo",
+    "name": "隆务寺",
+    "aliases": [],
+    "mapId": "cn-63",
+    "regionId": "cn-63",
+    "regionName": "青海省",
+    "city": "青海",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      102.009958,
+      35.508526
+    ],
+    "source": "https://www.wikidata.org/wiki/Q196175",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q196175.json?revision=2552969375",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q196175.json?revision=2552969375",
+      "entityId": "Q196175",
+      "revision": 2552969375,
+      "statementId": "Q196175$76c4faa3-40f1-652a-c82d-2fea09f50ebe",
+      "precision": 0.000001,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceKey": "Q196175",
+      "license": "CC0-1.0",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "山脚下的藏式寺院。",
+    "highlights": [
+      "山脚下的藏式寺院"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "qinghai-qutan",
+    "name": "瞿昙寺",
+    "aliases": [],
+    "mapId": "cn-63",
+    "regionId": "cn-63",
+    "regionName": "青海省",
+    "city": "青海",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      102.29611111,
+      36.355
+    ],
+    "source": "https://www.wikidata.org/wiki/Q2123692",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2123692.json?revision=2515918404",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q2123692.json?revision=2515918404",
+      "entityId": "Q2123692",
+      "revision": 2515918404,
+      "statementId": "Q2123692$AB37EB63-87E4-48C8-BCB7-88985758E759",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceKey": "Q2123692",
+      "license": "CC0-1.0",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "山间古寺与重檐殿宇。",
+    "highlights": [
+      "山间古寺与重檐殿宇"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "neimenggu-xiangshawan",
+    "name": "响沙湾",
+    "aliases": [],
+    "mapId": "cn-15",
+    "regionId": "cn-15",
+    "regionName": "内蒙古自治区",
+    "city": "内蒙古",
+    "category": "canyon",
+    "iconKey": "canyon",
+    "coordinates": [
+      109.95519444444444,
+      40.24325
+    ],
+    "source": "https://www.wikidata.org/wiki/Q42310009",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42310009.json?revision=2298448484",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q42310009.json?revision=2298448484",
+      "entityId": "Q42310009",
+      "revision": 2298448484,
+      "statementId": "Q42310009$126a1481-5a25-47ae-99c3-2a31f2c248ca",
+      "precision": 0.00002777777777777778,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/b-wikidata-extra.json",
+      "evidenceKey": "Q42310009",
+      "license": "CC0-1.0",
+      "evidenceSha256": "931be4f35ccfd1e1671ee0d5f4c23835ac3abd781b3e1a3a54e5503a6038acd8"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "沙丘曲线与沙海。",
+    "highlights": [
+      "沙丘曲线与沙海"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "neimenggu-hulun-lake",
+    "name": "呼伦湖",
+    "aliases": [],
+    "mapId": "cn-15",
+    "regionId": "cn-15",
+    "regionName": "内蒙古自治区",
+    "city": "内蒙古",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      117.43555555556,
+      48.973055555556
+    ],
+    "source": "https://www.wikidata.org/wiki/Q537374",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q537374.json?revision=2552494801",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q537374.json?revision=2552494801",
+      "entityId": "Q537374",
+      "revision": 2552494801,
+      "statementId": "q537374$6040C37D-7465-4BDC-A78D-A1F96CB3003D",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceKey": "Q537374",
+      "license": "CC0-1.0",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "草原与开阔湖面。",
+    "highlights": [
+      "草原与开阔湖面"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "neimenggu-wudang",
+    "name": "五当召",
+    "aliases": [],
+    "mapId": "cn-15",
+    "regionId": "cn-15",
+    "regionName": "内蒙古自治区",
+    "city": "内蒙古",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      110.30847222,
+      40.79111111
+    ],
+    "source": "https://www.wikidata.org/wiki/Q2594698",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2594698.json?revision=2515923804",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q2594698.json?revision=2515923804",
+      "entityId": "Q2594698",
+      "revision": 2515923804,
+      "statementId": "Q2594698$B42F33AE-52A3-4BDB-8B63-4829431E7C90",
+      "precision": 0.00002777777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceKey": "Q2594698",
+      "license": "CC0-1.0",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "山间白墙寺院。",
+    "highlights": [
+      "山间白墙寺院"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "neimenggu-asihatu",
+    "name": "阿斯哈图石林",
+    "aliases": [],
+    "mapId": "cn-15",
+    "regionId": "cn-15",
+    "regionName": "内蒙古自治区",
+    "city": "内蒙古",
+    "category": "stone-forest",
+    "iconKey": "stone-forest",
+    "coordinates": [
+      117.51749015251144,
+      43.953732349999996
+    ],
+    "source": "https://www.openstreetmap.org/way/961619853",
+    "coordinateSource": {
+      "type": "osm-surface-point",
+      "url": "https://www.openstreetmap.org/way/961619853",
+      "rawUrl": "https://api.openstreetmap.org/api/0.6/way/961619853/full.json",
+      "objectVersion": 3,
+      "timestamp": "2022-11-03T04:34:35Z",
+      "method": "midpoint of longest interior horizontal interval at bbox mid-latitude",
+      "evidenceFile": "reference/catalogue/expansion/b-osm-asihatu-way.json",
+      "evidenceKey": "way/961619853",
+      "license": "ODbL-1.0",
+      "attribution": "© OpenStreetMap contributors",
+      "evidenceSha256": "63de05b33b515a143d660d3cd53d2999fb6f0e8b6e862c3e3b9aeb69c6ad4329"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "以具名阿斯哈图石林园区原始面的内部点定位，不使用整个克什克腾旗中心；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "层状石柱与草地。",
+    "highlights": [
+      "层状石柱与草地"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "xizang-potala",
+    "name": "布达拉宫",
+    "aliases": [],
+    "mapId": "cn-54",
+    "regionId": "cn-54",
+    "regionName": "西藏自治区",
+    "city": "西藏",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      91.11694444444444,
+      29.657777777777778
+    ],
+    "source": "https://www.wikidata.org/wiki/Q71229",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q71229.json?revision=2559105747",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q71229.json?revision=2559105747",
+      "entityId": "Q71229",
+      "revision": 2559105747,
+      "statementId": "q71229$B2F26C7C-2EC0-4397-8930-4B68B382A915",
+      "precision": 0.000277778,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceKey": "Q71229",
+      "license": "CC0-1.0",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "山坡上的红白宫殿。",
+    "highlights": [
+      "山坡上的红白宫殿"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "xizang-namtso",
+    "name": "纳木错",
+    "aliases": [],
+    "mapId": "cn-54",
+    "regionId": "cn-54",
+    "regionName": "西藏自治区",
+    "city": "西藏",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      90.468055555556,
+      30.720833333333
+    ],
+    "source": "https://www.wikidata.org/wiki/Q651294",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q651294.json?revision=2527724461",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q651294.json?revision=2527724461",
+      "entityId": "Q651294",
+      "revision": 2527724461,
+      "statementId": "q651294$519656D5-B78C-4D3F-8781-BD0980958DB0",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceKey": "Q651294",
+      "license": "CC0-1.0",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "高原湖面与雪峰。",
+    "highlights": [
+      "高原湖面与雪峰"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "xizang-sakya",
+    "name": "萨迦寺",
+    "aliases": [],
+    "mapId": "cn-54",
+    "regionId": "cn-54",
+    "regionName": "西藏自治区",
+    "city": "西藏",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      88.017821,
+      28.904761
+    ],
+    "source": "https://www.wikidata.org/wiki/Q1585564",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1585564.json?revision=2549550459",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1585564.json?revision=2549550459",
+      "entityId": "Q1585564",
+      "revision": 2549550459,
+      "statementId": "Q1585564$44431eca-4c7f-c580-d3a5-7360c34a149a",
+      "precision": 0.000001,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceKey": "Q1585564",
+      "license": "CC0-1.0",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "厚重寺墙与条带色彩。",
+    "highlights": [
+      "厚重寺墙与条带色彩"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "xizang-guge",
+    "name": "古格王城遗址",
+    "aliases": [
+      "古格王国"
+    ],
+    "mapId": "cn-54",
+    "regionId": "cn-54",
+    "regionName": "西藏自治区",
+    "city": "西藏",
+    "category": "canyon",
+    "iconKey": "canyon",
+    "coordinates": [
+      79.800277777778,
+      31.481944444444
+    ],
+    "source": "https://www.wikidata.org/wiki/Q1193554",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1193554.json?revision=2354698455",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1193554.json?revision=2354698455",
+      "entityId": "Q1193554",
+      "revision": 2354698455,
+      "statementId": "q1193554$3772ABA8-4E3E-4FA8-B579-0DCCBE6D468A",
+      "precision": null,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceKey": "Q1193554",
+      "license": "CC0-1.0",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "土林与山顶遗址。",
+    "highlights": [
+      "土林与山顶遗址"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "taiwan-taipei-101",
+    "name": "台北101",
+    "aliases": [],
+    "mapId": "cn-71",
+    "regionId": "cn-71",
+    "regionName": "台湾省",
+    "city": "台湾",
+    "category": "pagoda",
+    "iconKey": "pagoda",
+    "coordinates": [
+      121.56472222222222,
+      25.03361111111111
+    ],
+    "source": "https://www.wikidata.org/wiki/Q83101",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q83101.json?revision=2556078116",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q83101.json?revision=2556078116",
+      "entityId": "Q83101",
+      "revision": 2556078116,
+      "statementId": "q83101$DAEB5F2B-7946-44B4-ADAF-1646B52E0F69",
+      "precision": 0.0002777777777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceKey": "Q83101",
+      "license": "CC0-1.0",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "竹节状的高楼。",
+    "highlights": [
+      "竹节状的高楼"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "taiwan-sun-moon-lake",
+    "name": "日月潭",
+    "aliases": [],
+    "mapId": "cn-71",
+    "regionId": "cn-71",
+    "regionName": "台湾省",
+    "city": "台湾",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      120.91666666667,
+      23.866666666667
+    ],
+    "source": "https://www.wikidata.org/wiki/Q716206",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q716206.json?revision=2503344260",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q716206.json?revision=2503344260",
+      "entityId": "Q716206",
+      "revision": 2503344260,
+      "statementId": "q716206$B4E1DFB8-7AA0-4CE6-AD65-1F5DD793BE20",
+      "precision": 0.016666666666667,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceKey": "Q716206",
+      "license": "CC0-1.0",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "山林环抱的湖面。",
+    "highlights": [
+      "山林环抱的湖面"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "taiwan-lin-garden",
+    "name": "林本源园邸",
+    "aliases": [],
+    "mapId": "cn-71",
+    "regionId": "cn-71",
+    "regionName": "台湾省",
+    "city": "台湾",
+    "category": "garden",
+    "iconKey": "garden",
+    "coordinates": [
+      121.45555556,
+      25.01027778
+    ],
+    "source": "https://www.wikidata.org/wiki/Q6550027",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6550027.json?revision=2488466295",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q6550027.json?revision=2488466295",
+      "entityId": "Q6550027",
+      "revision": 2488466295,
+      "statementId": "Q6550027$C13031DF-595F-4216-837B-DC3E28E1DE8F",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceKey": "Q6550027",
+      "license": "CC0-1.0",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "园池与传统亭廊。",
+    "highlights": [
+      "园池与传统亭廊"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "taiwan-lukang",
+    "name": "鹿港龙山寺",
+    "aliases": [],
+    "mapId": "cn-71",
+    "regionId": "cn-71",
+    "regionName": "台湾省",
+    "city": "台湾",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      120.435,
+      24.0504
+    ],
+    "source": "https://www.wikidata.org/wiki/Q3846720",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3846720.json?revision=2514364199",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q3846720.json?revision=2514364199",
+      "entityId": "Q3846720",
+      "revision": 2514364199,
+      "statementId": "Q3846720$C553D9F6-51C7-465A-914B-A72FB1492FAB",
+      "precision": 0.0098371414542759,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceKey": "Q3846720",
+      "license": "CC0-1.0",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用Wikidata鹿港寺院坐标；拒用中文Wikipedia偏南约一纬度的错误坐标；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "传统寺院与细部雕饰。",
+    "highlights": [
+      "传统寺院与细部雕饰"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "hongkong-victoria-peak",
+    "name": "太平山",
+    "aliases": [
+      "太平山 (香港)"
+    ],
+    "mapId": "cn-81",
+    "regionId": "cn-81",
+    "regionName": "香港特别行政区",
+    "city": "香港",
+    "category": "snow-mountain",
+    "iconKey": "snow-mountain",
+    "coordinates": [
+      114.14382777778,
+      22.275469444444
+    ],
+    "source": "https://www.wikidata.org/wiki/Q17541",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q17541.json?revision=2517773244",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q17541.json?revision=2517773244",
+      "entityId": "Q17541",
+      "revision": 2517773244,
+      "statementId": "q17541$2F32ABB3-D5C6-4B22-9FD8-93D02D6F3A25",
+      "precision": 0.0000027777777777778,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceKey": "Q17541",
+      "license": "CC0-1.0",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "山顶与维港景观。",
+    "highlights": [
+      "山顶与维港景观"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "hongkong-big-buddha",
+    "name": "天坛大佛",
+    "aliases": [],
+    "mapId": "cn-81",
+    "regionId": "cn-81",
+    "regionName": "香港特别行政区",
+    "city": "香港",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      113.90514444444,
+      22.254105555556
+    ],
+    "source": "https://www.wikidata.org/wiki/Q528079",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q528079.json?revision=2518385243",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q528079.json?revision=2518385243",
+      "entityId": "Q528079",
+      "revision": 2518385243,
+      "statementId": "q528079$BB2A0DDE-0C3A-4E26-B697-30BEF53F778C",
+      "precision": null,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceKey": "Q528079",
+      "license": "CC0-1.0",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "山坡上的铜佛。",
+    "highlights": [
+      "山坡上的铜佛"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "hongkong-tang-pagoda",
+    "name": "聚星楼",
+    "aliases": [],
+    "mapId": "cn-81",
+    "regionId": "cn-81",
+    "regionName": "香港特别行政区",
+    "city": "香港",
+    "category": "pagoda",
+    "iconKey": "pagoda",
+    "coordinates": [
+      114.006151,
+      22.448767
+    ],
+    "source": "https://www.wikidata.org/wiki/Q7850013",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7850013.json?revision=2559025795",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q7850013.json?revision=2559025795",
+      "entityId": "Q7850013",
+      "revision": 2559025795,
+      "statementId": "q7850013$CA2E8FF2-DD7B-464A-867B-5C97C7D5EC74",
+      "precision": 0.000001,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceKey": "Q7850013",
+      "license": "CC0-1.0",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "三层青砖古塔。",
+    "highlights": [
+      "三层青砖古塔"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "hongkong-tai-o",
+    "name": "大澳",
+    "aliases": [],
+    "mapId": "cn-81",
+    "regionId": "cn-81",
+    "regionName": "香港特别行政区",
+    "city": "香港",
+    "category": "village",
+    "iconKey": "village",
+    "coordinates": [
+      113.864,
+      22.2544
+    ],
+    "source": "https://www.wikidata.org/wiki/Q2497224",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2497224.json?revision=2508442238",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q2497224.json?revision=2508442238",
+      "entityId": "Q2497224",
+      "revision": 2508442238,
+      "statementId": "q2497224$20A1BE7A-FAFF-4C2F-90C1-97814DF98A3A",
+      "precision": null,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceKey": "Q2497224",
+      "license": "CC0-1.0",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "水道与棚屋渔村。",
+    "highlights": [
+      "水道与棚屋渔村"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "macau-saint-paul",
+    "name": "大三巴牌坊",
+    "aliases": [],
+    "mapId": "cn-82",
+    "regionId": "cn-82",
+    "regionName": "澳门特别行政区",
+    "city": "澳门",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      113.54086,
+      22.197468
+    ],
+    "source": "https://www.wikidata.org/wiki/Q1551411",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1551411.json?revision=2558866589",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q1551411.json?revision=2558866589",
+      "entityId": "Q1551411",
+      "revision": 2558866589,
+      "statementId": "q1551411$42232AF5-6B0F-4FB1-B744-42523C2A7AE7",
+      "precision": 1e-7,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceKey": "Q1551411",
+      "license": "CC0-1.0",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "石雕立面与台阶。",
+    "highlights": [
+      "石雕立面与台阶"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "macau-a-ma",
+    "name": "妈阁庙",
+    "aliases": [],
+    "mapId": "cn-82",
+    "regionId": "cn-82",
+    "regionName": "澳门特别行政区",
+    "city": "澳门",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      113.531139,
+      22.186111
+    ],
+    "source": "https://www.wikidata.org/wiki/Q2149114",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2149114.json?revision=2465046844",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q2149114.json?revision=2465046844",
+      "entityId": "Q2149114",
+      "revision": 2465046844,
+      "statementId": "q2149114$8DF56B76-5473-4B9F-9F50-3C7F04CC149A",
+      "precision": 0.00001,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceKey": "Q2149114",
+      "license": "CC0-1.0",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "山石与海边古庙。",
+    "highlights": [
+      "山石与海边古庙"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "macau-mandarin-house",
+    "name": "郑家大屋",
+    "aliases": [],
+    "mapId": "cn-82",
+    "regionId": "cn-82",
+    "regionName": "澳门特别行政区",
+    "city": "澳门",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      113.53436,
+      22.18856
+    ],
+    "source": "https://www.wikidata.org/wiki/Q6757684",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6757684.json?revision=2113785811",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q6757684.json?revision=2113785811",
+      "entityId": "Q6757684",
+      "revision": 2113785811,
+      "statementId": "Q6757684$C6C6D9DD-38E8-4A3B-9CF9-B906DCB631EA",
+      "precision": 0.0097015974145756,
+      "referenceCount": 0,
+      "evidenceFile": "reference/catalogue/expansion/b-wikidata-extra.json",
+      "evidenceKey": "Q6757684",
+      "license": "CC0-1.0",
+      "evidenceSha256": "931be4f35ccfd1e1671ee0d5f4c23835ac3abd781b3e1a3a54e5503a6038acd8"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "传统院落与砖墙。",
+    "highlights": [
+      "传统院落与砖墙"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "macau-taipa-houses",
+    "name": "龙环葡韵",
+    "aliases": [],
+    "mapId": "cn-82",
+    "regionId": "cn-82",
+    "regionName": "澳门特别行政区",
+    "city": "澳门",
+    "category": "museum",
+    "iconKey": "museum",
+    "coordinates": [
+      113.56,
+      22.1539
+    ],
+    "source": "https://www.wikidata.org/wiki/Q15216026",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q15216026.json?revision=2469242106",
+      "rawUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q15216026.json?revision=2469242106",
+      "entityId": "Q15216026",
+      "revision": 2469242106,
+      "statementId": "Q15216026$8FA46A43-6D3E-4201-870A-E6DF3AF6E5F9",
+      "precision": 0.096992033722992,
+      "referenceCount": 1,
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceKey": "Q15216026",
+      "license": "CC0-1.0",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "coordinateSystem": "WGS84",
+    "anchorNote": "采用具名地点的开放社区代表点；仅作回忆地图定位，不是导航入口，不代表到访。",
+    "text": "浅绿外墙的葡式住宅。",
+    "highlights": [
+      "浅绿外墙的葡式住宅"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  }
+]

@@ -1,8 +1,14 @@
 import { readFile } from 'node:fs/promises'
 import { hash } from './crypto.js'
 import { fail, fields, string } from './errors.js'
-export const VALIDATION_VERSION = 'national-20260907-b6918bc0'
-export const CATALOGUE_VERSION = 'yunnan43-3ecd736f'
+import { catalogueManifest } from './catalogue-manifest.js'
+export const VALIDATION_VERSION = catalogueManifest.validationVersion
+export const CATALOGUE_VERSION = catalogueManifest.catalogueVersion
+export function verifyCatalogueAsset(name: string, bytes: Buffer, expected: string) {
+  const value = JSON.parse(bytes.toString().replace(/^\uFEFF/, ''))
+  if (hash(JSON.stringify(value)) !== expected) throw new Error(`Controlled catalogue data changed: ${name}`)
+  return value
+}
 type Point = [number, number]
 type Geometry = { type: string; coordinates: any }
 function inRing(point: Point, ring: Point[]): number {
@@ -26,24 +32,30 @@ export function within(point: Point, geometry: Geometry): boolean {
 export class Catalogue {
   places = new Map<string, any>(); regions = new Map<string, string>(); boundaries = new Map<string, Geometry>()
   async load() {
-    const pins = {
-      'province-boundaries.json': 'b6918bc072de0d7c348ab574aa1d76aae3165a350be57e496ba4122330e5d4ab',
-      'yunnan-boundary.json': 'ce08da530d75b86f327eb8c5715b31b743848400b30407dab4ccb4cf7dc5896e',
-      'places.json': '3ecd736f56c0462587b96f7ce57d7380049ee18a66d0dbe541cd9d1a2351dd55',
-    }
+    const pins = catalogueManifest.pins
     const data: Record<string, any> = {}
     for (const [name, expected] of Object.entries(pins)) {
       const bytes = await readFile(new URL('../../shanhai-app/src/data/' + name, import.meta.url))
-      if (hash(bytes) !== expected) throw new Error(`Controlled catalogue data changed: ${name}`)
-      data[name] = JSON.parse(bytes.toString())
+      data[name] = verifyCatalogueAsset(name, bytes, expected)
     }
     for (const feature of data['province-boundaries.json'].features) {
       this.boundaries.set(feature.properties.provinceId, feature.geometry)
       if (feature.properties.provinceId !== 'yunnan') this.regions.set(feature.properties.provinceId, feature.properties.provinceId)
     }
     this.boundaries.set('yunnan', data['yunnan-boundary.json'].features[0].geometry)
-    for (const place of data['places.json']) { this.places.set(place.id, place); this.regions.set(place.regionId, 'yunnan') }
-    if (this.boundaries.size !== 34 || this.regions.size !== 49 || this.places.size !== 43) throw new Error('Unexpected controlled catalogue coverage')
+    for (const place of data['places.json']) { this.places.set(place.id, { ...place, mapId: 'yunnan' }); this.regions.set(place.regionId, 'yunnan') }
+    for (const place of data['national-places.json']) {
+      if (this.places.has(place.id) || !this.boundaries.has(place.mapId) || this.regions.get(place.regionId) !== place.mapId) throw new Error('Invalid controlled place ownership')
+      this.places.set(place.id, place)
+    }
+    const counts = catalogueManifest.counts
+    if (this.boundaries.size !== counts.provinces || this.regions.size !== counts.regions || this.places.size !== counts.publicPlaces) throw new Error('Unexpected controlled catalogue coverage')
+  }
+  supportsReference(placeId: string, version: unknown): boolean {
+    if (!this.places.has(placeId)) return false
+    if (version === CATALOGUE_VERSION) return true
+    const legacy = catalogueManifest.legacyVersions as Record<string, readonly string[]>
+    return typeof version === 'string' && Object.hasOwn(legacy, version) && legacy[version]!.includes(placeId)
   }
   custom(input: unknown) {
     const value = fields(input, ['clientId', 'name', 'regionId', 'coordinates', 'validationVersion'])

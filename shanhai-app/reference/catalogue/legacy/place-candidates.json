@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "status": "reviewed-legacy-subset",
+  "researchedOn": "2026-09-07",
+  "intendedUse": "local schematic travel memory map; not entrances or navigation",
+  "report": "../README.md",
+  "baseCatalogue": {
+    "file": "src/data/places.json",
+    "count": 43,
+    "sha256": "3ecd736f56c0462587b96f7ce57d7380049ee18a66d0dbe541cd9d1a2351dd55",
+    "productionUnchanged": true
+  },
+  "places": [
+    {
+      "id": "sichuan-dujiangyan",
+      "name": "都江堰",
+      "aliases": [
+        "都江堰水利工程",
+        "都江堰灌溉系统"
+      ],
+      "mapId": "cn-51",
+      "regionId": "cn-51",
+      "regionName": "四川省",
+      "city": "成都·都江堰",
+      "category": "waterworks",
+      "iconKey": "museum",
+      "coordinates": [
+        103.60441667,
+        31.00925
+      ],
+      "coordinateSystem": "WGS84",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q824157.json?revision=2537297340",
+        "entityId": "Q824157",
+        "revision": 2537297340,
+        "modified": "2026-08-28T06:09:45Z",
+        "statementId": "Q824157$5E0C5070-E76B-4CA0-84D3-F76FA7EF020B",
+        "globe": "http://www.wikidata.org/entity/Q2",
+        "precision": 0.00002777777777778,
+        "referenceCount": 1,
+        "license": "CC0-1.0",
+        "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+        "evidenceFile": "reference/catalogue/legacy/wikidata-sichuan-entities.json",
+        "evidenceSha256": "44470f674e8b693f2245ef0c679df14299947fdc1c75e57d71d37e80c470bf9d"
+      },
+      "anchorNote": "都江堰灌溉系统的开放社区代表点，不是都江堰市中心；P625 仅记录从德语 Wikipedia 导入。仅作地图展示，不是入口或导航终点；公共标记不代表到访。",
+      "source": "https://whc.unesco.org/en/list/1001/",
+      "text": "依岷江水势修建的古代灌溉系统，长期服务于成都平原。",
+      "highlights": [
+        "水利遗产",
+        "岷江"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "beijing-forbidden-city",
+      "name": "故宫",
+      "aliases": [
+        "紫禁城",
+        "北京故宫"
+      ],
+      "mapId": "cn-11",
+      "regionId": "cn-11",
+      "regionName": "北京市",
+      "city": "北京",
+      "category": "museum",
+      "iconKey": "museum",
+      "coordinates": [
+        116.39083333333333,
+        39.91583333333333
+      ],
+      "coordinateSystem": "WGS84",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q80290.json?revision=2519129582",
+        "entityId": "Q80290",
+        "revision": 2519129582,
+        "modified": "2026-07-18T14:24:52Z",
+        "statementId": "q80290$9F6A3AE0-A66C-400D-84BD-3435441E3616",
+        "globe": "http://www.wikidata.org/entity/Q2",
+        "precision": 0.0002777777777777778,
+        "referenceCount": 1,
+        "license": "CC0-1.0",
+        "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+        "evidenceFile": "reference/catalogue/legacy/wikidata-Q80290-r2519129582.json",
+        "evidenceSha256": "b4fdf6e0bac6fb7ce1b82a21365a3a2be0d2dfe40d20bf20cf674880820794b2"
+      },
+      "anchorNote": "北京故宫建筑群的开放社区代表点，不是博物馆机构实体；P625 仅记录从英语 Wikipedia 导入。仅作地图展示，不是入口或导航终点；公共标记不代表到访。",
+      "source": "https://whc.unesco.org/en/list/439/",
+      "text": "北京的明清宫殿建筑群，沿中轴线布置殿宇与庭院。",
+      "highlights": [
+        "明清宫殿",
+        "中轴布局"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "beijing-temple-of-heaven",
+      "name": "天坛",
+      "aliases": [
+        "北京天坛"
+      ],
+      "mapId": "cn-11",
+      "regionId": "cn-11",
+      "regionName": "北京市",
+      "city": "北京",
+      "category": "temple",
+      "iconKey": "temple",
+      "coordinates": [
+        116.4066,
+        39.8822
+      ],
+      "coordinateSystem": "WGS84",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q125445.json?revision=2529958570",
+        "entityId": "Q125445",
+        "revision": 2529958570,
+        "modified": "2026-08-11T09:20:17Z",
+        "statementId": "Q125445$f2bd2cfa-b287-4e0e-8d3b-ffdedcaf18fb",
+        "globe": "http://www.wikidata.org/entity/Q2",
+        "precision": 0.0001,
+        "referenceCount": 0,
+        "license": "CC0-1.0",
+        "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+        "evidenceFile": "reference/catalogue/legacy/wikidata-Q125445-r2529958570.json",
+        "evidenceSha256": "f62842a1d320b6246ca6535ee8a5e8ed698f8e1d7f00310e625e28aba6029547"
+      },
+      "anchorNote": "天坛建筑群的开放社区代表点，P625 无参考文献；仅作地图展示，不是祈年殿单体的专用点，也不是入口或导航终点；公共标记不代表到访。",
+      "source": "https://whc.unesco.org/en/list/881/",
+      "text": "北京的皇家祭祀建筑群，明清皇帝曾在此祭天祈谷。",
+      "highlights": [
+        "皇家祭祀",
+        "坛庙建筑"
+      ],
+      "priority": 1
+    }
+  ]
+}

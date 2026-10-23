@@ -4,6 +4,88 @@
  * The caller supplies the accessible place name on its button; SVG is decorative.
  */
 
+import { wrapLandmark, type LandmarkPack } from './landmarks/shared'
+import { nationalLandmarkSvg } from './landmarks/national'
+export { nationalLandmarkSvg, nationalLandmarkId } from './landmarks/national'
+
+const loaders: Readonly<Record<string, () => Promise<{ default: LandmarkPack }>>> = {
+  'cn-11': () => import('./landmarks/beijing'),
+  'cn-51': () => import('./landmarks/sichuan'),
+  'cn-33': () => import('./landmarks/zhejiang'),
+  'cn-35': () => import('./landmarks/fujian'),
+  'cn-45': () => import('./landmarks/guangxi'),
+  'cn-62': () => import('./landmarks/gansu'),
+  'cn-52': () => import('./landmarks/guizhou'),
+  'cn-65': () => import('./landmarks/xinjiang'),
+  'cn-12': () => import('./landmarks/tianjin'),
+  'cn-13': () => import('./landmarks/hebei'),
+  'cn-14': () => import('./landmarks/shanxi'),
+  'cn-21': () => import('./landmarks/liaoning'),
+  'cn-22': () => import('./landmarks/jilin'),
+  'cn-23': () => import('./landmarks/heilongjiang'),
+  'cn-31': () => import('./landmarks/shanghai'),
+  'cn-32': () => import('./landmarks/jiangsu'),
+  'cn-34': () => import('./landmarks/anhui'),
+  'cn-36': () => import('./landmarks/jiangxi'),
+  'cn-37': () => import('./landmarks/shandong'),
+  'cn-41': () => import('./landmarks/henan'),
+  'cn-42': () => import('./landmarks/hubei'),
+  'cn-43': () => import('./landmarks/hunan'),
+  'cn-44': () => import('./landmarks/guangdong'),
+  'cn-46': () => import('./landmarks/hainan'),
+  'cn-50': () => import('./landmarks/chongqing'),
+  'cn-61': () => import('./landmarks/shaanxi'),
+  'cn-64': () => import('./landmarks/ningxia'),
+  'cn-63': () => import('./landmarks/qinghai'),
+  'cn-15': () => import('./landmarks/neimenggu'),
+  'cn-54': () => import('./landmarks/xizang'),
+  'cn-71': () => import('./landmarks/taiwan'),
+  'cn-81': () => import('./landmarks/hongkong'),
+  'cn-82': () => import('./landmarks/macau'),
+}
+const provincePrefixes: Readonly<Record<string, string>> = {
+  beijing: 'cn-11', sichuan: 'cn-51', zhejiang: 'cn-33', fujian: 'cn-35',
+  guangxi: 'cn-45', gansu: 'cn-62', guizhou: 'cn-52', xinjiang: 'cn-65',
+  tianjin: 'cn-12', hebei: 'cn-13', shanxi: 'cn-14', liaoning: 'cn-21', jilin: 'cn-22',
+  heilongjiang: 'cn-23', shanghai: 'cn-31', jiangsu: 'cn-32', anhui: 'cn-34', jiangxi: 'cn-36',
+  shandong: 'cn-37', henan: 'cn-41', hubei: 'cn-42', hunan: 'cn-43', guangdong: 'cn-44',
+  hainan: 'cn-46', chongqing: 'cn-50', shaanxi: 'cn-61', ningxia: 'cn-64', qinghai: 'cn-63',
+  neimenggu: 'cn-15', xizang: 'cn-54', taiwan: 'cn-71', hongkong: 'cn-81', macau: 'cn-82',
+}
+const provinceIcons = new Map<string, { full: string; simple: string }>()
+const pending = new Map<string, Promise<void>>()
+const listeners = new Set<() => void>()
+let revision = 0
+
+export function landmarkProvince(variant: unknown): string | undefined {
+  if (typeof variant !== 'string') return undefined
+  const prefix = variant.split('-')[0] ?? ''
+  return Object.prototype.hasOwnProperty.call(provincePrefixes, prefix) ? provincePrefixes[prefix] : undefined
+}
+export const getLandmarkRevision = (): number => revision
+export function subscribeLandmarks(listener: () => void): () => void {
+  listeners.add(listener)
+  return () => { listeners.delete(listener) }
+}
+/** Only statically enumerated local modules can be loaded. Failures are retryable. */
+export function ensureLandmarks(provinceId: unknown): Promise<void> {
+  if (typeof provinceId !== 'string' || !Object.prototype.hasOwnProperty.call(loaders, provinceId)) return Promise.resolve()
+  const existing = pending.get(provinceId)
+  if (existing) return existing
+  const request = loaders[provinceId]!().then(({ default: pack }) => {
+    for (const [id, drawing] of Object.entries(pack)) {
+      provinceIcons.set(id, { full: wrapLandmark(drawing), simple: wrapLandmark(drawing, true) })
+    }
+    revision += 1
+    for (const listener of listeners) listener()
+  }).catch(error => {
+    pending.delete(provinceId)
+    throw error
+  })
+  pending.set(provinceId, request)
+  return request
+}
+
 const P = '#FBF8EF', I = '#163D3A', G = '#CCDCC8', W = '#A9CED3';
 const R = '#A23E34', A = '#D2AE65', S = '#849F98', B = '#7199AA';
 const ground = `<ellipse cx="40" cy="62" rx="27" ry="3" fill="${G}" stroke="none"/>`;
@@ -247,10 +329,16 @@ export function svg(key: unknown, options?: unknown): string {
   if (typeof key !== 'string' || !own(icons, key)) return fallback;
   const base = icons[key] ?? fallback;
   let variant: unknown;
+  let detail: unknown;
   // Ignore accessor properties; never execute/coerce supplied values.
   try {
-    if (options && typeof options === 'object') variant = Object.getOwnPropertyDescriptor(options, 'variant')?.value;
+    if (options && typeof options === 'object') {
+      variant = Object.getOwnPropertyDescriptor(options, 'variant')?.value;
+      detail = Object.getOwnPropertyDescriptor(options, 'detail')?.value;
+    }
   } catch { return base; }
+  const authored = typeof variant === 'string' ? provinceIcons.get(variant) : undefined;
+  if (authored) return detail === 'simple' ? authored.simple : authored.full;
   const mapping = own(variantNames, key) ? variantNames[key] : undefined;
   if (typeof variant === 'string' && mapping && own(mapping, variant)) {
     const name = mapping[variant];

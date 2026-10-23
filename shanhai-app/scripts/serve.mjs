@@ -6,8 +6,9 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createHash } from 'node:crypto'
 
-export const PUBLIC_FILES = Object.freeze(['index.html', '.vite/manifest.json', 'data/SOURCES.md', 'data/yunnan-geography.geojson', 'data/china-provinces.geojson', 'licenses/Leaflet.txt'])
-export const ASSET_PATTERN = /^assets\/(?:index|RemoteApp|geography|regions|places|vendor|rolldown-runtime)-[A-Za-z0-9_-]{8}\.(?:js|css)$/
+export const PUBLIC_FILES = Object.freeze(['index.html', '.vite/manifest.json', 'favicon.svg', 'data/SOURCES.md', 'data/national-places.json', 'data/yunnan-geography.geojson', 'data/china-provinces.geojson', 'licenses/Leaflet.txt'])
+export const LANDMARK_PROVINCES = Object.freeze(['anhui','beijing','chongqing','fujian','gansu','guangdong','guangxi','guizhou','hainan','hebei','heilongjiang','henan','hongkong','hubei','hunan','jiangsu','jiangxi','jilin','liaoning','macau','neimenggu','ningxia','qinghai','shaanxi','shandong','shanghai','shanxi','sichuan','taiwan','tianjin','xinjiang','xizang','zhejiang'])
+export const ASSET_PATTERN = new RegExp(`^assets/(?:index|RemoteApp|geography|regions|places|vendor|rolldown-runtime|landmark-(?:${[...LANDMARK_PROVINCES, 'shapes'].join('|')}))-[A-Za-z0-9_-]{8}\\.(?:js|css)$`)
 export const MANIFEST_FORMAT = 'shanhai-vue-local-trial'
 export const sha256 = bytes => createHash('sha256').update(bytes).digest('hex')
 
@@ -109,7 +110,7 @@ export async function loadRelease(folder) {
   return { manifest, cache }
 }
 
-const MIME = Object.freeze({ '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.md': 'text/plain; charset=utf-8', '.txt': 'text/plain; charset=utf-8', '.geojson': 'application/geo+json; charset=utf-8', '.json': 'application/json; charset=utf-8' })
+const MIME = Object.freeze({ '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.md': 'text/plain; charset=utf-8', '.txt': 'text/plain; charset=utf-8', '.geojson': 'application/geo+json; charset=utf-8', '.json': 'application/json; charset=utf-8' })
 const HEADERS = Object.freeze({
   'X-Content-Type-Options': 'nosniff',
   'Referrer-Policy': 'no-referrer',

@@ -1,0 +1,2238 @@
+[
+  {
+    "id": "tianjin-eye",
+    "name": "天津之眼",
+    "aliases": [
+      "天津之眼",
+      "天津"
+    ],
+    "mapId": "cn-12",
+    "regionId": "cn-12",
+    "regionName": "天津市",
+    "city": "天津",
+    "category": "bridge",
+    "iconKey": "bridge",
+    "coordinates": [
+      117.180262,
+      39.153364
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q750548.json?revision=2520143193",
+      "entityId": "Q750548",
+      "revision": 2520143193,
+      "modified": "2026-07-20T10:33:36Z",
+      "statementId": "q750548$00872B98-DF47-4B02-A57E-C41F9C2659D2",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.0001,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q750548.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "anchorNote": "天津之眼公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=93454982",
+    "text": "摩天轮与海河桥面。",
+    "highlights": [
+      "摩天轮与海河桥面"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "tianjin-ancient-culture-street",
+    "name": "古文化街",
+    "aliases": [
+      "古文化街",
+      "天津"
+    ],
+    "mapId": "cn-12",
+    "regionId": "cn-12",
+    "regionName": "天津市",
+    "city": "天津",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      117.1867,
+      39.142002777777776
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3121449.json?revision=2298153228",
+      "entityId": "Q3121449",
+      "revision": 2298153228,
+      "modified": "2025-01-14T14:24:43Z",
+      "statementId": "Q3121449$CEE9977F-005B-4257-BB31-BDEB441FEDC3",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.000001,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q3121449.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "anchorNote": "古文化街公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94395584",
+    "text": "传统店铺与海河街巷。",
+    "highlights": [
+      "传统店铺与海河街巷"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "tianjin-dule-temple",
+    "name": "独乐寺",
+    "aliases": [
+      "独乐寺",
+      "天津"
+    ],
+    "mapId": "cn-12",
+    "regionId": "cn-12",
+    "regionName": "天津市",
+    "city": "天津",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      117.39666667,
+      40.04416667
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q822195.json?revision=2515883459",
+      "entityId": "Q822195",
+      "revision": 2515883459,
+      "modified": "2026-07-10T13:51:57Z",
+      "statementId": "Q822195$A68FA5D2-D777-45CE-BC56-F596D367979A",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q822195.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "anchorNote": "独乐寺公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=92854906",
+    "text": "木构楼阁与古寺屋檐。",
+    "highlights": [
+      "木构楼阁与古寺屋檐"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "tianjin-jingyuan",
+    "name": "静园",
+    "aliases": [
+      "静园",
+      "天津"
+    ],
+    "mapId": "cn-12",
+    "regionId": "cn-12",
+    "regionName": "天津市",
+    "city": "天津",
+    "category": "garden",
+    "iconKey": "garden",
+    "coordinates": [
+      117.1828,
+      39.1223
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q15926315.json?revision=1842702887",
+      "entityId": "Q15926315",
+      "revision": 1842702887,
+      "modified": "2023-02-27T19:48:51Z",
+      "statementId": "Q15926315$854804be-348d-40a5-9acd-0cfd02a2a91a",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.0001,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q15926315.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "anchorNote": "静园公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=92093755",
+    "text": "庭园中的近代住宅。",
+    "highlights": [
+      "庭园中的近代住宅"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "hebei-shanhaiguan",
+    "name": "山海关",
+    "aliases": [
+      "山海关",
+      "河北"
+    ],
+    "mapId": "cn-13",
+    "regionId": "cn-13",
+    "regionName": "河北省",
+    "city": "秦皇岛",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      119.75357,
+      40.00916
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1048381.json?revision=2551266311",
+      "entityId": "Q1048381",
+      "revision": 2551266311,
+      "modified": "2026-09-30T10:11:00Z",
+      "statementId": "Q1048381$E42C882D-B9A3-4D34-8D45-200194345BE8",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.000001,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q1048381.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "anchorNote": "山海关公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94210127",
+    "text": "城门与长城垛口。",
+    "highlights": [
+      "城门与长城垛口"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "hebei-mountain-resort",
+    "name": "承德避暑山庄",
+    "aliases": [
+      "承德避暑山庄",
+      "河北"
+    ],
+    "mapId": "cn-13",
+    "regionId": "cn-13",
+    "regionName": "河北省",
+    "city": "承德",
+    "category": "garden",
+    "iconKey": "garden",
+    "coordinates": [
+      117.9375,
+      40.9875
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1046818.json?revision=2549919401",
+      "entityId": "Q1046818",
+      "revision": 2549919401,
+      "modified": "2026-09-27T07:31:20Z",
+      "statementId": "Q1046818$429172C8-C885-4673-8934-1DC75D18F6B3",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q1046818.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "anchorNote": "承德避暑山庄公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94287625",
+    "text": "山林与湖泊宫苑。",
+    "highlights": [
+      "山林与湖泊宫苑"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "hebei-longxing-temple",
+    "name": "隆兴寺",
+    "aliases": [
+      "隆兴寺",
+      "河北"
+    ],
+    "mapId": "cn-13",
+    "regionId": "cn-13",
+    "regionName": "河北省",
+    "city": "石家庄",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      114.57638889,
+      38.14416667
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1507370.json?revision=2518881755",
+      "entityId": "Q1507370",
+      "revision": 2518881755,
+      "modified": "2026-07-17T21:51:47Z",
+      "statementId": "Q1507370$D0AF52D7-47BB-4481-BC71-BEA1EE4F69F7",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q1507370.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "anchorNote": "隆兴寺公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=92021441",
+    "text": "古寺殿阁与庭院。",
+    "highlights": [
+      "古寺殿阁与庭院"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "hebei-jimingyi",
+    "name": "鸡鸣驿",
+    "aliases": [
+      "鸡鸣驿",
+      "河北"
+    ],
+    "mapId": "cn-13",
+    "regionId": "cn-13",
+    "regionName": "河北省",
+    "city": "张家口",
+    "category": "village",
+    "iconKey": "village",
+    "coordinates": [
+      115.3095,
+      40.45025833
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q11174339.json?revision=2515969863",
+      "entityId": "Q11174339",
+      "revision": 2515969863,
+      "modified": "2026-07-10T18:12:12Z",
+      "statementId": "Q11174339$3C971766-7D16-487B-A3A7-5373DE8D6BF8",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q11174339.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "anchorNote": "鸡鸣驿公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=84932119",
+    "text": "驿站城墙与街巷。",
+    "highlights": [
+      "驿站城墙与街巷"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "shanxi-pingyao",
+    "name": "平遥古城",
+    "aliases": [
+      "平遥古城",
+      "山西"
+    ],
+    "mapId": "cn-14",
+    "regionId": "cn-14",
+    "regionName": "山西省",
+    "city": "晋中",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      112.17666666667,
+      37.198888888889
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q500061.json?revision=2556200956",
+      "entityId": "Q500061",
+      "revision": 2556200956,
+      "modified": "2026-10-12T09:18:57Z",
+      "statementId": "q500061$5FDF249E-B83F-4006-BCDA-45C468603A71",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q500061.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "anchorNote": "平遥古城整体代表点；采用古城Wikidata实体坐标，不使用同名平遥古城高铁站的位置。不是城门入口。",
+    "source": "https://whc.unesco.org/en/list/812/",
+    "text": "方整城墙与古街。",
+    "highlights": [
+      "方整城墙与古街"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "shanxi-yungang",
+    "name": "云冈石窟",
+    "aliases": [
+      "云冈石窟",
+      "山西"
+    ],
+    "mapId": "cn-14",
+    "regionId": "cn-14",
+    "regionName": "山西省",
+    "city": "大同",
+    "category": "cave",
+    "iconKey": "cave",
+    "coordinates": [
+      113.12222222222,
+      40.109722222222
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q308805.json?revision=2559136964",
+      "entityId": "Q308805",
+      "revision": 2559136964,
+      "modified": "2026-10-20T08:04:27Z",
+      "statementId": "q308805$CA0C2E50-6D08-4DA0-8E37-4DADCE091756",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": null,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q308805.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "anchorNote": "云冈石窟公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=95024970",
+    "text": "岩壁洞窟与石雕。",
+    "highlights": [
+      "岩壁洞窟与石雕"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "shanxi-foguang-temple",
+    "name": "佛光寺（五台）",
+    "aliases": [
+      "佛光寺 (五台)",
+      "山西"
+    ],
+    "mapId": "cn-14",
+    "regionId": "cn-14",
+    "regionName": "山西省",
+    "city": "忻州",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      113.38777778,
+      38.86916667
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q44615.json?revision=2517954778",
+      "entityId": "Q44615",
+      "revision": 2517954778,
+      "modified": "2026-07-15T23:28:18Z",
+      "statementId": "Q44615$0E4EEC5D-937F-4451-B6A9-8C59DF1E1332",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q44615.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-a-fixes.json",
+      "evidenceSha256": "fb4521801a1f45fc23cc117e48556a8b854148089a9656c418e282a73701996c"
+    },
+    "anchorNote": "佛光寺（五台）公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94017555",
+    "text": "山间木构古殿。",
+    "highlights": [
+      "山间木构古殿"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "shanxi-wooden-pagoda",
+    "name": "应县木塔",
+    "aliases": [
+      "应县木塔",
+      "山西"
+    ],
+    "mapId": "cn-14",
+    "regionId": "cn-14",
+    "regionName": "山西省",
+    "city": "朔州",
+    "category": "pagoda",
+    "iconKey": "pagoda",
+    "coordinates": [
+      113.18194444,
+      39.56527778
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q117697.json?revision=2523299460",
+      "entityId": "Q117697",
+      "revision": 2523299460,
+      "modified": "2026-07-27T08:16:21Z",
+      "statementId": "Q117697$D480A44C-F900-46B9-9D94-38170E904C08",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q117697.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "anchorNote": "应县木塔公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94999912",
+    "text": "八角木塔与层叠屋檐。",
+    "highlights": [
+      "八角木塔与层叠屋檐"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "liaoning-mukden-palace",
+    "name": "沈阳故宫",
+    "aliases": [
+      "沈阳故宫",
+      "辽宁"
+    ],
+    "mapId": "cn-21",
+    "regionId": "cn-21",
+    "regionName": "辽宁省",
+    "city": "沈阳",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      123.45,
+      41.795833333333
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q852429.json?revision=2515885429",
+      "entityId": "Q852429",
+      "revision": 2515885429,
+      "modified": "2026-07-10T13:59:21Z",
+      "statementId": "q852429$BA1F2965-CDB1-4212-90F2-7DD4601112C4",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q852429.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "anchorNote": "沈阳故宫公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94239476",
+    "text": "宫殿屋脊与庭院。",
+    "highlights": [
+      "宫殿屋脊与庭院"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "liaoning-laohutan",
+    "name": "老虎滩海洋公园",
+    "aliases": [
+      "老虎滩海洋公园",
+      "辽宁"
+    ],
+    "mapId": "cn-21",
+    "regionId": "cn-21",
+    "regionName": "辽宁省",
+    "city": "大连",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      121.67313,
+      38.87301
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q11610664.json?revision=2495350352",
+      "entityId": "Q11610664",
+      "revision": 2495350352,
+      "modified": "2026-05-21T04:49:08Z",
+      "statementId": "Q11610664$a77a1dd7-48bb-f713-4498-532f927a7f2f",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00001,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q11610664.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "anchorNote": "老虎滩海洋公园条目代表点；临海坐标位于本应用粗化省区轮廓之外，保留来源真实坐标，不据示意轮廓判定归属。不是导航入口。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94052620",
+    "text": "海湾与滨海风景。",
+    "highlights": [
+      "海湾与滨海风景"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "liaoning-niuheliang",
+    "name": "牛河梁遗址",
+    "aliases": [
+      "牛河梁遗址",
+      "辽宁"
+    ],
+    "mapId": "cn-21",
+    "regionId": "cn-21",
+    "regionName": "辽宁省",
+    "city": "朝阳",
+    "category": "museum",
+    "iconKey": "museum",
+    "coordinates": [
+      119.528401,
+      41.334007
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7041693.json?revision=2515950205",
+      "entityId": "Q7041693",
+      "revision": 2515950205,
+      "modified": "2026-07-10T17:11:02Z",
+      "statementId": "Q7041693$731B0F3B-4EB7-4283-90D0-3E0A3119E3AA",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.000001,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q7041693.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "anchorNote": "牛河梁遗址公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94714816",
+    "text": "山岗与考古遗址。",
+    "highlights": [
+      "山岗与考古遗址"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "liaoning-benxi-cave",
+    "name": "本溪水洞",
+    "aliases": [
+      "本溪水洞",
+      "辽宁"
+    ],
+    "mapId": "cn-21",
+    "regionId": "cn-21",
+    "regionName": "辽宁省",
+    "city": "本溪",
+    "category": "cave",
+    "iconKey": "cave",
+    "coordinates": [
+      124.09966630555556,
+      41.298016805555555
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q384072.json?revision=2396232316",
+      "entityId": "Q384072",
+      "revision": 2396232316,
+      "modified": "2025-08-25T04:10:37Z",
+      "statementId": "Q384072$FB9056AE-AFF8-4E7B-A2A4-962AE0F3F260",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 2.777777777777778e-8,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q384072.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "anchorNote": "本溪水洞公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=87488028",
+    "text": "水洞中的岩壁与地下河。",
+    "highlights": [
+      "水洞中的岩壁与地下河"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "jilin-heaven-lake",
+    "name": "长白山天池",
+    "aliases": [
+      "长白山天池",
+      "吉林"
+    ],
+    "mapId": "cn-22",
+    "regionId": "cn-22",
+    "regionName": "吉林省",
+    "city": "延边",
+    "category": "lake",
+    "iconKey": "lake",
+    "coordinates": [
+      128.057,
+      42.006
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q714023.json?revision=2515879774",
+      "entityId": "Q714023",
+      "revision": 2515879774,
+      "modified": "2026-07-10T13:36:13Z",
+      "statementId": "q714023$B062A10A-6909-49C5-8EB2-112CB3D28F3D",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": null,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q714023.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "anchorNote": "长白山天池公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=91345371",
+    "text": "山口环抱的高山湖。",
+    "highlights": [
+      "山口环抱的高山湖"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "jilin-puppet-palace",
+    "name": "伪满皇宫博物院",
+    "aliases": [
+      "伪满皇宫博物院",
+      "吉林"
+    ],
+    "mapId": "cn-22",
+    "regionId": "cn-22",
+    "regionName": "吉林省",
+    "city": "长春",
+    "category": "museum",
+    "iconKey": "museum",
+    "coordinates": [
+      125.34222222222222,
+      43.90361111111111
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q83332.json?revision=2529531089",
+      "entityId": "Q83332",
+      "revision": 2529531089,
+      "modified": "2026-08-10T08:09:19Z",
+      "statementId": "Q83332$58A5584B-96CE-45E2-AB0F-95AAB00B82E4",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.0002777777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q83332.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "anchorNote": "伪满皇宫博物院公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94952496",
+    "text": "近代建筑与宫苑。",
+    "highlights": [
+      "近代建筑与宫苑"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "jilin-goguryeo",
+    "name": "国内城",
+    "aliases": [
+      "国内城",
+      "吉林"
+    ],
+    "mapId": "cn-22",
+    "regionId": "cn-22",
+    "regionName": "吉林省",
+    "city": "通化",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      126.17861111,
+      41.12083333
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q711386.json?revision=2532335617",
+      "entityId": "Q711386",
+      "revision": 2532335617,
+      "modified": "2026-08-17T13:13:38Z",
+      "statementId": "Q711386$0D290B5B-86CA-4C95-933F-602A6975E186",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.000001,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q711386.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-05.json",
+      "evidenceSha256": "06ca8bb5badbf28860c2b1cc526eb31d59dec2b5d143f17a97c9be6604383dd7"
+    },
+    "anchorNote": "国内城公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=92056436",
+    "text": "高句丽都城遗址。",
+    "highlights": [
+      "高句丽都城遗址"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "jilin-fangchuan",
+    "name": "防川",
+    "aliases": [
+      "防川",
+      "吉林"
+    ],
+    "mapId": "cn-22",
+    "regionId": "cn-22",
+    "regionName": "吉林省",
+    "city": "延边",
+    "category": "village",
+    "iconKey": "village",
+    "coordinates": [
+      130.58828611,
+      42.43700556
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5433823.json?revision=2526540407",
+      "entityId": "Q5433823",
+      "revision": 2526540407,
+      "modified": "2026-08-03T00:46:00Z",
+      "statementId": "Q5433823$0D5EEE79-3F35-4097-8DD6-2E9C5EAEC132",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00000277777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q5433823.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "anchorNote": "防川村条目代表点；边境狭长地形在粗化省区轮廓中失真，保留来源真实坐标，不据示意轮廓判定归属。不是导航入口。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94345110",
+    "text": "边境村落与河流。",
+    "highlights": [
+      "边境村落与河流"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "heilongjiang-saint-sophia",
+    "name": "圣索菲亚教堂",
+    "aliases": [
+      "圣索菲亚教堂 (哈尔滨)",
+      "黑龙江"
+    ],
+    "mapId": "cn-23",
+    "regionId": "cn-23",
+    "regionName": "黑龙江省",
+    "city": "哈尔滨",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      126.62128,
+      45.76818
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1632027.json?revision=2515909843",
+      "entityId": "Q1632027",
+      "revision": 2515909843,
+      "modified": "2026-07-10T15:28:56Z",
+      "statementId": "q1632027$683DA962-B746-4884-8463-0D8DF7C8D3FA",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00001,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q1632027.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "anchorNote": "圣索菲亚教堂公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=92076197",
+    "text": "绿色穹顶与红砖墙。",
+    "highlights": [
+      "绿色穹顶与红砖墙"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "heilongjiang-wudalianchi",
+    "name": "五大连池火山群",
+    "aliases": [
+      "五大连池火山群",
+      "黑龙江"
+    ],
+    "mapId": "cn-23",
+    "regionId": "cn-23",
+    "regionName": "黑龙江省",
+    "city": "黑河",
+    "category": "volcano",
+    "iconKey": "volcano",
+    "coordinates": [
+      126.12,
+      48.71666667
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2594712.json?revision=2515923811",
+      "entityId": "Q2594712",
+      "revision": 2515923811,
+      "modified": "2026-07-10T16:03:55Z",
+      "statementId": "Q2594712$4E1D37E5-30B4-42B9-9003-434F6F868E0F",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q2594712.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-a-fixes.json",
+      "evidenceSha256": "fb4521801a1f45fc23cc117e48556a8b854148089a9656c418e282a73701996c"
+    },
+    "anchorNote": "五大连池火山群公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=95139230",
+    "text": "火山与相连湖泊。",
+    "highlights": [
+      "火山与相连湖泊"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "heilongjiang-hengdaohezi",
+    "name": "横道河子站",
+    "aliases": [
+      "横道河子站",
+      "黑龙江"
+    ],
+    "mapId": "cn-23",
+    "regionId": "cn-23",
+    "regionName": "黑龙江省",
+    "city": "牡丹江",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      129.06634203138165,
+      44.81255219587785
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q11121687.json?revision=2529142175",
+      "entityId": "Q11121687",
+      "revision": 2529142175,
+      "modified": "2026-08-09T10:03:59Z",
+      "statementId": "Q11121687$45627828-4c27-1d6b-6ccf-b5080e3557a1",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 1e-8,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q11121687.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "anchorNote": "横道河子站公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=95010304",
+    "text": "木构车站与铁路记忆。",
+    "highlights": [
+      "木构车站与铁路记忆"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "heilongjiang-zhalong",
+    "name": "扎龙自然保护区",
+    "aliases": [
+      "扎龙自然保护区",
+      "黑龙江"
+    ],
+    "mapId": "cn-23",
+    "regionId": "cn-23",
+    "regionName": "黑龙江省",
+    "city": "齐齐哈尔",
+    "category": "wetland",
+    "iconKey": "wetland",
+    "coordinates": [
+      124.25,
+      47.2
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q197132.json?revision=2515850645",
+      "entityId": "Q197132",
+      "revision": 2515850645,
+      "modified": "2026-07-10T11:51:18Z",
+      "statementId": "Q197132$29714BFB-B4A2-4045-BDD6-F4AEE894B597",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.016666666666667,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q197132.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "anchorNote": "扎龙自然保护区公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=88667131",
+    "text": "芦苇湿地与水鸟。",
+    "highlights": [
+      "芦苇湿地与水鸟"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "shanghai-oriental-pearl",
+    "name": "东方明珠广播电视塔",
+    "aliases": [
+      "东方明珠广播电视塔",
+      "上海"
+    ],
+    "mapId": "cn-31",
+    "regionId": "cn-31",
+    "regionName": "上海市",
+    "city": "上海",
+    "category": "pagoda",
+    "iconKey": "pagoda",
+    "coordinates": [
+      121.49471666667,
+      31.241669444444
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q223207.json?revision=2542421257",
+      "entityId": "Q223207",
+      "revision": 2542421257,
+      "modified": "2026-09-08T19:14:39Z",
+      "statementId": "q223207$D4C05B2E-DF9E-4AD6-8E07-90EE2492144D",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.0000027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q223207.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "anchorNote": "东方明珠广播电视塔公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=93803918",
+    "text": "球体塔身与江岸。",
+    "highlights": [
+      "球体塔身与江岸"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "shanghai-yu-garden",
+    "name": "豫园",
+    "aliases": [
+      "豫园",
+      "上海"
+    ],
+    "mapId": "cn-31",
+    "regionId": "cn-31",
+    "regionName": "上海市",
+    "city": "上海",
+    "category": "garden",
+    "iconKey": "garden",
+    "coordinates": [
+      121.4875,
+      31.22916667
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1328025.json?revision=2550122201",
+      "entityId": "Q1328025",
+      "revision": 2550122201,
+      "modified": "2026-09-27T18:10:19Z",
+      "statementId": "Q1328025$0465E877-6E10-424D-9361-CB350C6A505B",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q1328025.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "anchorNote": "豫园公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94992788",
+    "text": "园林水面与亭台。",
+    "highlights": [
+      "园林水面与亭台"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "shanghai-slaughterhouse",
+    "name": "1933老场坊",
+    "aliases": [
+      "1933老场坊",
+      "上海"
+    ],
+    "mapId": "cn-31",
+    "regionId": "cn-31",
+    "regionName": "上海市",
+    "city": "上海",
+    "category": "museum",
+    "iconKey": "museum",
+    "coordinates": [
+      121.48785,
+      31.25663333
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q11056843.json?revision=2372665980",
+      "entityId": "Q11056843",
+      "revision": 2372665980,
+      "modified": "2025-07-03T08:13:14Z",
+      "statementId": "Q11056843$F1A2CCFD-28E2-4C3E-984C-67890974D7A7",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.000001,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q11056843.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "anchorNote": "1933老场坊公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=91953942",
+    "text": "工业建筑与交错廊桥。",
+    "highlights": [
+      "工业建筑与交错廊桥"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "shanghai-xujiahui-cathedral",
+    "name": "徐家汇天主堂",
+    "aliases": [
+      "徐家汇天主堂",
+      "上海"
+    ],
+    "mapId": "cn-31",
+    "regionId": "cn-31",
+    "regionName": "上海市",
+    "city": "上海",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      121.431389,
+      31.193056
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49633.json?revision=2516833422",
+      "entityId": "Q49633",
+      "revision": 2516833422,
+      "modified": "2026-07-13T00:21:28Z",
+      "statementId": "q49633$543C9BF9-7C61-473B-8EC4-DD8A44E34343",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00001,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q49633.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "anchorNote": "徐家汇天主堂公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=95215308",
+    "text": "双塔与砖砌教堂。",
+    "highlights": [
+      "双塔与砖砌教堂"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "jiangsu-humble-garden",
+    "name": "拙政园",
+    "aliases": [
+      "拙政园",
+      "江苏"
+    ],
+    "mapId": "cn-32",
+    "regionId": "cn-32",
+    "regionName": "江苏省",
+    "city": "苏州",
+    "category": "garden",
+    "iconKey": "garden",
+    "coordinates": [
+      120.62444444444,
+      31.325833333333
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1076650.json?revision=2552123471",
+      "entityId": "Q1076650",
+      "revision": 2552123471,
+      "modified": "2026-10-02T10:49:54Z",
+      "statementId": "Q1076650$BCC67063-D2E3-4A3C-BB78-EF235F04396E",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.001,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q1076650.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "anchorNote": "拙政园公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=93446803",
+    "text": "池塘与江南亭廊。",
+    "highlights": [
+      "池塘与江南亭廊"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "jiangsu-sun-mausoleum",
+    "name": "中山陵",
+    "aliases": [
+      "中山陵",
+      "江苏"
+    ],
+    "mapId": "cn-32",
+    "regionId": "cn-32",
+    "regionName": "江苏省",
+    "city": "南京",
+    "category": "museum",
+    "iconKey": "museum",
+    "coordinates": [
+      118.84826944444,
+      32.064416666667
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1338405.json?revision=2515902235",
+      "entityId": "Q1338405",
+      "revision": 2515902235,
+      "modified": "2026-07-10T15:05:56Z",
+      "statementId": "q1338405$F5122726-3703-46D3-A52B-B1FD8029BC15",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q1338405.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "anchorNote": "中山陵公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=93905714",
+    "text": "山坡台阶与蓝瓦殿堂。",
+    "highlights": [
+      "山坡台阶与蓝瓦殿堂"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "jiangsu-huishan",
+    "name": "惠山古镇",
+    "aliases": [
+      "惠山古镇",
+      "江苏"
+    ],
+    "mapId": "cn-32",
+    "regionId": "cn-32",
+    "regionName": "江苏省",
+    "city": "无锡",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      120.268216,
+      31.582032
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q11073375.json?revision=2515966768",
+      "entityId": "Q11073375",
+      "revision": 2515966768,
+      "modified": "2026-07-10T18:02:58Z",
+      "statementId": "Q11073375$f3813938-446a-4601-6d87-77d41e3b22f0",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.000001,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q11073375.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "anchorNote": "惠山古镇公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=93744104",
+    "text": "水巷与祠堂街区。",
+    "highlights": [
+      "水巷与祠堂街区"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "jiangsu-ge-garden",
+    "name": "个园",
+    "aliases": [
+      "个园",
+      "江苏"
+    ],
+    "mapId": "cn-32",
+    "regionId": "cn-32",
+    "regionName": "江苏省",
+    "city": "扬州",
+    "category": "garden",
+    "iconKey": "garden",
+    "coordinates": [
+      119.438148,
+      32.402015
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3277018.json?revision=2515929957",
+      "entityId": "Q3277018",
+      "revision": 2515929957,
+      "modified": "2026-07-10T16:21:36Z",
+      "statementId": "Q3277018$CC974936-F2B6-4066-AEE0-C8D291C6293B",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00000277777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q3277018.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "anchorNote": "个园公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=92116205",
+    "text": "竹林与叠石园景。",
+    "highlights": [
+      "竹林与叠石园景"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "anhui-huangshan",
+    "name": "黄山",
+    "aliases": [
+      "黄山",
+      "安徽"
+    ],
+    "mapId": "cn-34",
+    "regionId": "cn-34",
+    "regionName": "安徽省",
+    "city": "黄山",
+    "category": "snow-mountain",
+    "iconKey": "snow-mountain",
+    "coordinates": [
+      118.166667,
+      30.125
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q36034.json?revision=2554076669",
+      "entityId": "Q36034",
+      "revision": 2554076669,
+      "modified": "2026-10-06T18:06:40Z",
+      "statementId": "q36034$E8749E2F-8585-4A51-977F-EDF7EB06F250",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00001,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q36034.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "anchorNote": "黄山公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94378912",
+    "text": "花岗岩峰与山松。",
+    "highlights": [
+      "花岗岩峰与山松"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "anhui-hongcun",
+    "name": "宏村",
+    "aliases": [
+      "宏村",
+      "安徽"
+    ],
+    "mapId": "cn-34",
+    "regionId": "cn-34",
+    "regionName": "安徽省",
+    "city": "黄山",
+    "category": "village",
+    "iconKey": "village",
+    "coordinates": [
+      117.98166666667,
+      30.003611111111
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4008.json?revision=2555881675",
+      "entityId": "Q4008",
+      "revision": 2555881675,
+      "modified": "2026-10-11T13:12:41Z",
+      "statementId": "q4008$E0CDE81C-0790-46BE-B300-9E5FB18D4D53",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": null,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q4008.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "anchorNote": "宏村公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=93512565",
+    "text": "白墙黑瓦与村中水面。",
+    "highlights": [
+      "白墙黑瓦与村中水面"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "anhui-chengkan",
+    "name": "呈坎村",
+    "aliases": [
+      "呈坎村",
+      "安徽"
+    ],
+    "mapId": "cn-34",
+    "regionId": "cn-34",
+    "regionName": "安徽省",
+    "city": "黄山",
+    "category": "village",
+    "iconKey": "village",
+    "coordinates": [
+      118.28138889,
+      29.92138889
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10920045.json?revision=2522145405",
+      "entityId": "Q10920045",
+      "revision": 2522145405,
+      "modified": "2026-07-24T16:11:24Z",
+      "statementId": "Q10920045$335493CD-CBF5-4EB7-B9A0-2D778FC31940",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.000001,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q10920045.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "anchorNote": "呈坎村公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=92583502",
+    "text": "徽州古村与层叠屋顶。",
+    "highlights": [
+      "徽州古村与层叠屋顶"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "anhui-tangyue",
+    "name": "棠樾牌坊群",
+    "aliases": [
+      "棠樾牌坊群",
+      "安徽"
+    ],
+    "mapId": "cn-34",
+    "regionId": "cn-34",
+    "regionName": "安徽省",
+    "city": "黄山",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      118.36513,
+      29.87103
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q11116971.json?revision=2372659196",
+      "entityId": "Q11116971",
+      "revision": 2372659196,
+      "modified": "2025-07-03T08:00:49Z",
+      "statementId": "Q11116971$C98235C6-6A08-4D2C-BA48-8CB52AB130D6",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.000001,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q11116971.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-01.json",
+      "evidenceSha256": "93783bd8503c5482c8f9a555dd92e54f7bdd64c856c67dcb3226abe5343e945f"
+    },
+    "anchorNote": "棠樾牌坊群公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=92993703",
+    "text": "石牌坊组成的古村轴线。",
+    "highlights": [
+      "石牌坊组成的古村轴线"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "jiangxi-lushan",
+    "name": "庐山·汉阳峰",
+    "aliases": [
+      "汉阳峰",
+      "江西"
+    ],
+    "mapId": "cn-36",
+    "regionId": "cn-36",
+    "regionName": "江西省",
+    "city": "九江",
+    "category": "snow-mountain",
+    "iconKey": "snow-mountain",
+    "coordinates": [
+      115.956,
+      29.5005
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3382304.json?revision=2013754811",
+      "entityId": "Q3382304",
+      "revision": 2013754811,
+      "modified": "2023-11-18T23:55:14Z",
+      "statementId": "Q3382304$1E175136-D859-436F-912E-F8D3236A508E",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.1,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q3382304.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-a-anchor.json",
+      "evidenceSha256": "bdd1f9bfed71d7e591f5526480ec2838e94dc19f3642171baeb66ecd6597fb36"
+    },
+    "anchorNote": "以庐山最高峰汉阳峰为明确代表点，采用汉阳峰条目坐标；不混用庐山遗产范围和山体条目的宽泛登记点。仅作回忆定位，不是景区入口。",
+    "source": "https://whc.unesco.org/en/list/778/",
+    "text": "庐山主峰的山林与峰峦。",
+    "highlights": [
+      "庐山主峰的山林与峰峦"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "jiangxi-tengwang",
+    "name": "滕王阁",
+    "aliases": [
+      "滕王阁",
+      "江西"
+    ],
+    "mapId": "cn-36",
+    "regionId": "cn-36",
+    "regionName": "江西省",
+    "city": "南昌",
+    "category": "pagoda",
+    "iconKey": "pagoda",
+    "coordinates": [
+      115.8756502,
+      28.6840416
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1375487.json?revision=2519708508",
+      "entityId": "Q1375487",
+      "revision": 2519708508,
+      "modified": "2026-07-19T15:34:08Z",
+      "statementId": "Q1375487$112b9c50-48e6-27d1-60a6-e3ff270b0b5b",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.0000277778,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q1375487.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "anchorNote": "滕王阁公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=92662823",
+    "text": "江岸上的层叠楼阁。",
+    "highlights": [
+      "江岸上的层叠楼阁"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "jiangxi-yaoli",
+    "name": "瑶里古镇",
+    "aliases": [
+      "瑶里镇",
+      "江西"
+    ],
+    "mapId": "cn-36",
+    "regionId": "cn-36",
+    "regionName": "江西省",
+    "city": "景德镇",
+    "category": "village",
+    "iconKey": "village",
+    "coordinates": [
+      117.5679,
+      29.5323
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3496635.json?revision=2550688701",
+      "entityId": "Q3496635",
+      "revision": 2550688701,
+      "modified": "2026-09-28T23:32:43Z",
+      "statementId": "q3496635$459024B0-C0BE-4E56-8FD9-9A0E9C5BB871",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 1e-7,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q3496635.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "anchorNote": "瑶里古镇代表点；Wikidata瑶里镇坐标与OSM瑶里古镇旅游节点5175990732相邻，区别于行政镇域中心。不是导航入口。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=91258064",
+    "text": "沿河民居与古桥。",
+    "highlights": [
+      "沿河民居与古桥"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "jiangxi-white-deer",
+    "name": "白鹿洞书院",
+    "aliases": [
+      "白鹿洞书院",
+      "江西"
+    ],
+    "mapId": "cn-36",
+    "regionId": "cn-36",
+    "regionName": "江西省",
+    "city": "九江",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      116.03719,
+      29.51961
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q414476.json?revision=2550113901",
+      "entityId": "Q414476",
+      "revision": 2550113901,
+      "modified": "2026-09-27T17:42:04Z",
+      "statementId": "Q414476$9BA510DA-B580-468E-80C9-B17DB10035C6",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.000001,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q414476.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "anchorNote": "白鹿洞书院公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=95052658",
+    "text": "山间书院与院落。",
+    "highlights": [
+      "山间书院与院落"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "shandong-taishan",
+    "name": "泰山",
+    "aliases": [
+      "泰山",
+      "山东"
+    ],
+    "mapId": "cn-37",
+    "regionId": "cn-37",
+    "regionName": "山东省",
+    "city": "泰安",
+    "category": "snow-mountain",
+    "iconKey": "snow-mountain",
+    "coordinates": [
+      117.1,
+      36.266666666667
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q216059.json?revision=2558190425",
+      "entityId": "Q216059",
+      "revision": 2558190425,
+      "modified": "2026-10-18T01:08:57Z",
+      "statementId": "q216059$3607AEA9-23EA-4394-AB3A-C375FF32A725",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.016666666666667,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q216059.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "anchorNote": "泰山整体代表点；采用与UNESCO遗产437登记位置一致的Wikidata条目坐标，不声称玉皇顶或景区入口。",
+    "source": "https://whc.unesco.org/en/list/437/",
+    "text": "山峰与登山石阶。",
+    "highlights": [
+      "山峰与登山石阶"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "shandong-confucius-temple",
+    "name": "曲阜孔庙",
+    "aliases": [
+      "曲阜孔庙",
+      "山东"
+    ],
+    "mapId": "cn-37",
+    "regionId": "cn-37",
+    "regionName": "山东省",
+    "city": "济宁",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      116.984,
+      35.5967
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q339822.json?revision=2535669629",
+      "entityId": "Q339822",
+      "revision": 2535669629,
+      "modified": "2026-08-24T04:14:18Z",
+      "statementId": "Q339822$86461CF1-E22F-491D-AE8E-968EEC4EFE4A",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.01104756370315,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q339822.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "anchorNote": "曲阜孔庙公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94491366",
+    "text": "轴线殿宇与古树。",
+    "highlights": [
+      "轴线殿宇与古树"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "shandong-qingzhou",
+    "name": "青州古城",
+    "aliases": [
+      "青州古城",
+      "山东"
+    ],
+    "mapId": "cn-37",
+    "regionId": "cn-37",
+    "regionName": "山东省",
+    "city": "潍坊",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      118.47364,
+      36.67713
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q139679534.json?revision=2513583163",
+      "entityId": "Q139679534",
+      "revision": 2513583163,
+      "modified": "2026-07-03T22:46:07Z",
+      "statementId": "Q139679534$8052cccc-4ec4-a3e2-fd7a-bf01fd91d752",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00001,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q139679534.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "anchorNote": "青州古城公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=92795756",
+    "text": "城门与古街。",
+    "highlights": [
+      "城门与古街"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "shandong-penglai",
+    "name": "蓬莱阁",
+    "aliases": [
+      "蓬莱阁",
+      "山东"
+    ],
+    "mapId": "cn-37",
+    "regionId": "cn-37",
+    "regionName": "山东省",
+    "city": "烟台",
+    "category": "pagoda",
+    "iconKey": "pagoda",
+    "coordinates": [
+      120.750732,
+      37.829989
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1937908.json?revision=2535669849",
+      "entityId": "Q1937908",
+      "revision": 2535669849,
+      "modified": "2026-08-24T04:15:34Z",
+      "statementId": "Q1937908$8E978AFC-EFED-46B6-AF22-958C9EB8B10A",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00000277777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q1937908.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "anchorNote": "蓬莱阁公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=85702301",
+    "text": "海边楼阁与山崖。",
+    "highlights": [
+      "海边楼阁与山崖"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "henan-longmen",
+    "name": "龙门石窟",
+    "aliases": [
+      "龙门石窟",
+      "河南"
+    ],
+    "mapId": "cn-41",
+    "regionId": "cn-41",
+    "regionName": "河南省",
+    "city": "洛阳",
+    "category": "cave",
+    "iconKey": "cave",
+    "coordinates": [
+      112.46972222222,
+      34.555555555556
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q273834.json?revision=2545516373",
+      "entityId": "Q273834",
+      "revision": 2545516373,
+      "modified": "2026-09-14T09:13:13Z",
+      "statementId": "q273834$0D22B9AF-2E8F-44C4-9981-418F40D8B9A6",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": null,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q273834.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "anchorNote": "龙门石窟公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94688574",
+    "text": "河畔崖壁与石窟。",
+    "highlights": [
+      "河畔崖壁与石窟"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "henan-shaolin",
+    "name": "少林寺",
+    "aliases": [
+      "少林寺",
+      "河南"
+    ],
+    "mapId": "cn-41",
+    "regionId": "cn-41",
+    "regionName": "河南省",
+    "city": "郑州",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      112.93569,
+      34.50709
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q232771.json?revision=2530036760",
+      "entityId": "Q232771",
+      "revision": 2530036760,
+      "modified": "2026-08-11T14:43:24Z",
+      "statementId": "Q232771$0f5cd2bc-48dc-e7c7-44b0-0496b6f85919",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.0000277778,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q232771.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-03.json",
+      "evidenceSha256": "fbcc9a2771525204887b6c558cae577bb6ef1538bbb1fc04807eb4ceb09ea74b"
+    },
+    "anchorNote": "少林寺公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94697579",
+    "text": "寺院与塔林。",
+    "highlights": [
+      "寺院与塔林"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "henan-guanlin",
+    "name": "关林",
+    "aliases": [
+      "关林",
+      "河南"
+    ],
+    "mapId": "cn-41",
+    "regionId": "cn-41",
+    "regionName": "河南省",
+    "city": "洛阳",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      112.47722222,
+      34.60861111
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1552783.json?revision=2544823703",
+      "entityId": "Q1552783",
+      "revision": 2544823703,
+      "modified": "2026-09-13T02:28:56Z",
+      "statementId": "Q1552783$DE344D42-3B66-4EBD-B9FC-7C7BE0A3FB69",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q1552783.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-a-fixes.json",
+      "evidenceSha256": "fb4521801a1f45fc23cc117e48556a8b854148089a9656c418e282a73701996c"
+    },
+    "anchorNote": "关林公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94656951",
+    "text": "古树与红色庙宇屋檐。",
+    "highlights": [
+      "古树与红色庙宇屋檐"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "henan-shedian",
+    "name": "赊店镇",
+    "aliases": [
+      "赊店镇",
+      "河南"
+    ],
+    "mapId": "cn-41",
+    "regionId": "cn-41",
+    "regionName": "河南省",
+    "city": "南阳",
+    "category": "old-town",
+    "iconKey": "old-town",
+    "coordinates": [
+      112.93909,
+      33.05781
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q13909523.json?revision=2523447384",
+      "entityId": "Q13909523",
+      "revision": 2523447384,
+      "modified": "2026-07-27T14:14:42Z",
+      "statementId": "Q13909523$29A094EB-5092-4342-ADBA-875DB55F3A2D",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00001,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q13909523.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "anchorNote": "赊店镇公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=91038889",
+    "text": "商埠街巷与会馆。",
+    "highlights": [
+      "商埠街巷与会馆"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "hubei-yellow-crane",
+    "name": "黄鹤楼",
+    "aliases": [
+      "黄鹤楼",
+      "湖北"
+    ],
+    "mapId": "cn-42",
+    "regionId": "cn-42",
+    "regionName": "湖北省",
+    "city": "武汉",
+    "category": "pagoda",
+    "iconKey": "pagoda",
+    "coordinates": [
+      114.29694444,
+      30.54694444
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q462372.json?revision=2517838611",
+      "entityId": "Q462372",
+      "revision": 2517838611,
+      "modified": "2026-07-15T18:41:46Z",
+      "statementId": "Q462372$06CBB195-F4AE-44C5-B0F2-F181A8B1988D",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q462372.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "anchorNote": "黄鹤楼公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94882021",
+    "text": "层叠飞檐与江城楼阁。",
+    "highlights": [
+      "层叠飞檐与江城楼阁"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "hubei-wudang",
+    "name": "武当山",
+    "aliases": [
+      "武当山",
+      "湖北"
+    ],
+    "mapId": "cn-42",
+    "regionId": "cn-42",
+    "regionName": "湖北省",
+    "city": "十堰",
+    "category": "temple",
+    "iconKey": "temple",
+    "coordinates": [
+      111.00388888889,
+      32.400833333333
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4034.json?revision=2553155246",
+      "entityId": "Q4034",
+      "revision": 2553155246,
+      "modified": "2026-10-04T19:17:38Z",
+      "statementId": "q4034$AB68A229-F30B-430A-A4B8-98D83F21CA7F",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": null,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q4034.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-04.json",
+      "evidenceSha256": "4d9b448b2b38efe5e20b93e384f05db4619af5c9425fa69e079a653fa4085859"
+    },
+    "anchorNote": "武当山公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=94859759",
+    "text": "山峰上的宫观。",
+    "highlights": [
+      "山峰上的宫观"
+    ],
+    "priority": 1,
+    "discoveryTier": "classic"
+  },
+  {
+    "id": "hubei-longzhong",
+    "name": "古隆中",
+    "aliases": [
+      "古隆中",
+      "湖北"
+    ],
+    "mapId": "cn-42",
+    "regionId": "cn-42",
+    "regionName": "湖北省",
+    "city": "襄阳",
+    "category": "garden",
+    "iconKey": "garden",
+    "coordinates": [
+      112.027003,
+      31.994077
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q130891.json?revision=2515840740",
+      "entityId": "Q130891",
+      "revision": 2515840740,
+      "modified": "2026-07-10T11:12:58Z",
+      "statementId": "Q130891$1A177AB9-E3B3-4EEB-BCE9-639AB6B54CDC",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.000001,
+      "referenceCount": 0,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q130891.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-02.json",
+      "evidenceSha256": "60538b5df01d41cb33eb9ddf1c18cb75a84f396cf68ad2eaefa67f2005becb49"
+    },
+    "anchorNote": "古隆中公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=89002608",
+    "text": "山林间的历史园景。",
+    "highlights": [
+      "山林间的历史园景"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  },
+  {
+    "id": "hubei-guqin-terrace",
+    "name": "古琴台",
+    "aliases": [
+      "古琴臺",
+      "湖北"
+    ],
+    "mapId": "cn-42",
+    "regionId": "cn-42",
+    "regionName": "湖北省",
+    "city": "武汉",
+    "category": "garden",
+    "iconKey": "garden",
+    "coordinates": [
+      114.25833333,
+      30.55666667
+    ],
+    "coordinateSystem": "WGS84",
+    "coordinateSource": {
+      "type": "wikidata-coordinate",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10913488.json?revision=2191928235",
+      "entityId": "Q10913488",
+      "revision": 2191928235,
+      "modified": "2024-06-30T08:03:07Z",
+      "statementId": "Q10913488$4CEAE63C-813C-469F-A850-11A10660DDC2",
+      "globe": "http://www.wikidata.org/entity/Q2",
+      "precision": 0.00027777777777778,
+      "referenceCount": 1,
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "evidenceKey": "entities.Q10913488.claims.P625",
+      "evidenceFile": "reference/catalogue/expansion/other-wikidata-a-fixes.json",
+      "evidenceSha256": "fb4521801a1f45fc23cc117e48556a8b854148089a9656c418e282a73701996c"
+    },
+    "anchorNote": "古琴台公开条目代表点；景区和建筑群使用整体代表位置，仅作回忆定位，不是导航入口或到访证明。",
+    "source": "https://zh.wikipedia.org/w/index.php?oldid=92754597",
+    "text": "湖畔亭廊与琴台。",
+    "highlights": [
+      "湖畔亭廊与琴台"
+    ],
+    "priority": 2,
+    "discoveryTier": "local"
+  }
+]

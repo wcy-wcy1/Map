@@ -3,11 +3,11 @@ import { inject, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import * as L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import type { Coordinates, Cover, Geography, Place, Region, VisitSummary } from '../domain/models'
-import { group, type PlaceGroup } from '../domain/map-layout'
-import { svg } from '../map/landmarks'
-import { focusAnchor, markerDimensions, markerLabel } from '../map/presentation'
+import { type PlaceGroup } from '../domain/map-layout'
+import { svg, ensureLandmarks, subscribeLandmarks, nationalLandmarkSvg } from '../map/landmarks'
+import { clusterZoom, focusAnchor, markerDimensions, markerLabel, overviewPlaces, stableGroups } from '../map/presentation'
 import { selectPlaceCover } from '../domain/place-cover'
-import { layoutMapCovers, type Rect } from '../map/cover-layout'
+import { layoutMapCovers, layoutMapLabels, type Rect, type CoverPlacement } from '../map/cover-layout'
 import { createMapPhotoCover } from '../map/photo-cover'
 import { buildMemoryRoutes, type MemoryRoute } from '../map/routes'
 import { PHOTO_LOADER_KEY } from '../services/photo-loader'
@@ -27,8 +27,9 @@ const props = withDefaults(defineProps<{
   provinceId?: string
   areaLabel?: string
   pickingLocation?: boolean
+  bottomInset?: number
   plannedRouteIds?: readonly string[]
-}>(), { query: '', regionId: '', provinceId: 'yunnan', areaLabel: '云南', pickingLocation: false, recordIndex: () => new Map(), covers: () => [], revision: -1, plannedRouteIds: () => [] })
+}>(), { bottomInset: 0, query: '', regionId: '', provinceId: 'yunnan', areaLabel: '云南', pickingLocation: false, recordIndex: () => new Map(), covers: () => [], revision: -1, plannedRouteIds: () => [] })
 const emit = defineEmits<{
   select: [placeId: string]
   cluster: [placeIds: string[]]
@@ -44,9 +45,44 @@ const routeSummary = ref('')
 const plannedSummary = ref('')
 const zoom = ref(5)
 const coarsePointer = ref(false)
+const artworkFailed = ref(false)
+let unsubscribeArtwork: (() => void) | undefined
+let artworkRequest = 0
+async function loadArtwork() {
+  const request = ++artworkRequest
+  artworkFailed.value = false
+  try { await ensureLandmarks(props.provinceId) }
+  catch { if (request === artworkRequest) artworkFailed.value = true }
+}
 const photoLoader = inject(PHOTO_LOADER_KEY, null)
-let photoViews: ReturnType<typeof createMapPhotoCover>[] = []
-function releasePhotos() { photoViews.forEach(view => view.dispose()); photoViews = [] }
+interface MarkerView {
+  marker: L.Marker
+  button: HTMLButtonElement
+  artwork: HTMLSpanElement
+  label: HTMLSpanElement
+  count: HTMLSpanElement
+  item: PlaceGroup
+  artworkKey: string
+  size: number
+  coverKey?: string
+  photo?: ReturnType<typeof createMapPhotoCover>
+}
+const markerViews = new Map<string, MarkerView>()
+const labelViews = new Map<string, { marker: L.Marker; label: HTMLSpanElement }>()
+const featureMetrics = new WeakMap<Geography['features'][number], { bounds: L.LatLngBounds; center: L.LatLng }>()
+const scopeViews = new Map<string, { center: L.LatLng; zoom: number }>()
+let previousGroups: PlaceGroup[] = []
+let previousCoverOffsets = new Map<string, CoverPlacement>()
+let routeKey = ''
+let reducedMotion: MediaQueryList | undefined
+let scopeAnimation: Animation | undefined
+function revealScope() {
+  scopeAnimation?.cancel()
+  if (!reducedMotion?.matches) scopeAnimation = element.value?.animate?.([{ opacity: 0.65 }, { opacity: 1 }], { duration: 220, easing: 'ease-out' })
+}
+function releaseMarker(view: MarkerView) { view.photo?.dispose(); markers?.removeLayer(view.marker) }
+function motion(duration = 0.24): L.ZoomPanOptions { return { animate: !reducedMotion?.matches, duration } }
+
 let map: L.Map | undefined
 let markers: L.LayerGroup | undefined
 let routes: L.LayerGroup | undefined
@@ -70,16 +106,26 @@ const nationalLabelGap = (zoom: number) => zoom < 4.8 ? 26 : zoom < 5.8 ? 16 : 8
 
 function fitProvince() {
   if (!map || !provinceBounds?.isValid() || !element.value) return
-  map.fitBounds(provinceBounds, { padding: element.value.clientWidth < 500 ? [18, 32] : [40, 40], animate: false })
+  map.stop()
+  map.fitBounds(provinceBounds, { padding: !props.provinceId ? [24, 28] : element.value.clientWidth < 500 ? [18, 32] : [40, 40], animate: false })
+  revealScope()
 }
 function fitPlaces(places: readonly Place[]) {
   if (!map || !places.length) return
+  map.stop()
   const first = places[0]
-  if (places.length === 1 && first) map.setView(asLatLng(first), 9.5, { animate: false })
-  else map.fitBounds(L.latLngBounds(places.map(asLatLng)), { padding: [62, 70], maxZoom: 12, animate: false })
+  if (places.length === 1 && first) map.setView(asLatLng(first), 9.5, motion())
+  else map.fitBounds(L.latLngBounds(places.map(asLatLng)), { paddingTopLeft: [62, 70], paddingBottomRight: [62, 70 + props.bottomInset], maxZoom: 12, ...motion() })
 }
 function selectPlace(place: Place) {
-  map?.setView(asLatLng(place), Math.max(9.5, map.getZoom()), { animate: false })
+  if (!map) return
+  map.stop()
+  const point = map.latLngToContainerPoint(asLatLng(place)), size = map.getSize()
+  const left = 72, right = Math.max(left, size.x - 80)
+  const top = 90, bottom = Math.max(top, size.y - props.bottomInset - 80)
+  const x = Math.min(right, Math.max(left, point.x)), y = Math.min(bottom, Math.max(top, point.y))
+  // Selection is immediate; only move an obscured anchor into the usable area.
+  if (x !== point.x || y !== point.y) map.panBy([point.x - x, point.y - y], motion())
 }
 defineExpose({ fitProvince, fitOverview: fitProvince, fitPlaces, selectPlace })
 
@@ -94,19 +140,15 @@ function activateGroup(item: PlaceGroup) {
     return
   }
   const bounds = L.latLngBounds(item.members.map(asLatLng))
-  const next = Math.min(18, Math.max(map.getZoom() + 1.5, map.getBoundsZoom(bounds, false, L.point(140, 140))))
-  map.setView(bounds.getCenter(), next, { animate: false })
+  const spread = map.project(bounds.getNorthEast(), 16).distanceTo(map.project(bounds.getSouthWest(), 16))
+  const next = clusterZoom(map.getZoom(), map.getBoundsZoom(bounds, false, L.point(140, 140)), spread)
+  map.stop()
+  if (next > map.getZoom()) map.setView(bounds.getCenter(), next, motion())
   emit('cluster', item.members.map(place => place.id))
   queueMarkers()
   if (window.matchMedia('(max-width:900px)').matches) element.value?.focus({ preventScroll: true })
 }
 
-function addText(parent: HTMLElement, className: string, text: string) {
-  const span = document.createElement('span')
-  span.className = className
-  span.textContent = text
-  parent.append(span)
-}
 const collides = (rect: Rect, others: readonly Rect[], gap = 6) => others.some(other =>
   rect.x < other.x + other.width + gap && rect.x + rect.width + gap > other.x &&
   rect.y < other.y + other.height + gap && rect.y + rect.height + gap > other.y)
@@ -141,18 +183,21 @@ function labelCenter(feature: Geography['features'][number], fallback: L.LatLng)
 
 function renderRoutes(currentZoom: number) {
   if (!map || !routes) return
-  routes.clearLayers()
   routeSummary.value = ''
   plannedSummary.value = ''
   activeRouteIds = []
   activePlannedIds = []
   // The route is a diary affordance, not a national navigation overlay.
   // Keep it hidden in the overview and reveal it once the map is readable.
-  if (props.pickingLocation) return
-  const plannedRoute = plannedMemoryRoute()
-  if (plannedRoute && currentZoom >= 5) addRoute(plannedRoute, 'planned')
-  const memoryRoutes = currentZoom >= 8.5 ? buildMemoryRoutes(props.places, props.recordIndex) : []
-  for (const route of memoryRoutes) addRoute(route, 'memory')
+  const plannedRoute = !props.pickingLocation && currentZoom >= 5 ? plannedMemoryRoute() : null
+  const memoryRoutes = !props.pickingLocation && currentZoom >= 8.5 ? buildMemoryRoutes(props.places, props.recordIndex) : []
+  const key = JSON.stringify([plannedRoute, memoryRoutes])
+  if (key !== routeKey) {
+    routes.clearLayers()
+    if (plannedRoute) addRoute(plannedRoute, 'planned')
+    for (const route of memoryRoutes) addRoute(route, 'memory')
+    routeKey = key
+  }
   const activeRoute = memoryRoutes.find(route => route.coordinates.some(([longitude, latitude]) =>
     map?.getBounds().contains([latitude, longitude])))
   if (activeRoute) {
@@ -207,20 +252,31 @@ function renderMarkers() {
   if (!map || !markers || !regionLabels || !element.value) return
   const active = document.activeElement instanceof HTMLElement && element.value.contains(document.activeElement)
     ? document.activeElement.dataset.mapPlace : undefined
-  releasePhotos()
-  markers.clearLayers()
-  regionLabels.clearLayers()
   const currentZoom = map.getZoom()
+  const visited = new Set(props.visitedIds)
   renderRoutes(currentZoom)
   const dimensions = markerDimensions(currentZoom)
-  const projected = props.places.map(place => {
+  const size = map.getSize()
+  const controls: Rect[] = [{ x: size.x - 62, y: 10, width: 52, height: 152 },
+    { x: 12, y: 12, width: 40, height: 30 }, { x: 0, y: size.y - 62, width: size.x, height: 62 }]
+  const overview = !props.provinceId && currentZoom < 7 && !props.query
+  const viewport = map.getBounds().pad(0.18)
+  const candidates = overview ? overviewPlaces(props.places.filter(place => {
+    if (!viewport.contains(L.latLng(...asLatLng(place)))) return false
+    if (place.id === props.selectedId || visited.has(place.id)) return true
+    const point = map!.latLngToContainerPoint(asLatLng(place))
+    // Pick another representative when a fixed control would cover this symbol;
+    // neither the public point nor a user's selected coordinate is displaced.
+    return !collides({ x: point.x - dimensions.anchorX, y: point.y - dimensions.anchorY,
+      width: dimensions.width, height: dimensions.height }, controls, 0)
+  }), props.visitedIds, props.selectedId, element.value.clientWidth < 600 ? 6 : 12) : props.places
+  const projected = candidates.map(place => {
     const pixel = map!.project(asLatLng(place), currentZoom)
     return { ...place, x: pixel.x, y: pixel.y }
   })
-  const groups = group(projected, { radius: currentZoom >= 14 ? 54 : 70, selectedId: props.selectedId })
-  const viewport = map.getBounds().pad(0.18)
+  const groups = stableGroups(projected, previousGroups, { radius: overview ? 60 : currentZoom >= 14 ? 54 : 70, selectedId: props.selectedId })
+  previousGroups = groups
   const visible: PlaceGroup[] = []
-  const visited = new Set(props.visitedIds)
   // Layout uses container pixels, while grouping continues to use true projected
   // coordinates. Neither the artwork nor the geographic anchor is displaced.
   const visibleGroups = groups.filter(item => viewport.contains(L.latLng(...asLatLng(item.anchor))))
@@ -232,28 +288,33 @@ function renderMarkers() {
     const point = map!.latLngToContainerPoint(asLatLng(item.anchor))
     return { id: item.anchor.id, x: point.x - dimensions.anchorX, y: point.y - dimensions.anchorY,
       width: dimensions.width, height: dimensions.height, anchorX: point.x, anchorY: point.y,
-      hasCover: !!coverReferences.get(item.anchor.id), selected: item.anchor.id === props.selectedId }
+      hasCover: !!coverReferences.get(item.anchor.id), selected: item.anchor.id === props.selectedId,
+      labelWidth: Math.min(172, Math.max(48, [...item.anchor.name].length * 17 + 24)) }
   })
   const obstacles: Rect[] = []
+  if (props.bottomInset) obstacles.push({ x: 0, y: map.getSize().y - props.bottomInset, width: map.getSize().x, height: props.bottomInset })
   visibleGroups.forEach((item, index) => {
     const marker = layoutMarkers[index]!
     const left = marker.x, top = marker.y
-    // Reserve even transient hover labels, so revealing a name cannot cover a photo.
-    obstacles.push({ x: marker.anchorX - 86, y: top + dimensions.height + 5, width: 172, height: 31 })
     if (item.members.length > 1) {
       const width = Math.max(36, String(item.members.length).length * 7 + 20)
       obstacles.push({ x: left + dimensions.width + 8 - width, y: top, width, height: 22 })
     }
   })
   // UI overlays (controls, north, attribution/scale and status) must also stay clear.
-  const size = map.getSize()
-  obstacles.push({ x: size.x - 62, y: 10, width: 52, height: 152 },
-    { x: 12, y: 12, width: 40, height: 30 }, { x: 0, y: size.y - 62, width: size.x, height: 62 })
+  obstacles.push(...controls)
   if (routeSummary.value) obstacles.push({ x: 12, y: size.y - 104, width: Math.min(370, size.x * 0.62), height: 42 })
   if (plannedSummary.value) obstacles.push({ x: 12, y: size.y - 150, width: Math.min(370, size.x * 0.62), height: 42 })
-  const placements = layoutMapCovers(layoutMarkers, { width: size.x, height: size.y }, obstacles)
+  const labelPlacements = layoutMapLabels(layoutMarkers, { width: size.x, height: size.y }, obstacles)
+  obstacles.push(...labelPlacements.values())
+  const placements = layoutMapCovers(layoutMarkers, { width: size.x, height: size.y }, obstacles, previousCoverOffsets)
+  previousCoverOffsets = new Map(layoutMarkers.flatMap(marker => {
+    const placement = placements.get(marker.id)
+    return placement ? [[marker.id, { ...placement, x: placement.x - marker.anchorX, y: placement.y - marker.anchorY }] as const] : []
+  }))
   let shown = 0
   let grouped = 0
+  const liveMarkers = new Set<string>()
   for (const item of groups) {
     const place = item.anchor
     const latlng = L.latLng(...asLatLng(place))
@@ -261,9 +322,32 @@ function renderMarkers() {
     visible.push(item)
     shown += item.members.length
     if (item.members.length > 1) grouped++
-    const button = document.createElement('button')
-    button.type = 'button'
-    button.className = 'yn-pin'
+    liveMarkers.add(place.id)
+    let view = markerViews.get(place.id)
+    if (!view) {
+      const button = document.createElement('button')
+      button.type = 'button'; button.className = 'yn-pin'
+      const artwork = document.createElement('span'), label = document.createElement('span'), count = document.createElement('span')
+      artwork.className = 'yn-pin-artwork'; label.className = 'yn-pin-label'; count.className = 'yn-cluster-count'
+      button.append(artwork, label, count)
+      const marker = L.marker(latlng, { keyboard: false, bubblingMouseEvents: false,
+        icon: L.divIcon({ className: 'yn-map-icon', html: button, iconSize: [dimensions.width, dimensions.height], iconAnchor: [dimensions.anchorX, dimensions.anchorY] }) })
+      view = { marker, button, artwork, label, count, item, artworkKey: '', size: dimensions.width }
+      markerViews.set(place.id, view)
+      button.addEventListener('click', () => activateGroup(markerViews.get(place.id)!.item))
+      L.DomEvent.disableClickPropagation(button)
+      markers.addLayer(marker)
+    }
+    const { button } = view
+    view.item = item
+    view.marker.setLatLng(latlng).setZIndexOffset(place.id === props.selectedId ? 1000 : 0)
+    // Resize the existing icon wrapper instead of detaching its focused button/photo.
+    const icon = view.marker.getElement()
+    if (icon && view.size !== dimensions.width) {
+      icon.style.width = `${dimensions.width}px`; icon.style.height = `${dimensions.height}px`
+      icon.style.marginLeft = `${-dimensions.anchorX}px`; icon.style.marginTop = `${-dimensions.anchorY}px`
+      view.size = dimensions.width
+    }
     button.style.width = `${dimensions.width}px`
     button.style.height = `${dimensions.height}px`
     button.dataset.mapPlace = place.id
@@ -273,39 +357,47 @@ function renderMarkers() {
     const visitedCount = item.members.filter(member => visited.has(member.id)).length
     button.dataset.visited = String(visitedCount > 0)
     button.dataset.visitedCount = String(visitedCount)
-    button.dataset.label = String(currentZoom >= PLACE_LABEL_ZOOM && item.members.length === 1)
+    const labelPlacement = labelPlacements.get(place.id)
+    button.dataset.label = String(!!labelPlacement && (place.id === props.selectedId ||
+      (currentZoom >= PLACE_LABEL_ZOOM || overview || props.places.length <= 4) && item.members.length === 1))
     button.setAttribute('aria-pressed', String(props.selectedId === place.id))
     button.setAttribute('aria-label', markerLabel(item, visited, props.pickingLocation))
     // svg() only returns internal authored artwork. User names never enter markup.
-    button.innerHTML = svg(place.iconKey, { variant: place.id })
+    const artwork = (overview ? nationalLandmarkSvg(place.mapId ?? '', place.id) : undefined) ?? svg(place.iconKey, { variant: place.id })
+    if (view.artworkKey !== artwork) { view.artwork.innerHTML = artwork; view.artworkKey = artwork }
     const reference = coverReferences.get(place.id), placement = placements.get(place.id)
     button.dataset.cover = reference ? placement ? 'shown' : 'collapsed' : 'none'
-    if (reference && placement) {
-      const point = map.latLngToContainerPoint(asLatLng(place))
-      const view = createMapPhotoCover(reference, props.revision, photoLoader)
-      view.element.style.left = `${placement.x - point.x + dimensions.anchorX}px`
-      view.element.style.top = `${placement.y - point.y + dimensions.anchorY}px`
-      view.element.style.width = `${placement.width}px`
-      view.element.style.height = `${placement.height}px`
-      view.element.dataset.compact = String(placement.compact)
-      button.append(view.element); photoViews.push(view)
+    const coverKey = reference && placement ? JSON.stringify([reference.visitId, reference.photoId, reference.photoCount, props.revision]) : undefined
+    if (view.coverKey !== coverKey) {
+      view.photo?.dispose(); view.photo?.element.remove(); view.photo = undefined
+      view.coverKey = coverKey
+      if (reference && placement) { view.photo = createMapPhotoCover(reference, props.revision, photoLoader); button.append(view.photo.element) }
+    }
+    if (reference && placement && view.photo) {
+      const point = map.latLngToContainerPoint(asLatLng(place)), photo = view.photo.element
+      photo.style.left = `${placement.x - point.x + dimensions.anchorX}px`
+      photo.style.top = `${placement.y - point.y + dimensions.anchorY}px`
+      photo.style.width = `${placement.width}px`; photo.style.height = `${placement.height}px`
+      photo.dataset.compact = String(placement.compact)
       button.setAttribute('aria-label', `${markerLabel(item, visited, props.pickingLocation)}，封面来自${place.name}的回忆，共 ${reference.photoCount} 张照片`)
     }
-    addText(button, 'yn-pin-label', item.members.length > 1 ? `${place.name}附近 · ${item.members.length}处` : place.name)
-    if (item.members.length > 1) addText(button, 'yn-cluster-count', `${item.members.length} 处`)
-    button.addEventListener('click', () => activateGroup(item))
-    L.DomEvent.disableClickPropagation(button)
-    markers.addLayer(L.marker(latlng, {
-      keyboard: false,
-      bubblingMouseEvents: false,
-      zIndexOffset: place.id === props.selectedId ? 1000 : 0,
-      icon: L.divIcon({
-        className: 'yn-map-icon', html: button,
-        iconSize: [dimensions.width, dimensions.height],
-        iconAnchor: [dimensions.anchorX, dimensions.anchorY],
-      }),
-    }))
+    view.label.textContent = place.name
+    button.title = place.name
+    view.label.style.visibility = labelPlacement ? '' : 'hidden'
+    if (labelPlacement) {
+      const point = map.latLngToContainerPoint(asLatLng(place))
+      view.label.style.left = `${labelPlacement.x - point.x + dimensions.anchorX}px`
+      view.label.style.top = `${labelPlacement.y - point.y + dimensions.anchorY}px`
+      view.label.style.width = `${labelPlacement.width}px`
+      view.label.style.height = `${labelPlacement.height}px`
+      view.label.style.transform = 'none'
+      view.label.style.textAlign = 'center'
+    }
+    view.count.textContent = item.members.length > 1 ? `${item.members.length} 处` : ''
+    view.count.hidden = item.members.length <= 1
   }
+  for (const [id, view] of markerViews) if (!liveMarkers.has(id)) { releaseMarker(view); markerViews.delete(id) }
+  const liveLabels = new Set<string>()
   const showProvinceLabels = !props.provinceId
   const showRegionLabels = !!props.provinceId && currentZoom < 11.5
   if ((showProvinceLabels || showRegionLabels) && !props.query) {
@@ -316,21 +408,28 @@ function renderMarkers() {
     for (const feature of labelFeatures) {
       const id = props.provinceId ? feature.properties.regionId : String(feature.properties.provinceId || '')
       if (props.regionId && id !== props.regionId) continue
-      const bounds = L.geoJSON(feature).getBounds()
-      if (!bounds.isValid()) continue
+      let metrics = featureMetrics.get(feature)
+      if (!metrics) {
+        const bounds = L.geoJSON(feature).getBounds()
+        if (!bounds.isValid()) continue
+        metrics = { bounds, center: labelCenter(feature, bounds.getCenter()) }; featureMetrics.set(feature, metrics)
+      }
       const region = props.regions.find(region => region.id === id)
       const text = (region?.name || feature.properties.name || '').replace(/壮族自治区$|回族自治区$|维吾尔自治区$|自治区$|特别行政区$|[省市州]$/u, '')
-      const center = labelCenter(feature, bounds.getCenter())
+      const center = metrics.center
       if (showProvinceLabels && !viewport.contains(center)) continue
       const point = map.latLngToContainerPoint(center)
       const isPriority = showProvinceLabels && id && priorityProvinceIds.has(id)
       const labelWidth = showProvinceLabels ? Math.max(50, Math.min(98, text.length * 16 + 18)) : Math.max(54, Math.min(120, text.length * 15 + 18))
       const labelHeight = showProvinceLabels ? 25 : 23
       const rect = { x: point.x - labelWidth / 2, y: point.y - labelHeight / 2, width: labelWidth, height: labelHeight }
-      if (showProvinceLabels && !isPriority && collides(rect, obstacles, 6)) continue
+      if (showProvinceLabels && collides(rect, [...obstacles, ...layoutMarkers], 6)) continue
       if (showProvinceLabels && collides(rect, labelRects, isPriority ? 6 : nationalLabelGap(currentZoom))) continue
       labelRects.push(rect)
-      const label = document.createElement('span')
+      const key = `${props.provinceId || 'national'}:${id || feature.properties.name}`
+      liveLabels.add(key)
+      let labelView = labelViews.get(key)
+      const label = labelView?.label ?? document.createElement('span')
       label.className = 'yn-region-label'
       label.dataset.scope = props.provinceId ? 'region' : 'province'
       label.dataset.priority = isPriority ? 'memory' : 'map'
@@ -338,12 +437,14 @@ function renderMarkers() {
       label.dataset.labelLatitude = String(center.lat)
       label.textContent = text
       if (id) label.dataset.regionLabel = id
-      regionLabels.addLayer(L.marker(center, {
-        interactive: false, keyboard: false, zIndexOffset: -1000,
-        icon: L.divIcon({ className: 'yn-map-icon', html: label, iconSize: [labelWidth, labelHeight], iconAnchor: [labelWidth / 2, labelHeight / 2] }),
-      }))
+      if (!labelView) {
+        const marker = L.marker(center, { interactive: false, keyboard: false, zIndexOffset: -1000,
+          icon: L.divIcon({ className: 'yn-map-icon', html: label, iconSize: [labelWidth, labelHeight], iconAnchor: [labelWidth / 2, labelHeight / 2] }) })
+        labelView = { marker, label }; labelViews.set(key, labelView); regionLabels.addLayer(marker)
+      } else labelView.marker.setLatLng(center)
     }
   }
+  for (const [id, view] of labelViews) if (!liveLabels.has(id)) { regionLabels.removeLayer(view.marker); labelViews.delete(id) }
   summary.value = projected.length ? `视野内约 ${shown} 处${grouped ? ' · 点击数字展开' : ''}`
     : props.query || props.regionId ? '没有符合筛选的地点，可调整筛选或添加我的地点' : '这里还没有地点，可添加我的地点留回忆'
   zoom.value = currentZoom
@@ -355,7 +456,7 @@ function renderMarkers() {
     const id = focusAnchor(visible, active)
     const replacement = [...element.value.querySelectorAll<HTMLButtonElement>('[data-map-place]')].find(button => button.dataset.mapPlace === id)
     // If filtering hides the marker, keep keyboard focus on the map, not the body.
-    ;(replacement || element.value).focus({ preventScroll: true })
+    if (document.activeElement !== replacement) (replacement || element.value).focus({ preventScroll: true })
   }
 }
 function queueMarkers() {
@@ -426,13 +527,19 @@ function updatePointer() {
 
 onMounted(() => {
   if (!element.value) return
+  unsubscribeArtwork = subscribeLandmarks(queueMarkers)
+  void loadArtwork()
   root = element.value.closest<HTMLElement>('#shanhai-lijiang')
+  sizeMapToViewport()
+  reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
   pointerQuery = window.matchMedia('(pointer:coarse)')
   coarsePointer.value = pointerQuery.matches
   map = L.map(element.value, {
     zoomControl: false, attributionControl: true, minZoom: 2, maxZoom: 18,
-    zoomSnap: 0.5, zoomDelta: 1, scrollWheelZoom: false,
+    zoomSnap: 0.25, zoomDelta: 1, scrollWheelZoom: false,
     dragging: !coarsePointer.value, touchZoom: true,
+    // CSS zoom transitions cannot be interrupted with Leaflet's public stop().
+    // Keep scope jumps immediate with a cancellable fade, and animate short pans.
     zoomAnimation: false, fadeAnimation: false, markerZoomAnimation: false,
     // Viewport guard only; record validation uses the selected province geometry.
     maxBounds: [[-5, 60], [65, 150]], maxBoundsViscosity: 0.9,
@@ -468,10 +575,26 @@ onMounted(() => {
 
 watch(() => [props.places, props.regions, props.visitedIds, props.selectedId, props.query, props.regionId, props.pickingLocation,
   props.plannedRouteIds,
-  props.recordIndex, props.covers, props.revision], () => { releasePhotos(); queueMarkers() }, { deep: true })
-watch(() => [props.geography, props.provinceId], () => { updateGeography(); queueMarkers() })
+  props.recordIndex, props.covers, props.revision, props.bottomInset], queueMarkers)
+watch(() => props.bottomInset, () => {
+  const selected = props.places.find(place => place.id === props.selectedId)
+  if (selected) selectPlace(selected)
+})
+watch(() => [props.geography, props.provinceId] as const, ([_geography, scope], [, previousScope]) => {
+  const changed = scope !== previousScope
+  if (changed) void loadArtwork()
+  if (changed && map) { map.stop(); scopeViews.set(previousScope, { center: map.getCenter(), zoom: map.getZoom() }); previousGroups = [] }
+  updateGeography()
+  if (changed && map) {
+    const saved = scopeViews.get(scope)
+    if (saved) { map.setView(saved.center, saved.zoom, { animate: false }); revealScope() }
+    else fitProvince()
+  }
+  queueMarkers()
+})
 onBeforeUnmount(() => {
-  releasePhotos()
+  artworkRequest++; unsubscribeArtwork?.(); scopeAnimation?.cancel()
+  markerViews.forEach(releaseMarker); markerViews.clear(); labelViews.clear()
   routes?.clearLayers()
   if (markerFrame !== undefined) cancelAnimationFrame(markerFrame)
   if (resizeFrame !== undefined) cancelAnimationFrame(resizeFrame)
@@ -505,6 +628,7 @@ onBeforeUnmount(() => {
         <span><strong>计划路线</strong>{{ plannedSummary }}</span>
       </button>
     </div>
+    <p v-if="artworkFailed" class="yn-map-detail-note">地标暂用简图显示。<button type="button" @click="loadArtwork">重试地标图形</button></p>
     <p class="yn-map-help"><span class="yn-visited-dot"></span>有我的回忆 <span>{{ coarsePointer ? '双指移动或缩放，单指滚动页面；放大后显示名字和照片。' : '放大后显示名字和照片；数字是附近景点数，点击展开。' }}</span></p>
     <p class="yn-map-detail-note">{{ !provinceId ? '点击省区轮廓，或用上方选择框进入。' : '' }}省区轮廓为粗略示意，仅作回忆定位，不用于导航或判定行政归属。</p>
   </div>

@@ -1,5 +1,5 @@
 import { flushPromises, mount } from '@vue/test-utils'
-import { defineComponent } from 'vue'
+import { defineComponent, h } from 'vue'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import type { LibraryIndexSnapshot, Visit } from '../src/domain/models'
 import { toVisitSummary } from '../src/domain/visit-summary'
@@ -24,8 +24,8 @@ const visit: Visit = { id: 'app-test', createdAt: 1, placeId: 'yulong', date: '2
 const empty = (): LibraryIndexSnapshot => ({ visits: [], covers: [], revision: 0 })
 const saved = (): LibraryIndexSnapshot => ({ visits: [toVisitSummary(visit)], covers: [], revision: 1 })
 function deferred<T>() { let resolve!: (value: T) => void; const promise = new Promise<T>(yes => { resolve = yes }); return { promise, resolve } }
-const mapStub = defineComponent({ name: 'FootprintMap', props: ['recordIndex', 'covers', 'revision', 'query', 'geography', 'provinceId'], emits: ['province', 'pick', 'reset'], setup(_, { expose }) {
-  expose(mapActions); return () => null
+const mapStub = defineComponent({ name: 'FootprintMap', props: ['recordIndex', 'covers', 'revision', 'query', 'geography', 'provinceId', 'bottomInset'], emits: ['province', 'pick', 'reset'], setup(_, { expose }) {
+  expose(mapActions); return () => h('div', { id: 'yn-map' })
 } })
 const editorStub = defineComponent({ name: 'MemoryEditor', props: ['open', 'visit', 'provinceId'], emits: ['saved', 'close', 'pick-location', 'location-error'], setup(_, { expose }) {
   expose({ cancelLocationPick() {}, acceptLocation() { return true } }); return () => null
@@ -52,23 +52,84 @@ beforeEach(() => {
   repository.readVisit.mockResolvedValue(structuredClone(visit))
   vi.stubGlobal('ResizeObserver', class { observe() {} disconnect() {} })
   vi.stubGlobal('matchMedia', () => ({ matches: false }))
+  Object.defineProperty(HTMLElement.prototype, 'scrollIntoView', { configurable: true, value: vi.fn() })
   Object.defineProperty(HTMLDialogElement.prototype, 'showModal', { configurable: true, value() { this.setAttribute('open', '') } })
   Object.defineProperty(HTMLDialogElement.prototype, 'close', { configurable: true, value() { this.removeAttribute('open') } })
 })
 
 describe('national map scope and asynchronous geography boundaries', () => {
   const choose = async (id: string) => { await wrapper!.get('select[aria-label="选择省份或地区"]').setValue(id); await flushPromises() }
+  it('restores a province discovery filter on return and does not reset the map scope from App', async () => {
+    repository.loadIndex.mockResolvedValue(empty()); await start()
+    await choose('cn-11')
+    await wrapper!.get('[aria-label="景点特色筛选"]').findAll('button')[2]!.trigger('click'); await flushPromises()
+    expect(wrapper!.findAll('.yn-place-row')).toHaveLength(2)
+    expect(wrapper!.findAll('.yn-place-row').every(row => row.text().includes('地方发现'))).toBe(true)
+    await choose('cn-51')
+    expect(wrapper!.findAll('.yn-place-row')).toHaveLength(4)
+    mapActions.fitProvince.mockClear(); mapActions.fitPlaces.mockClear()
+    await choose('cn-11')
+    expect(wrapper!.findAll('.yn-place-row')).toHaveLength(2)
+    expect(mapActions.fitProvince).not.toHaveBeenCalled()
+    expect(mapActions.fitPlaces).not.toHaveBeenCalled()
+  })
+  it('opens a compact accessible mobile sheet, expands it and restores the list without reading photos', async () => {
+    vi.stubGlobal('matchMedia', (query: string) => ({ matches: query.includes('max-width:900px') }))
+    repository.loadIndex.mockResolvedValue(empty()); await start(); await choose('cn-11')
+    vi.spyOn(wrapper!.get('#yn-map').element, 'getBoundingClientRect').mockImplementation(() => new DOMRect(0, 100, 390, 400))
+    vi.spyOn(wrapper!.get('.yn-panel').element, 'getBoundingClientRect').mockImplementation(() =>
+      wrapper!.get('.yn-panel').attributes('data-expanded') === 'true' ? new DOMRect(0, 400, 390, 444) : new DOMRect(0, 760, 390, 84))
+    await wrapper!.get('.yn-place-row').trigger('click'); await flushPromises()
+    expect(wrapper!.get('.yn-panel').attributes('data-sheet')).toBe('true')
+    expect(wrapper!.get('.yn-sheet-toggle').attributes('aria-expanded')).toBe('false')
+    expect(wrapper!.get('#yn-panel-content').isVisible()).toBe(false)
+    expect(wrapper!.findComponent(mapStub).props('bottomInset')).toBe(0)
+    await wrapper!.get('.yn-sheet-toggle').trigger('click'); await flushPromises()
+    expect(wrapper!.get('#yn-panel-content').isVisible()).toBe(true)
+    expect(wrapper!.findComponent(mapStub).props('bottomInset')).toBe(100)
+    expect(repository.readVisit).not.toHaveBeenCalled()
+    await wrapper!.get('[aria-label="关闭地点详情"]').trigger('click'); await flushPromises()
+    expect(wrapper!.findAll('.yn-place-row')).toHaveLength(4)
+    expect(wrapper!.findComponent(mapStub).props('bottomInset')).toBe(0)
+  })
   it('starts with all 34 boundaries and loads detailed Yunnan only on entering that province', async () => {
     repository.loadIndex.mockResolvedValue(empty()); await start()
     expect(wrapper!.findComponent(mapStub).props('geography').features).toHaveLength(34)
     expect(geographyLoader).not.toHaveBeenCalled()
     await choose('cn-51')
     expect(wrapper!.findComponent(mapStub).props('provinceId')).toBe('cn-51')
-    expect(wrapper!.text()).toContain('四川的公共景点目录尚在整理')
+    expect(wrapper!.text()).toContain('九寨沟')
+    expect(wrapper!.findAll('.yn-place-row')).toHaveLength(4)
     expect(geographyLoader).not.toHaveBeenCalled()
     await choose('yunnan')
     expect(geographyLoader).toHaveBeenCalledTimes(1)
     expect(wrapper!.get('select[aria-label="按州市筛选"]').findAll('option')).toHaveLength(17)
+  })
+  it('reveals a newly saved personal place when an editorial filter was active in the same province', async () => {
+    const personal: Visit = { ...visit, id: 'local-filter-memory', placeId: 'custom-beijing-courtyard',
+      customPlace: { id: 'custom-beijing-courtyard', name: '我的庭院', regionId: 'cn-11', coordinates: [116.4, 39.9] } }
+    repository.loadIndex.mockResolvedValueOnce(empty()).mockResolvedValue({ visits: [toVisitSummary(personal)], covers: [], revision: 1 })
+    await start(); await choose('cn-11')
+    await wrapper!.get('[aria-label="景点特色筛选"]').findAll('button')[2]!.trigger('click'); await flushPromises()
+    wrapper!.findComponent(editorStub).vm.$emit('saved', personal, { edited: false }); await flushPromises()
+    expect(wrapper!.get('[aria-label="景点特色筛选"]').findAll('button')[0]!.attributes('aria-pressed')).toBe('true')
+    expect(mapActions.selectPlace).toHaveBeenLastCalledWith(expect.objectContaining({ id: personal.placeId }))
+    await button('返回景点列表').trigger('click'); await flushPromises()
+    expect(wrapper!.findAll('.yn-place-row')).toHaveLength(1)
+    expect(wrapper!.get('.yn-place-row').text()).toContain('我的庭院')
+  })
+  it('keeps a national memory search when entering the matching province and detail', async () => {
+    const match: Visit = { ...visit, id: 'beijing-match', placeId: 'beijing-forbidden-city', note: '雨后故宫', photos: [] }
+    const other: Visit = { ...match, id: 'beijing-other', date: '2025-02-01', note: '晴天故宫' }
+    repository.loadIndex.mockResolvedValue({ visits: [toVisitSummary(match), toVisitSummary(other)], covers: [], revision: 1 })
+    await start()
+    await wrapper!.get('input[type="search"]').setValue('雨后'); await flushPromises()
+    await wrapper!.get('.yn-place-row').trigger('click'); await flushPromises()
+    expect(wrapper!.findComponent(mapStub).props('provinceId')).toBe('cn-11')
+    expect(wrapper!.findComponent(mapStub).props('query')).toBe('雨后')
+    expect(wrapper!.findAll('.yn-memory')).toHaveLength(1)
+    expect(wrapper!.get('.yn-memory').text()).toContain('雨后故宫')
+    expect(repository.readVisit).not.toHaveBeenCalled()
   })
   it('does not replace a new province with a delayed result from the previous scope', async () => {
     repository.loadIndex.mockResolvedValue(empty())

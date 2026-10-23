@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises'
 import { dirname, resolve, sep } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { gzipSync } from 'node:zlib'
+import { ASSET_PATTERN, LANDMARK_PROVINCES } from './serve.mjs'
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -31,6 +32,9 @@ export async function measureBundle(directory = resolve(projectRoot, 'dist')) {
   }
   const reachable = completeClosure('index.html')
   const issues = []
+  for (const chunk of Object.values(manifest)) {
+    for (const file of [chunk.file, ...chunk.css ?? [], ...chunk.assets ?? []]) if (!ASSET_PATTERN.test(file)) issues.push(`Unapproved map build asset: ${file}`)
+  }
   if (reachable.size !== Object.keys(manifest).length) issues.push('Every build chunk must be reachable; orphan assets are forbidden.')
   if (Object.values(manifest).some(chunk => chunk.name === 'geography')) issues.push('Detailed geography belongs in the on-demand JSON resource, not in the JavaScript graph.')
   for (const name of ['regions', 'places', 'vendor']) {
@@ -44,6 +48,12 @@ export async function measureBundle(directory = resolve(projectRoot, 'dist')) {
     if (chunk.file === entry.file || chunk.isEntry) issues.push(`${name} must be separate from the application entry.`)
     if (!initialKeys.has(key)) issues.push(`${name} must remain a static dependency for synchronous catalogue startup.`)
     if (staticClosure(key).has('index.html')) issues.push(`${name} must not import the application entry.`)
+  }
+  for (const province of LANDMARK_PROVINCES) {
+    const name = `landmark-${province}`, matches = Object.entries(manifest).filter(([, chunk]) => chunk.name === name)
+    if (matches.length !== 1) { issues.push(`Expected one deferred ${name} pack.`); continue }
+    const [key, chunk] = matches[0]
+    if (initialKeys.has(key) || chunk.isEntry) issues.push(`${name} must stay outside initial JavaScript.`)
   }
 
   const measured = new Map()
@@ -70,7 +80,7 @@ export async function measureBundle(directory = resolve(projectRoot, 'dist')) {
   return {
     schemaVersion: 1,
     compression: { algorithm: 'gzip', implementation: 'node:zlib', level: 6, independentFiles: true },
-    scope: 'Independent gzip measurements of generated JS/CSS files. Boundaries, places and vendor are first-load dependencies. Detailed Yunnan geography is a separate same-origin JSON request measured in deferredGeography; browser evidence must confirm request timing. HTML, other public assets, HTTP overhead and actual browser timings are outside the JavaScript totals.',
+    scope: 'Map-only build. Independent gzip measurements of generated JS/CSS files. Boundaries, places and vendor are first-load dependencies; all 33 province artwork packs must stay deferred. Detailed Yunnan geography is a separate same-origin JSON request. Browser evidence must confirm request timing. HTML, other public assets, HTTP overhead and actual browser timings are outside the JavaScript totals.',
     policy: { passed: issues.length === 0, issues },
     entry: entryAsset,
     staticDependencies: initialJavaScript.filter(item => item.file !== entry.file),

@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto'
 import type { Request } from 'express'
 import { Database, type Actor, type Change, type Client, type Result } from './db.js'
-import { Catalogue, CATALOGUE_VERSION } from './catalogue.js'
+import { Catalogue } from './catalogue.js'
 import { canonical, hash, Signer } from './crypto.js'
 import { fail, fields, string, version } from './errors.js'
 export const resource = (row: any) => ({ ...row.data, id: row.id, version: String(row.version) })
@@ -34,7 +34,7 @@ export class Records {
     const placeId = string(place.id, 'place.id')
     if (place.kind === 'public') {
       if (!this.catalogue.places.has(placeId)) fail(422, 'VALIDATION_FAILED', 'Unknown public place identity')
-      if (place.catalogueVersion !== CATALOGUE_VERSION) fail(422, 'CATALOGUE_VERSION_UNSUPPORTED', 'Use the published catalogue version')
+      if (!this.catalogue.supportsReference(placeId, place.catalogueVersion)) fail(422, 'CATALOGUE_VERSION_UNSUPPORTED', 'Use the published catalogue version')
     } else if (place.kind === 'custom') { fields(place, ['kind', 'id']); current(await owned(client, 'custom_places', actor.owner, placeId)) }
     else fail(422, 'VALIDATION_FAILED', 'Invalid place kind')
     if (!Number.isSafeInteger(value.clientCreatedAt) || Number(value.clientCreatedAt) < 0) fail(422, 'VALIDATION_FAILED', 'Invalid clientCreatedAt')

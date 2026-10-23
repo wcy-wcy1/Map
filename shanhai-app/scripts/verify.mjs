@@ -13,9 +13,12 @@ await writeFile(reportPath, JSON.stringify({ checkedAt: new Date().toISOString()
 const tasks = [
   ['kernel-freshness', 'scripts/sync-legacy-kernels.mjs', '--check'],
   ['geography-freshness', 'scripts/build-national-geography.mjs', '--check'],
-  ['typecheck', 'node_modules/vue-tsc/bin/vue-tsc.js', '--noEmit'],
-  ['tests', 'node_modules/vitest/vitest.mjs', 'run'],
-  ['build', 'node_modules/vite/bin/vite.js', 'build'],
+  ['catalogue-data-freshness', 'scripts/build-national-catalogue.mjs', '--check'],
+  ['catalogue-freshness', 'scripts/build-catalogue-manifest.mjs', '--check'],
+  ['typecheck', 'node_modules/vue-tsc/bin/vue-tsc.js', '--noEmit', '--project', 'tsconfig.map.json'],
+  ['tests', 'node_modules/vitest/vitest.mjs', 'run', '--maxWorkers=1'],
+  ['build', 'node_modules/vite/bin/vite.js', 'build', '--mode', 'map-release'],
+  ['bundle-policy', 'scripts/measure-bundle.mjs'],
 ]
 const checks = []
 let sourcesAtStart = [], sources = [], artifacts = [], changedDuringRun = []
@@ -42,5 +45,5 @@ changedDuringRun = [...new Set([...before.keys(), ...after.keys()])].filter(path
 }
 const passed = !failure && checks.length === tasks.length && checks.every(check => check.passed) && changedDuringRun.length === 0
 await writeFile(reportPath, JSON.stringify({ checkedAt: new Date().toISOString(), node: process.version, passed, checks, artifacts, sources, sourcesAtStart, changedDuringRun, failure,
-  scope: 'Vue catalogue/map/retrieval, storage and backup kernels, editor/photo/backup/card components, old-store compatibility, build chunk policy and local distribution tooling. Sources include all scripts and public resources; distribution dependency closure and allowlist are checked. Unit platform adapters are controlled. Native same-origin migration/browser evidence is recorded separately; phone/user testing and real share delivery are not certified by this report.' }, null, 2) + '\n')
+  scope: 'Map/account Vue catalogue, retrieval, storage and backup kernels, editor/photo/card components, old-store compatibility, build chunk policy and local distribution tooling. The explicit development meeting entry, meeting-only scripts/styles and character portraits are outside the map release. All remaining source files and exact map public resources are hashed; unknown public siblings, dependency closure and distribution allowlists are checked. Native migration/browser evidence is recorded separately; phone/user testing and real share delivery are not certified by this report.' }, null, 2) + '\n')
 if (!passed) process.exitCode = 1

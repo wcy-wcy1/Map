@@ -12,6 +12,8 @@ import { inflateRawSync } from 'node:zlib'
 import { createZip, packageRelease, sourceSnapshot, distributionSnapshot } from '../scripts/package.mjs'
 // @ts-expect-error No declaration file for the standalone server CLI.
 import { createReleaseServer, loadRelease, parsePort, sha256, safeFileNames } from '../scripts/serve.mjs'
+// @ts-expect-error No declaration file for the standalone release CLI.
+import { CATALOGUE_REFERENCE_FILES } from '../scripts/release-utils.mjs'
 
 type Snapshot = { path: string; sha256: string; bytes?: number }
 type Report = { checkedAt: string; passed: boolean; checks: { name: string; passed: boolean; exitCode: number }[]; changedDuringRun: string[]; sources: Snapshot[]; sourcesAtStart: Snapshot[]; artifacts: Snapshot[] }
@@ -29,9 +31,10 @@ async function put(root: string, name: string, content: string | Buffer) {
 async function fixture() {
   const root = await mkdtemp(path.join(tmpdir(), 'shanhai-release-test-'))
   fixtures.push(root)
-  for (const name of ['index.html', 'package.json', 'package-lock.json', 'tsconfig.json', 'vite.config.ts', 'src/main.ts', 'tests/example.test.ts', 'scripts/verify.mjs', 'scripts/sync-legacy-kernels.mjs', 'scripts/build-national-geography.mjs']) await put(root, name, '{}\n')
-  for (const name of ['serve.mjs', 'package.mjs', 'release-utils.mjs']) await put(root, `scripts/${name}`, await readFile(fileURLToPath(new URL(`../scripts/${name}`, import.meta.url))))
-  for (const [name, content] of Object.entries({ 'data/SOURCES.md': 'Public geographic sources', 'data/yunnan-geography.geojson': '{"type":"FeatureCollection","features":[]}', 'data/china-provinces.geojson': '{"type":"FeatureCollection","features":[]}', 'licenses/Leaflet.txt': 'Leaflet license' })) {
+  for (const name of ['index.html', 'package.json', 'package-lock.json', 'tsconfig.json', 'tsconfig.map.json', 'vite.config.ts', 'src/main.ts', 'tests/example.test.ts', 'scripts/verify.mjs', 'scripts/sync-legacy-kernels.mjs', 'scripts/build-national-geography.mjs', 'scripts/map-release-plugin.mjs', 'scripts/measure-bundle.mjs']) await put(root, name, '{}\n')
+  for (const name of CATALOGUE_REFERENCE_FILES) await put(root, name, '{}\n')
+  for (const name of ['serve.mjs', 'package.mjs', 'release-utils.mjs', 'map-public.mjs']) await put(root, `scripts/${name}`, await readFile(fileURLToPath(new URL(`../scripts/${name}`, import.meta.url))))
+  for (const [name, content] of Object.entries({ 'favicon.svg':'<svg xmlns="http://www.w3.org/2000/svg"/>', 'data/SOURCES.md': 'Public geographic sources', 'data/national-places.json': '[]', 'data/yunnan-geography.geojson': '{"type":"FeatureCollection","features":[]}', 'data/china-provinces.geojson': '{"type":"FeatureCollection","features":[]}', 'licenses/Leaflet.txt': 'Leaflet license' })) {
     await put(root, `public/${name}`, content)
     await put(root, `dist/${name}`, content)
   }
@@ -40,7 +43,7 @@ async function fixture() {
   await put(root, `dist/${entryCss}`, 'body{color:#222}\n')
   await put(root, 'dist/.vite/manifest.json', JSON.stringify({ 'index.html': { file: entryJs, isEntry: true, css: [entryCss] } }))
   const sources = await sourceSnapshot(root), artifacts = await distributionSnapshot(root)
-  const report: Report = { checkedAt: now.toISOString(), passed: true, checks: ['kernel-freshness', 'geography-freshness', 'typecheck', 'tests', 'build'].map(name => ({ name, passed: true, exitCode: 0 })), changedDuringRun: [], sources, sourcesAtStart: sources, artifacts }
+  const report: Report = { checkedAt: now.toISOString(), passed: true, checks: ['kernel-freshness', 'geography-freshness', 'catalogue-data-freshness', 'catalogue-freshness', 'typecheck', 'tests', 'build', 'bundle-policy'].map(name => ({ name, passed: true, exitCode: 0 })), changedDuringRun: [], sources, sourcesAtStart: sources, artifacts }
   await put(root, 'qa/current/report.json', JSON.stringify(report))
   return { root, report }
 }
@@ -169,14 +172,15 @@ describe('verified standalone trial packaging', () => {
     }
     await put(root, 'dist/.vite/manifest.json', JSON.stringify(graph))
     report.artifacts = await distributionSnapshot(root)
-    report.checks.push({ name: 'bundle-policy', passed: true, exitCode: 0 })
+    report.checks.push({ name: 'browser-smoke', passed: true, exitCode: 0 })
     await put(root, 'qa/current/report.json', JSON.stringify(report))
     const release = await packageRelease({ root, now })
     expect(release.manifest.publicFiles).toContain('assets/rolldown-runtime-AbCd1234.js')
-    expect(release.manifest.verification.checks).toContainEqual({ name: 'bundle-policy', passed: true, exitCode: 0 })
+    expect(release.manifest.verification.checks).toContainEqual({ name: 'browser-smoke', passed: true, exitCode: 0 })
     expect(release.manifest.publicFiles).toContain('data/china-provinces.geojson')
     expect(release.manifest.publicFiles).toContain('assets/regions-AbCd1234.js')
-    expect(release.manifest.publicFiles).toHaveLength(13)
+    expect(release.manifest.publicFiles).toContain('data/national-places.json')
+    expect(release.manifest.publicFiles).toHaveLength(15)
   })
 
   it('rejects unsafe and duplicate ZIP entry names before encoding an archive', () => {
@@ -184,10 +188,40 @@ describe('verified standalone trial packaging', () => {
     expect(() => createZip([{ name: 'same.txt', bytes: Buffer.from('one') }, { name: 'same.txt', bytes: Buffer.from('two') }], now)).toThrow(/Duplicate/)
   })
 
-  it.each(['dist/private.json', 'dist/photo.png', 'dist/assets/index-AbCd1234.js.map', 'dist/.env', 'dist/qa/report.json', 'src/data/private.json', 'public/data/backup.json', 'scripts/credentials.json'])('refuses unlisted or private-shaped input %s', async name => {
+  it.each(['dist/private.json', 'dist/photo.png', 'dist/assets/index-AbCd1234.js.map', 'dist/.env', 'dist/qa/report.json', 'src/data/private.json', 'public/data/backup.json', 'public/unknown.png', 'public/unreviewed/image.png', 'scripts/credentials.json', 'reference/catalogue/expansion/private.json', 'reference/catalogue/first-batch/photo.png', 'reference/catalogue/unreviewed/source.json'])('refuses unlisted or private-shaped input %s', async name => {
     const { root } = await fixture()
     await put(root, name, 'must never enter archive')
     await expect(packageRelease({ root, now })).rejects.toThrow(/Unlisted/)
+  })
+
+  it('leaves only the explicitly excluded meeting development files outside the map snapshot and package', async () => {
+    const { root, report } = await fixture()
+    for (const name of ['src/dev.ts', 'src/MeetingApp.vue', 'src/styles/meeting.css', 'src/styles/meeting-polish.css', 'scripts/meeting-bridge.mjs', 'scripts/meeting-turns.test.mjs', 'scripts/MEETING.md', 'scripts/prepare-character-portrait.py', 'public/characters/local-portrait.png']) await put(root, name, 'development only')
+    expect(await sourceSnapshot(root)).toEqual(report.sources)
+    const release = await packageRelease({ root, now })
+    expect(release.manifest.files.every((item: Snapshot) => !/meeting|characters/i.test(item.path))).toBe(true)
+    await put(root, 'dist/assets/MeetingApp-12345678.js', 'unapproved')
+    await expect(distributionSnapshot(root)).rejects.toThrow(/Unlisted/)
+  })
+
+  it('accepts only known deferred landmark asset families and requires graph reachability', async () => {
+    const { root } = await fixture()
+    await put(root, 'dist/assets/landmark-beijing-12345678.js', 'export const place = true')
+    await expect(distributionSnapshot(root)).rejects.toThrow(/Unreferenced/)
+    await put(root, 'dist/.vite/manifest.json', JSON.stringify({ 'index.html': { file:entryJs, isEntry:true, css:[entryCss], dynamicImports:['_beijing'] }, _beijing:{ file:'assets/landmark-beijing-12345678.js' } }))
+    await expect(distributionSnapshot(root)).resolves.toBeTruthy()
+    await put(root, 'dist/assets/landmark-unreviewed-12345678.js', 'unapproved')
+    await expect(distributionSnapshot(root)).rejects.toThrow(/Unlisted/)
+  })
+
+  it('requires and hashes the frozen catalogue sources without publishing them as application assets', async () => {
+    const { root } = await fixture()
+    const file = 'reference/catalogue/first-batch/evidence.json'
+    expect((await sourceSnapshot(root)).some((item: Snapshot) => item.path === file)).toBe(true)
+    await put(root, file, '{"changed":true}\n')
+    await expect(packageRelease({ root, now })).rejects.toThrow(/Sources changed/)
+    await rm(path.join(root, file))
+    await expect(sourceSnapshot(root)).rejects.toThrow(/Missing required source/)
   })
 
   it('rejects orphan assets, unsafe manifest references, and duplicate stale asset families', async () => {

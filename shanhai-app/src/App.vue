@@ -37,6 +37,10 @@ const repository = services.repository
 const photoLoader = createPhotoLoader(repository)
 provide(PHOTO_LOADER_KEY, photoLoader)
 const query = ref(''), provinceId = ref(''), regionId = ref(''), visitedOnly = ref(false)
+const discoveryTier = ref<'' | 'classic' | 'local'>('')
+const coveredProvinceCount = new Set(publicPlaces.map(place => place.mapId)).size
+const scopeFilters = new Map<string, { query: string; regionId: string; visitedOnly: boolean; discoveryTier: '' | 'classic' | 'local' }>()
+const mobileViewport = ref(false), sheetExpanded = ref(false), bottomInset = ref(0)
 const currentProvince = computed(() => getProvince(provinceId.value))
 const scopeRegions = computed(() => regions.filter(region => region.provinceId === provinceId.value))
 const scopePublicCount = computed(() => publicPlaces.filter(place => !provinceId.value || place.mapId === provinceId.value).length)
@@ -65,14 +69,27 @@ const recordIndex = computed(() => indexVisits(visits.value))
 const visitedIds = computed(() => [...recordIndex.value.keys()])
 const filtered = computed(() => {
   void catalogueVersion.value
-  const places = filter(catalogue.all, { query: query.value, provinceId: provinceId.value, regionId: regionId.value, visitedOnly: visitedOnly.value, visitedIds: visitedIds.value, visits: visits.value })
-  return visitedOnly.value ? places.sort((a, b) => (recordIndex.value.get(b.id)?.[0]?.date ?? '').localeCompare(recordIndex.value.get(a.id)?.[0]?.date ?? '')) : places
+  const places = filter(catalogue.all, { query: query.value, provinceId: provinceId.value, regionId: regionId.value, discoveryTier: discoveryTier.value, visitedOnly: visitedOnly.value, visitedIds: visitedIds.value, visits: visits.value })
+  if (visitedOnly.value) return places.sort((a, b) => (recordIndex.value.get(b.id)?.[0]?.date ?? '').localeCompare(recordIndex.value.get(a.id)?.[0]?.date ?? ''))
+  if (provinceId.value || query.value) return places
+  // Let each province introduce itself before showing the rest of Yunnan's larger catalogue.
+  const byProvince = new Map<string, Place[]>()
+  for (const place of places) {
+    const key = place.mapId ?? ''
+    if (!byProvince.has(key)) byProvince.set(key, [])
+    byProvince.get(key)!.push(place)
+  }
+  const buckets = [...byProvince.values()], balanced: Place[] = []
+  for (let index = 0; balanced.length < places.length; index++) {
+    for (const bucket of buckets) if (bucket[index]) balanced.push(bucket[index]!)
+  }
+  return balanced
 })
 const shown = computed(() => groupIds.value.length ? filtered.value.filter(place => groupIds.value.includes(place.id)) : filtered.value)
 const selected = computed(() => { void catalogueVersion.value; return selectedId.value ? catalogue.get(selectedId.value) : undefined })
 const journeyPlaces = computed(() => { void catalogueVersion.value; return journeyIds.value.map(id => catalogue.get(id)).filter(Boolean) as Place[] })
 const mapPlannedRouteIds = computed(() => journeyVariant.value === 'planned' ? journeyIds.value : planning.value ? plannedIds.value : [])
-const hasFilters = computed(() => !!query.value || !!provinceId.value || !!regionId.value || visitedOnly.value)
+const hasFilters = computed(() => !!query.value || !!provinceId.value || !!regionId.value || visitedOnly.value || !!discoveryTier.value)
 
 async function loadGeography() {
   const id = provinceId.value, request = ++geographyRequest
@@ -87,40 +104,65 @@ async function loadGeography() {
   } finally { if (!disposed && request === geographyRequest) geographyLoading.value = false }
 }
 watch(provinceId, () => { regionId.value = ''; void loadGeography() }, { flush: 'sync' })
-watch([query, regionId, visitedOnly, provinceId], async (values, previous) => {
+watch([query, regionId, visitedOnly, provinceId, discoveryTier], async (values, previous) => {
   cancelRecordRead()
   selectedId.value = null; groupIds.value = []; journeyIds.value = []; planning.value = false; limit.value = 12
   await nextTick()
   // A cross-province select also waits for this render. Its explicit landmark
   // focus must win over this earlier, generic scope-fit intention.
   if (disposed || selectedId.value) return
-  if (values[3] !== previous[3] || !filtered.value.length || pickingLocation.value) map.value?.fitProvince()
+  // The map owns scope transitions and remembers each province's view.
+  if (values[3] !== previous[3]) return
+  if (!filtered.value.length || pickingLocation.value) map.value?.fitProvince()
   else if (hasFilters.value) map.value?.fitPlaces(filtered.value)
   else map.value?.fitProvince()
 })
 function reset() {
   cancelRecordRead()
   provinceId.value = pickingLocation.value ? pickingProvince.value : ''
-  query.value = ''; regionId.value = ''; visitedOnly.value = false; selectedId.value = null; groupIds.value = []; journeyIds.value = []; planning.value = false; limit.value = 12
+  query.value = ''; regionId.value = ''; visitedOnly.value = false; discoveryTier.value = ''; selectedId.value = null; groupIds.value = []; journeyIds.value = []; planning.value = false; limit.value = 12
   void nextTick(() => map.value?.fitProvince())
 }
-function showFootprints() { if (!pickingLocation.value) { provinceId.value = ''; regionId.value = ''; query.value = ''; visitedOnly.value = true; journeyIds.value = [] } }
-function changeProvince(id: string) { if (!pickingLocation.value && (!id || getProvince(id))) { provinceId.value = id; journeyIds.value = [] } }
+function showFootprints() { if (!pickingLocation.value) { provinceId.value = ''; regionId.value = ''; query.value = ''; discoveryTier.value = ''; visitedOnly.value = true; journeyIds.value = [] } }
+function changeProvince(id: string) {
+  if (pickingLocation.value || (id && !getProvince(id)) || id === provinceId.value) return
+  scopeFilters.set(provinceId.value, { query: query.value, regionId: regionId.value, visitedOnly: visitedOnly.value, discoveryTier: discoveryTier.value })
+  provinceId.value = id; journeyIds.value = []
+  const previous = scopeFilters.get(id)
+  query.value = previous?.query ?? ''; regionId.value = previous?.regionId ?? ''; visitedOnly.value = previous?.visitedOnly ?? false; discoveryTier.value = previous?.discoveryTier ?? ''
+}
 function startPlanning() { if (!pickingLocation.value) { selectedId.value = null; groupIds.value = []; journeyIds.value = []; planning.value = true } }
 async function select(id: string, focusMap = false) {
   cancelRecordRead()
   const place = catalogue.get(id)
   if (!place) return
   const changedScope = !!place.mapId && provinceId.value !== place.mapId
-  if (changedScope) { provinceId.value = place.mapId!; await nextTick() }
-  selectedId.value = id; journeyIds.value = []; planning.value = false
-  if (focusMap || changedScope) map.value?.selectPlace(place)
+  if (changedScope) {
+    const fromFootprints = visitedOnly.value && recordIndex.value.has(id)
+    const selectionQuery = query.value
+    changeProvince(place.mapId!); query.value = selectionQuery; regionId.value = ''; discoveryTier.value = ''; visitedOnly.value = fromFootprints
+    await nextTick()
+  }
+  selectedId.value = id; journeyIds.value = []; planning.value = false; sheetExpanded.value = false
   await nextTick()
+  map.value?.selectPlace(place)
   const detail = panel.value?.querySelector<HTMLElement>('.yn-detail')
-  detail?.focus({ preventScroll: true })
-  if (matchMedia('(max-width:900px)').matches) detail?.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth' })
+  if (mobileViewport.value) panel.value?.querySelector<HTMLElement>('.yn-sheet-toggle')?.focus({ preventScroll: true })
+  else detail?.focus({ preventScroll: true })
 }
-function backToList() { cancelRecordRead(); selectedId.value = null }
+function backToList() {
+  const previousId = selectedId.value
+  cancelRecordRead(); selectedId.value = null; sheetExpanded.value = false
+  void nextTick(() => {
+    const row = Array.from(panel.value?.querySelectorAll<HTMLElement>('[data-place-id]') ?? []).find(item => item.dataset.placeId === previousId)
+    row?.focus({ preventScroll: true })
+  })
+}
+async function toggleSheet() {
+  sheetExpanded.value = !sheetExpanded.value
+  await nextTick()
+  if (selected.value) map.value?.selectPlace(selected.value)
+}
 function selectCluster(ids: string[]) { cancelRecordRead(); selectedId.value = null; journeyIds.value = []; planning.value = false; groupIds.value = ids; limit.value = 12 }
 function togglePlannedPlace(id: string) {
   plannedIds.value = plannedIds.value.includes(id) ? plannedIds.value.filter(row => row !== id) : [...plannedIds.value, id]
@@ -219,7 +261,7 @@ async function saved(visit: Visit, result: { edited: boolean; draftWarning?: str
       ? visits.value.map(row => row.id === visit.id ? summary : row) : [...visits.value, summary]
     catalogue.replaceCustomPlaces(visits.value); catalogueVersion.value++
   }
-  query.value = ''; regionId.value = ''; visitedOnly.value = true
+  query.value = ''; regionId.value = ''; discoveryTier.value = ''; visitedOnly.value = true
   // The server assigns a stable private-place identity. Prefer the committed
   // index rather than the editor's pre-upload temporary location identity.
   const savedPlaceId = visits.value.find(row => row.id === visit.id)?.placeId ?? visit.placeId
@@ -234,7 +276,7 @@ async function beginPicking(custom: NonNullable<Draft['customPlace']>) {
   if (!province) { locationError.value = '请先选择省份或地区。'; return }
   pickingProvince.value = province.id; provinceId.value = province.id; locationError.value = ''
   pickingLocation.value = true; selectedId.value = null; groupIds.value = []
-  query.value = ''; regionId.value = ''; visitedOnly.value = false
+  query.value = ''; regionId.value = ''; discoveryTier.value = ''; visitedOnly.value = false
   await nextTick(); map.value?.fitProvince()
   const element = app.value?.querySelector<HTMLElement>('#yn-map'); element?.scrollIntoView({ block: 'center' }); element?.focus({ preventScroll: true })
 }
@@ -337,23 +379,39 @@ async function undoDelete() {
   finally { mutationBusy.value = false }
 }
 const backgroundReload = () => { if (!document.hidden) void reload() }
-let observer: ResizeObserver | undefined
+let observer: ResizeObserver | undefined, sheetMeasureFrame: number | undefined
+function measureSheetInset() {
+  const mapElement = app.value?.querySelector<HTMLElement>('#yn-map')
+  if (!mobileViewport.value || !selectedId.value || pickingLocation.value || !mapElement || !panel.value) { bottomInset.value = 0; return }
+  const mapRect = mapElement.getBoundingClientRect(), sheetRect = panel.value.getBoundingClientRect()
+  bottomInset.value = Math.max(0, Math.min(mapRect.bottom, sheetRect.bottom) - Math.max(mapRect.top, sheetRect.top))
+}
+function queueSheetMeasure() {
+  if (sheetMeasureFrame !== undefined) return
+  sheetMeasureFrame = requestAnimationFrame(() => { sheetMeasureFrame = undefined; measureSheetInset() })
+}
+watch([selectedId, mobileViewport, sheetExpanded, pickingLocation], () => { void nextTick(measureSheetInset) })
 function sizeMap() {
+  mobileViewport.value = matchMedia('(max-width:900px)').matches
   const element = app.value?.querySelector<HTMLElement>('#yn-map')
   if (element) app.value?.style.setProperty('--yn-map-top', `${Math.round(element.getBoundingClientRect().top + window.scrollY)}px`)
+  measureSheetInset()
 }
 onMounted(() => {
   observer = new ResizeObserver(sizeMap)
-  for (const selector of ['.yn-header', '.yn-toolbar', '.yn-storage', '.yn-account-bar']) {
+  for (const selector of ['.yn-header', '.yn-toolbar', '.yn-storage', '.yn-account-bar', '#yn-map', '.yn-panel']) {
     const element = app.value?.querySelector(selector)
     if (element) observer.observe(element)
   }
   window.addEventListener('resize', sizeMap); sizeMap()
+  window.addEventListener('scroll', queueSheetMeasure, { passive: true })
   window.addEventListener('focus', backgroundReload); document.addEventListener('visibilitychange', backgroundReload)
   void reload()
 })
 onBeforeUnmount(() => {
   disposed = true; observer?.disconnect(); window.removeEventListener('resize', sizeMap)
+  window.removeEventListener('scroll', queueSheetMeasure)
+  if (sheetMeasureFrame !== undefined) cancelAnimationFrame(sheetMeasureFrame)
   geographyController?.abort(); geographyService.close()
   cancelRecordRead(); photoLoader.close()
   window.removeEventListener('focus', backgroundReload); document.removeEventListener('visibilitychange', backgroundReload)
@@ -372,14 +430,19 @@ defineExpose({ refresh: () => reload(true) })
     <div class="yn-storage" role="status" :data-error="storageError"><span>{{ storageMessage }}</span><button v-if="storageError" type="button" :disabled="busy || editorOpen" @click="reload()">重新读取</button><button v-if="hasDraft" type="button" :disabled="!ready || busy || editorOpen" @click="openRecord()">继续草稿</button></div>
     <p v-if="!accountMode" class="yn-migration-note">新版迁移试用：尚未替换旧入口，仍需完整兼容与真机验收。不同网址和端口不共享本机记录，迁移请导入备份；请保留原照片。<a href="http://127.0.0.1:8767/app">打开旧版</a></p>
     <p v-else class="yn-migration-note">账号联调版：保存时会上传照片副本和手记到这台电脑的服务端，不是云服务。旧本机资料不会自动上传；草稿仅存本浏览器。账号备份、旧库迁移和删除撤销尚未接入，请保留原片。</p>
-    <SearchToolbar v-model:query="query" v-model:region-id="regionId" v-model:visited-only="visitedOnly" :province-id="provinceId" :regions="scopeRegions" :place-count="scopePublicCount" :disabled="pickingLocation" @update:province-id="changeProvince" />
+    <SearchToolbar v-model:query="query" v-model:region-id="regionId" v-model:visited-only="visitedOnly" v-model:discovery-tier="discoveryTier" :province-id="provinceId" :regions="scopeRegions" :place-count="scopePublicCount" :covered-province-count="coveredProvinceCount" :disabled="pickingLocation" @update:province-id="changeProvince" />
     <p v-if="geographyLoading" role="status">正在加载云南的州市与水系细节，回忆仍可使用。</p>
     <p v-if="geographyError" class="yn-record-error" role="alert">{{ geographyError }} <button type="button" @click="loadGeography">重试地图细节</button></p>
     <div v-if="pickingLocation" class="yn-location-banner" role="status"><strong>在{{ areaLabel }}地图上点选这个地点的位置</strong><p>位置由你确认，仅用于保存旅行回忆。地区轮廓较粗略，不是导航地图。</p><p v-if="locationError" class="yn-record-error" role="alert">{{ locationError }}</p><button type="button" @click="cancelPicking">返回填写</button></div>
     <div v-if="undo && !accountMode" class="yn-undo" role="status"><span>最近删除的回忆还可以恢复。</span><button type="button" :disabled="busy" @click="undoDelete">撤销删除</button></div>
     <section class="yn-workspace">
-      <FootprintMap ref="map" :places="filtered" :geography="geography" :province-id="provinceId" :area-label="areaLabel" :regions="scopeRegions" :visited-ids="visitedIds" :selected-id="selectedId" :record-index="recordIndex" :covers="covers" :revision="libraryRevision" :query="query" :region-id="regionId" :picking-location="pickingLocation" :planned-route-ids="mapPlannedRouteIds" @select="select($event)" @province="changeProvince" @cluster="selectCluster" @journey="openMapJourney" @reset="reset" @pick="acceptLocation" />
-      <aside ref="panel" class="yn-panel" aria-label="景点与回忆">
+      <FootprintMap ref="map" :places="filtered" :geography="geography" :province-id="provinceId" :area-label="areaLabel" :regions="scopeRegions" :visited-ids="visitedIds" :selected-id="selectedId" :record-index="recordIndex" :covers="covers" :revision="libraryRevision" :query="query" :region-id="regionId" :picking-location="pickingLocation" :planned-route-ids="mapPlannedRouteIds" :bottom-inset="bottomInset" @select="select($event)" @province="changeProvince" @cluster="selectCluster" @journey="openMapJourney" @reset="reset" @pick="acceptLocation" />
+      <aside ref="panel" class="yn-panel" :data-sheet="!!selected && mobileViewport && !pickingLocation" :data-expanded="sheetExpanded" aria-label="景点与回忆" @animationend="measureSheetInset">
+        <div v-if="selected && mobileViewport && !pickingLocation" class="yn-sheet-heading">
+          <button type="button" class="yn-sheet-toggle" :aria-expanded="sheetExpanded" aria-controls="yn-panel-content" @click="toggleSheet"><span><strong>{{ selected.name }}</strong><small>{{ selected.highlights.slice(0, 2).join(' · ') }}</small></span><span>{{ sheetExpanded ? '收起' : '查看详情' }}</span></button>
+          <button type="button" class="yn-sheet-close" aria-label="关闭地点详情" @click="backToList">关闭</button>
+        </div>
+        <div id="yn-panel-content" v-show="!selected || !mobileViewport || sheetExpanded || pickingLocation">
         <p v-if="readingRecord" role="status">正在打开这次回忆… <button type="button" @click="cancelRecordRead">取消打开</button></p>
         <PlaceDetail v-if="selected" :place="selected" :visits="recordIndex.get(selected.id) ?? []" :revision="libraryRevision" :query="query" :disabled="!ready || busy || editorOpen" @back="backToList" @add="openRecord(selected.id)" @edit="openRecord($event.placeId, $event)" @delete="askDelete" @view-photo="viewPhoto" @share="openCard($event)" />
         <JourneyDetail v-else-if="journeyIds.length" :place-ids="journeyIds" :places="journeyPlaces" :record-index="recordIndex" :covers="covers" :revision="libraryRevision" :variant="journeyVariant" @back="journeyIds = []" @select="select($event, true)" @add="openRecord" @view-photo="viewPhoto" />
@@ -387,9 +450,10 @@ defineExpose({ refresh: () => reload(true) })
         <template v-else>
           <p v-if="provinceId && !scopePublicCount && !visitedOnly" class="yn-list-intro">{{ areaLabel }}的公共景点目录尚在整理，可以先添加自己的地点。省区轮廓不等于景点已完整覆盖。</p>
           <p v-if="groupIds.length" class="yn-cluster-intro">这些地点相邻，选择一个查看。<button type="button" @click="groupIds = []">返回全部结果</button></p>
-          <PlaceList :places="shown" :record-index="recordIndex" :covers="covers" :revision="libraryRevision" :query="query" :limit="limit" :has-filters="hasFilters" :visited-only="visitedOnly" @select="select($event, true)" @more="limit += 12" @reset="reset" />
+          <PlaceList :places="shown" :record-index="recordIndex" :covers="covers" :revision="libraryRevision" :query="query" :limit="limit" :has-filters="hasFilters" :visited-only="visitedOnly" :province-id="provinceId" @select="select($event, true)" @more="limit += 12" @reset="reset" />
           <button type="button" :disabled="!ready || busy || editorOpen" @click="openRecord('__custom')">没有这个地点？自己记一个</button>
         </template>
+        </div>
       </aside>
     </section>
     <div v-if="!accountMode" ref="backupHost"><BackupPanel :services="services" :disabled="editorOpen || mutationBusy || readingRecord" :on-committed="afterImport" @busy="backupBusy = $event" /></div>
@@ -401,6 +465,6 @@ defineExpose({ refresh: () => reload(true) })
       <p v-if="accountMode">这会删除账号中的回忆与对应照片副本，其他会话同步后也将移除。账号模式暂不支持撤销，请确认原片已保留。</p><p v-else>可在本页撤销最近一次删除；离开页面后，请使用事先保留的备份找回。</p><p v-if="deleteError" role="alert">{{ deleteError }}</p>
       <div class="yn-detail-actions"><button type="button" :disabled="mutationBusy" @click="closeDelete">保留回忆</button><button type="button" :disabled="mutationBusy" @click="removeVisit">确认删除</button></div>
     </dialog>
-    <footer class="yn-footer"><p>省区选择已扩展，公共景点目前仍为云南 43 处。个人地点由你确认；照片请保留原件并定期备份。</p><details><summary>地图与资料来源</summary><p>坐标使用 WGS84，仅作旅行回忆示意，不是导航入口或精确行政归属判断。图标是简化意象，不是建筑测绘复原。</p><p>省区示意数据来自 <a href="https://www.geoboundaries.org/api/current/gbOpen/CHN/ADM1/" target="_blank" rel="noopener noreferrer">geoBoundaries / Wikimedia Commons</a>（原资料标记为 2019 年，存在精度与更新限制）。<a href="/data/china-provinces.geojson" download>下载省区示意数据</a>。本机开发版未完成公开地图上线审核。</p><p>云南详细地理数据 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> · ODbL。<a href="/data/SOURCES.md" target="_blank" rel="noopener noreferrer">来源与重建说明</a> · <a href="/data/yunnan-geography.geojson" download>下载云南衍生地理数据</a></p><p>公共景点资料及坐标来源保留在各地点详情中。这里不提供实时攻略、票价和开放状态。</p></details></footer>
+    <footer class="yn-footer"><p>已整理 {{ coveredProvinceCount }} 个省区、{{ publicPlaces.length }} 处公共景点，持续收集各地风景。个人地点由你确认；照片请保留原件并定期备份。</p><details><summary>地图与资料来源</summary><p>经典地标与地方发现是内容选题，不代表实时热度或客流。坐标使用 WGS84，仅作旅行回忆示意，不是导航入口或精确行政归属判断。图标是简化意象，不是建筑测绘复原。</p><p>省区示意数据来自 <a href="https://www.geoboundaries.org/api/current/gbOpen/CHN/ADM1/" target="_blank" rel="noopener noreferrer">geoBoundaries / Wikimedia Commons</a>（原资料标记为 2019 年，存在精度与更新限制）。<a href="/data/china-provinces.geojson" download>下载省区示意数据</a>。本机开发版未完成公开地图上线审核。</p><p>云南详细地理数据 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> · ODbL。<a href="/data/SOURCES.md" target="_blank" rel="noopener noreferrer">来源与重建说明</a> · <a href="/data/yunnan-geography.geojson" download>下载云南衍生地理数据</a></p><p>公共景点资料及坐标来源保留在各地点详情中。这里不提供实时攻略、票价和开放状态。</p></details></footer>
   </main>
 </template>

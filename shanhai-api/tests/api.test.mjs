@@ -9,6 +9,7 @@ import sharp from 'sharp'
 import { createApp } from '../dist/app.js'
 import { migrate } from '../dist/migrate.js'
 import { validateConfig } from '../dist/config.js'
+import { catalogueManifest } from '../dist/catalogue-manifest.js'
 import { Catalogue, within } from '../dist/catalogue.js'
 
 const origin = 'http://127.0.0.1:5191'
@@ -73,13 +74,24 @@ test('explicit test mode, exact loopback origin, real PostgreSQL and controlled 
   assert.throws(() => validateConfig({ ...config, testAuthSecret: 'short' }))
   const server = (await db.query('SELECT version() AS version,(SELECT rolsuper FROM pg_roles WHERE rolname=current_user) AS superuser')).rows[0]
   assert.match(server.version, /PostgreSQL 17\./); assert.equal(server.superuser, false)
-  assert.deepEqual([capabilities.provinces, capabilities.regions, capabilities.publicPlaces], [34, 49, 43])
+  assert.deepEqual([capabilities.provinces, capabilities.regions, capabilities.publicPlaces], [34, 49, catalogueManifest.counts.publicPlaces])
   assert.equal(capabilities.completeNationalCatalogue, false)
   const catalogue = new Catalogue(); await catalogue.load()
   assert.ok(catalogue.places.has('yulong')); assert.equal(catalogue.regions.get('lijiang'), 'yunnan')
   const polygon = { type: 'Polygon', coordinates: [[[0, 0], [10, 0], [10, 10], [0, 10], [0, 0]], [[3, 3], [5, 3], [5, 5], [3, 5], [3, 3]]] }
   assert.equal(within([0, 5], polygon), true); assert.equal(within([3, 4], polygon), false)
 })
+test('new public places and legacy Yunnan references retain account-scoped identity', async () => {
+  const body = (id, catalogueVersion = capabilities.catalogueVersion) => ({ ...visitBody(null, id), place: { kind: 'public', id, catalogueVersion } })
+  const beijing = expect(await call(alice, 'POST', '/api/v1/visits', body('beijing-forbidden-city')), 201).visit
+  assert.equal(beijing.place.id, 'beijing-forbidden-city')
+  expect(await call(bob, 'GET', `/api/v1/visits/${beijing.id}`), 404, 'NOT_FOUND')
+  const old = expect(await call(alice, 'POST', '/api/v1/visits', body('yulong', 'yunnan43-3ecd736f')), 201).visit
+  assert.equal(old.place.catalogueVersion, 'yunnan43-3ecd736f')
+  expect(await call(alice, 'POST', '/api/v1/visits', body('beijing-forbidden-city', 'yunnan43-3ecd736f')), 422, 'CATALOGUE_VERSION_UNSUPPORTED')
+  expect(await call(alice, 'POST', '/api/v1/visits', body('yulong', 'unknown')), 422, 'CATALOGUE_VERSION_UNSUPPORTED')
+})
+
 test('security headers, missing auth, origin, host, CSRF, unknown fields and private paths', async () => {
   expect(await call(null, 'GET', '/api/v1/session'), 401)
   expect(await call(null, 'POST', '/api/v1/testing/login', { subject: 'alice', secret: 'wrong' }), 401)

@@ -1,18 +1,23 @@
 import placeData from '../data/places.json'
+import nationalPlaceData from '../data/national-places.json'
 import { getProvince, provinces, withinProvince } from './provinces'
 import type { Coordinates, CustomPlace, Place, Region, Visit } from './models'
 
 // These are checked-in source assets, never remote or user-provided JSON.
-const seeds = placeData as unknown as Place[]
-export const publicPlaces: readonly Place[] = seeds.map(p => ({ ...p, mapId: 'yunnan', coordinates: [...p.coordinates], aliases: [...p.aliases, '云南', '云南省'] }))
-export const yunnanRegions: readonly Region[] = [...new Set(publicPlaces.map(p => p.regionId))].map(id => ({
-  id, provinceId: 'yunnan', name: publicPlaces.find(p => p.regionId === id)!.regionName,
-  placeIds: publicPlaces.filter(p => p.regionId === id).map(p => p.id),
+const seeds = [...placeData.map(p => ({ ...p, mapId: 'yunnan' })), ...nationalPlaceData] as unknown as Place[]
+export const publicPlaces: readonly Place[] = seeds.map(p => {
+  const province = getProvince(p.mapId!)!
+  return { ...p, discoveryTier: p.discoveryTier ?? (p.priority === 1 ? 'classic' : 'local'), coordinates: [...p.coordinates], aliases: [...new Set([...p.aliases, province.name, province.shortName])] }
+})
+const yunnanPlaces = publicPlaces.filter(p => p.mapId === 'yunnan')
+export const yunnanRegions: readonly Region[] = [...new Set(yunnanPlaces.map(p => p.regionId))].map(id => ({
+  id, provinceId: 'yunnan', name: yunnanPlaces.find(p => p.regionId === id)!.regionName,
+  placeIds: yunnanPlaces.filter(p => p.regionId === id).map(p => p.id),
 }))
 // Legacy prefecture ids remain valid identities. Outside the existing Yunnan
 // catalogue the first release records the province only, not invented cities.
 export const regions: readonly Region[] = [...yunnanRegions, ...provinces.filter(p => p.id !== 'yunnan').map(p => ({
-  id: p.id, provinceId: p.id, name: p.name, placeIds: [],
+  id: p.id, provinceId: p.id, name: p.name, placeIds: publicPlaces.filter(place => place.regionId === p.id).map(place => place.id),
 }))]
 const regionById = new Map(regions.map(region => [region.id, region]))
 export function provinceForRegion(regionId: string) { return getProvince(regionById.get(regionId)?.provinceId ?? '') }

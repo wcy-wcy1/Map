@@ -1,0 +1,28 @@
+[
+  {
+    "results": [
+      {
+        "place_id": 219774427,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 16906759,
+        "lat": "38.8081115",
+        "lon": "106.3525716",
+        "category": "natural",
+        "type": "water",
+        "place_rank": 22,
+        "importance": 0.10672341420614936,
+        "addresstype": "water",
+        "name": "沙湖",
+        "display_name": "沙湖, 平罗县, 石嘴山市, 宁夏回族自治区, 中国",
+        "boundingbox": [
+          "38.7890630",
+          "38.8271491",
+          "106.3296033",
+          "106.3861951"
+        ]
+      }
+    ],
+    "query": "沙湖 宁夏"
+  }
+]

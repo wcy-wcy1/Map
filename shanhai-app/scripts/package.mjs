@@ -58,7 +58,7 @@ export function createZip(entries, date = new Date()) {
 
 const README = `# 山海集 Vue 本地试用包
 
-这是云南旅行记录 Vue 版本的独立本地试用构建。无需安装 npm 依赖；需要已安装并处于维护期的 Node.js 22.22.2+ 或 24.15.0+。
+这是山海集全国旅行回忆地图的独立本地试用构建。无需安装 npm 依赖；需要已安装并处于维护期的 Node.js 22.22.2+ 或 24.15.0+。会议开发页面与角色图片不包含在此地图包内，开发项目的 /meeting 入口继续保留。
 
 1. 完整解压 ZIP，进入含 serve.mjs 和 manifest.json 的目录。
 2. 在终端运行：node serve.mjs
@@ -75,7 +75,7 @@ const README = `# 山海集 Vue 本地试用包
 
 manifest.json 记录构建验证报告的摘要哈希和包内文件哈希；外部同名 .release.json 回执记录 ZIP 与清单哈希。README.md、serve.mjs 和发布清单不作为网页路由提供。网页只接受 GET/HEAD，没有 QA、上传、任意文件读取或数据写入接口。
 
-公开数据来源见 data/SOURCES.md；Leaflet 许可见 licenses/Leaflet.txt。可选择 34 个省区并添加个人地点，公共目录目前仍为云南 43 个代表性地点；省区轮廓较粗略，不是全国完整景点目录、导航地图或实时排名。
+公开数据来源见 data/SOURCES.md；Leaflet 许可见 licenses/Leaflet.txt。可选择 34 个省区并添加个人地点，公共目录现有 175 个代表性地点（保留云南 43 点，其他 33 省区各 4 点）；省区轮廓较粗略，不是全国完整景点目录、导航地图或实时排名。
 `
 
 export async function packageRelease({ root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'), now = new Date() } = {}) {

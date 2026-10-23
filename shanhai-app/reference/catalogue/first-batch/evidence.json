@@ -1,0 +1,2921 @@
+{
+  "retrievedOn": "2026-10-23",
+  "coordinateSystem": "WGS84",
+  "sources": {
+    "Q2298526": {
+      "coordinates": [
+        116.357,
+        39.924
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q2298526",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2298526.json?revision=2383630244",
+        "entityId": "Q2298526",
+        "revision": 2383630244,
+        "statementId": "q2298526$1DE4F1B2-7026-4932-A668-310208C0013F",
+        "precision": 0.001,
+        "referenceCount": 1,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q2298526",
+        "lastrevid": 2383630244,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "妙应寺"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "b2d27cdb2bb17001f69072ff18bd91a12202a28f",
+            "datavalue": {
+              "value": {
+                "latitude": 39.924,
+                "longitude": 116.357,
+                "altitude": null,
+                "precision": 0.001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q2298526$1DE4F1B2-7026-4932-A668-310208C0013F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Q1815062": {
+      "coordinates": [
+        116.02416667,
+        39.90416667
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q1815062",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1815062.json?revision=2515913586",
+        "entityId": "Q1815062",
+        "revision": 2515913586,
+        "statementId": "Q1815062$CFCB4C56-2E27-45F4-B050-AE0E3DE11DAF",
+        "precision": 0.00027777777777778,
+        "referenceCount": 1,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q1815062",
+        "lastrevid": 2515913586,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "潭柘寺"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "346ed2a9c700229b8e200076344484a8cf6e577b",
+            "datavalue": {
+              "value": {
+                "latitude": 39.90416667,
+                "longitude": 116.02416667,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1815062$CFCB4C56-2E27-45F4-B050-AE0E3DE11DAF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Q4111": {
+      "coordinates": [
+        103.9,
+        33.2
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q4111",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4111.json?revision=2555627739",
+        "entityId": "Q4111",
+        "revision": 2555627739,
+        "statementId": "Q4111$8CC20EBD-256F-4533-A78B-632A65324712",
+        "precision": 0.016666666666667,
+        "referenceCount": 1,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q4111",
+        "lastrevid": 2555627739,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "九寨沟风景名胜区"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "ce4c6ad7d760396b9eab23ef0ddcfa56dd7e7c94",
+            "datavalue": {
+              "value": {
+                "latitude": 33.2,
+                "longitude": 103.9,
+                "altitude": null,
+                "precision": 0.016666666666667,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q4111$8CC20EBD-256F-4533-A78B-632A65324712",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Q502371": {
+      "coordinates": [
+        120.14083333333,
+        30.2375
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q502371",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q502371.json?revision=2551300681",
+        "entityId": "Q502371",
+        "revision": 2551300681,
+        "statementId": "q502371$D4001F90-9A84-4076-A0BA-16F119FEC4CA",
+        "precision": null,
+        "referenceCount": 0,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q502371",
+        "lastrevid": 2551300681,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "西湖"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "2e8776082f16545cbea7fb6064976303ac71716c",
+            "datavalue": {
+              "value": {
+                "latitude": 30.2375,
+                "longitude": 120.14083333333,
+                "altitude": null,
+                "precision": null,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q502371$D4001F90-9A84-4076-A0BA-16F119FEC4CA",
+          "rank": "normal"
+        }
+      }
+    },
+    "Q1371343": {
+      "coordinates": [
+        120.487959,
+        30.742693
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q1371343",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1371343.json?revision=2526811655",
+        "entityId": "Q1371343",
+        "revision": 2526811655,
+        "statementId": "q1371343$78DC39DB-3B54-4845-82E1-293944702547",
+        "precision": 0.00027777777777778,
+        "referenceCount": 1,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q1371343",
+        "lastrevid": 2526811655,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "乌镇镇"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "3b168e8326569f230ce34e050fd399548f8c88ad",
+            "datavalue": {
+              "value": {
+                "latitude": 30.742693,
+                "longitude": 120.487959,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q1371343$78DC39DB-3B54-4845-82E1-293944702547",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0ee3b3ba1c958f4c3dcba7ed8091fe4b57311348",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "cb49f6fa327b245e4a5aaf48c44b3f503bcd4265",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 30239,
+                        "id": "Q30239"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Q1025339": {
+      "coordinates": [
+        118.06194444444,
+        24.4475
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q1025339",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1025339.json?revision=2554558537",
+        "entityId": "Q1025339",
+        "revision": 2554558537,
+        "statementId": "q1025339$7EE472B6-411F-4ECB-A7EC-77085AD857EF",
+        "precision": 0.00027777777777778,
+        "referenceCount": 1,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q1025339",
+        "lastrevid": 2554558537,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "鼓浪屿"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "8d972eb953b6c44e6e41e7e034a56bfd20d69f41",
+            "datavalue": {
+              "value": {
+                "latitude": 24.4475,
+                "longitude": 118.06194444444,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q1025339$7EE472B6-411F-4ECB-A7EC-77085AD857EF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Q7800231": {
+      "coordinates": [
+        117.055,
+        24.5872
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q7800231",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7800231.json?revision=2513535692",
+        "entityId": "Q7800231",
+        "revision": 2513535692,
+        "statementId": "Q7800231$AEE58AA8-D71B-4C6B-93E4-4C5C942A978E",
+        "precision": 0.0098788799297386,
+        "referenceCount": 1,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q7800231",
+        "lastrevid": 2513535692,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "南靖田螺坑土楼群"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "bd3c2db75bc1a38dd33728c055ecc03177c70a0e",
+            "datavalue": {
+              "value": {
+                "latitude": 24.5872,
+                "longitude": 117.055,
+                "altitude": null,
+                "precision": 0.0098788799297386,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q7800231$AEE58AA8-D71B-4C6B-93E4-4C5C942A978E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Q2035546": {
+      "coordinates": [
+        109.63806111111111,
+        25.90045
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q2035546",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2035546.json?revision=2483285373",
+        "entityId": "Q2035546",
+        "revision": 2483285373,
+        "statementId": "Q2035546$B2AD753E-6A49-4906-9F71-7F06EA7C4C08",
+        "precision": 0.000002777777777777778,
+        "referenceCount": 1,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q2035546",
+        "lastrevid": 2483285373,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "程阳永济桥"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "f723f19b764630e5cfaa686b4f241ae4d4018c39",
+            "datavalue": {
+              "value": {
+                "latitude": 25.90045,
+                "longitude": 109.63806111111111,
+                "altitude": null,
+                "precision": 0.000002777777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2035546$B2AD753E-6A49-4906-9F71-7F06EA7C4C08",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "e1d7525819907ae9a9da83742737f82b23437f01",
+              "snaks": {
+                "P454": [
+                  {
+                    "snaktype": "value",
+                    "property": "P454",
+                    "hash": "5c25e247d4e1ac057f57cfe681c13295f0f8f8ae",
+                    "datavalue": {
+                      "value": "20011805",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P454"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Q43286": {
+      "coordinates": [
+        94.804166666667,
+        40.037222222222
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q43286",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q43286.json?revision=2559363079",
+        "entityId": "Q43286",
+        "revision": 2559363079,
+        "statementId": "q43286$0322CAED-6B52-4F44-8554-A19A8F2FAAD6",
+        "precision": null,
+        "referenceCount": 0,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q43286",
+        "lastrevid": 2559363079,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "莫高窟"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "226acde3733642b684171d1f5bee2ca2031c1c93",
+            "datavalue": {
+              "value": {
+                "latitude": 40.037222222222,
+                "longitude": 94.804166666667,
+                "altitude": null,
+                "precision": null,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q43286$0322CAED-6B52-4F44-8554-A19A8F2FAAD6",
+          "rank": "normal"
+        }
+      }
+    },
+    "Q17638329": {
+      "coordinates": [
+        100.133,
+        38.9156
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q17638329",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q17638329.json?revision=2551351068",
+        "entityId": "Q17638329",
+        "revision": 2551351068,
+        "statementId": "Q17638329$2961CAB3-BFB9-4471-9F77-45E465E6DE8F",
+        "precision": 0.011545398351903,
+        "referenceCount": 1,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q17638329",
+        "lastrevid": 2551351068,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "张掖丹霞国家地质公园"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "89c6dad166d3cfffa48174a241a7dc3b4142df4a",
+            "datavalue": {
+              "value": {
+                "latitude": 38.9156,
+                "longitude": 100.133,
+                "altitude": null,
+                "precision": 0.011545398351903,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q17638329$2961CAB3-BFB9-4471-9F77-45E465E6DE8F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Q38432": {
+      "coordinates": [
+        105.666,
+        25.992
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q38432",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q38432.json?revision=2547223378",
+        "entityId": "Q38432",
+        "revision": 2547223378,
+        "statementId": "q38432$EF0B1F4C-A1BD-48CF-97D8-13C693107651",
+        "precision": 0.00027777777777778,
+        "referenceCount": 1,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q38432",
+        "lastrevid": 2547223378,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "黄果树瀑布"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "6cf2672f13bb6603d53dc902fe196a54bea5e4a6",
+            "datavalue": {
+              "value": {
+                "latitude": 25.992,
+                "longitude": 105.666,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q38432$EF0B1F4C-A1BD-48CF-97D8-13C693107651",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Q1723644": {
+      "coordinates": [
+        87.04,
+        48.815
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q1723644",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1723644.json?revision=2491545698",
+        "entityId": "Q1723644",
+        "revision": 2491545698,
+        "statementId": "q1723644$D9A3E5BA-0E70-48BA-9B60-E235DE4AE3BB",
+        "precision": 0.0002777777777777778,
+        "referenceCount": 1,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q1723644",
+        "lastrevid": 2491545698,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "喀纳斯湖"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "c21cc0d195af24e610d6771567620e3549340fb9",
+            "datavalue": {
+              "value": {
+                "latitude": 48.815,
+                "longitude": 87.04,
+                "altitude": null,
+                "precision": 0.0002777777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q1723644$D9A3E5BA-0E70-48BA-9B60-E235DE4AE3BB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Q965252": {
+      "coordinates": [
+        88.1325,
+        43.885833333333
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q965252",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q965252.json?revision=2515889992",
+        "entityId": "Q965252",
+        "revision": 2515889992,
+        "statementId": "q965252$F2E18048-1BAB-4A12-BDFB-B87AB99A6FBB",
+        "precision": 0.00027777777777778,
+        "referenceCount": 1,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q965252",
+        "lastrevid": 2515889992,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "天池"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "864cd529e3c89b5ad1500956386015fae1c22301",
+            "datavalue": {
+              "value": {
+                "latitude": 43.885833333333,
+                "longitude": 88.1325,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q965252$F2E18048-1BAB-4A12-BDFB-B87AB99A6FBB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Q1330939": {
+      "coordinates": [
+        89.06393051,
+        42.95051742
+      ],
+      "identityUrl": "https://www.wikidata.org/wiki/Q1330939",
+      "coordinateSource": {
+        "type": "wikidata-coordinate",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1330939.json?revision=2556894679",
+        "entityId": "Q1330939",
+        "revision": 2556894679,
+        "statementId": "Q1330939$182C91D0-0C0A-4F7A-8478-3419E105893F",
+        "precision": 0.00000277777777778,
+        "referenceCount": 1,
+        "license": "CC0-1.0"
+      },
+      "raw": {
+        "id": "Q1330939",
+        "lastrevid": 2556894679,
+        "labels": {
+          "zh": {
+            "language": "zh",
+            "value": "交河故城"
+          }
+        },
+        "claim": {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "e2f1d69951161cdd71b4b957a6480c4de8a52d43",
+            "datavalue": {
+              "value": {
+                "latitude": 42.95051742,
+                "longitude": 89.06393051,
+                "altitude": null,
+                "precision": 0.00000277777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1330939$182C91D0-0C0A-4F7A-8478-3419E105893F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "node/1799747868": {
+      "coordinates": [
+        103.0739598,
+        30.1832925
+      ],
+      "identityUrl": "https://www.openstreetmap.org/node/1799747868",
+      "coordinateSource": {
+        "type": "osm-node",
+        "url": "https://www.openstreetmap.org/node/1799747868",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/node/1799747868/4.json",
+        "objectVersion": 4,
+        "timestamp": "2024-05-10T10:36:35Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors"
+      },
+      "raw": {
+        "type": "node",
+        "id": 1799747868,
+        "lat": 30.1832925,
+        "lon": 103.0739598,
+        "timestamp": "2024-05-10T10:36:35Z",
+        "version": 4,
+        "changeset": 151138547,
+        "user": "Lepuse",
+        "uid": 9560399,
+        "tags": {
+          "alt_name": "上里古镇",
+          "name": "上里古鎮",
+          "name:en": "Shangli Old Town",
+          "name:fr": "Vieille Ville de Shangli",
+          "name:zh": "上里古鎮",
+          "name:zh-Latn-pinyin": "Shànglì gŭzhèn",
+          "place": "neighbourhood"
+        }
+      }
+    },
+    "node/2018098512": {
+      "coordinates": [
+        109.2116965,
+        25.9018992
+      ],
+      "identityUrl": "https://www.openstreetmap.org/node/2018098512",
+      "coordinateSource": {
+        "type": "osm-node",
+        "url": "https://www.openstreetmap.org/node/2018098512",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/node/2018098512/4.json",
+        "objectVersion": 4,
+        "timestamp": "2026-05-25T09:52:00Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors"
+      },
+      "raw": {
+        "type": "node",
+        "id": 2018098512,
+        "lat": 25.9018992,
+        "lon": 109.2116965,
+        "timestamp": "2026-05-25T09:52:00Z",
+        "version": 4,
+        "changeset": 183147341,
+        "user": "Taksine",
+        "uid": 10348274,
+        "tags": {
+          "name": "堂安村",
+          "name:en": "Tang'an",
+          "name:zh-Latn-pinyin": "tángān",
+          "place": "village",
+          "wikidata": "Q65989665"
+        }
+      }
+    },
+    "node/2105587519": {
+      "coordinates": [
+        103.1875235,
+        34.2384318
+      ],
+      "identityUrl": "https://www.openstreetmap.org/node/2105587519",
+      "coordinateSource": {
+        "type": "osm-node",
+        "url": "https://www.openstreetmap.org/node/2105587519",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/node/2105587519/8.json",
+        "objectVersion": 8,
+        "timestamp": "2022-09-05T17:21:53Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors"
+      },
+      "raw": {
+        "type": "node",
+        "id": 2105587519,
+        "lat": 34.2384318,
+        "lon": 103.1875235,
+        "timestamp": "2022-09-05T17:21:53Z",
+        "version": 8,
+        "changeset": 125824356,
+        "user": "rheins",
+        "uid": 2996489,
+        "tags": {
+          "name": "扎尕那",
+          "name:en": "Zhagana",
+          "name:zh": "扎尕那",
+          "place": "village",
+          "place:CN": "village",
+          "source": "GNS",
+          "tourism": "attraction"
+        }
+      }
+    },
+    "node/4440824693": {
+      "coordinates": [
+        103.4567704,
+        31.5570036
+      ],
+      "identityUrl": "https://www.openstreetmap.org/node/4440824693",
+      "coordinateSource": {
+        "type": "osm-node",
+        "url": "https://www.openstreetmap.org/node/4440824693",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/node/4440824693/1.json",
+        "objectVersion": 1,
+        "timestamp": "2016-10-10T15:53:23Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors"
+      },
+      "raw": {
+        "type": "node",
+        "id": 4440824693,
+        "lat": 31.5570036,
+        "lon": 103.4567704,
+        "timestamp": "2016-10-10T15:53:23Z",
+        "version": 1,
+        "changeset": 42780701,
+        "user": "亚洲之鹰",
+        "uid": 4702581,
+        "tags": {
+          "name": "桃坪羌寨",
+          "name:zh": "桃坪羌寨",
+          "tourism": "attraction"
+        }
+      }
+    },
+    "node/4546339893": {
+      "coordinates": [
+        108.4279395,
+        27.0507455
+      ],
+      "identityUrl": "https://www.openstreetmap.org/node/4546339893",
+      "coordinateSource": {
+        "type": "osm-node",
+        "url": "https://www.openstreetmap.org/node/4546339893",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/node/4546339893/2.json",
+        "objectVersion": 2,
+        "timestamp": "2025-05-25T14:25:17Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors"
+      },
+      "raw": {
+        "type": "node",
+        "id": 4546339893,
+        "lat": 27.0507455,
+        "lon": 108.4279395,
+        "timestamp": "2025-05-25T14:25:17Z",
+        "version": 2,
+        "changeset": 166737019,
+        "user": "JMAZL",
+        "uid": 22065592,
+        "tags": {
+          "name": "镇远古城",
+          "name:en": "Zhenyuan",
+          "tourism": "attraction"
+        }
+      }
+    },
+    "node/5019534726": {
+      "coordinates": [
+        89.5590488,
+        43.6605934
+      ],
+      "identityUrl": "https://www.openstreetmap.org/node/5019534726",
+      "coordinateSource": {
+        "type": "osm-node",
+        "url": "https://www.openstreetmap.org/node/5019534726",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/node/5019534726/1.json",
+        "objectVersion": 1,
+        "timestamp": "2017-08-07T08:41:14Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors"
+      },
+      "raw": {
+        "type": "node",
+        "id": 5019534726,
+        "lat": 43.6605934,
+        "lon": 89.5590488,
+        "timestamp": "2017-08-07T08:41:14Z",
+        "version": 1,
+        "changeset": 50909629,
+        "user": "Wingcl",
+        "uid": 5344985,
+        "tags": {
+          "name": "江布拉克",
+          "name:zh": "江布拉克",
+          "tourism": "viewpoint"
+        }
+      }
+    },
+    "node/6752630586": {
+      "coordinates": [
+        107.7415,
+        25.2515687
+      ],
+      "identityUrl": "https://www.openstreetmap.org/node/6752630586",
+      "coordinateSource": {
+        "type": "osm-node",
+        "url": "https://www.openstreetmap.org/node/6752630586",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/node/6752630586/3.json",
+        "objectVersion": 3,
+        "timestamp": "2023-09-15T18:21:18Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors"
+      },
+      "raw": {
+        "type": "node",
+        "id": 6752630586,
+        "lat": 25.2515687,
+        "lon": 107.7415,
+        "timestamp": "2023-09-15T18:21:18Z",
+        "version": 3,
+        "changeset": 141314944,
+        "user": "Taksine",
+        "uid": 10348274,
+        "tags": {
+          "area": "yes",
+          "name": "小七孔古桥",
+          "name:en": "Tongu Bridge",
+          "tourism": "attraction"
+        }
+      }
+    },
+    "node/2730362591": {
+      "coordinates": [
+        119.8693727,
+        26.3730813
+      ],
+      "identityUrl": "https://www.openstreetmap.org/node/2730362591",
+      "coordinateSource": {
+        "type": "osm-node",
+        "url": "https://www.openstreetmap.org/node/2730362591",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/node/2730362591/1.json",
+        "objectVersion": 1,
+        "timestamp": "2014-03-21T01:29:42Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors"
+      },
+      "raw": {
+        "type": "node",
+        "id": 2730362591,
+        "lat": 26.3730813,
+        "lon": 119.8693727,
+        "timestamp": "2014-03-21T01:29:42Z",
+        "version": 1,
+        "changeset": 21220466,
+        "user": "starrysky",
+        "uid": 1924888,
+        "tags": {
+          "name": "奇达村",
+          "place": "village"
+        }
+      }
+    },
+    "node/10609308998": {
+      "coordinates": [
+        119.5087759,
+        28.5254698
+      ],
+      "identityUrl": "https://www.openstreetmap.org/node/10609308998",
+      "coordinateSource": {
+        "type": "osm-node",
+        "url": "https://www.openstreetmap.org/node/10609308998",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/node/10609308998/1.json",
+        "objectVersion": 1,
+        "timestamp": "2023-02-06T01:48:14Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors"
+      },
+      "raw": {
+        "type": "node",
+        "id": 10609308998,
+        "lat": 28.5254698,
+        "lon": 119.5087759,
+        "timestamp": "2023-02-06T01:48:14Z",
+        "version": 1,
+        "changeset": 132133564,
+        "user": "MNXANL",
+        "uid": 10537336,
+        "tags": {
+          "name": "陈家铺村",
+          "place": "village",
+          "wikidata": "Q14316690"
+        }
+      }
+    },
+    "node/3338457399": {
+      "coordinates": [
+        110.4487965,
+        24.9943696
+      ],
+      "identityUrl": "https://www.openstreetmap.org/node/3338457399",
+      "coordinateSource": {
+        "type": "osm-node",
+        "url": "https://www.openstreetmap.org/node/3338457399",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/node/3338457399/5.json",
+        "objectVersion": 5,
+        "timestamp": "2025-02-03T02:48:12Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors"
+      },
+      "raw": {
+        "type": "node",
+        "id": 3338457399,
+        "lat": 24.9943696,
+        "lon": 110.4487965,
+        "timestamp": "2025-02-03T02:48:12Z",
+        "version": 5,
+        "changeset": 162069023,
+        "user": "user_22099974",
+        "uid": 22099974,
+        "tags": {
+          "amenity": "ferry_terminal",
+          "ferry": "yes",
+          "name": "杨堤码头",
+          "name:en": "Yangdi Bamboo Pier",
+          "name:zh": "杨堤码头",
+          "public_transport": "station",
+          "tourism": "attraction"
+        }
+      }
+    },
+    "node/1872107158": {
+      "coordinates": [
+        110.1483316,
+        25.8057021
+      ],
+      "identityUrl": "https://www.openstreetmap.org/node/1872107158",
+      "coordinateSource": {
+        "type": "osm-node",
+        "url": "https://www.openstreetmap.org/node/1872107158",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/node/1872107158/3.json",
+        "objectVersion": 3,
+        "timestamp": "2022-02-10T05:34:50Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors"
+      },
+      "raw": {
+        "type": "node",
+        "id": 1872107158,
+        "lat": 25.8057021,
+        "lon": 110.1483316,
+        "timestamp": "2022-02-10T05:34:50Z",
+        "version": 3,
+        "changeset": 117227961,
+        "user": "Fnkok",
+        "uid": 13101682,
+        "tags": {
+          "direction": "50",
+          "name": "千层天梯",
+          "name:en": "Thousand layers to the heaven",
+          "ref": "2",
+          "tourism": "viewpoint"
+        }
+      }
+    },
+    "way/611166527": {
+      "coordinates": [
+        119.8245103,
+        25.5867096
+      ],
+      "identityUrl": "https://www.openstreetmap.org/way/611166527",
+      "coordinateSource": {
+        "type": "osm-nominatim-label-point",
+        "url": "https://www.openstreetmap.org/way/611166527",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/way/611166527/full.json",
+        "objectVersion": 7,
+        "timestamp": "2025-10-23T05:16:21Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors",
+        "method": "Nominatim display point (not a surveyed entrance)"
+      },
+      "raw": {
+        "object": {
+          "type": "way",
+          "id": 611166527,
+          "timestamp": "2025-10-23T05:16:21Z",
+          "version": 7,
+          "changeset": 173655428,
+          "user": "Karma Howlin",
+          "uid": 4259372,
+          "nodes": [
+            5786966915,
+            11222188036,
+            5786966916,
+            12045527344,
+            5786966917,
+            5786966918,
+            5786966919,
+            5786966920,
+            13251167100,
+            13251167099,
+            13251167084,
+            13251174003,
+            13251174023,
+            5786966921,
+            13251174024,
+            13251174044,
+            13251174040,
+            13251174043,
+            13251174042,
+            13251174047,
+            5786966922,
+            5786966923,
+            5786966924,
+            13251149091,
+            5786966925,
+            13251149099,
+            13251149098,
+            5786966926,
+            5793418546,
+            5786966927,
+            5793418544,
+            5786966928,
+            5793418543,
+            5786966929,
+            13251177815,
+            5786966930,
+            5786966915
+          ],
+          "tags": {
+            "landuse": "residential",
+            "name": "北港村",
+            "place": "village"
+          }
+        },
+        "label": {
+          "place_id": 226041220,
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+          "osm_type": "way",
+          "osm_id": 611166527,
+          "lat": "25.5867096",
+          "lon": "119.8245103",
+          "category": "place",
+          "type": "village",
+          "place_rank": 19,
+          "importance": 0.14672666895551992,
+          "addresstype": "village",
+          "name": "北港村",
+          "display_name": "北港村, 君山镇, 君山片区, 平潭县, 福州市, 福建省, 中国",
+          "boundingbox": [
+            "25.5844307",
+            "25.5886701",
+            "119.8208272",
+            "119.8265083"
+          ]
+        },
+        "geometry": [
+          {
+            "type": "node",
+            "id": 5786966915,
+            "lat": 25.5856146,
+            "lon": 119.820932
+          },
+          {
+            "type": "node",
+            "id": 5786966916,
+            "lat": 25.5860231,
+            "lon": 119.82147
+          },
+          {
+            "type": "node",
+            "id": 5786966917,
+            "lat": 25.5869373,
+            "lon": 119.8231072
+          },
+          {
+            "type": "node",
+            "id": 5786966918,
+            "lat": 25.5874486,
+            "lon": 119.8233968
+          },
+          {
+            "type": "node",
+            "id": 5786966919,
+            "lat": 25.5879711,
+            "lon": 119.8246909
+          },
+          {
+            "type": "node",
+            "id": 5786966920,
+            "lat": 25.5886701,
+            "lon": 119.8254085
+          },
+          {
+            "type": "node",
+            "id": 5786966921,
+            "lat": 25.5873195,
+            "lon": 119.8262183
+          },
+          {
+            "type": "node",
+            "id": 5786966922,
+            "lat": 25.5864112,
+            "lon": 119.8265083
+          },
+          {
+            "type": "node",
+            "id": 5786966923,
+            "lat": 25.5853255,
+            "lon": 119.8259171
+          },
+          {
+            "type": "node",
+            "id": 5786966924,
+            "lat": 25.585099,
+            "lon": 119.8254226
+          },
+          {
+            "type": "node",
+            "id": 5786966925,
+            "lat": 25.5856423,
+            "lon": 119.8246292
+          },
+          {
+            "type": "node",
+            "id": 5786966926,
+            "lat": 25.5853347,
+            "lon": 119.8237659
+          },
+          {
+            "type": "node",
+            "id": 5786966927,
+            "lat": 25.5851297,
+            "lon": 119.8233183
+          },
+          {
+            "type": "node",
+            "id": 5786966928,
+            "lat": 25.5847781,
+            "lon": 119.8232366
+          },
+          {
+            "type": "node",
+            "id": 5786966929,
+            "lat": 25.5844766,
+            "lon": 119.8230163
+          },
+          {
+            "type": "node",
+            "id": 5786966930,
+            "lat": 25.5844307,
+            "lon": 119.8208272
+          },
+          {
+            "type": "node",
+            "id": 5793418543,
+            "lat": 25.5845511,
+            "lon": 119.823143
+          },
+          {
+            "type": "node",
+            "id": 5793418544,
+            "lat": 25.5850635,
+            "lon": 119.8232516
+          },
+          {
+            "type": "node",
+            "id": 5793418546,
+            "lat": 25.5852545,
+            "lon": 119.8236026
+          },
+          {
+            "type": "node",
+            "id": 11222188036,
+            "lat": 25.5859357,
+            "lon": 119.8213282
+          },
+          {
+            "type": "node",
+            "id": 12045527344,
+            "lat": 25.5864521,
+            "lon": 119.8224481
+          },
+          {
+            "type": "node",
+            "id": 13251149091,
+            "lat": 25.5854184,
+            "lon": 119.8250201
+          },
+          {
+            "type": "node",
+            "id": 13251149098,
+            "lat": 25.5858196,
+            "lon": 119.8241095
+          },
+          {
+            "type": "node",
+            "id": 13251149099,
+            "lat": 25.5857474,
+            "lon": 119.8244222
+          },
+          {
+            "type": "node",
+            "id": 13251167084,
+            "lat": 25.5875636,
+            "lon": 119.8261077
+          },
+          {
+            "type": "node",
+            "id": 13251167099,
+            "lat": 25.5882024,
+            "lon": 119.8255423
+          },
+          {
+            "type": "node",
+            "id": 13251167100,
+            "lat": 25.5885768,
+            "lon": 119.8255975
+          },
+          {
+            "type": "node",
+            "id": 13251174003,
+            "lat": 25.5875483,
+            "lon": 119.8261175
+          },
+          {
+            "type": "node",
+            "id": 13251174023,
+            "lat": 25.5874562,
+            "lon": 119.8261765
+          },
+          {
+            "type": "node",
+            "id": 13251174024,
+            "lat": 25.5872574,
+            "lon": 119.8264093
+          },
+          {
+            "type": "node",
+            "id": 13251174040,
+            "lat": 25.5869484,
+            "lon": 119.8262285
+          },
+          {
+            "type": "node",
+            "id": 13251174042,
+            "lat": 25.5864818,
+            "lon": 119.8263016
+          },
+          {
+            "type": "node",
+            "id": 13251174043,
+            "lat": 25.586476,
+            "lon": 119.8262173
+          },
+          {
+            "type": "node",
+            "id": 13251174044,
+            "lat": 25.5872191,
+            "lon": 119.8263869
+          },
+          {
+            "type": "node",
+            "id": 13251174047,
+            "lat": 25.5864469,
+            "lon": 119.8264038
+          },
+          {
+            "type": "node",
+            "id": 13251177815,
+            "lat": 25.584578,
+            "lon": 119.8224629
+          },
+          {
+            "type": "way",
+            "id": 611166527,
+            "nodes": [
+              5786966915,
+              11222188036,
+              5786966916,
+              12045527344,
+              5786966917,
+              5786966918,
+              5786966919,
+              5786966920,
+              13251167100,
+              13251167099,
+              13251167084,
+              13251174003,
+              13251174023,
+              5786966921,
+              13251174024,
+              13251174044,
+              13251174040,
+              13251174043,
+              13251174042,
+              13251174047,
+              5786966922,
+              5786966923,
+              5786966924,
+              13251149091,
+              5786966925,
+              13251149099,
+              13251149098,
+              5786966926,
+              5793418546,
+              5786966927,
+              5793418544,
+              5786966928,
+              5793418543,
+              5786966929,
+              13251177815,
+              5786966930,
+              5786966915
+            ]
+          }
+        ]
+      }
+    },
+    "way/1361457686": {
+      "coordinates": [
+        111.2009023,
+        24.2509662
+      ],
+      "identityUrl": "https://www.openstreetmap.org/way/1361457686",
+      "coordinateSource": {
+        "type": "osm-nominatim-label-point",
+        "url": "https://www.openstreetmap.org/way/1361457686",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/way/1361457686/full.json",
+        "objectVersion": 2,
+        "timestamp": "2025-05-12T18:14:11Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors",
+        "method": "Nominatim display point (not a surveyed entrance)"
+      },
+      "raw": {
+        "object": {
+          "type": "way",
+          "id": 1361457686,
+          "timestamp": "2025-05-12T18:14:11Z",
+          "version": 2,
+          "changeset": 166166230,
+          "user": "JMAZL",
+          "uid": 22065592,
+          "nodes": [
+            11117191210,
+            12604055751,
+            12604055752,
+            12604055753,
+            12604055754,
+            12604055755,
+            12604055756,
+            12604055757,
+            12604055758,
+            2903985166,
+            12604055759,
+            12604055760,
+            12604055761,
+            12604055762,
+            12604055763,
+            12604055764,
+            12604055765,
+            12831681968,
+            12604055766,
+            12604055767,
+            12604055768,
+            12604055769,
+            12604055770,
+            12604055771,
+            12604055772,
+            12604055773,
+            12604055774,
+            12831681914,
+            12604055775,
+            12604055776,
+            12604055777,
+            12604055778,
+            12604055779,
+            12604055780,
+            12604055781,
+            12604055782,
+            11117191218,
+            11117191219,
+            11117191220,
+            11117191221,
+            11117191222,
+            11117191223,
+            11117191224,
+            11117191225,
+            12831681970,
+            12831681969,
+            11117191226,
+            11117191206,
+            11117191207,
+            11117191208,
+            11117191209,
+            2903985146,
+            11117191210
+          ],
+          "tags": {
+            "leisure": "nature_reserve",
+            "name": "黄姚古镇",
+            "name:en": "Huangyao Ancient Town"
+          }
+        },
+        "label": {
+          "place_id": 240912842,
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+          "osm_type": "way",
+          "osm_id": 1361457686,
+          "lat": "24.2509662",
+          "lon": "111.2009023",
+          "category": "leisure",
+          "type": "nature_reserve",
+          "place_rank": 24,
+          "importance": 0.08004646295872432,
+          "addresstype": "nature_reserve",
+          "name": "黄姚古镇",
+          "display_name": "黄姚古镇, 黄姚镇, 昭平县, 贺州市, 广西壮族自治区, 中国",
+          "boundingbox": [
+            "24.2473069",
+            "24.2548082",
+            "111.1927852",
+            "111.2096542"
+          ]
+        },
+        "geometry": [
+          {
+            "type": "node",
+            "id": 2903985146,
+            "lat": 24.2512555,
+            "lon": 111.197427
+          },
+          {
+            "type": "node",
+            "id": 2903985166,
+            "lat": 24.253605,
+            "lon": 111.204346
+          },
+          {
+            "type": "node",
+            "id": 11117191206,
+            "lat": 24.250853,
+            "lon": 111.1945474
+          },
+          {
+            "type": "node",
+            "id": 11117191207,
+            "lat": 24.2511562,
+            "lon": 111.1952555
+          },
+          {
+            "type": "node",
+            "id": 11117191208,
+            "lat": 24.2511954,
+            "lon": 111.1961567
+          },
+          {
+            "type": "node",
+            "id": 11117191209,
+            "lat": 24.2511905,
+            "lon": 111.1971974
+          },
+          {
+            "type": "node",
+            "id": 11117191210,
+            "lat": 24.2516405,
+            "lon": 111.1987156
+          },
+          {
+            "type": "node",
+            "id": 11117191218,
+            "lat": 24.247845,
+            "lon": 111.1997884
+          },
+          {
+            "type": "node",
+            "id": 11117191219,
+            "lat": 24.2473069,
+            "lon": 111.1992896
+          },
+          {
+            "type": "node",
+            "id": 11117191220,
+            "lat": 24.2475075,
+            "lon": 111.1990482
+          },
+          {
+            "type": "node",
+            "id": 11117191221,
+            "lat": 24.247708,
+            "lon": 111.1984849
+          },
+          {
+            "type": "node",
+            "id": 11117191222,
+            "lat": 24.2482558,
+            "lon": 111.1959207
+          },
+          {
+            "type": "node",
+            "id": 11117191223,
+            "lat": 24.248471,
+            "lon": 111.1949229
+          },
+          {
+            "type": "node",
+            "id": 11117191224,
+            "lat": 24.2486373,
+            "lon": 111.1942416
+          },
+          {
+            "type": "node",
+            "id": 11117191225,
+            "lat": 24.2488622,
+            "lon": 111.1938705
+          },
+          {
+            "type": "node",
+            "id": 11117191226,
+            "lat": 24.2500313,
+            "lon": 111.1927852
+          },
+          {
+            "type": "node",
+            "id": 12604055751,
+            "lat": 24.251834,
+            "lon": 111.1993667
+          },
+          {
+            "type": "node",
+            "id": 12604055752,
+            "lat": 24.2520707,
+            "lon": 111.2002525
+          },
+          {
+            "type": "node",
+            "id": 12604055753,
+            "lat": 24.2522935,
+            "lon": 111.2011016
+          },
+          {
+            "type": "node",
+            "id": 12604055754,
+            "lat": 24.2526082,
+            "lon": 111.2017309
+          },
+          {
+            "type": "node",
+            "id": 12604055755,
+            "lat": 24.252817,
+            "lon": 111.2023509
+          },
+          {
+            "type": "node",
+            "id": 12604055756,
+            "lat": 24.2529591,
+            "lon": 111.2024364
+          },
+          {
+            "type": "node",
+            "id": 12604055757,
+            "lat": 24.2531317,
+            "lon": 111.2030443
+          },
+          {
+            "type": "node",
+            "id": 12604055758,
+            "lat": 24.2534144,
+            "lon": 111.2034982
+          },
+          {
+            "type": "node",
+            "id": 12604055759,
+            "lat": 24.2535355,
+            "lon": 111.2044432
+          },
+          {
+            "type": "node",
+            "id": 12604055760,
+            "lat": 24.2538809,
+            "lon": 111.2054756
+          },
+          {
+            "type": "node",
+            "id": 12604055761,
+            "lat": 24.2545269,
+            "lon": 111.2070304
+          },
+          {
+            "type": "node",
+            "id": 12604055762,
+            "lat": 24.2547024,
+            "lon": 111.2077421
+          },
+          {
+            "type": "node",
+            "id": 12604055763,
+            "lat": 24.2548082,
+            "lon": 111.2089302
+          },
+          {
+            "type": "node",
+            "id": 12604055764,
+            "lat": 24.2547191,
+            "lon": 111.2096542
+          },
+          {
+            "type": "node",
+            "id": 12604055765,
+            "lat": 24.2539616,
+            "lon": 111.2090952
+          },
+          {
+            "type": "node",
+            "id": 12604055766,
+            "lat": 24.2535619,
+            "lon": 111.208811
+          },
+          {
+            "type": "node",
+            "id": 12604055767,
+            "lat": 24.2531986,
+            "lon": 111.2082277
+          },
+          {
+            "type": "node",
+            "id": 12604055768,
+            "lat": 24.2525692,
+            "lon": 111.2074977
+          },
+          {
+            "type": "node",
+            "id": 12604055769,
+            "lat": 24.2518033,
+            "lon": 111.2072747
+          },
+          {
+            "type": "node",
+            "id": 12604055770,
+            "lat": 24.251341,
+            "lon": 111.2072411
+          },
+          {
+            "type": "node",
+            "id": 12604055771,
+            "lat": 24.2510793,
+            "lon": 111.2069479
+          },
+          {
+            "type": "node",
+            "id": 12604055772,
+            "lat": 24.2506949,
+            "lon": 111.2071006
+          },
+          {
+            "type": "node",
+            "id": 12604055773,
+            "lat": 24.2500572,
+            "lon": 111.207629
+          },
+          {
+            "type": "node",
+            "id": 12604055774,
+            "lat": 24.2486814,
+            "lon": 111.2075741
+          },
+          {
+            "type": "node",
+            "id": 12604055775,
+            "lat": 24.2485143,
+            "lon": 111.2072808
+          },
+          {
+            "type": "node",
+            "id": 12604055776,
+            "lat": 24.2487037,
+            "lon": 111.2057444
+          },
+          {
+            "type": "node",
+            "id": 12604055777,
+            "lat": 24.2488262,
+            "lon": 111.204993
+          },
+          {
+            "type": "node",
+            "id": 12604055778,
+            "lat": 24.2486424,
+            "lon": 111.2040736
+          },
+          {
+            "type": "node",
+            "id": 12604055779,
+            "lat": 24.2484475,
+            "lon": 111.2038568
+          },
+          {
+            "type": "node",
+            "id": 12604055780,
+            "lat": 24.2480325,
+            "lon": 111.2022715
+          },
+          {
+            "type": "node",
+            "id": 12604055781,
+            "lat": 24.2478097,
+            "lon": 111.201233
+          },
+          {
+            "type": "node",
+            "id": 12604055782,
+            "lat": 24.2477568,
+            "lon": 111.2004694
+          },
+          {
+            "type": "node",
+            "id": 12831681914,
+            "lat": 24.2486081,
+            "lon": 111.2074454
+          },
+          {
+            "type": "node",
+            "id": 12831681968,
+            "lat": 24.2537727,
+            "lon": 111.208933
+          },
+          {
+            "type": "node",
+            "id": 12831681969,
+            "lat": 24.2496755,
+            "lon": 111.1932747
+          },
+          {
+            "type": "node",
+            "id": 12831681970,
+            "lat": 24.2491552,
+            "lon": 111.1936026
+          },
+          {
+            "type": "way",
+            "id": 1361457686,
+            "nodes": [
+              11117191210,
+              12604055751,
+              12604055752,
+              12604055753,
+              12604055754,
+              12604055755,
+              12604055756,
+              12604055757,
+              12604055758,
+              2903985166,
+              12604055759,
+              12604055760,
+              12604055761,
+              12604055762,
+              12604055763,
+              12604055764,
+              12604055765,
+              12831681968,
+              12604055766,
+              12604055767,
+              12604055768,
+              12604055769,
+              12604055770,
+              12604055771,
+              12604055772,
+              12604055773,
+              12604055774,
+              12831681914,
+              12604055775,
+              12604055776,
+              12604055777,
+              12604055778,
+              12604055779,
+              12604055780,
+              12604055781,
+              12604055782,
+              11117191218,
+              11117191219,
+              11117191220,
+              11117191221,
+              11117191222,
+              11117191223,
+              11117191224,
+              11117191225,
+              12831681970,
+              12831681969,
+              11117191226,
+              11117191206,
+              11117191207,
+              11117191208,
+              11117191209,
+              2903985146,
+              11117191210
+            ]
+          }
+        ]
+      }
+    },
+    "relation/13389373": {
+      "coordinates": [
+        119.7306503,
+        28.30565
+      ],
+      "identityUrl": "https://www.openstreetmap.org/relation/13389373",
+      "coordinateSource": {
+        "type": "osm-nominatim-label-point",
+        "url": "https://www.openstreetmap.org/relation/13389373",
+        "rawUrl": "https://api.openstreetmap.org/api/0.6/relation/13389373/full.json",
+        "objectVersion": 2,
+        "timestamp": "2023-08-14T05:05:52Z",
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors",
+        "method": "Nominatim display point (not a surveyed entrance)"
+      },
+      "raw": {
+        "object": {
+          "type": "relation",
+          "id": 13389373,
+          "timestamp": "2023-08-14T05:05:52Z",
+          "version": 2,
+          "changeset": 139852550,
+          "user": "Abedul Bouleau",
+          "uid": 1951271,
+          "members": [
+            {
+              "type": "way",
+              "ref": 532742491,
+              "role": "outer"
+            },
+            {
+              "type": "way",
+              "ref": 532742492,
+              "role": "outer"
+            }
+          ],
+          "tags": {
+            "name": "古堰画乡",
+            "name:en": "Guyan Huaxiang",
+            "tourism": "attraction",
+            "type": "multipolygon"
+          }
+        },
+        "label": {
+          "place_id": 225203471,
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+          "osm_type": "relation",
+          "osm_id": 13389373,
+          "lat": "28.3056500",
+          "lon": "119.7306503",
+          "category": "tourism",
+          "type": "attraction",
+          "place_rank": 30,
+          "importance": 0.00005363164721136824,
+          "addresstype": "tourism",
+          "name": "古堰画乡",
+          "display_name": "古堰画乡, S50, 松阳县, 丽水市, 浙江省, 323060, 中国",
+          "boundingbox": [
+            "28.2986603",
+            "28.3094134",
+            "119.7233071",
+            "119.7399654"
+          ]
+        },
+        "geometry": [
+          {
+            "type": "node",
+            "id": 5169252124,
+            "lat": 28.2992649,
+            "lon": 119.7337963
+          },
+          {
+            "type": "node",
+            "id": 5169252131,
+            "lat": 28.3000548,
+            "lon": 119.739838
+          },
+          {
+            "type": "node",
+            "id": 5169252132,
+            "lat": 28.3001545,
+            "lon": 119.7398522
+          },
+          {
+            "type": "node",
+            "id": 5169252133,
+            "lat": 28.3001358,
+            "lon": 119.7385356
+          },
+          {
+            "type": "node",
+            "id": 5169252134,
+            "lat": 28.2999458,
+            "lon": 119.7375552
+          },
+          {
+            "type": "node",
+            "id": 5169252135,
+            "lat": 28.2993755,
+            "lon": 119.7342284
+          },
+          {
+            "type": "node",
+            "id": 5169252138,
+            "lat": 28.3001451,
+            "lon": 119.7391881
+          },
+          {
+            "type": "node",
+            "id": 5169252139,
+            "lat": 28.3049158,
+            "lon": 119.7324869
+          },
+          {
+            "type": "node",
+            "id": 5169252140,
+            "lat": 28.3048084,
+            "lon": 119.7319503
+          },
+          {
+            "type": "node",
+            "id": 5169252141,
+            "lat": 28.3044429,
+            "lon": 119.7312936
+          },
+          {
+            "type": "node",
+            "id": 5169252142,
+            "lat": 28.3043854,
+            "lon": 119.7309244
+          },
+          {
+            "type": "node",
+            "id": 5169252143,
+            "lat": 28.3049522,
+            "lon": 119.7305167
+          },
+          {
+            "type": "node",
+            "id": 5169252144,
+            "lat": 28.3053111,
+            "lon": 119.729948
+          },
+          {
+            "type": "node",
+            "id": 5169252145,
+            "lat": 28.3057126,
+            "lon": 119.7293526
+          },
+          {
+            "type": "node",
+            "id": 5169252146,
+            "lat": 28.3061328,
+            "lon": 119.7288361
+          },
+          {
+            "type": "node",
+            "id": 5169252147,
+            "lat": 28.3064048,
+            "lon": 119.7283564
+          },
+          {
+            "type": "node",
+            "id": 5169252148,
+            "lat": 28.3072424,
+            "lon": 119.726405
+          },
+          {
+            "type": "node",
+            "id": 5169252149,
+            "lat": 28.3075645,
+            "lon": 119.7252585
+          },
+          {
+            "type": "node",
+            "id": 5169252150,
+            "lat": 28.3079941,
+            "lon": 119.7233071
+          },
+          {
+            "type": "node",
+            "id": 5169252151,
+            "lat": 28.308187,
+            "lon": 119.7251001
+          },
+          {
+            "type": "node",
+            "id": 5169252152,
+            "lat": 28.3094134,
+            "lon": 119.7252768
+          },
+          {
+            "type": "node",
+            "id": 5169252153,
+            "lat": 28.3094106,
+            "lon": 119.725373
+          },
+          {
+            "type": "node",
+            "id": 5169252154,
+            "lat": 28.309329,
+            "lon": 119.7267617
+          },
+          {
+            "type": "node",
+            "id": 5169252155,
+            "lat": 28.3092315,
+            "lon": 119.7271525
+          },
+          {
+            "type": "node",
+            "id": 5169252156,
+            "lat": 28.3088868,
+            "lon": 119.7275434
+          },
+          {
+            "type": "node",
+            "id": 5169252157,
+            "lat": 28.3085112,
+            "lon": 119.7236727
+          },
+          {
+            "type": "node",
+            "id": 5169252158,
+            "lat": 28.3082523,
+            "lon": 119.7280917
+          },
+          {
+            "type": "node",
+            "id": 5169252159,
+            "lat": 28.3066621,
+            "lon": 119.7308861
+          },
+          {
+            "type": "node",
+            "id": 5169252160,
+            "lat": 28.307586,
+            "lon": 119.7251611
+          },
+          {
+            "type": "node",
+            "id": 5169252171,
+            "lat": 28.3049854,
+            "lon": 119.7322129
+          },
+          {
+            "type": "node",
+            "id": 5171330433,
+            "lat": 28.3049009,
+            "lon": 119.7324125
+          },
+          {
+            "type": "node",
+            "id": 5171330745,
+            "lat": 28.3043584,
+            "lon": 119.7314258
+          },
+          {
+            "type": "node",
+            "id": 5171330746,
+            "lat": 28.3045505,
+            "lon": 119.7316881
+          },
+          {
+            "type": "node",
+            "id": 5171330747,
+            "lat": 28.3018928,
+            "lon": 119.7371423
+          },
+          {
+            "type": "node",
+            "id": 5171330748,
+            "lat": 28.3026158,
+            "lon": 119.7341626
+          },
+          {
+            "type": "node",
+            "id": 5171330749,
+            "lat": 28.3029544,
+            "lon": 119.7342097
+          },
+          {
+            "type": "node",
+            "id": 5171330750,
+            "lat": 28.3026827,
+            "lon": 119.7354144
+          },
+          {
+            "type": "node",
+            "id": 5171330751,
+            "lat": 28.3021685,
+            "lon": 119.7365259
+          },
+          {
+            "type": "node",
+            "id": 5171330752,
+            "lat": 28.3022774,
+            "lon": 119.7366029
+          },
+          {
+            "type": "node",
+            "id": 5171330753,
+            "lat": 28.3018323,
+            "lon": 119.7367689
+          },
+          {
+            "type": "node",
+            "id": 5171330755,
+            "lat": 28.3022631,
+            "lon": 119.7349661
+          },
+          {
+            "type": "node",
+            "id": 5171330756,
+            "lat": 28.3022815,
+            "lon": 119.7354574
+          },
+          {
+            "type": "node",
+            "id": 5171330757,
+            "lat": 28.3028303,
+            "lon": 119.7336602
+          },
+          {
+            "type": "node",
+            "id": 5171330758,
+            "lat": 28.3031055,
+            "lon": 119.7331604
+          },
+          {
+            "type": "node",
+            "id": 5171330759,
+            "lat": 28.3034043,
+            "lon": 119.7329983
+          },
+          {
+            "type": "node",
+            "id": 5171330760,
+            "lat": 28.303798,
+            "lon": 119.7318104
+          },
+          {
+            "type": "node",
+            "id": 5171330761,
+            "lat": 28.3039388,
+            "lon": 119.7315242
+          },
+          {
+            "type": "node",
+            "id": 5171330762,
+            "lat": 28.3040565,
+            "lon": 119.7315206
+          },
+          {
+            "type": "node",
+            "id": 5171330763,
+            "lat": 28.3040894,
+            "lon": 119.7313525
+          },
+          {
+            "type": "node",
+            "id": 5171330764,
+            "lat": 28.3042333,
+            "lon": 119.7313704
+          },
+          {
+            "type": "node",
+            "id": 5171330765,
+            "lat": 28.304054,
+            "lon": 119.7314393
+          },
+          {
+            "type": "node",
+            "id": 5171330766,
+            "lat": 28.3041785,
+            "lon": 119.7311611
+          },
+          {
+            "type": "node",
+            "id": 5171330767,
+            "lat": 28.304254,
+            "lon": 119.7312595
+          },
+          {
+            "type": "node",
+            "id": 5171330768,
+            "lat": 28.3043602,
+            "lon": 119.7311907
+          },
+          {
+            "type": "node",
+            "id": 5171340992,
+            "lat": 28.299134,
+            "lon": 119.7339626
+          },
+          {
+            "type": "node",
+            "id": 5171340993,
+            "lat": 28.2986603,
+            "lon": 119.7341986
+          },
+          {
+            "type": "node",
+            "id": 5171340994,
+            "lat": 28.2990665,
+            "lon": 119.7340484
+          },
+          {
+            "type": "node",
+            "id": 5171340995,
+            "lat": 28.2993641,
+            "lon": 119.7363175
+          },
+          {
+            "type": "node",
+            "id": 5171340996,
+            "lat": 28.2999053,
+            "lon": 119.7399654
+          },
+          {
+            "type": "node",
+            "id": 5171340997,
+            "lat": 28.2995861,
+            "lon": 119.7377016
+          },
+          {
+            "type": "node",
+            "id": 5171340998,
+            "lat": 28.2991893,
+            "lon": 119.7378732
+          },
+          {
+            "type": "node",
+            "id": 7491216022,
+            "lat": 28.3055874,
+            "lon": 119.7296208
+          },
+          {
+            "type": "way",
+            "id": 532742491,
+            "nodes": [
+              5169252124,
+              5171340992,
+              5171340994,
+              5171340993,
+              5171340995,
+              5171340997,
+              5171340998,
+              5171340996,
+              5169252131,
+              5169252132,
+              5169252138,
+              5169252133,
+              5169252134,
+              5169252135,
+              5169252124
+            ]
+          },
+          {
+            "type": "way",
+            "id": 532742492,
+            "nodes": [
+              5169252139,
+              5171330433,
+              5169252171,
+              5169252140,
+              5171330746,
+              5171330749,
+              5171330750,
+              5171330751,
+              5171330752,
+              5171330747,
+              5171330753,
+              5171330756,
+              5171330755,
+              5171330748,
+              5171330757,
+              5171330758,
+              5171330759,
+              5171330760,
+              5171330761,
+              5171330762,
+              5171330765,
+              5171330763,
+              5171330764,
+              5171330745,
+              5169252141,
+              5171330768,
+              5171330767,
+              5171330766,
+              5169252142,
+              5169252143,
+              5169252144,
+              7491216022,
+              5169252145,
+              5169252146,
+              5169252147,
+              5169252148,
+              5169252149,
+              5169252160,
+              5169252150,
+              5169252157,
+              5169252151,
+              5169252152,
+              5169252153,
+              5169252154,
+              5169252155,
+              5169252156,
+              5169252158,
+              5169252159,
+              5169252139
+            ]
+          },
+          {
+            "type": "relation",
+            "id": 13389373,
+            "members": [
+              {
+                "type": "way",
+                "ref": 532742491,
+                "role": "outer"
+              },
+              {
+                "type": "way",
+                "ref": 532742492,
+                "role": "outer"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "way/643705212": {
+      "coordinates": [
+        104.3659329,
+        33.9828024
+      ],
+      "identityUrl": "https://www.openstreetmap.org/way/643705212",
+      "coordinateSource": {
+        "type": "osm-river-vertex",
+        "url": "https://www.openstreetmap.org/way/643705212",
+        "objectVersion": 2,
+        "nodeId": 10760031348,
+        "license": "ODbL-1.0",
+        "attribution": "© OpenStreetMap contributors",
+        "method": "middle indexed vertex of the named river"
+      },
+      "raw": {
+        "way": {
+          "type": "way",
+          "id": 643705212,
+          "timestamp": "2023-03-24T20:43:10Z",
+          "version": 2,
+          "changeset": 134084039,
+          "user": "ff5722",
+          "uid": 3450290,
+          "nodes": [
+            10760031272,
+            10760031273,
+            10760031274,
+            10760031275,
+            10760031276,
+            10760031277,
+            10760031278,
+            10760031279,
+            10760031280,
+            10760031281,
+            10760031282,
+            10760031283,
+            10760031284,
+            10760031285,
+            10760031286,
+            10760031287,
+            10760031288,
+            10760031289,
+            10760031290,
+            10760031291,
+            10760031292,
+            10760031293,
+            10760031294,
+            10760031295,
+            10760031296,
+            10760031297,
+            10760031298,
+            10760031299,
+            10760031300,
+            10760031301,
+            10760031302,
+            10760031303,
+            10760031304,
+            10760031305,
+            10760031306,
+            10760031307,
+            10760031308,
+            10760031309,
+            10760031310,
+            10760031311,
+            10760031312,
+            10760031313,
+            10760031314,
+            10760031315,
+            10760031316,
+            10760031317,
+            10760031318,
+            10760031319,
+            10760031320,
+            10760031321,
+            10760031322,
+            10760031323,
+            10760031324,
+            10760031325,
+            10760031326,
+            10760031327,
+            10760031328,
+            10760031329,
+            10760031330,
+            10760031331,
+            10760031332,
+            10760031333,
+            10760031334,
+            10760031335,
+            10760031336,
+            10760031337,
+            10760031338,
+            10760031339,
+            10760031340,
+            10760031341,
+            10760031342,
+            10760031343,
+            10760031344,
+            10760031345,
+            10760031346,
+            10760031347,
+            10760031348,
+            10760031349,
+            10760031350,
+            10760031351,
+            10760031352,
+            10760031353,
+            10760031354,
+            10760031355,
+            10760031356,
+            10760031357,
+            10760031358,
+            10760031359,
+            10760031360,
+            10760031361,
+            10760031362,
+            10760031363,
+            10760031364,
+            10760031365,
+            10760031366,
+            10760031367,
+            10760031368,
+            10760031369,
+            10760031370,
+            10760031371,
+            10760031372,
+            10760031373,
+            10760031374,
+            10760031375,
+            10760031609,
+            10760031610,
+            10760031611,
+            10760031612,
+            10760031613,
+            10760031614,
+            10760031615,
+            10760031616,
+            10760031617,
+            10760031618,
+            10760031619,
+            10760031620,
+            10760031621,
+            10760031622,
+            10760031623,
+            10760031624,
+            6056977587,
+            6056977589,
+            6056977595,
+            6056977599,
+            6056977603,
+            6056977615,
+            6056977622,
+            6056977647,
+            6056977657,
+            6056977675,
+            6056974056,
+            6056974078,
+            6056978689,
+            6056978697,
+            6056978707,
+            6056978711,
+            6056978714,
+            6056978726,
+            6056978728,
+            6056978732,
+            6056978735,
+            6056978739,
+            6056978741,
+            6056978744,
+            6056978746,
+            6056978747,
+            6056978749,
+            6056978889,
+            6056978910,
+            6056978964,
+            6056977937,
+            6056979196,
+            6056994754
+          ],
+          "tags": {
+            "name": "官鹅沟",
+            "source": "digitalGlobe Standard",
+            "waterway": "river"
+          }
+        },
+        "node": {
+          "type": "node",
+          "id": 10760031348,
+          "lat": 33.9828024,
+          "lon": 104.3659329,
+          "timestamp": "2023-03-24T20:43:08Z",
+          "version": 1,
+          "changeset": 134084039,
+          "user": "ff5722",
+          "uid": 3450290
+        }
+      }
+    }
+  }
+}

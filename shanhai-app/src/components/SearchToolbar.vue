@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import type { Region } from '../domain/models'
 import { getProvince, provinces } from '../domain/provinces'
-const props = withDefaults(defineProps<{ query: string; regionId: string; visitedOnly: boolean; regions: readonly Region[]; placeCount: number; provinceId?: string; disabled?: boolean }>(), { provinceId: '', disabled: false })
+const props = withDefaults(defineProps<{ query: string; regionId: string; visitedOnly: boolean; regions: readonly Region[]; placeCount: number; provinceId?: string; coveredProvinceCount?: number; discoveryTier?: '' | 'classic' | 'local'; disabled?: boolean }>(), { provinceId: '', coveredProvinceCount: 1, discoveryTier: '', disabled: false })
 const province = computed(() => getProvince(props.provinceId))
 const subregions = computed(() => props.provinceId ? props.regions.filter(region => region.id !== props.provinceId) : [])
 const emit = defineEmits<{
@@ -10,12 +10,13 @@ const emit = defineEmits<{
   'update:provinceId': [value: string]
   'update:regionId': [value: string]
   'update:visitedOnly': [value: boolean]
+  'update:discoveryTier': [value: '' | 'classic' | 'local']
 }>()
 </script>
 
 <template>
   <section class="yn-toolbar" aria-label="地图筛选">
-    <div class="yn-map-heading"><h1>{{ province?.shortName || '全国' }}</h1><span class="yn-catalog-count">{{ placeCount }} 个公共地点<span v-if="!provinceId">，目前整理于云南</span><span v-else-if="!placeCount">，可添加我的地点</span></span></div>
+    <div class="yn-map-heading"><div><button v-if="provinceId" class="yn-national-back" type="button" :disabled="disabled" @click="emit('update:provinceId', '')">返回全国</button><h1>{{ province?.shortName || '全国' }}</h1></div><span class="yn-catalog-count"><template v-if="!provinceId">{{ coveredProvinceCount }} 个省区 · {{ placeCount }} 处景点</template><template v-else>{{ placeCount }} 个公共地点<span v-if="!placeCount">，可添加我的地点</span><span v-else> · 慢慢发现当地</span></template></span></div>
     <form class="yn-search" role="search" aria-label="找回旅行回忆" @submit.prevent>
       <svg class="yn-search-symbol" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></svg>
       <label class="yn-sr-only" for="yn-query">搜索地点、日期或手记</label>
@@ -31,6 +32,14 @@ const emit = defineEmits<{
         <button type="button" :disabled="disabled" :aria-pressed="!visitedOnly" @click="emit('update:visitedOnly', false)">全部地点</button>
         <button type="button" :disabled="disabled" :aria-pressed="visitedOnly" @click="emit('update:visitedOnly', true)">我去过的</button>
       </div>
+    </div>
+    <div class="yn-discovery-bar">
+      <div class="yn-discovery-filters" role="group" aria-label="景点特色筛选">
+        <button type="button" :disabled="disabled" :aria-pressed="!discoveryTier" @click="emit('update:discoveryTier', '')">全部精选</button>
+        <button type="button" :disabled="disabled" :aria-pressed="discoveryTier === 'classic'" @click="emit('update:discoveryTier', 'classic')">经典地标</button>
+        <button type="button" :disabled="disabled" :aria-pressed="discoveryTier === 'local'" @click="emit('update:discoveryTier', 'local')">地方发现</button>
+      </div>
+      <span class="yn-discovery-hint">{{ discoveryTier === 'local' ? '街巷、村落与山水间的地方特色' : discoveryTier === 'classic' ? '从熟悉的地标开始认识一个地方' : '看地方风景，也留下自己的故事' }}</span>
     </div>
   </section>
 </template>

@@ -1,0 +1,46 @@
+{
+  "version": "0.6",
+  "generator": "openstreetmap-cgimap 2.1.0 (1308 spike-08.openstreetmap.org)",
+  "copyright": "OpenStreetMap and contributors",
+  "attribution": "http://www.openstreetmap.org/copyright",
+  "license": "http://opendatacommons.org/licenses/odbl/1-0/",
+  "bounds": {
+    "minlat": 28.9,
+    "minlon": 108.33,
+    "maxlat": 28.94,
+    "maxlon": 108.36
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 2886574248,
+      "lat": 28.9299234,
+      "lon": 108.35156,
+      "timestamp": "2026-03-14T22:31:37Z",
+      "version": 6,
+      "changeset": 179878051,
+      "user": "Higashimado",
+      "uid": 23239738,
+      "tags": {
+        "capital": "8",
+        "name": "龚滩镇",
+        "name:en": "Gongtan",
+        "name:zh": "龚滩镇",
+        "name:zh-Hans": "龚滩镇",
+        "name:zh-Hant": "龔灘鎮",
+        "name:zh-Latn-pinyin": "Gōngtān Zhèn",
+        "official_name": "龚滩镇",
+        "place": "town",
+        "place:CN": "town",
+        "short_name": "龚滩",
+        "source": "GNS",
+        "wikidata": "Q11181964",
+        "wikipedia": "zh:龚滩镇"
+      }
+    }
+  ],
+  "extraction": {
+    "note": "Only the named source object is retained from the original OSM API response; object fields are unmodified.",
+    "sourceObject": "node/2886574248"
+  }
+}

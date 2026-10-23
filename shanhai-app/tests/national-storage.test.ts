@@ -35,8 +35,8 @@ describe('cross-province records preserve the existing storage and backup protoc
     expect(catalogue.get(beijing().placeId)?.mapId).toBe('cn-11')
     expect(catalogue.get(sichuan().placeId)?.mapId).toBe('cn-51')
     expect(catalogue.get(old().placeId)?.mapId).toBe('yunnan')
-    expect(filter(catalogue.all, { provinceId: 'cn-51' }).map(place => place.name)).toEqual(['成都散步'])
-    expect(filter(catalogue.all, { query: '四川' }).map(place => place.id)).toEqual([sichuan().placeId])
+    expect(filter(catalogue.all, { provinceId: 'cn-51' }).filter(place => place.isCustom).map(place => place.name)).toEqual(['成都散步'])
+    expect(filter(catalogue.all, { query: '四川' }).filter(place => place.isCustom).map(place => place.id)).toEqual([sichuan().placeId])
     expect(filter(catalogue.all, { visitedOnly: true, visitedIds: rows.map(row => row.placeId) })).toHaveLength(3)
     expect(normalizeCustomPlace(old().customPlace)).toEqual(old().customPlace)
   })
@@ -69,7 +69,8 @@ describe('cross-province records preserve the existing storage and backup protoc
     expect(index.visits.map(row => row.customPlace?.regionId).sort()).toEqual(['cn-11', 'cn-51', 'lijiang'])
   })
   it.each(['single-v1', 'volume-v2'] as const)('round-trips old and new provinces with covers through %s without changing payload identities', async format => {
-    const source = harness(), rows = [old(), beijing(), sichuan()]
+    const publicVisit = (id: string, placeId: string): Visit => ({ ...beijing(), id, placeId, customPlace: undefined })
+    const source = harness(), rows = [old(), beijing(), sichuan(), publicVisit('visit-public-beijing', 'beijing-forbidden-city'), publicVisit('visit-public-yunnan', 'yulong'), publicVisit('visit-public-taipei', 'taiwan-taipei-101')]
     for (const row of rows) await source.repository.addVisit(row)
     await source.repository.setMapCover(beijing().placeId, { visitId: beijing().id, photoId: 'photo-one' })
     const before = await source.repository.load(), target = harness(new IDBFactory(), 'national-target')
@@ -83,9 +84,9 @@ describe('cross-province records preserve the existing storage and backup protoc
     }
     let decoded = 0
     const preview = await target.restores.inspect(files, { decodePhoto: async photo => { expect(photo.url).toBe(png); decoded++ } })
-    expect(preview.format).toBe(format); expect(decoded).toBe(3)
+    expect(preview.format).toBe(format); expect(decoded).toBe(rows.length)
     expect(await target.repository.load()).toEqual({ visits: [], covers: [] })
-    expect((await target.restores.commit(preview)).added).toBe(3)
+    expect((await target.restores.commit(preview)).added).toBe(rows.length)
     const sort = (value: Snapshot) => ({ visits: [...value.visits].sort((a, b) => a.id.localeCompare(b.id)), covers: value.covers })
     expect(sort(await target.repository.load())).toEqual(sort(before))
     target.catalogue.replaceCustomPlaces((await target.repository.loadIndex()).visits)

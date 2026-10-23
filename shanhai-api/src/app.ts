@@ -5,6 +5,7 @@ import express, { type NextFunction, type Request, type Response } from 'express
 import { randomUUID } from 'node:crypto'
 import { Auth } from './auth.js'
 import { Catalogue, CATALOGUE_VERSION, VALIDATION_VERSION } from './catalogue.js'
+import { catalogueManifest } from './catalogue-manifest.js'
 import { type ApiConfig, validateConfig } from './config.js'
 import { Signer } from './crypto.js'
 import { Database, type Result } from './db.js'
@@ -38,7 +39,7 @@ class ApiController {
       if (version) res.setHeader('ETag', `"${version}"`)
       return res.status(result.status).json(result.body)
     }
-    if (method === 'GET' && route === '/capabilities') return res.json({ apiVersion: '1', validationVersion: VALIDATION_VERSION, catalogueVersion: CATALOGUE_VERSION, provinces: 34, regions: 49, publicPlaces: 43, completeNationalCatalogue: false, testIdentityOnly: true, photo: { maxBytes: PHOTO_LIMIT, maxPhotosPerVisit: 9, stripsMetadata: true }, fixedSnapshots: false, legacyMigration: false })
+    if (method === 'GET' && route === '/capabilities') return res.json({ apiVersion: '1', validationVersion: VALIDATION_VERSION, catalogueVersion: CATALOGUE_VERSION, provinces: 34, regions: 49, publicPlaces: catalogueManifest.counts.publicPlaces, completeNationalCatalogue: false, testIdentityOnly: true, photo: { maxBytes: PHOTO_LIMIT, maxPhotosPerVisit: 9, stripsMetadata: true }, fixedSnapshots: false, legacyMigration: false })
     if (method === 'GET' && route === '/health') { await db.pool.query('SELECT 1'); return res.json({ status: 'ok', scope: 'loopback-test-only' }) }
     if (method === 'POST' && route === '/testing/login') {
       if (req.headers.origin !== config.origin) fail(403, 'ORIGIN_REQUIRED', 'The local test login requires its exact origin')

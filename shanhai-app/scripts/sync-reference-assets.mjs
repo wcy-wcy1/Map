@@ -8,13 +8,14 @@ const legacy = resolve(root, '../output/shanhai-yunnan')
 // Fixed source-data allowlist. Never copy the legacy page, private uploads,
 // local backups, QA fixtures or the complete output directory into this app.
 const assets = [
-  ['places.json', 'src/data/places.json'],
+  // Public catalogue files are now owned here. Never overwrite reviewed content
+  // from the legacy export; regenerate its controlled manifest explicitly.
   ['geography/data.json', 'src/data/geography.json'],
   // public/data/SOURCES.md is now maintained by this app: it also documents
   // the separately licensed national layer and must not revert to Yunnan only.
   ['geography/data.json', 'public/data/yunnan-geography.geojson'],
   ['vendor/LICENSE-Leaflet.txt', 'public/licenses/Leaflet.txt'],
-  ['app.css', 'src/styles/journal.css'],
+  // journal.css is maintained by the app too, not a legacy generated asset.
 ]
 const receipts = []
 for (const [source, target] of assets) {

@@ -5,7 +5,7 @@ import { matchesVisit } from '../domain/map-layout'
 import { selectPlaceCover } from '../domain/place-cover'
 import LandmarkIcon from './LandmarkIcon.vue'
 import PhotoThumbnail from './PhotoThumbnail.vue'
-const props = defineProps<{ places: readonly Place[]; recordIndex: Map<string, VisitSummary[]>; covers?: readonly Cover[]; revision: number; query: string; limit: number; hasFilters: boolean; visitedOnly: boolean }>()
+const props = defineProps<{ places: readonly Place[]; recordIndex: Map<string, VisitSummary[]>; covers?: readonly Cover[]; revision: number; query: string; limit: number; hasFilters: boolean; visitedOnly: boolean; provinceId?: string }>()
 const emit = defineEmits<{ select: [placeId: string]; more: []; reset: [] }>()
 const shown = computed(() => props.places.slice(0, props.limit))
 const firstVisit = (id: string) => {
@@ -26,10 +26,10 @@ const cover = (id: string) => selectedCovers.value.get(id)
       <button v-if="hasFilters" type="button" @click="emit('reset')">清除筛选，看看全部景点</button>
     </div>
     <div class="yn-place-list">
-      <button v-for="place in shown" :key="place.id" class="yn-place-row" type="button" :aria-label="`查看${place.name}${recordIndex.has(place.id) ? '，有我的回忆' : ''}`" @click="emit('select', place.id)">
+      <button v-for="place in shown" :key="place.id" class="yn-place-row" :data-place-id="place.id" type="button" :aria-label="`查看${place.name}${recordIndex.has(place.id) ? '，有我的回忆' : ''}`" @click="emit('select', place.id)">
         <span v-if="cover(place.id)" class="yn-row-photo"><PhotoThumbnail :visit-id="cover(place.id)!.visitId" :photo-id="cover(place.id)!.photoId" :revision="revision" :alt="`${place.name}的回忆封面`" compact /></span>
-        <LandmarkIcon v-else class="yn-list-icon" :icon-key="place.iconKey" :variant="place.id" />
-        <span class="yn-row-copy"><strong>{{ place.name }}</strong><small>{{ place.regionName }}{{ place.isCustom ? ' · 我的地点' : '' }}</small><span v-if="firstVisit(place.id)" class="yn-row-memory">{{ firstVisit(place.id)!.date }} · {{ firstVisit(place.id)!.note.slice(0, 54) || '那天的照片' }}</span></span>
+        <LandmarkIcon v-else class="yn-list-icon" :icon-key="place.iconKey" :variant="place.id" :simple="!provinceId" />
+        <span class="yn-row-copy"><strong>{{ place.name }}</strong><small>{{ place.city || place.regionName }}{{ place.isCustom ? ' · 我的地点' : '' }}<span v-if="!place.isCustom && place.discoveryTier" class="yn-discovery-tag" :data-tier="place.discoveryTier">{{ place.discoveryTier === 'classic' ? '经典地标' : '地方发现' }}</span></small><span v-if="firstVisit(place.id)" class="yn-row-memory">{{ firstVisit(place.id)!.date }} · {{ firstVisit(place.id)!.note.slice(0, 54) || '那天的照片' }}</span><span v-else class="yn-row-highlight">{{ place.highlights.slice(0, 2).join(' · ') }}</span></span>
         <span v-if="recordIndex.has(place.id)" class="yn-row-count">{{ recordIndex.get(place.id)!.length }} 段</span>
       </button>
     </div>

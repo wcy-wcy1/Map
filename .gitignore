@@ -7,3 +7,6 @@ opencode.json
 /shanhai-app/release/
 /shanhai-api/qa/
 /shanhai-api/.local/
+/output/
+/.playwright-cli/
+/shanhai-app/output/

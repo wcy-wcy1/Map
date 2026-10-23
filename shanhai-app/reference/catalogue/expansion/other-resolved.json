@@ -1,0 +1,2544 @@
+{
+  "tianjin-eye": {
+    "title": "天津之眼",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 846231,
+      "ns": 0,
+      "title": "天津之眼",
+      "coordinates": [
+        {
+          "lat": 39.15344,
+          "lon": 117.18053,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 93454982,
+          "parentid": 92021316,
+          "timestamp": "2026-07-14T07:01:46Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "天津之眼北1.jpg",
+        "wikibase_item": "Q750548"
+      }
+    }
+  },
+  "tianjin-ancient-culture-street": {
+    "title": "古文化街",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 1006258,
+      "ns": 0,
+      "title": "古文化街",
+      "coordinates": [
+        {
+          "lat": 39.14152,
+          "lon": 117.18665,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94395584,
+          "parentid": 90882577,
+          "timestamp": "2026-09-16T18:17:33Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "津门故里古文化街_1.jpg",
+        "wikibase_item": "Q3121449"
+      }
+    }
+  },
+  "tianjin-dule-temple": {
+    "title": "独乐寺",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 232398,
+      "ns": 0,
+      "title": "独乐寺",
+      "revisions": [
+        {
+          "revid": 92854906,
+          "parentid": 92021300,
+          "timestamp": "2026-05-30T12:18:22Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "独乐寺观音阁正面1.JPG",
+        "wikibase-badge-Q17437796": "",
+        "wikibase_item": "Q822195"
+      }
+    }
+  },
+  "tianjin-jingyuan": {
+    "title": "静园",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 1192579,
+      "ns": 0,
+      "title": "静园",
+      "revisions": [
+        {
+          "revid": 92093755,
+          "parentid": 89706025,
+          "timestamp": "2026-03-30T03:24:40Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "静园.jpg",
+        "wikibase_item": "Q15926315"
+      }
+    }
+  },
+  "hebei-shanhaiguan": {
+    "title": "山海关",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 11396,
+      "ns": 0,
+      "title": "山海关",
+      "coordinates": [
+        {
+          "lat": 40.00936389,
+          "lon": 119.75414444,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94210127,
+          "parentid": 93895454,
+          "timestamp": "2026-09-05T23:26:52Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "S",
+        "page_image_free": "Shanhaiguan.jpg",
+        "wikibase_item": "Q1048381"
+      }
+    }
+  },
+  "hebei-mountain-resort": {
+    "title": "承德避暑山庄及其周围寺庙",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 50995,
+      "ns": 0,
+      "title": "承德避暑山庄及其周围寺庙",
+      "coordinates": [
+        {
+          "lat": 40.99361111,
+          "lon": 117.92944444,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94287625,
+          "parentid": 93534282,
+          "timestamp": "2026-09-10T23:29:12Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Chengde_Mountain_Resort_22630-Chengde_(42954495010).jpg",
+        "wikibase_item": "Q1046818"
+      }
+    }
+  },
+  "hebei-longxing-temple": {
+    "title": "隆興寺",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 1017523,
+      "ns": 0,
+      "title": "隆興寺",
+      "coordinates": [
+        {
+          "lat": 38.14397,
+          "lon": 114.576346,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 92021441,
+          "parentid": 92014795,
+          "timestamp": "2026-03-24T06:34:41Z"
+        }
+      ],
+      "pageprops": {
+        "kartographer_frames": "1",
+        "page_image_free": "The_Manichaean_Hall_03_Longxing_temple.JPG",
+        "wikibase_item": "Q1507370"
+      }
+    }
+  },
+  "hebei-jimingyi": {
+    "title": "鸡鸣驿",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 89298,
+      "ns": 0,
+      "title": "鸡鸣驿",
+      "coordinates": [
+        {
+          "lat": 40.45025833,
+          "lon": 115.3095,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 84932119,
+          "parentid": 83557876,
+          "timestamp": "2024-11-11T10:49:28Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "J鸡鸣驿",
+        "page_image_free": "Jimingyi_1.jpg",
+        "wikibase_item": "Q11174339"
+      }
+    }
+  },
+  "shanxi-pingyao": {
+    "title": "平遥古城",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 106430,
+      "ns": 0,
+      "title": "平遥古城",
+      "coordinates": [
+        {
+          "lat": 37.20138889,
+          "lon": 112.15444444,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94979908,
+          "parentid": 94415942,
+          "timestamp": "2026-10-12T17:28:56Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Pingyao_40.JPG",
+        "wikibase_item": "Q500061"
+      }
+    }
+  },
+  "shanxi-yungang": {
+    "title": "雲岡石窟",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 22174,
+      "ns": 0,
+      "title": "雲岡石窟",
+      "coordinates": [
+        {
+          "lat": 40.11,
+          "lon": 113.1225,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 95024970,
+          "parentid": 95006701,
+          "timestamp": "2026-10-14T07:40:47Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "Yun",
+        "page_image_free": "61292-Yungang-Grottoes_(28498548881).jpg",
+        "wikibase_item": "Q308805"
+      }
+    }
+  },
+  "shanxi-foguang-temple": {
+    "title": "佛光寺",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 2962154,
+      "ns": 0,
+      "title": "佛光寺",
+      "revisions": [
+        {
+          "revid": 46644719,
+          "parentid": 39435261,
+          "timestamp": "2017-10-20T21:58:37Z"
+        }
+      ],
+      "pageprops": {
+        "disambiguation": "",
+        "expectshortpage": "",
+        "wikibase_item": "Q10886699"
+      }
+    }
+  },
+  "shanxi-wooden-pagoda": {
+    "title": "應縣木塔",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 478837,
+      "ns": 0,
+      "title": "應縣木塔",
+      "coordinates": [
+        {
+          "lat": 39.56527778,
+          "lon": 113.18194444,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94999912,
+          "parentid": 93052581,
+          "timestamp": "2026-10-13T10:31:49Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "Fo",
+        "page_image_free": "Pagoda_of_Fogong_Temple_at_Dust.jpg",
+        "wikibase-badge-Q17437798": "",
+        "wikibase_item": "Q117697"
+      }
+    }
+  },
+  "liaoning-mukden-palace": {
+    "title": "沈阳故宫",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 41665,
+      "ns": 0,
+      "title": "沈阳故宫",
+      "coordinates": [
+        {
+          "lat": 41.7958,
+          "lon": 123.45,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94239476,
+          "parentid": 94187481,
+          "timestamp": "2026-09-08T02:40:53Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "沈阳故宫世界文化遗产标志.jpg",
+        "wikibase_item": "Q852429"
+      }
+    }
+  },
+  "liaoning-laohutan": {
+    "title": "老虎滩海洋公园",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 3902928,
+      "ns": 0,
+      "title": "老虎滩海洋公园",
+      "revisions": [
+        {
+          "revid": 94052620,
+          "parentid": 89827984,
+          "timestamp": "2026-08-26T10:48:40Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "老虎滩海洋公园正门.jpg",
+        "wikibase_item": "Q11610664"
+      }
+    }
+  },
+  "liaoning-niuheliang": {
+    "title": "牛河梁遗址",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 940655,
+      "ns": 0,
+      "title": "牛河梁遗址",
+      "coordinates": [
+        {
+          "lat": 41.33400694,
+          "lon": 119.52840111,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94714816,
+          "parentid": 93353137,
+          "timestamp": "2026-10-02T19:27:49Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "N",
+        "wikibase_item": "Q7041693"
+      }
+    }
+  },
+  "liaoning-benxi-cave": {
+    "title": "本溪水洞",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 1247259,
+      "ns": 0,
+      "title": "本溪水洞",
+      "revisions": [
+        {
+          "revid": 87488028,
+          "parentid": 84102597,
+          "timestamp": "2025-05-28T16:55:57Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Benxi_Watercave_National_Park_entrance.JPG",
+        "wikibase_item": "Q384072"
+      }
+    }
+  },
+  "jilin-heaven-lake": {
+    "title": "长白山天池",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 143434,
+      "ns": 0,
+      "title": "长白山天池",
+      "coordinates": [
+        {
+          "lat": 42.006,
+          "lon": 128.057,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 91345371,
+          "parentid": 91307574,
+          "timestamp": "2026-01-31T21:13:22Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "Tianchi天池",
+        "kartographer_frames": "1",
+        "page_image_free": "Satellite_picture_of_Heaven_Lake_-_ISS041-E-78210.jpg",
+        "wikibase_item": "Q714023"
+      }
+    }
+  },
+  "jilin-puppet-palace": {
+    "title": "偽滿皇宮博物院",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 100465,
+      "ns": 0,
+      "title": "偽滿皇宮博物院",
+      "coordinates": [
+        {
+          "lat": 43.9036,
+          "lon": 125.3422,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94952496,
+          "parentid": 93510296,
+          "timestamp": "2026-10-11T19:02:20Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Imperial_Household_Office_of_Manchukuo.JPG",
+        "wikibase_item": "Q83332"
+      }
+    }
+  },
+  "jilin-goguryeo": {
+    "title": "國內城",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 610658,
+      "ns": 0,
+      "title": "國內城",
+      "coordinates": [
+        {
+          "lat": 41.12083306,
+          "lon": 126.17861111,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 92056436,
+          "parentid": 85502240,
+          "timestamp": "2026-03-27T02:17:53Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "Guoneicheng",
+        "page_image_free": "Koguryo_Remains_Park_1.jpg",
+        "wikibase_item": "Q711386"
+      }
+    }
+  },
+  "jilin-fangchuan": {
+    "title": "防川村",
+    "file": "other-wikipedia-01.json",
+    "page": {
+      "pageid": 1118838,
+      "ns": 0,
+      "title": "防川村",
+      "coordinates": [
+        {
+          "lat": 42.4375,
+          "lon": 130.5875,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94345110,
+          "parentid": 92237605,
+          "timestamp": "2026-09-13T21:18:45Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "国际客运列车在图们江铁路桥上行驶，离开朝鲜进入俄罗斯_-_panoramio.jpg",
+        "wikibase_item": "Q5433823"
+      }
+    }
+  },
+  "heilongjiang-saint-sophia": {
+    "title": "圣索菲亚教堂 (哈尔滨)",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 267662,
+      "ns": 0,
+      "title": "圣索菲亚教堂 (哈尔滨)",
+      "coordinates": [
+        {
+          "lat": 45.7682,
+          "lon": 126.62127,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 92076197,
+          "parentid": 91362575,
+          "timestamp": "2026-03-28T16:02:38Z"
+        }
+      ],
+      "pageprops": {
+        "kartographer_frames": "1",
+        "page_image_free": "West_facade_of_St._Sophia_Cathedral,_Harbin_(20230721150450).jpg",
+        "wikibase_item": "Q1632027"
+      }
+    }
+  },
+  "heilongjiang-wudalianchi": {
+    "title": "五大连池",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 183568,
+      "ns": 0,
+      "title": "五大连池",
+      "revisions": [
+        {
+          "revid": 26183666,
+          "parentid": 13460538,
+          "timestamp": "2013-04-13T22:03:57Z"
+        }
+      ],
+      "pageprops": {
+        "disambiguation": "",
+        "expectshortpage": "",
+        "wikibase_item": "Q10881670"
+      }
+    }
+  },
+  "heilongjiang-hengdaohezi": {
+    "title": "横道河子站",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 726480,
+      "ns": 0,
+      "title": "横道河子站",
+      "revisions": [
+        {
+          "revid": 95010304,
+          "parentid": 94773219,
+          "timestamp": "2026-10-13T18:27:48Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Hengdaohezi_Railway_Station.jpg",
+        "wikibase_item": "Q11121687"
+      }
+    }
+  },
+  "heilongjiang-zhalong": {
+    "title": "黑龙江扎龙国家级自然保护区",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 52356,
+      "ns": 0,
+      "title": "黑龙江扎龙国家级自然保护区",
+      "revisions": [
+        {
+          "revid": 88667131,
+          "parentid": 87765780,
+          "timestamp": "2025-08-10T08:22:03Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Zhalong.jpg",
+        "wikibase_item": "Q197132"
+      }
+    }
+  },
+  "shanghai-oriental-pearl": {
+    "title": "东方明珠广播电视塔",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 45254,
+      "ns": 0,
+      "title": "东方明珠广播电视塔",
+      "coordinates": [
+        {
+          "lat": 31.2419,
+          "lon": 121.49526,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 93803918,
+          "parentid": 93097390,
+          "timestamp": "2026-08-07T14:08:05Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Oriental_Pearl_Tower_in_Shanghai.jpg",
+        "wikibase_item": "Q223207"
+      }
+    }
+  },
+  "shanghai-yu-garden": {
+    "title": "豫园",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 201517,
+      "ns": 0,
+      "title": "豫园",
+      "coordinates": [
+        {
+          "lat": 31.22916667,
+          "lon": 121.4875,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94992788,
+          "parentid": 94692736,
+          "timestamp": "2026-10-13T05:32:48Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Shanghai_-_Yu_Garden_-_0035.jpg",
+        "wikibase_item": "Q1328025"
+      }
+    }
+  },
+  "shanghai-slaughterhouse": {
+    "title": "上海公共租界工部局宰牲场",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 1334368,
+      "ns": 0,
+      "title": "上海公共租界工部局宰牲场",
+      "revisions": [
+        {
+          "revid": 91953942,
+          "parentid": 91677233,
+          "timestamp": "2026-03-19T17:09:29Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "1933·上海公共租界工部局宰牲场·上海虹口·（正面俯拍）.jpg",
+        "wikibase_item": "Q11056843"
+      }
+    }
+  },
+  "shanghai-xujiahui-cathedral": {
+    "title": "徐家汇圣依纳爵主教座堂",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 4725847,
+      "ns": 0,
+      "title": "徐家汇圣依纳爵主教座堂",
+      "revisions": [
+        {
+          "revid": 95215308,
+          "parentid": 95215290,
+          "timestamp": "2026-10-22T17:57:13Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Cathedral_in_Xujiahui.jpg",
+        "wikibase-badge-Q17437798": "",
+        "wikibase_item": "Q49633"
+      }
+    }
+  },
+  "jiangsu-humble-garden": {
+    "title": "拙政园",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 50187,
+      "ns": 0,
+      "title": "拙政园",
+      "coordinates": [
+        {
+          "lat": 31.32611111,
+          "lon": 120.62388889,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 93446803,
+          "parentid": 92806816,
+          "timestamp": "2026-07-13T13:23:06Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Humble_Administrator's_Garden_Suzhou_November_2017_008.jpg",
+        "wikibase_item": "Q1076650"
+      }
+    }
+  },
+  "jiangsu-sun-mausoleum": {
+    "title": "中山陵",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 46423,
+      "ns": 0,
+      "title": "中山陵",
+      "coordinates": [
+        {
+          "lat": 32.06441667,
+          "lon": 118.84826944,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 93905714,
+          "parentid": 93864644,
+          "timestamp": "2026-08-15T15:58:08Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "Z",
+        "page_image_free": "Hall_of_Sun_Yat-sen_Mausoleum.jpg",
+        "wikibase-badge-Q17437798": "",
+        "wikibase_item": "Q1338405"
+      }
+    }
+  },
+  "jiangsu-huishan": {
+    "title": "惠山镇祠堂",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 917938,
+      "ns": 0,
+      "title": "惠山镇祠堂",
+      "coordinates": [
+        {
+          "lat": 31.58302,
+          "lon": 120.26799,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 93744104,
+          "parentid": 92925253,
+          "timestamp": "2026-08-02T15:36:58Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Librairie_avant-garde_in_Wuxi_Huishan_2.JPG",
+        "wikibase_item": "Q11073375"
+      }
+    }
+  },
+  "jiangsu-ge-garden": {
+    "title": "个园",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 104410,
+      "ns": 0,
+      "title": "个园",
+      "coordinates": [
+        {
+          "lat": 32.40201389,
+          "lon": 119.43814722,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 92116205,
+          "parentid": 91692714,
+          "timestamp": "2026-03-31T16:12:56Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "G",
+        "page_image_free": "Bamb_Garden_in_Yangzhou.JPG",
+        "wikibase_item": "Q3277018"
+      }
+    }
+  },
+  "anhui-huangshan": {
+    "title": "黄山",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 135989,
+      "ns": 0,
+      "title": "黄山",
+      "revisions": [
+        {
+          "revid": 94378912,
+          "parentid": 94293413,
+          "timestamp": "2026-09-15T19:45:31Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Huangshan_pic_4.jpg",
+        "wikibase_item": "Q36034"
+      }
+    }
+  },
+  "anhui-hongcun": {
+    "title": "宏村村",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 105761,
+      "ns": 0,
+      "title": "宏村村",
+      "revisions": [
+        {
+          "revid": 93512565,
+          "parentid": 92096617,
+          "timestamp": "2026-07-17T06:39:22Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Yixian_Hongcun_2016.09.09_18-17-55.jpg",
+        "wikibase_item": "Q4008"
+      }
+    }
+  },
+  "anhui-chengkan": {
+    "title": "呈坎村",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 1166189,
+      "ns": 0,
+      "title": "呈坎村",
+      "coordinates": [
+        {
+          "lat": 29.92138889,
+          "lon": 118.28138889,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 92583502,
+          "parentid": 84929240,
+          "timestamp": "2026-05-08T15:36:24Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "C呈",
+        "page_image_free": "Chengkan_5456.jpg",
+        "wikibase_item": "Q10920045"
+      }
+    }
+  },
+  "anhui-tangyue": {
+    "title": "棠樾牌坊群",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 1122018,
+      "ns": 0,
+      "title": "棠樾牌坊群",
+      "coordinates": [
+        {
+          "lat": 29.87103,
+          "lon": 118.36513,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 92993703,
+          "parentid": 92583856,
+          "timestamp": "2026-06-08T13:44:49Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "T",
+        "page_image_free": "Tangyue_5328.jpg",
+        "wikibase_item": "Q11116971"
+      }
+    }
+  },
+  "jiangxi-lushan": {
+    "title": "庐山",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 100453,
+      "ns": 0,
+      "title": "庐山",
+      "coordinates": [
+        {
+          "lat": 29.43333333,
+          "lon": 115.86666667,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 95162383,
+          "parentid": 93487028,
+          "timestamp": "2026-10-19T08:16:06Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Mount_Lushan_-_fog.JPG",
+        "wikibase_item": "Q622616"
+      }
+    }
+  },
+  "jiangxi-tengwang": {
+    "title": "滕王阁",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 300407,
+      "ns": 0,
+      "title": "滕王阁",
+      "coordinates": [
+        {
+          "lat": 28.6841,
+          "lon": 115.8758,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 92662823,
+          "parentid": 91845450,
+          "timestamp": "2026-05-15T05:06:15Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "滕王阁_2024-08-05_04.jpg",
+        "wikibase_item": "Q1375487"
+      }
+    }
+  },
+  "jiangxi-yaoli": {
+    "title": "瑶里镇",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 1097860,
+      "ns": 0,
+      "title": "瑶里镇",
+      "coordinates": [
+        {
+          "lat": 29.5477,
+          "lon": 117.57752,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 91258064,
+          "parentid": 91039562,
+          "timestamp": "2026-01-25T17:08:09Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Fuliang_Yaoli_2018.01.01_08-27-56.jpg",
+        "wikibase_item": "Q3496635"
+      }
+    }
+  },
+  "jiangxi-white-deer": {
+    "title": "白鹿洞书院",
+    "file": "other-wikipedia-02.json",
+    "page": {
+      "pageid": 191020,
+      "ns": 0,
+      "title": "白鹿洞书院",
+      "coordinates": [
+        {
+          "lat": 29.51961,
+          "lon": 116.03719,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 95052658,
+          "parentid": 93354829,
+          "timestamp": "2026-10-15T07:21:56Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Lushan_White_Lotus_Grotto_Academy.JPG",
+        "wikibase_item": "Q414476"
+      }
+    }
+  },
+  "shandong-taishan": {
+    "title": "泰山",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 21980,
+      "ns": 0,
+      "title": "泰山",
+      "coordinates": [
+        {
+          "lat": 36.25583333,
+          "lon": 117.1075,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 95162342,
+          "parentid": 94532805,
+          "timestamp": "2026-10-19T08:14:24Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "Taishan",
+        "page_image_free": "泰山_南天门.jpg",
+        "wikibase_item": "Q216059"
+      }
+    }
+  },
+  "shandong-confucius-temple": {
+    "title": "曲阜孔庙",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 86881,
+      "ns": 0,
+      "title": "曲阜孔庙",
+      "coordinates": [
+        {
+          "lat": 35.59589,
+          "lon": 116.98443,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94491366,
+          "parentid": 94475900,
+          "timestamp": "2026-09-22T05:28:59Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Qufu_Confucian_Temple_49189-Qufu_(49055643376).jpg",
+        "wikibase_item": "Q339822"
+      }
+    }
+  },
+  "shandong-qingzhou": {
+    "title": "青州古城",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 9335251,
+      "ns": 0,
+      "title": "青州古城",
+      "revisions": [
+        {
+          "revid": 92795756,
+          "parentid": 92557097,
+          "timestamp": "2026-05-25T20:46:13Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "20211114_青州古城景区_偶园街_06.jpg",
+        "wikibase_item": "Q139679534"
+      }
+    }
+  },
+  "shandong-penglai": {
+    "title": "蓬莱阁",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 120551,
+      "ns": 0,
+      "title": "蓬莱阁",
+      "revisions": [
+        {
+          "revid": 85702301,
+          "parentid": 85702266,
+          "timestamp": "2025-01-16T10:55:40Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "PenglaiPavilion.jpg",
+        "wikibase_item": "Q1937908"
+      }
+    }
+  },
+  "henan-longmen": {
+    "title": "龙门石窟",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 21986,
+      "ns": 0,
+      "title": "龙门石窟",
+      "coordinates": [
+        {
+          "lat": 34.55444444,
+          "lon": 112.47111111,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94688574,
+          "parentid": 94679043,
+          "timestamp": "2026-10-01T12:45:17Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "27427-Luoyang_(49067744628).jpg",
+        "wikibase_item": "Q273834"
+      }
+    }
+  },
+  "henan-shaolin": {
+    "title": "少林寺",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 13585,
+      "ns": 0,
+      "title": "少林寺",
+      "coordinates": [
+        {
+          "lat": 34.50708333,
+          "lon": 112.93569444,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94697579,
+          "parentid": 93618672,
+          "timestamp": "2026-10-02T00:03:58Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "Shaolin Si",
+        "page_image_free": "Shaolinsi.JPG",
+        "wikibase_item": "Q232771"
+      }
+    }
+  },
+  "henan-songyang": {
+    "title": "嵩阳书院",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 13586,
+      "ns": 0,
+      "title": "嵩阳书院",
+      "revisions": [
+        {
+          "revid": 93974519,
+          "parentid": 92210371,
+          "timestamp": "2026-08-20T21:26:46Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "Songyang",
+        "page_image_free": "20250629_Songyang_Academy_03.jpg",
+        "wikibase_item": "Q11054608"
+      }
+    }
+  },
+  "henan-shedian": {
+    "title": "赊店镇",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 1274414,
+      "ns": 0,
+      "title": "赊店镇",
+      "coordinates": [
+        {
+          "lat": 33.05781,
+          "lon": 112.93909,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 91038889,
+          "parentid": 89431760,
+          "timestamp": "2026-01-09T00:36:15Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "20251004_Ciqi_Street_04.jpg",
+        "wikibase_item": "Q13909523"
+      }
+    }
+  },
+  "hubei-yellow-crane": {
+    "title": "黄鹤楼",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 1228,
+      "ns": 0,
+      "title": "黄鹤楼",
+      "coordinates": [
+        {
+          "lat": 30.54694444,
+          "lon": 114.29694444,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94882021,
+          "parentid": 94367730,
+          "timestamp": "2026-10-09T12:28:37Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "H",
+        "page_image_free": "CN_-_Hubei_-_Wuhan_-_Kranichpagode.jpg",
+        "wikibase_item": "Q462372"
+      }
+    }
+  },
+  "hubei-wudang": {
+    "title": "武当山",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 22170,
+      "ns": 0,
+      "title": "武当山",
+      "coordinates": [
+        {
+          "lat": 32.40083333,
+          "lon": 111.00388889,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94859759,
+          "parentid": 93836850,
+          "timestamp": "2026-10-08T18:26:52Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "Wu",
+        "page_image_free": "Wudangshan_pic_7.jpg",
+        "wikibase_item": "Q4034"
+      }
+    }
+  },
+  "hubei-longzhong": {
+    "title": "隆中",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 1280315,
+      "ns": 0,
+      "title": "隆中",
+      "coordinates": [
+        {
+          "lat": 31.99407694,
+          "lon": 112.02700306,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 89002608,
+          "parentid": 89002054,
+          "timestamp": "2025-09-03T22:51:32Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "L",
+        "page_image_free": "Xingyang_Longzhong_2013.08.23_10-51-10.jpg",
+        "wikibase_item": "Q130891"
+      }
+    }
+  },
+  "hubei-tusi-city": {
+    "title": "恩施土司城",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "ns": 0,
+      "title": "恩施土司城",
+      "missing": true
+    }
+  },
+  "hunan-wulingyuan": {
+    "title": "武陵源風景名勝區",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 42846,
+      "ns": 0,
+      "title": "武陵源風景名勝區",
+      "revisions": [
+        {
+          "revid": 94548876,
+          "parentid": 90834867,
+          "timestamp": "2026-09-25T05:35:49Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "1_zhangjiajie_huangshizhai_wulingyuan_panorama_2012.jpg",
+        "wikibase_item": "Q4187"
+      }
+    }
+  },
+  "hunan-yueyang": {
+    "title": "岳阳楼",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 173423,
+      "ns": 0,
+      "title": "岳阳楼",
+      "coordinates": [
+        {
+          "lat": 29.38473056,
+          "lon": 113.08833889,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 91965474,
+          "parentid": 87811537,
+          "timestamp": "2026-03-20T12:19:23Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "Y",
+        "page_image_free": "Frontal_view_of_Yueyang_Tower,_Hunan,_China1.jpg",
+        "wikibase_item": "Q1195796"
+      }
+    }
+  },
+  "hunan-hongjiang": {
+    "title": "洪江古建筑群",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 1738394,
+      "ns": 0,
+      "title": "洪江古建筑群",
+      "coordinates": [
+        {
+          "lat": 27.1175,
+          "lon": 110,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 84933340,
+          "parentid": 82563739,
+          "timestamp": "2024-11-11T11:41:22Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "Hong",
+        "page_image_free": "洪江古商城.jpg",
+        "wikibase_item": "Q11147080"
+      }
+    }
+  },
+  "hunan-qianyang": {
+    "title": "黔城古建筑群",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 7541379,
+      "ns": 0,
+      "title": "黔城古建筑群",
+      "revisions": [
+        {
+          "revid": 93140860,
+          "parentid": 92293565,
+          "timestamp": "2026-06-20T13:04:02Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "中正门楼.jpg",
+        "wikibase_item": "Q110109423"
+      }
+    }
+  },
+  "guangdong-canton-tower": {
+    "title": "广州塔",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 898760,
+      "ns": 0,
+      "title": "广州塔",
+      "coordinates": [
+        {
+          "lat": 23.1092,
+          "lon": 113.31914722,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94491382,
+          "parentid": 93899954,
+          "timestamp": "2026-09-22T05:30:24Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Canton_Tower_2013.11.15_18-12-45.jpg",
+        "wikibase_item": "Q168400"
+      }
+    }
+  },
+  "guangdong-kaiping": {
+    "title": "开平碉楼",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 574969,
+      "ns": 0,
+      "title": "开平碉楼",
+      "coordinates": [
+        {
+          "lat": 22.28555556,
+          "lon": 112.56583333,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94616859,
+          "parentid": 93112784,
+          "timestamp": "2026-09-28T03:20:23Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Zili_Village_Yunhuan_Lou_0005.jpg",
+        "wikibase_item": "Q16303641"
+      }
+    }
+  },
+  "guangdong-chen-clan": {
+    "title": "陈家祠",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 965072,
+      "ns": 0,
+      "title": "陈家祠",
+      "coordinates": [
+        {
+          "lat": 23.12975833,
+          "lon": 113.2405,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 93276312,
+          "parentid": 92720598,
+          "timestamp": "2026-07-01T13:17:04Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Chen_Clan_Ancestral_Hall_2025.06_02.jpg",
+        "wikibase_item": "Q5090739"
+      }
+    }
+  },
+  "guangdong-guangji": {
+    "title": "广济桥",
+    "file": "other-wikipedia-03.json",
+    "page": {
+      "pageid": 3500210,
+      "ns": 0,
+      "title": "广济桥",
+      "revisions": [
+        {
+          "revid": 89182056,
+          "parentid": 86293240,
+          "timestamp": "2025-09-18T00:05:21Z"
+        }
+      ],
+      "pageprops": {
+        "disambiguation": "",
+        "expectshortpage": "",
+        "wikibase_item": "Q15901266"
+      }
+    }
+  },
+  "hainan-tianya": {
+    "title": "天涯海角",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 244719,
+      "ns": 0,
+      "title": "天涯海角",
+      "coordinates": [
+        {
+          "lat": 18.29298,
+          "lon": 109.34545,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 90037302,
+          "parentid": 89410598,
+          "timestamp": "2025-11-16T21:35:00Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Beach_of_Tianya-Haijiao_near_Tianya_Rock_(20230325134441).jpg",
+        "wikibase_item": "Q857031"
+      }
+    }
+  },
+  "hainan-nanshan": {
+    "title": "南山寺 (三亚)",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 6676034,
+      "ns": 0,
+      "title": "南山寺 (三亚)",
+      "coordinates": [
+        {
+          "lat": 18.304336,
+          "lon": 109.206161,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 93614059,
+          "parentid": 85817322,
+          "timestamp": "2026-07-23T05:25:34Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Haishangguanyin.jpg",
+        "wikibase_item": "Q4494941"
+      }
+    }
+  },
+  "hainan-boao": {
+    "title": "玉帶灘",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 335268,
+      "ns": 0,
+      "title": "玉帶灘",
+      "revisions": [
+        {
+          "revid": 93500249,
+          "parentid": 93456126,
+          "timestamp": "2026-07-16T07:22:50Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "HN_QH_Boao_Jade_Belt_Beach_WanQuan_River.jpg",
+        "wikibase_item": "Q17040738"
+      }
+    }
+  },
+  "hainan-dongpo": {
+    "title": "东坡书院",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 1642587,
+      "ns": 0,
+      "title": "东坡书院",
+      "coordinates": [
+        {
+          "lat": 19.74275,
+          "lon": 109.3534,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 93801105,
+          "parentid": 92413535,
+          "timestamp": "2026-08-07T09:00:05Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Entrance_of_Dongpo_Academy,_Danzhou_(20230327163531).jpg",
+        "wikibase_item": "Q847432"
+      }
+    }
+  },
+  "chongqing-hongya": {
+    "title": "洪崖洞民俗风貌区",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 7131293,
+      "ns": 0,
+      "title": "洪崖洞民俗风貌区",
+      "revisions": [
+        {
+          "revid": 92414195,
+          "parentid": 91700245,
+          "timestamp": "2026-04-25T15:55:37Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg",
+        "wikibase_item": "Q32171478"
+      }
+    }
+  },
+  "chongqing-dazu": {
+    "title": "大足石刻",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 21281,
+      "ns": 0,
+      "title": "大足石刻",
+      "coordinates": [
+        {
+          "lat": 29.7,
+          "lon": 105.7,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 95006714,
+          "parentid": 94739646,
+          "timestamp": "2026-10-13T15:41:16Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "Da",
+        "page_image_free": "大足石刻.JPG",
+        "wikibase_item": "Q651278"
+      }
+    }
+  },
+  "chongqing-gongtan": {
+    "title": "龚滩古镇",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "ns": 0,
+      "title": "龚滩古镇",
+      "missing": true
+    }
+  },
+  "chongqing-diaoyu": {
+    "title": "钓鱼城遗址",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 105230,
+      "ns": 0,
+      "title": "钓鱼城遗址",
+      "coordinates": [
+        {
+          "lat": 30.00561,
+          "lon": 106.31043111,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 92451405,
+          "parentid": 86003314,
+          "timestamp": "2026-04-28T16:18:30Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Fishingtown.jpg",
+        "wikibase_item": "Q195821"
+      }
+    }
+  },
+  "shaanxi-terracotta": {
+    "title": "秦始皇兵马俑",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 18633,
+      "ns": 0,
+      "title": "秦始皇兵马俑",
+      "coordinates": [
+        {
+          "lat": 34.385,
+          "lon": 109.27305556,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94339230,
+          "parentid": 94094774,
+          "timestamp": "2026-09-13T13:45:37Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "51714-Terracota-Army.jpg",
+        "wikibase_item": "Q47672"
+      }
+    }
+  },
+  "shaanxi-wild-goose": {
+    "title": "大雁塔",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 56807,
+      "ns": 0,
+      "title": "大雁塔",
+      "coordinates": [
+        {
+          "lat": 34.21976944,
+          "lon": 108.95933611,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 95083212,
+          "parentid": 94116118,
+          "timestamp": "2026-10-16T07:47:46Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Giant_Wild_Goose_Pagoda.jpg",
+        "wikibase-badge-Q17437798": "",
+        "wikibase_item": "Q1047061"
+      }
+    }
+  },
+  "shaanxi-dangjia": {
+    "title": "党家村",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 1561368,
+      "ns": 0,
+      "title": "党家村",
+      "coordinates": [
+        {
+          "lat": 35.52701944,
+          "lon": 110.47196944,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 92622203,
+          "parentid": 90318707,
+          "timestamp": "2026-05-11T15:45:40Z"
+        }
+      ],
+      "pageprops": {
+        "kartographer_frames": "1",
+        "page_image_free": "Dangjiacun.JPG",
+        "wikibase_item": "Q10891162"
+      }
+    }
+  },
+  "shaanxi-famen": {
+    "title": "法门寺",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 18631,
+      "ns": 0,
+      "title": "法门寺",
+      "coordinates": [
+        {
+          "lat": 34.44166667,
+          "lon": 107.89972222,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94988753,
+          "parentid": 92682247,
+          "timestamp": "2026-10-13T02:06:50Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Famensi.jpg",
+        "wikibase_item": "Q614916"
+      }
+    }
+  },
+  "ningxia-sand-lake": {
+    "title": "沙湖",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 1154711,
+      "ns": 0,
+      "title": "沙湖",
+      "revisions": [
+        {
+          "revid": 49612694,
+          "parentid": 21830704,
+          "timestamp": "2018-05-18T11:26:03Z"
+        }
+      ],
+      "pageprops": {
+        "disambiguation": "",
+        "expectshortpage": "",
+        "wikibase_item": "Q11140406"
+      }
+    }
+  },
+  "ningxia-western-xia": {
+    "title": "西夏陵",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 1250943,
+      "ns": 0,
+      "title": "西夏陵",
+      "coordinates": [
+        {
+          "lat": 38.43503611,
+          "lon": 105.98716667,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 92706891,
+          "parentid": 91618699,
+          "timestamp": "2026-05-18T15:52:29Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "XiXia_Tomb_3_F.jpg",
+        "wikibase-badge-Q17437796": "",
+        "wikibase_item": "Q1069411"
+      }
+    }
+  },
+  "ningxia-shuidonggou": {
+    "title": "水洞沟遗址",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 4647338,
+      "ns": 0,
+      "title": "水洞沟遗址",
+      "coordinates": [
+        {
+          "lat": 38.29875,
+          "lon": 106.50183333,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 88074520,
+          "parentid": 85946044,
+          "timestamp": "2025-07-04T05:32:43Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "水洞沟遗址.jpg",
+        "wikibase_item": "Q19841439"
+      }
+    }
+  },
+  "ningxia-zhenbeibu": {
+    "title": "镇北堡西部影城",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 1250855,
+      "ns": 0,
+      "title": "镇北堡西部影城",
+      "revisions": [
+        {
+          "revid": 87705974,
+          "parentid": 86518677,
+          "timestamp": "2025-06-12T04:03:54Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "镇北堡西北影视城标志.jpg",
+        "wikibase_item": "Q15897600"
+      }
+    }
+  },
+  "qinghai-qinghai-lake": {
+    "title": "青海湖",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 69354,
+      "ns": 0,
+      "title": "青海湖",
+      "coordinates": [
+        {
+          "lat": 37,
+          "lon": 100.13333333,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94928825,
+          "parentid": 94330108,
+          "timestamp": "2026-10-11T01:18:12Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Qinghai_lake.jpg",
+        "wikibase_item": "Q201294"
+      }
+    }
+  },
+  "qinghai-kumbum": {
+    "title": "塔尔寺",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 59595,
+      "ns": 0,
+      "title": "塔尔寺",
+      "coordinates": [
+        {
+          "lat": 36.48143889,
+          "lon": 101.59919167,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94760979,
+          "parentid": 94376690,
+          "timestamp": "2026-10-04T23:05:58Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Taersi.jpg",
+        "wikibase_item": "Q1791988"
+      }
+    }
+  },
+  "qinghai-rongwo": {
+    "title": "隆务寺",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 767376,
+      "ns": 0,
+      "title": "隆务寺",
+      "revisions": [
+        {
+          "revid": 94678787,
+          "parentid": 92694842,
+          "timestamp": "2026-10-01T02:05:07Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "L",
+        "page_image_free": "Rebkong_monastery.JPG",
+        "wikibase_item": "Q196175"
+      }
+    }
+  },
+  "qinghai-qutan": {
+    "title": "瞿昙寺",
+    "file": "other-wikipedia-04.json",
+    "page": {
+      "pageid": 3336733,
+      "ns": 0,
+      "title": "瞿昙寺",
+      "coordinates": [
+        {
+          "lat": 36.355,
+          "lon": 102.29611111,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 91958217,
+          "parentid": 86488172,
+          "timestamp": "2026-03-20T01:17:19Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Qutan_Gruschke.jpg",
+        "wikibase_item": "Q2123692"
+      }
+    }
+  },
+  "neimenggu-xiangshawan": {
+    "title": "响沙湾",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "ns": 0,
+      "title": "响沙湾",
+      "missing": true
+    }
+  },
+  "neimenggu-hulun-lake": {
+    "title": "呼倫湖",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 313904,
+      "ns": 0,
+      "title": "呼倫湖",
+      "coordinates": [
+        {
+          "lat": 48.97416667,
+          "lon": 117.44027778,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94706863,
+          "parentid": 92375033,
+          "timestamp": "2026-10-02T10:28:44Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "Hulun",
+        "page_image_free": "HulunLake2.jpg",
+        "wikibase_item": "Q537374"
+      }
+    }
+  },
+  "neimenggu-wudang": {
+    "title": "五當召",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 527454,
+      "ns": 0,
+      "title": "五當召",
+      "coordinates": [
+        {
+          "lat": 40.79111111,
+          "lon": 110.30847222,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 93741433,
+          "parentid": 93715227,
+          "timestamp": "2026-08-02T11:51:40Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "InnerMongoliaBuddhistTemple.jpg",
+        "wikibase-badge-Q17437798": "",
+        "wikibase_item": "Q2594698"
+      }
+    }
+  },
+  "neimenggu-asihatu": {
+    "title": "阿斯哈图石林",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "ns": 0,
+      "title": "阿斯哈图石林",
+      "missing": true
+    }
+  },
+  "xizang-potala": {
+    "title": "布达拉宫",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 98733,
+      "ns": 0,
+      "title": "布达拉宫",
+      "coordinates": [
+        {
+          "lat": 29.6578,
+          "lon": 91.1169,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94340716,
+          "parentid": 93618779,
+          "timestamp": "2026-09-13T14:58:37Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Potala_palace23.jpg",
+        "wikibase_item": "Q71229"
+      }
+    }
+  },
+  "xizang-namtso": {
+    "title": "纳木错",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 11175,
+      "ns": 0,
+      "title": "纳木错",
+      "coordinates": [
+        {
+          "lat": 30.7,
+          "lon": 90.55,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94330020,
+          "parentid": 94330016,
+          "timestamp": "2026-09-13T04:35:11Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Namtso-and-holy-rock.jpg",
+        "wikibase_item": "Q651294"
+      }
+    }
+  },
+  "xizang-sakya": {
+    "title": "萨迦寺",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 780846,
+      "ns": 0,
+      "title": "萨迦寺",
+      "coordinates": [
+        {
+          "lat": 28.90476111,
+          "lon": 88.01782111,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94817373,
+          "parentid": 94293760,
+          "timestamp": "2026-10-07T08:21:23Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "TIB-sakya-nordkloster.jpg",
+        "wikibase_item": "Q1585564"
+      }
+    }
+  },
+  "xizang-guge": {
+    "title": "古格王国",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 598737,
+      "ns": 0,
+      "title": "古格王国",
+      "revisions": [
+        {
+          "revid": 94184791,
+          "parentid": 92652665,
+          "timestamp": "2026-09-04T02:55:02Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "古格阴霾.jpg",
+        "wikibase_item": "Q1193554"
+      }
+    }
+  },
+  "taiwan-taipei-101": {
+    "title": "台北101",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 7253,
+      "ns": 0,
+      "title": "台北101",
+      "coordinates": [
+        {
+          "lat": 25.03361111,
+          "lon": 121.56444444,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94660335,
+          "parentid": 94660068,
+          "timestamp": "2026-09-30T06:13:34Z"
+        }
+      ],
+      "pageprops": {
+        "defaultsort": "T",
+        "page_image_free": "Taipei_101_logo.svg",
+        "wikibase-badge-Q17437798": "",
+        "wikibase_item": "Q83101"
+      }
+    }
+  },
+  "taiwan-sun-moon-lake": {
+    "title": "日月潭",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 53626,
+      "ns": 0,
+      "title": "日月潭",
+      "revisions": [
+        {
+          "revid": 94010805,
+          "parentid": 93979814,
+          "timestamp": "2026-08-23T10:35:30Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Sun_Moon_Lake_Sentinel-2B_MSI_2024-04-04.jpg",
+        "wikibase_item": "Q716206"
+      }
+    }
+  },
+  "taiwan-lin-garden": {
+    "title": "林本源園邸",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 208719,
+      "ns": 0,
+      "title": "林本源園邸",
+      "coordinates": [
+        {
+          "lat": 25.01054167,
+          "lon": 121.45488333,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94822981,
+          "parentid": 94408420,
+          "timestamp": "2026-10-07T12:35:55Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "林家花園一景.jpg",
+        "wikibase_item": "Q6550027"
+      }
+    }
+  },
+  "taiwan-lukang": {
+    "title": "鹿港龍山寺",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 144236,
+      "ns": 0,
+      "title": "鹿港龍山寺",
+      "coordinates": [
+        {
+          "lat": 23.050366,
+          "lon": 120.43493,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 92149278,
+          "parentid": 91635419,
+          "timestamp": "2026-04-03T12:15:24Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "鹿港龍山寺(夜拍正門).jpg",
+        "wikibase_item": "Q3846720"
+      }
+    }
+  },
+  "hongkong-victoria-peak": {
+    "title": "太平山 (香港)",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 92552,
+      "ns": 0,
+      "title": "太平山 (香港)",
+      "coordinates": [
+        {
+          "lat": 22.27546944,
+          "lon": 114.14382778,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 95074247,
+          "parentid": 94955034,
+          "timestamp": "2026-10-16T00:37:16Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Victoria_Peak_from_Findlay_Road.jpg",
+        "wikibase_item": "Q17541"
+      }
+    }
+  },
+  "hongkong-big-buddha": {
+    "title": "天坛大佛",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 127483,
+      "ns": 0,
+      "title": "天坛大佛",
+      "coordinates": [
+        {
+          "lat": 22.254106,
+          "lon": 113.905144,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94446774,
+          "parentid": 93752356,
+          "timestamp": "2026-09-19T18:37:26Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Tian_Tan_Buddha_2013.JPG",
+        "wikibase_item": "Q528079"
+      }
+    }
+  },
+  "hongkong-tang-pagoda": {
+    "title": "聚星樓",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 348641,
+      "ns": 0,
+      "title": "聚星樓",
+      "revisions": [
+        {
+          "revid": 95178782,
+          "parentid": 92814115,
+          "timestamp": "2026-10-20T02:22:49Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "聚星樓.JPG",
+        "wikibase_item": "Q7850013"
+      }
+    }
+  },
+  "hongkong-tai-o": {
+    "title": "大澳",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 223847,
+      "ns": 0,
+      "title": "大澳",
+      "coordinates": [
+        {
+          "lat": 22.254955,
+          "lon": 113.862855,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94857599,
+          "parentid": 93170211,
+          "timestamp": "2026-10-08T16:28:48Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "HK-lantau-map-zh.jpg",
+        "wikibase_item": "Q2497224"
+      }
+    }
+  },
+  "macau-saint-paul": {
+    "title": "大三巴牌坊",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 153944,
+      "ns": 0,
+      "title": "大三巴牌坊",
+      "coordinates": [
+        {
+          "lat": 22.1975,
+          "lon": 113.54055556,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94808076,
+          "parentid": 94672798,
+          "timestamp": "2026-10-07T01:10:11Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "Ruínas_de_São_Paulo_28-09-2023.jpg",
+        "wikibase-badge-Q17437798": "",
+        "wikibase_item": "Q1551411"
+      }
+    }
+  },
+  "macau-a-ma": {
+    "title": "媽祖閣",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 135294,
+      "ns": 0,
+      "title": "媽祖閣",
+      "revisions": [
+        {
+          "revid": 94103018,
+          "parentid": 93845032,
+          "timestamp": "2026-08-30T07:17:29Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "A_Ma_Temple_200907.jpg",
+        "wikibase-badge-Q17437798": "",
+        "wikibase_item": "Q2149114"
+      }
+    }
+  },
+  "macau-mandarin-house": {
+    "title": "鄭家大屋",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 330400,
+      "ns": 0,
+      "title": "鄭家大屋",
+      "revisions": [
+        {
+          "revid": 87951550,
+          "parentid": 57830511,
+          "timestamp": "2025-06-27T07:27:32Z"
+        }
+      ],
+      "pageprops": {
+        "disambiguation": "",
+        "expectshortpage": "",
+        "wikibase_item": "Q15881880"
+      }
+    }
+  },
+  "macau-taipa-houses": {
+    "title": "龍環葡韻住宅式博物館",
+    "file": "other-wikipedia-05.json",
+    "page": {
+      "pageid": 188138,
+      "ns": 0,
+      "title": "龍環葡韻住宅式博物館",
+      "coordinates": [
+        {
+          "lat": 22.15389,
+          "lon": 113.55961,
+          "primary": true,
+          "globe": "earth"
+        }
+      ],
+      "revisions": [
+        {
+          "revid": 94619850,
+          "parentid": 93823588,
+          "timestamp": "2026-09-28T07:03:22Z"
+        }
+      ],
+      "pageprops": {
+        "page_image_free": "20260809_Casas–Museu_da_Taipa.jpg",
+        "wikibase-badge-Q17437798": "",
+        "wikibase_item": "Q15216026"
+      }
+    }
+  }
+}

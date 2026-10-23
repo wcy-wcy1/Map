@@ -8,8 +8,8 @@ const visit = (id: string, name = '雪山下的庭院'): Visit => ({ id, created
 
 describe('source catalogue and local places', () => {
   it('preserves all 43 source places, their distinct ids and 16 regions', () => {
-    expect(publicPlaces).toHaveLength(43)
-    expect(new Set(publicPlaces.map(p => p.id)).size).toBe(43)
+    expect(publicPlaces.filter(p => p.mapId === 'yunnan')).toHaveLength(43)
+    expect(new Set(publicPlaces.map(p => p.id)).size).toBe(publicPlaces.length)
     expect(yunnanRegions).toHaveLength(16)
     expect(regions).toHaveLength(49)
     expect(regions.flatMap(r => r.placeIds).sort()).toEqual(publicPlaces.map(p => p.id).sort())
@@ -35,7 +35,7 @@ describe('source catalogue and local places', () => {
   it('derives and removes custom places from saved visits, without changing source rows', () => {
     const catalogue = createCatalogue(), source = JSON.stringify(publicPlaces)
     catalogue.replaceCustomPlaces([visit('one'), visit('two')])
-    expect(catalogue.all).toHaveLength(44)
+    expect(catalogue.all).toHaveLength(publicPlaces.length + 1)
     expect(catalogue.get('custom-courtyard')?.isCustom).toBe(true)
     catalogue.replaceCustomPlaces([])
     expect(catalogue.has('custom-courtyard')).toBe(false)

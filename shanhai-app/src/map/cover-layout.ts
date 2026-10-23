@@ -21,6 +21,36 @@ const separated = (a: Rect, b: Rect) =>
   a.y + a.height + GAP <= b.y || b.y + b.height + GAP <= a.y
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value))
 
+/** Names can move around a fixed geographic symbol; the symbol never moves.
+ * Reserve actual label widths instead of an invisible 172px strip per place. */
+export function layoutMapLabels(
+  markers: readonly (CoverMarker & { labelWidth: number })[],
+  viewport: { width: number; height: number },
+  obstacles: readonly Rect[] = [],
+): Map<string, Rect> {
+  const result = new Map<string, Rect>()
+  if (!finite(viewport.width, viewport.height) || viewport.width <= EDGE * 2 || viewport.height <= EDGE * 2) return result
+  const blocked = [...markers.filter(validRect), ...obstacles.filter(validRect)]
+  const ordered = markers.filter(marker => validRect(marker) && finite(marker.labelWidth, marker.anchorX, marker.anchorY) && marker.labelWidth > 0)
+    .slice().sort((a, b) => Number(b.selected === true) - Number(a.selected === true) || compareId(a, b))
+  for (const marker of ordered) {
+    const width = Math.min(172, marker.labelWidth), height = 29
+    const x = clamp(marker.anchorX - width / 2, EDGE, viewport.width - EDGE - width)
+    const middle = marker.y + (marker.height - height) / 2
+    const candidates = [
+      { x, y: marker.y + marker.height + 6, width, height },
+      { x, y: marker.y - height - 6, width, height },
+      { x: marker.x + marker.width + 6, y: middle, width, height },
+      { x: marker.x - width - 6, y: middle, width, height },
+    ]
+    const placed = candidates.find(rect => rect.x >= EDGE && rect.y >= EDGE &&
+      rect.x + width <= viewport.width - EDGE && rect.y + height <= viewport.height - EDGE &&
+      blocked.every(obstacle => separated(rect, obstacle)))
+    if (placed) { result.set(marker.id, placed); blocked.push(placed) }
+  }
+  return result
+}
+
 /** Place small photo stacks around immutable landmark rectangles. Every valid
  * landmark remains an obstacle, including ones without photos or valid anchors.
  * Invalid/ambiguous markers receive no photo; hiding a cover never moves or
@@ -29,6 +59,7 @@ export function layoutMapCovers(
   markers: readonly CoverMarker[],
   viewport: { width: number; height: number },
   obstacles: readonly Rect[] = [],
+  previousOffsets: ReadonlyMap<string, CoverPlacement> = new Map(),
 ): Map<string, CoverPlacement> {
   const result = new Map<string, CoverPlacement>()
   if (!finite(viewport.width, viewport.height) || viewport.width < COMPACT.width + EDGE * 2 || viewport.height < COMPACT.height + EDGE * 2) return result
@@ -47,8 +78,11 @@ export function layoutMapCovers(
       blocked.every(obstacle => separated(rect, obstacle))
   }
   for (const marker of eligible) {
-    let placed: CoverPlacement | undefined
+    const previous = previousOffsets.get(marker.id)
+    const retained = previous && { ...previous, x: marker.anchorX + previous.x, y: marker.anchorY + previous.y }
+    let placed: CoverPlacement | undefined = retained && fits(retained) && sizes.some(size => size.width === retained.width) ? retained : undefined
     for (const size of sizes) {
+      if (placed) break
       const sideY = clamp(marker.y + (marker.height - size.height) / 2, EDGE, viewport.height - EDGE - size.height)
       const candidates: CoverPlacement[] = [
         { x: marker.x + marker.width + GAP, y: sideY, ...size },

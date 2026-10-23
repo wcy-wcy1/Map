@@ -21,10 +21,10 @@ export function matchesVisit(visit: Pick<VisitSummary, 'date' | 'note'>, query: 
   const q = normalizeQuery(query)
   return !!q && [visit.date, visit.note].some(value => normalizeQuery(value).includes(q))
 }
-export function filter(places: readonly Place[], { query = '', provinceId = '', regionId = '', visitedOnly = false, visitedIds = [], visits = [] }: FilterOptions = {}): Place[] {
+export function filter(places: readonly Place[], { query = '', provinceId = '', regionId = '', discoveryTier = '', visitedOnly = false, visitedIds = [], visits = [] }: FilterOptions = {}): Place[] {
   const q = normalizeQuery(query), visited = new Set(visitedIds)
   const memoryPlaces = new Set(q ? visits.filter(v => matchesVisit(v, q)).map(v => v.placeId) : [])
-  return places.filter(p => (!provinceId || p.mapId === provinceId) && (!regionId || p.regionId === regionId) && (!visitedOnly || visited.has(p.id)) &&
+  return places.filter(p => (!provinceId || p.mapId === provinceId) && (!regionId || p.regionId === regionId) && (!discoveryTier || (!p.isCustom && p.discoveryTier === discoveryTier)) && (!visitedOnly || visited.has(p.id)) &&
     (!q || memoryPlaces.has(p.id) || [p.name, p.city, p.regionName, ...p.aliases].some(value => normalizeQuery(value).includes(q))))
 }
 export function detailPage<T extends VisitSummary>(visits: readonly T[], query: string, { showAll = false, limit = 8 }: { showAll?: boolean; limit?: number } = {}) {

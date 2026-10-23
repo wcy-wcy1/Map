@@ -1,0 +1,254 @@
+{
+  "version": "0.6",
+  "generator": "openstreetmap-cgimap 2.1.0 (1297 spike-08.openstreetmap.org)",
+  "copyright": "OpenStreetMap and contributors",
+  "attribution": "http://www.openstreetmap.org/copyright",
+  "license": "http://opendatacommons.org/licenses/odbl/1-0/",
+  "elements": [
+    {
+      "type": "relation",
+      "id": 16906759,
+      "timestamp": "2023-12-31T06:03:33Z",
+      "version": 3,
+      "changeset": 145720997,
+      "user": "Manfutu",
+      "uid": 5769221,
+      "members": [
+        {
+          "type": "way",
+          "ref": 208621845,
+          "role": "outer"
+        },
+        {
+          "type": "way",
+          "ref": 1235727791,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235727792,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235727793,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235727794,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235727795,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235727796,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235727797,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235727798,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235727799,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235727800,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235727801,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235727802,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235727803,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728754,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728755,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728756,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728757,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728758,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728759,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728760,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728761,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728762,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728763,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728764,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728765,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728766,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728767,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728768,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728769,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728770,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728771,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728772,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728773,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728774,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728775,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728776,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728777,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728778,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728779,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728780,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728781,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235728782,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235763232,
+          "role": "inner"
+        },
+        {
+          "type": "way",
+          "ref": 1235763240,
+          "role": "inner"
+        }
+      ],
+      "tags": {
+        "name": "沙湖",
+        "natural": "water",
+        "type": "multipolygon"
+      }
+    }
+  ],
+  "extraction": {
+    "note": "Only the named source object is retained from the original OSM API response; object fields are unmodified.",
+    "sourceObject": "relation/16906759"
+  }
+}

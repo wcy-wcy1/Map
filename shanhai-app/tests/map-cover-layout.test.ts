@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { layoutMapCovers, type CoverMarker, type Rect } from '../src/map/cover-layout'
+import { layoutMapCovers, layoutMapLabels, type CoverMarker, type Rect } from '../src/map/cover-layout'
 
 const marker = (id: string, overrides: Partial<CoverMarker> = {}): CoverMarker => ({ id, x: 120, y: 100, width: 54, height: 54, anchorX: 147, anchorY: 154, hasCover: true, ...overrides })
 const viewport = { width: 600, height: 400 }
@@ -22,6 +22,15 @@ describe('small map cover collision layout', () => {
     const source = marker('snow')
     expect(layoutMapCovers([source], viewport).get('snow')).toEqual({ x: 178, y: 105, width: 48, height: 44, compact: false })
     expectSafe([source])
+  })
+  it('retains a valid previous relative position until a new obstacle requires reflow', () => {
+    const source = marker('snow')
+    const previous = new Map([['snow', { x: -79, y: -49, width: 48, height: 44, compact: false }]])
+    expect(layoutMapCovers([source], viewport, [], previous).get('snow')?.x).toBe(68)
+    const obstacle = { x: 55, y: 90, width: 62, height: 75 }
+    expect(layoutMapCovers([source], viewport, [obstacle], previous).get('snow')?.x).toBe(178)
+    const shifted = marker('snow', { x: 130, anchorX: 157 })
+    expect(layoutMapCovers([shifted], viewport, [], previous).get('snow')?.x).toBe(78)
   })
   it('tries left before below, then avoids the name/control obstacles below', () => {
     const source = marker('snow'), right = { x: 178, y: 90, width: 55, height: 75 }, left = { x: 55, y: 90, width: 62, height: 75 }
@@ -119,5 +128,30 @@ describe('small map cover collision layout', () => {
     result.get('snow')!.x = 0
     expect(source.x).toBe(120)
     expect(layoutMapCovers([source, { ...source, x: 400 }], viewport).size).toBe(0)
+  })
+})
+
+describe('coordinate-fixed name placement', () => {
+  const named = (id: string, overrides: Partial<CoverMarker> = {}) => ({ ...marker(id, overrides), labelWidth: 100 })
+  it('puts a name above its symbol when the status area blocks the usual bottom position', () => {
+    const source = named('coast', { y: 285, anchorY: 339 })
+    const status = { x: 0, y: 338, width: 600, height: 62 }
+    expect(layoutMapLabels([source], viewport, [status]).get(source.id)).toEqual({ x: 97, y: 250, width: 100, height: 29 })
+    expect(source.anchorY).toBe(339)
+  })
+  it('separates neighbouring names, landmarks and photo stacks with selected names first', () => {
+    const markers = [named('a'), named('b', { x: 195, anchorX: 222, selected: true })]
+    const labels = layoutMapLabels(markers, viewport)
+    expect([...labels.keys()][0]).toBe('b')
+    expect(labels.size).toBe(2)
+    expect(gap(labels.get('a')!, labels.get('b')!)).toBe(true)
+    for (const label of labels.values()) for (const symbol of markers) expect(gap(label, symbol)).toBe(true)
+    const photos = layoutMapCovers(markers, viewport, [...labels.values()])
+    for (const photo of photos.values()) for (const label of labels.values()) expect(gap(photo, label)).toBe(true)
+  })
+  it('keeps edge names inside the map and declines completely blocked placements', () => {
+    const source = named('edge', { x: 0, anchorX: 27 })
+    expect(layoutMapLabels([source], viewport).get('edge')?.x).toBe(8)
+    expect(layoutMapLabels([source], viewport, [{ x: 0, y: 0, ...viewport }]).size).toBe(0)
   })
 })

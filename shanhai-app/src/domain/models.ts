@@ -52,6 +52,7 @@ export interface Place {
   text: string
   highlights: string[]
   priority: number
+  discoveryTier?: 'classic' | 'local'
   isCustom?: boolean
   customPlace?: CustomPlace
 }
@@ -64,6 +65,7 @@ export interface GeographyProperties {
 }
 export type Geography = FeatureCollection<Geometry, GeographyProperties>
 export interface FilterOptions {
+  discoveryTier?: '' | 'classic' | 'local'
   query?: string
   provinceId?: string
   regionId?: string

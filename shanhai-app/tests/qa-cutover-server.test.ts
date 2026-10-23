@@ -64,10 +64,12 @@ async function fixture() {
   for (const [name, content] of Object.entries({
     'dist/index.html': `<script type="module" src="/${entryJs}"></script><link rel="stylesheet" href="/${entryCss}"><div id="app">合成构建</div>`,
     'dist/.vite/manifest.json': JSON.stringify(manifest),
+    'dist/favicon.svg': '<svg xmlns="http://www.w3.org/2000/svg"/>',
     [`dist/${entryJs}`]: `import '/${vendorJs}'; console.log('synthetic app');`,
     [`dist/${entryCss}`]: 'body{color:#234}',
     [`dist/${vendorJs}`]: 'export const fixture = true;',
     'dist/data/SOURCES.md': 'Authored QA geography source notice',
+    'dist/data/national-places.json': '[]',
     'dist/data/yunnan-geography.geojson': '{"type":"FeatureCollection","features":[]}',
     'dist/data/china-provinces.geojson': '{"type":"FeatureCollection","features":[]}',
     'dist/licenses/Leaflet.txt': 'Authored QA license fixture',
@@ -75,7 +77,7 @@ async function fixture() {
     'src/private.ts': 'synthetic private source marker',
     'qa/report.json': '{"privateFixture":true}',
   })) await put(projectRoot, name, content)
-  for (const name of ['data/SOURCES.md', 'data/yunnan-geography.geojson', 'data/china-provinces.geojson', 'licenses/Leaflet.txt']) {
+  for (const name of ['favicon.svg', 'data/SOURCES.md', 'data/national-places.json', 'data/yunnan-geography.geojson', 'data/china-provinces.geojson', 'licenses/Leaflet.txt']) {
     await put(projectRoot, `public/${name}`, await readFile(path.join(projectRoot, 'dist', name)))
   }
   return { root, projectRoot, manifest }
