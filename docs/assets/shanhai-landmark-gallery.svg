@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600" role="img" aria-labelledby="gallery-title gallery-description">
+  <title id="gallery-title">山海集：产品地标插画</title>
+  <desc id="gallery-description">来自山海集应用的六处原创地标插画，按经典地标与地方发现配对。北京：故宫与白塔寺街区；上海：豫园与1933老场坊；福建：鼓浪屿与奇达村。</desc>
+  <style>
+    text { text-anchor: middle; fill: #183B3C; }
+    .region { font-family: "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", SimSun, serif; font-size: 40px; font-weight: 400; letter-spacing: 5px; }
+    .caption, .category, .place { font-family: "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; font-weight: 400; }
+    .caption { font-size: 20px; letter-spacing: 2px; text-anchor: start; fill: #647E7B; }
+    .category { font-size: 20px; letter-spacing: 1.5px; }
+    .classic { fill: #183B3C; }
+    .local { fill: #647E7B; }
+    .place { font-size: 26px; }
+  </style>
+  <rect width="1600" height="600" fill="#EEF2EE"/>
+  <text class="caption" x="76" y="58">产品地标插画</text>
+  <g>
+    <text class="region" x="300" y="146">北京</text>
+    <g aria-label="北京，经典地标，故宫">
+      <text class="category classic" x="188" y="210">经典地标</text>
+      <svg x="84" y="240" width="208" height="187.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 72" aria-hidden="true" focusable="false" data-anchor-x="40" data-anchor-y="68"><g fill="none" stroke="#163D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="40" cy="62" rx="27" ry="3" fill="#CCDCC8" stroke="none"/><path d="M8 44h64v17H8Z" fill="#A23E34"/><path d="M23 31h34v20H23Z" fill="#A23E34"/><path d="m17 32 10-9h26l10 9Zm-12 13 9-9h11v4h30v-4h11l9 9Z" fill="#D2AE65"/><path d="M29 60v-8h22v8M20 62h40" fill="#FBF8EF"/><g data-detail="true"><path d="M28 20h24m-23 15v9m7-9v9m8-9v9m7-9v9M13 49h9m36 0h9" stroke="#D2AE65"/><path d="M12 61v-7a3 3 0 0 1 6 0v7m44 0v-7a3 3 0 0 1 6 0v7" fill="#163D3A"/><path d="m34 57 12 0m-15 4h18M18 29l-2-3m46 3 2-3"/></g><path d="M40 63v3"/><circle cx="40" cy="68" r="2" fill="#163D3A" stroke="#FBF8EF" stroke-width="1"/></g></svg>
+      <text class="place" x="188" y="488">故宫</text>
+    </g>
+<g aria-label="北京，地方发现，白塔寺街区">
+      <text class="category local" x="412" y="210">地方发现</text>
+      <svg x="308" y="240" width="208" height="187.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 72" aria-hidden="true" focusable="false" data-anchor-x="40" data-anchor-y="68"><g fill="none" stroke="#163D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="40" cy="62" rx="27" ry="3" fill="#CCDCC8" stroke="none"/><path d="M25 59v-6h30v6H25Zm5-6v-5c-14-10-6-23 10-24 16 1 24 14 10 24v5Z" fill="#FBF8EF"/><path d="m32 25 4-14h8l4 14ZM30 10l10-5 10 5Z" fill="#D2AE65"/><path d="M7 49h14v11H7Zm52 0h14v11H59Z" fill="#FBF8EF"/><path d="m4 49 10-8 10 8Zm52 0 10-8 10 8Z" fill="#849F98"/><g data-detail="true"><path d="M35 15h10m-11 5h12M33 48h14M11 52v8m5-8v8m48-8v8m5-8v8"/><path d="M34 33c-6 5-5 10-1 12" stroke="#CCDCC8" stroke-width="3"/><path d="M38 60v-5h4v5" fill="#A23E34"/></g><path d="M40 63v3"/><circle cx="40" cy="68" r="2" fill="#163D3A" stroke="#FBF8EF" stroke-width="1"/></g></svg>
+      <text class="place" x="412" y="488">白塔寺街区</text>
+    </g>
+  </g>
+<g>
+    <text class="region" x="800" y="146">上海</text>
+    <g aria-label="上海，经典地标，豫园">
+      <text class="category classic" x="688" y="210">经典地标</text>
+      <svg x="584" y="240" width="208" height="187.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 72" aria-hidden="true" focusable="false" data-anchor-x="40" data-anchor-y="68"><g fill="none" stroke="#163D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="40" cy="62" rx="27" ry="3" fill="#CCDCC8" stroke="none"/><ellipse cx="40" cy="54" rx="34" ry="8" fill="#A9CED3"/><rect x="27" y="33" width="39" height="19" fill="#FBF8EF"/><path d="M23 34 46.5 23 70 34Z" fill="#849F98"/><path d="m23 34 23-17 24 17Zm-16 22 12-7 12 7 10-7" fill="#D2AE65"/><g data-detail="true"><path d="M33 35v17m25-17v17M43 40h7v12h-7" fill="none"/><path d="M8 48 13 30l8 5 5 17Z" fill="#849F98"/><path d="m14 36 3 8m15 15h26" fill="none" stroke="#FBF8EF"/></g><path d="M40 63v3"/><circle cx="40" cy="68" r="2" fill="#163D3A" stroke="#FBF8EF" stroke-width="1"/></g></svg>
+      <text class="place" x="688" y="488">豫园</text>
+    </g>
+<g aria-label="上海，地方发现，1933老场坊">
+      <text class="category local" x="912" y="210">地方发现</text>
+      <svg x="808" y="240" width="208" height="187.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 72" aria-hidden="true" focusable="false" data-anchor-x="40" data-anchor-y="68"><g fill="none" stroke="#163D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="40" cy="62" rx="27" ry="3" fill="#CCDCC8" stroke="none"/><rect x="8" y="21" width="64" height="39" fill="#849F98"/><rect x="15" y="29" width="50" height="31" fill="#FBF8EF"/><ellipse cx="40" cy="28" rx="24" ry="10" fill="#D2AE65"/><ellipse cx="40" cy="28" rx="13" ry="5" fill="#FBF8EF"/><path d="M16 43 62 30v8L16 52Z" fill="#849F98"/><g data-detail="true"><path d="M22 34v25m12-24v24m12-24v24m12-25v25M11 24h4m50 0h4m-40 18 24 11" fill="none" stroke="#163D3A"/></g><path d="M40 63v3"/><circle cx="40" cy="68" r="2" fill="#163D3A" stroke="#FBF8EF" stroke-width="1"/></g></svg>
+      <text class="place" x="912" y="488">1933老场坊</text>
+    </g>
+  </g>
+<g>
+    <text class="region" x="1300" y="146">福建</text>
+    <g aria-label="福建，经典地标，鼓浪屿">
+      <text class="category classic" x="1188" y="210">经典地标</text>
+      <svg x="1084" y="240" width="208" height="187.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 72" aria-hidden="true" focusable="false" data-anchor-x="40" data-anchor-y="68"><g fill="none" stroke="#163D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="40" cy="62" rx="27" ry="3" fill="#CCDCC8" stroke="none"/><ellipse cx="40" cy="56" rx="35" ry="7" fill="#A9CED3"/><path d="M9 52c8-15 42-15 62 0l-6 6H15Z" fill="#CCDCC8"/><path d="M17 31h24v23H17Zm27-7h19v29H44Z" fill="#FBF8EF"/><path d="m13 32 16-13 16 13Zm29-9h23v5H42Z" fill="#A23E34"/><path d="M49 24V13h9v11Z" fill="#D2AE65"/><path d="M48 13c0-10 11-10 11 0Z" fill="#A23E34"/><g data-detail="true"><path d="M22 54V43a5 5 0 0 1 10 0v11m17-19h4v6h-4m7-6h4v6h-4m-11 5h4v7h-4m7-7h4v7h-4"/><circle cx="29" cy="29" r="3" fill="#D2AE65"/><path d="M54 8V5m-40 53V37m0 4-6-4m6 1 5-4"/><path d="M21 60h15m17-1h12" stroke="#FBF8EF"/></g><path d="M40 63v3"/><circle cx="40" cy="68" r="2" fill="#163D3A" stroke="#FBF8EF" stroke-width="1"/></g></svg>
+      <text class="place" x="1188" y="488">鼓浪屿</text>
+    </g>
+<g aria-label="福建，地方发现，奇达村">
+      <text class="category local" x="1412" y="210">地方发现</text>
+      <svg x="1308" y="240" width="208" height="187.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 72" aria-hidden="true" focusable="false" data-anchor-x="40" data-anchor-y="68"><g fill="none" stroke="#163D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="40" cy="62" rx="27" ry="3" fill="#CCDCC8" stroke="none"/><path d="M6 52 8 31 22 9l17 19 15 8 20 20Z" fill="#CCDCC8"/><path d="M28 32c14 6 15 15 46 13v17H20Z" fill="#A9CED3"/><path d="m16 31 17 3 5 15-14-4Z" fill="#FBF8EF"/><path d="m12 31 10-8 13 11Z" fill="#A23E34"/><path d="m35 48 10-5 11 4-10 6Zm16 8 11-5 12 4-11 6Z" fill="#D2AE65"/><g data-detail="true"><path d="m22 12 2 10-7 6m-3 11 4 11m8-12 3 6m13 2 8 5m-13-2 11-5m10 9 9 5m-12-3 12-5M54 34h14l-4 5h-6Z" fill="#A23E34"/><path d="M62 34V25l5 9" fill="#FBF8EF"/><path d="M25 55h13m8 5h8" stroke="#FBF8EF"/></g><path d="M40 63v3"/><circle cx="40" cy="68" r="2" fill="#163D3A" stroke="#FBF8EF" stroke-width="1"/></g></svg>
+      <text class="place" x="1412" y="488">奇达村</text>
+    </g>
+  </g>
+</svg>
